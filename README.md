@@ -3,8 +3,8 @@ Proyecto para el curso de Construcción de Software II
 
 Integrantes:
 
--Nelia
+-Nelia Escalante Marón
 
--Gisela
+-Gisela Flores Colque
 
 -Kevin Montes De Oca Vizcarra
