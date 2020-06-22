@@ -13,7 +13,7 @@ gulp.task("licenses", async function() {
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2020 Creative Tim (http://www.creative-tim.com)
+* Copyright 2020 SERVICE OK (http://www.creative-tim.com)
 
 * Coded by Creative Tim
 
