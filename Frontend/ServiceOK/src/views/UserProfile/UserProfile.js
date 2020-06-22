@@ -44,8 +44,8 @@ export default function UserProfile() {
         <GridItem xs={12} sm={12} md={8}>
           <Card>
             <CardHeader color="primary">
-              <h4 className={classes.cardTitleWhite}>Edit Profile</h4>
-              <p className={classes.cardCategoryWhite}>Complete your profile</p>
+              <h4 className={classes.cardTitleWhite}>Gestionar Actividad</h4>
+              <p className={classes.cardCategoryWhite}>Completa los campos</p>
             </CardHeader>
             <CardBody>
               <GridContainer>
@@ -63,8 +63,8 @@ export default function UserProfile() {
                 </GridItem>
                 <GridItem xs={12} sm={12} md={3}>
                   <CustomInput
-                    labelText="Username"
-                    id="username"
+                    labelText="Tipo Actividad"
+                    id="tip_actividad"
                     formControlProps={{
                       fullWidth: true
                     }}
@@ -72,66 +72,19 @@ export default function UserProfile() {
                 </GridItem>
                 <GridItem xs={12} sm={12} md={4}>
                   <CustomInput
-                    labelText="Email address"
-                    id="email-address"
+                    labelText="Nombre Actividad"
+                    id="nom_actividad"
                     formControlProps={{
                       fullWidth: true
                     }}
                   />
                 </GridItem>
               </GridContainer>
-              <GridContainer>
-                <GridItem xs={12} sm={12} md={6}>
-                  <CustomInput
-                    labelText="First Name"
-                    id="first-name"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={6}>
-                  <CustomInput
-                    labelText="Last Name"
-                    id="last-name"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-              </GridContainer>
-              <GridContainer>
-                <GridItem xs={12} sm={12} md={4}>
-                  <CustomInput
-                    labelText="City"
-                    id="city"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={4}>
-                  <CustomInput
-                    labelText="Country"
-                    id="country"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={4}>
-                  <CustomInput
-                    labelText="Postal Code"
-                    id="postal-code"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-              </GridContainer>
+
+              
               <GridContainer>
                 <GridItem xs={12} sm={12} md={12}>
-                  <InputLabel style={{ color: "#AAAAAA" }}>About me</InputLabel>
+                  <InputLabel style={{ color: "#AAAAAA" }}>Descripcion</InputLabel>
                   <CustomInput
                     labelText="Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo."
                     id="about-me"
@@ -147,7 +100,7 @@ export default function UserProfile() {
               </GridContainer>
             </CardBody>
             <CardFooter>
-              <Button color="primary">Update Profile</Button>
+              <Button color="primary">Aceptar</Button>
             </CardFooter>
           </Card>
         </GridItem>
