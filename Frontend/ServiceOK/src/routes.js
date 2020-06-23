@@ -30,7 +30,8 @@ import UserProfile from "views/UserProfile/UserProfile.js";
 import TableList from "views/TableList/TableList.js";
 import Typography from "views/Typography/Typography.js";
 import Icons from "views/Icons/Icons.js";
-import Maps from "views/Maps/Maps.js";
+// import Maps from "views/Maps/Maps.js";
+import DashboardPage from "views/Dashboard/Dashboardy.js"; 
 import NotificationsPage from "views/Notifications/Notifications.js";
 import UpgradeToPro from "views/UpgradeToPro/UpgradeToPro.js";
 // core components/views for RTL layout
@@ -79,11 +80,11 @@ const dashboardRoutes = [
     layout: "/admin"
   },
   {
-    path: "/maps",
+    path: "/dashboardy",
     name: "Generar Reporte de Calificacion de Establecimiento",
     rtlName: "خرائط",
     icon: LocationOn,
-    component: Maps,
+    component: DashboardPage,
     layout: "/admin"
   },
   {

@@ -99,10 +99,13 @@ export default function TableList() {
                 </GridItem>
                 </GridContainer>
          </CardBody>
+         <CardFooter>
+              <Button color="primary">Aceptar</Button>
+            </CardFooter>
         </Card>
       </GridItem>
       
-     
+      
     </GridContainer>
     </div>
   );
