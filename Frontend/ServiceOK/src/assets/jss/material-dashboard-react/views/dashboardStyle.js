@@ -10,8 +10,8 @@ const dashboardStyle = {
     color: successColor[0]
   },
   upArrowCardCategory: {
-    width: "16px",
-    height: "16px"
+    width: "50px",
+    height: "80px"
   },
   stats: {
     color: grayColor[0],
