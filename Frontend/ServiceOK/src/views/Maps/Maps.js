@@ -3,8 +3,9 @@ import {
   withScriptjs,
   withGoogleMap,
   GoogleMap,
-  Marker
+  Marker,
 } from "react-google-maps";
+
 
 const CustomSkinMap = withScriptjs(
   withGoogleMap(() => (
@@ -14,7 +15,7 @@ const CustomSkinMap = withScriptjs(
       defaultOptions={{
         scrollwheel: false,
         zoomControl: true,
-        styles: [
+       styles: [
           {
             featureType: "water",
             stylers: [
@@ -81,13 +82,18 @@ const CustomSkinMap = withScriptjs(
   ))
 );
 
+
 export default function Maps() {
   return (
     <CustomSkinMap
+    
+    //<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNAXohf-3egfiJ2NExexvsUCvf1Q_yCY4"
+   // type="text/javascript"></script>
+
       googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNAXohf-3egfiJ2NExexvsUCvf1Q_yCY4"
-      loadingElement={<div style={{ height: `100%` }} />}
+     loadingElement={<div style={{ height: `100%` }} />}
       containerElement={<div style={{ height: `100vh` }} />}
-      mapElement={<div style={{ height: `100%` }} />}
+     mapElement={<div style={{ height: `100%` }} />}
     />
   );
 }

@@ -53,7 +53,7 @@ export default function UserProfile() {
                   
                   <select>
                     
-                  <option value="">Hola</option>
+                  <option value="">Tipo de Actividad</option>
                   </select>
                 
                    
