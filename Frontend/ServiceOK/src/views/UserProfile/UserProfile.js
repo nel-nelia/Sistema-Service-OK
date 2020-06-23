@@ -50,16 +50,13 @@ export default function UserProfile() {
             <CardBody>
               <GridContainer>
                 <GridItem xs={12} sm={12} md={5}>
-                  <CustomInput
-                    labelText="Company (disabled)"
-                    id="company-disabled"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                    inputProps={{
-                      disabled: true
-                    }}
-                  />
+                  
+                  <select>
+                  labelText="Tipo Actividad"
+                  <option value="">Hola</option>
+                  </select>
+                
+                   
                 </GridItem>
                 <GridItem xs={12} sm={12} md={3}>
                   <CustomInput
