@@ -52,7 +52,7 @@ export default function UserProfile() {
                 <GridItem xs={12} sm={12} md={5}>
                   
                   <select>
-                  labelText="Tipo Actividad"
+                    
                   <option value="">Hola</option>
                   </select>
                 
