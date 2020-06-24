@@ -57,17 +57,17 @@ export default function Dashboard() {
             title="Gestionar:"
             headerColor="primary"
             tabs={[
-              {
-                tabName: "Bugs",
-                tabIcon: BugReport,
-                tabContent: (
-                  <Tasks
-                    checkedIndexes={[0, 3]}
-                    tasksIndexes={[0, 1, 2, 3]}
-                    tasks={bugs}
-                  />
-                )
-              },
+           //   {
+            //    tabName: "Bugs",
+              //  tabIcon: BugReport,
+              //  tabContent: (
+               //   <Tasks
+               //     checkedIndexes={[0, 3]}
+                //    tasksIndexes={[0, 1, 2, 3]}
+                 //   tasks={bugs}
+                 // />
+               // )
+             // },
               {
                 tabName: "Website",
                 tabIcon: Code,

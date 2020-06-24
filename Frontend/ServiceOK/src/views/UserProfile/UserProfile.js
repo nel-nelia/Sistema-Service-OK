@@ -41,7 +41,7 @@ export default function UserProfile() {
   return (
     <div>
       <GridContainer>
-        <GridItem xs={12} sm={12} md={8}>
+        <GridItem xs={12} sm={12} md={12}>
           <Card>
             <CardHeader color="primary">
               <h4 className={classes.cardTitleWhite}>Gestionar Actividad</h4>
@@ -49,7 +49,7 @@ export default function UserProfile() {
             </CardHeader>
             <CardBody>
               <GridContainer>
-                <GridItem xs={12} sm={12} md={5}>
+                <GridItem xs={12} sm={12} md={3}>
                   
                   <select>
                     
@@ -67,7 +67,8 @@ export default function UserProfile() {
                     }}
                   />
                 </GridItem>
-                <GridItem xs={12} sm={12} md={4}>
+
+                <GridItem xs={12} sm={12} md={3}>
                   <CustomInput
                     labelText="Nombre Actividad"
                     id="nom_actividad"
@@ -76,30 +77,27 @@ export default function UserProfile() {
                     }}
                   />
                 </GridItem>
-              </GridContainer>
 
-              
-              <GridContainer>
-                <GridItem xs={12} sm={12} md={12}>
-                  <InputLabel style={{ color: "#AAAAAA" }}>Descripcion</InputLabel>
+                <GridItem xs={12} sm={12} md={4}>
                   <CustomInput
-                    labelText="Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo."
-                    id="about-me"
+                    labelText="Descripcion "
+                    id="nom_actividad"
                     formControlProps={{
                       fullWidth: true
                     }}
-                    inputProps={{
-                      multiline: true,
-                      rows: 5
-                    }}
                   />
                 </GridItem>
+
               </GridContainer>
+
+
             </CardBody>
             <CardFooter>
               <Button color="primary">Aceptar</Button>
             </CardFooter>
-          </Card>
+
+        </Card>
+
         </GridItem>
         <GridItem xs={12} sm={12} md={4}>
           <Card profile>
@@ -120,7 +118,8 @@ export default function UserProfile() {
                 Follow
               </Button>
             </CardBody>
-          </Card>
+          </Card>  
+
         </GridItem>
       </GridContainer>
     </div>
