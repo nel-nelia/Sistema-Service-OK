@@ -27,7 +27,7 @@ export default function Icons() {
       <GridItem xs={12} sm={12} md={12}>
         <Card plain>
           <CardHeader plain color="primary">
-            <h4 className={classes.cardTitleWhite}>Consultas Estado de Establecimientos</h4>
+            <h3 className={classes.cardTitleWhite}>Consultas Estado de Establecimientos</h3>
             <p className={classes.cardCategoryWhite}>
               Consultar Estado de Establecimientos
              
@@ -35,7 +35,7 @@ export default function Icons() {
           </CardHeader>
           <CardBody>
            <GridContainer>
-           <GridItem xs={12} sm={12} md={5}>
+           <GridItem xs={12} sm={12} md={4}>
                   <CustomInput
                     labelText="Nombre"
                     id="nom_actividad"
@@ -44,7 +44,8 @@ export default function Icons() {
                     }}
                   />
                 </GridItem>
-                <GridItem xs={12} sm={12} md={3}>
+
+                <GridItem xs={12} sm={12} md={4}>
                   <CustomInput
                     labelText="Direccion"
                     id="dir_actividad"
@@ -64,7 +65,7 @@ export default function Icons() {
                 </GridItem>
                 </GridContainer>
                 <GridContainer>
-                <GridItem xs={12} sm={12} md={3}>
+                <GridItem xs={12} sm={12} md={4}>
                   <CustomInput
                     labelText="Whatsapp"
                     id="what_actividad"
@@ -73,7 +74,7 @@ export default function Icons() {
                     }}
                   />
                 </GridItem>
-                <GridItem xs={12} sm={12} md={3}>
+                <GridItem xs={12} sm={12} md={4}>
                   <CustomInput
                     labelText="Delivery"
                     id="deli_actividad"
