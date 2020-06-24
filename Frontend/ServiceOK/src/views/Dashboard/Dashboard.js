@@ -41,8 +41,8 @@ import styles from "assets/jss/material-dashboard-react/views/dashboardStyle.js"
 
 const useStyles = makeStyles(styles);
 
-export default function Dashboard() {
-  const classes = useStyles();
+export default function Dashboard() {  
+  const classes = useStyles();  
   return (
     <div>
       <GridContainer>
