@@ -133,13 +133,13 @@ h6 {
 }
 
 a {
-  color: #9c27b0;
+  color: #69f0ae;
   text-decoration: none;
 }
 
 a:hover,
 a:focus {
-  color: #89229b;
+  color: #69f0ae;
   text-decoration: none;
 }
 
@@ -293,7 +293,7 @@ footer ul li a:hover {
 }
 
 .fixed-plugin .active .fa-circle-thin {
-  color: #00bbff;
+  color: #22e95d;
 }
 
 .fixed-plugin .dropdown-menu > .active > a,
@@ -328,7 +328,7 @@ footer ul li a:hover {
 
 .fixed-plugin .badge.active,
 .fixed-plugin .badge:hover {
-  border-color: #00bbff;
+  border-color: #24f740;
 }
 
 
@@ -441,12 +441,12 @@ footer ul li a:hover {
 }
 .fixed-plugin .dropdown-menu > li:hover > a.img-holder,
 .fixed-plugin .dropdown-menu > li:focus > a.img-holder {
-  border-color: rgba(0, 187, 255, 0.53);
+  border-color: rgba(84, 255, 0.20);
 }
 
 .fixed-plugin .dropdown-menu > .active > a.img-holder,
 .fixed-plugin .dropdown-menu > .active > a.img-holder {
-  border-color: #00bbff;
+  border-color: #06f17f;
   background-color: #ffffff;
 }
 .fixed-plugin .dropdown .dropdown-menu {
