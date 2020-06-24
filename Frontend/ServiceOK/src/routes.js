@@ -31,7 +31,8 @@ import TableList from "views/TableList/TableList.js";
 import Typography from "views/Typography/Typography.js";
 import Icons from "views/Icons/Icons.js";
 import Maps from "views/Maps/Maps.js";
-
+//importar la carpeta de graficos
+import Graficos from "views/Graficos/Dashboardy.js"
 import NotificationsPage from "views/Notifications/Notifications.js";
 import UpgradeToPro from "views/UpgradeToPro/UpgradeToPro.js";
 // core components/views for RTL layout
@@ -64,11 +65,11 @@ const dashboardRoutes = [
     layout: "/admin"
   },
   {
-    path: "/typography",
+    path: "/maps",
     name: "Gestionar Ubicacion de Establecimiento",
     rtlName: "طباعة",
     icon: LocationOn,
-    component: Typography,
+    component: Maps,
     layout: "/admin"
   },
   {
@@ -80,16 +81,16 @@ const dashboardRoutes = [
     layout: "/admin"
   },
   {
-    path: "/maps",
+    path: "/graficos",
     name: "Generar Reporte de Calificacion de Establecimiento",
     rtlName: "خرائط",
     icon: LocationOn,
-    component: Maps,
+    component: Graficos,
     layout: "/admin"
   },
   {
     path: "/notifications",
-    name: "Notifications",
+    name: "Notificaciones",
     rtlName: "إخطارات",
     icon: Notifications,
     component: NotificationsPage,
