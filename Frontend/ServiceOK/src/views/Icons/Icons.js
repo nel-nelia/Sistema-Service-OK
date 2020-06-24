@@ -27,7 +27,7 @@ export default function Icons() {
       <GridItem xs={12} sm={12} md={12}>
         <Card plain>
           <CardHeader plain color="primary">
-            <h3 className={classes.cardTitleWhite}>Consultas Estado de Establecimientos</h3>
+            <h4 className={classes.cardTitleWhite}>Consultas Estado de Establecimientos</h4>
             <p className={classes.cardCategoryWhite}>
               Consultar Estado de Establecimientos
              

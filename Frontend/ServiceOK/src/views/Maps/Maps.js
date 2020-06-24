@@ -97,7 +97,7 @@ export default function TypographyPage() {
   return (
     <div>
     <GridContainer>
-      <GridItem xs={12} sm={12} md={8}>
+      <GridItem xs={12} sm={12} md={11.5}>
         <Card>
           <CardHeader color="primary">
             <h4 className={classes.cardTitleWhite}>Gestionar Ubicacion de Establecimiento</h4>
@@ -107,7 +107,7 @@ export default function TypographyPage() {
           </CardHeader>
          <CardBody>
          <GridContainer>
-                <GridItem xs={12} sm={12} md={5}>
+                <GridItem xs={12} sm={12} md={3}>
                   <CustomInput
                     labelText="Latitud"
                     id="lati_establecimiento"

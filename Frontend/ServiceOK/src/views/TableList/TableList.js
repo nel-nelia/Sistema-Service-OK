@@ -40,7 +40,7 @@ export default function TableList() {
   return (
     <div>
     <GridContainer>
-      <GridItem xs={12} sm={12} md={8}>
+      <GridItem xs={12} sm={12} md={12}>
         <Card>
           <CardHeader color="primary">
             <h4 className={classes.cardTitleWhite}>Gestionar Establecimeinto</h4>
@@ -50,7 +50,7 @@ export default function TableList() {
           </CardHeader>
          <CardBody>
          <GridContainer>
-                <GridItem xs={12} sm={12} md={5}>
+                <GridItem xs={12} sm={12} md={4}>
                   <CustomInput
                     labelText="Nombre"
                     id="nom_actividad"
@@ -59,7 +59,7 @@ export default function TableList() {
                     }}
                   />
                 </GridItem>
-                <GridItem xs={12} sm={12} md={3}>
+                <GridItem xs={12} sm={12} md={4}>
                   <CustomInput
                     labelText="Direccion"
                     id="dir_actividad"
@@ -79,7 +79,7 @@ export default function TableList() {
                 </GridItem>
                 </GridContainer>
                 <GridContainer>
-                <GridItem xs={12} sm={12} md={3}>
+                <GridItem xs={12} sm={12} md={4}>
                   <CustomInput
                     labelText="Whatsapp"
                     id="what_actividad"
@@ -88,7 +88,7 @@ export default function TableList() {
                     }}
                   />
                 </GridItem>
-                <GridItem xs={12} sm={12} md={3}>
+                <GridItem xs={12} sm={12} md={4}>
                   <CustomInput
                     labelText="Delivery"
                     id="deli_actividad"
