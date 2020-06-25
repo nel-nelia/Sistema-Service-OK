@@ -29,7 +29,7 @@ import GestipoactividadPage from "views/Gestipoactividad/Gestipoactividad.js";
 import Gestiactividad from "views/Gestiactividad/Gestiactividad.js";
 import TableList from "views/TableList/TableList.js";
 import Typography from "views/Typography/Typography.js";
-import Icons from "views/Icons/Icons.js";
+import Consultaestaestable from "views/Consultaestaestable/Consultaestaestable.js";
 import Maps from "views/Maps/Maps.js";
 //importar la carpeta de graficos
 import Graficos from "views/Graficos/Dashboardy.js"
@@ -73,11 +73,11 @@ const dashboardRoutes = [
     layout: "/admin"
   },
   {
-    path: "/icons",
+    path: "/consultaestaestable",
     name: "Consultar Estado de Establecimiento",
     rtlName: "الرموز",
     icon: LibraryBooks,
-    component: Icons,
+    component: Consultaestaestable,
     layout: "/admin"
   },
   {
