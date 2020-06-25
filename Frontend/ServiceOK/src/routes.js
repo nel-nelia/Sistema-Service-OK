@@ -26,7 +26,7 @@ import Unarchive from "@material-ui/icons/Unarchive";
 import Language from "@material-ui/icons/Language";
 // core components/views for Admin layout
 import GestipoactividadPage from "views/Gestipoactividad/Gestipoactividad.js";
-import UserProfile from "views/UserProfile/UserProfile.js";
+import Gestiactividad from "views/Gestiactividad/Gestiactividad.js";
 import TableList from "views/TableList/TableList.js";
 import Typography from "views/Typography/Typography.js";
 import Icons from "views/Icons/Icons.js";
@@ -49,11 +49,11 @@ const dashboardRoutes = [
     layout: "/admin"
   },
   {
-    path: "/user",
+    path: "/gestiactividad",
     name: "Gestionar Actividad",
     rtlName: "ملف تعريفي للمستخدم",
     icon: LibraryBooks,
-    component: UserProfile,
+    component: Gestiactividad,
     layout: "/admin"
   },
   {
