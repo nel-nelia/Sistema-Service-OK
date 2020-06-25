@@ -210,7 +210,7 @@ body {
   color: #666666;
 }
 .fixed-section li a.active {
-  color: #00bbff;
+  color: #55f036;
 }
 .fixed-section.float {
   position: fixed;
@@ -371,10 +371,10 @@ body {
   margin-right: 5px;
 }
 .sharing-area .btn-twitter {
-  background-color: #55acee;
+  background-color: #40f149;
 }
 .sharing-area .btn-facebook {
-  background-color: #3b5998;
+  background-color: #31fc75;
 }
 .sharing-area .btn-google-plus {
   background-color: #dd4b39;
@@ -521,7 +521,7 @@ body {
 
 .navbar,
 .navbar.navbar-default {
-  background-color: #9c27b0;
+  background-color: #29f04b;
   color: #ffffff;
 }
 
@@ -560,7 +560,7 @@ footer.footer-documentation li a {
 
 footer.footer-documentation li a:hover,
 footer.footer-documentation li a:focus {
-  color: #89229b;
+  color: #3ef548;
 }
 
 footer ul {

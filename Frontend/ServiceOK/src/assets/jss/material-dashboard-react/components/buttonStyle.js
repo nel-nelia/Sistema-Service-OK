@@ -160,7 +160,7 @@ const buttonStyle = {
         ", 0.2)"
     }
   },
-  success: {
+  /*success: {
     backgroundColor: successColor[0],
     boxShadow:
       "0 2px 2px 0 rgba(" +
@@ -181,8 +181,8 @@ const buttonStyle = {
         hexToRgb(successColor[0]) +
         ", 0.2)"
     }
-  },
-  warning: {
+  },*/
+ /* warning: {
     backgroundColor: warningColor[0],
     boxShadow:
       "0 2px 2px 0 rgba(" +
@@ -225,8 +225,8 @@ const buttonStyle = {
         hexToRgb(dangerColor[0]) +
         ", 0.2)"
     }
-  },
-  simple: {
+  },*/  
+ /* simple: {
     "&,&:focus,&:hover": {
       color: whiteColor,
       background: "transparent",
@@ -262,7 +262,7 @@ const buttonStyle = {
         color: dangerColor[0]
       }
     }
-  },
+  },*/
   transparent: {
     "&,&:focus,&:hover": {
       color: "inherit",
