@@ -25,11 +25,11 @@ import Notifications from "@material-ui/icons/Notifications";
 import Unarchive from "@material-ui/icons/Unarchive";
 import Language from "@material-ui/icons/Language";
 // core components/views for Admin layout
-import DashboardPage from "views/Dashboard/Dashboard.js";
-import UserProfile from "views/UserProfile/UserProfile.js";
+import GestipoactividadPage from "views/Gestipoactividad/Gestipoactividad.js";
+import Gestiactividad from "views/Gestiactividad/Gestiactividad.js";
 import TableList from "views/TableList/TableList.js";
 import Typography from "views/Typography/Typography.js";
-import Icons from "views/Icons/Icons.js";
+import Consultaestaestable from "views/Consultaestaestable/Consultaestaestable.js";
 import Maps from "views/Maps/Maps.js";
 //importar la carpeta de graficos
 import Graficos from "views/Graficos/Dashboardy.js"
@@ -41,19 +41,19 @@ import SearchBox from "react-google-maps/lib/components/places/SearchBox";
 
 const dashboardRoutes = [
   {
-    path: "/dashboard",
+    path: "/gestipoactividad",
     name: "Gestionar Tipo de Actividad",
     rtlName: "لوحة القيادة",
     icon: Dashboard,
-    component: DashboardPage,
+    component: GestipoactividadPage,
     layout: "/admin"
   },
   {
-    path: "/user",
+    path: "/gestiactividad",
     name: "Gestionar Actividad",
     rtlName: "ملف تعريفي للمستخدم",
     icon: LibraryBooks,
-    component: UserProfile,
+    component: Gestiactividad,
     layout: "/admin"
   },
   {
@@ -73,11 +73,11 @@ const dashboardRoutes = [
     layout: "/admin"
   },
   {
-    path: "/icons",
+    path: "/consultaestaestable",
     name: "Consultar Estado de Establecimiento",
     rtlName: "الرموز",
     icon: LibraryBooks,
-    component: Icons,
+    component: Consultaestaestable,
     layout: "/admin"
   },
   {
