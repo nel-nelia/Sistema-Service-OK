@@ -17,14 +17,14 @@ const buttonStyle = {
     minWidth: "auto",
     backgroundColor: grayColor[0],
     color: whiteColor,
-    boxShadow:
+    /*boxShadow:
       "0 2px 2px 0 rgba(" +
       hexToRgb(grayColor[0]) +
-      ", 0.14), 0 3px 1px -2px rgba(" +
+      ", 0.4), 0 3px 1px -2px rgba(" +
       hexToRgb(grayColor[0]) +
       ", 0.2), 0 1px 5px 0 rgba(" +
       hexToRgb(grayColor[0]) +
-      ", 0.12)",
+      ", 0.12)",*/
     border: "none",
     borderRadius: "3px",
     position: "relative",

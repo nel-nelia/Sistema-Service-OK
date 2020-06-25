@@ -54,7 +54,7 @@ export default function Dashboard() {
       <GridContainer>
         <GridItem xs={12} sm={12} md={12}>
           <CustomTabs
-            title="Gestionar:"
+            title=":"
             headerColor="primary"
             tabs={[
            //   {
@@ -68,7 +68,7 @@ export default function Dashboard() {
                  // />
                // )
              // },
-              {
+            /*  {
                 tabName: "Website",
                 tabIcon: Code,
                 tabContent: (
@@ -78,9 +78,9 @@ export default function Dashboard() {
                     tasks={website}
                   />
                 )
-              },
+              },*/
               {
-                tabName: "Server",
+                tabName: "Gestionar Tipo de Actividad",
                 tabIcon: Cloud,
                 tabContent: (
                   <Tasks
