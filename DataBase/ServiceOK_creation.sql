@@ -68,3 +68,65 @@ CREATE TABLE Calificacion
 	EstablecimientoID	INT(11) NOT NULL,
 	FOREIGN KEY (EstablecimientoID) REFERENCES Establecimiento(EstablecimientoID)
 );
+
+
+CREATE TABLE Rol
+(
+	RolID				INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	Nombre			VARCHAR(250) NOT NULL,
+	Descripcion		VARCHAR(400) NOT NULL	
+);
+
+CREATE TABLE RolUsuario
+(
+	RolID					INT(11) NOT NULL PRIMARY KEY,
+	GestionaUsuario	INT(1) NOT NULL DEFAULT 0,
+	DesactivaUsuario	INT(1) NOT NULL DEFAULT 0,
+	FOREIGN KEY (RolID) REFERENCES Rol(RolID)
+);
+
+CREATE TABLE RolPersona
+(
+	RolID							INT(11) NOT NULL PRIMARY KEY,
+	GestionaPersona			INT(1) NOT NULL DEFAULT 0,
+	GestionaRepresentante	INT(1) NOT NULL DEFAULT 0,
+	FOREIGN KEY (RolID) REFERENCES Rol(RolID)
+);
+
+CREATE TABLE RolActividad
+(
+	RolID							INT(11) NOT NULL PRIMARY KEY,
+	GestionarActividad		INT(1) NOT NULL DEFAULT 0,
+	DesactivarActividad		INT(1) NOT NULL DEFAULT 0,
+	GestionarActividadTipo	INT(1) NOT NULL DEFAULT 0,
+	DesactivarActividadTipo	INT(1) NOT NULL DEFAULT 0,	
+	FOREIGN KEY (RolID) REFERENCES Rol(RolID)
+);
+
+CREATE TABLE RolEstablecimiento
+(
+	RolID									INT(11) NOT NULL PRIMARY KEY,
+	GestionarEstablecimiento		INT(1) NOT NULL DEFAULT 0,
+	GestionarUbicacion				INT(1) NOT NULL DEFAULT 0,
+	DesactivarEstablecimiento		INT(1) NOT NULL DEFAULT 0,
+	FOREIGN KEY (RolID) REFERENCES Rol(RolID)
+);
+
+CREATE TABLE RolCalificacion
+(
+	RolID									INT(11) NOT NULL PRIMARY KEY,
+	GestionarCalificacion			INT(1) NOT NULL DEFAULT 0,
+	FOREIGN KEY (RolID) REFERENCES Rol(RolID)
+);
+
+CREATE TABLE Usuario
+(
+	EntidadID		INT(11) NOT NULL PRIMARY KEY,	
+	Usuario			VARCHAR(20) NOT NULL,
+	Secret			VARCHAR(20) NOT NULL,
+	RolID				INT(11) NOT NULL,
+	FOREIGN KEY (RolID) REFERENCES Rol(RolID),
+	FOREIGN KEY (EntidadID) REFERENCES Entidad(EntidadID)
+);
+
+
