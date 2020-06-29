@@ -1,0 +1,72 @@
+[
+    {
+        "model-name": "ActividadTipo",
+        "resource-file": "actividad_tipos.json",
+        "table-name": "actividadtipo"
+    },
+    {
+        "model-name": "Actividad",
+        "resource-file": "actividads.json",
+        "table-name": "actividad"
+    },
+    {
+        "model-name": "Calificacion",
+        "resource-file": "calificacions.json",
+        "table-name": "calificacion"
+    },
+    {
+        "model-name": "Entidad",
+        "resource-file": "entidads.json",
+        "table-name": "entidad"
+    },
+    {
+        "model-name": "Persona",
+        "resource-file": "personas.json",
+        "table-name": "persona"
+    },
+    {
+        "model-name": "Usuario",
+        "resource-file": "usuarios.json",
+        "table-name": "usuario"
+    },
+    {
+        "model-name": "Representante",
+        "resource-file": "representantes.json",
+        "table-name": "representante"
+    },
+    {
+        "model-name": "Establecimiento",
+        "resource-file": "establecimientos.json",
+        "table-name": "establecimiento"
+    },
+    {
+        "model-name": "Rol",
+        "resource-file": "rols.json",
+        "table-name": "rol"
+    },
+    {
+        "model-name": "RolEstablecimiento",
+        "resource-file": "rol_establecimientos.json",
+        "table-name": "rolestablecimiento"
+    },
+    {
+        "model-name": "RolActividad",
+        "resource-file": "rol_actividads.json",
+        "table-name": "rolactividad"
+    },
+    {
+        "model-name": "RolPersona",
+        "resource-file": "rol_personas.json",
+        "table-name": "rolpersona"
+    },
+    {
+        "model-name": "RolCalificacion",
+        "resource-file": "rol_calificacions.json",
+        "table-name": "rolcalificacion"
+    },
+    {
+        "model-name": "RolUsuario",
+        "resource-file": "rol_usuarios.json",
+        "table-name": "rolusuario"
+    }
+]
