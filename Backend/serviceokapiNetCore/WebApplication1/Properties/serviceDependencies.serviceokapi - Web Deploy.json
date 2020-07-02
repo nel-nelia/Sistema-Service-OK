@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroup')]/providers/Microsoft.Sql/servers/servidorserviceok/databases/serviceOK",
+      "type": "mssql.azure",
+      "connectionId": "serviceOkconnection",
+      "secretStore": "AzureAppSettings"
+    }
+  }
+}
