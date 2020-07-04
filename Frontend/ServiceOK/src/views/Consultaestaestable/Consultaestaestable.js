@@ -26,6 +26,7 @@ export default function Icons() {
     <GridContainer>
       <GridItem xs={12} sm={12} md={12}>
         <Card plain>
+
           <CardHeader plain color="primary">
             <h4 className={classes.cardTitleWhite}>Consultas Estado de Establecimientos</h4>
             <p className={classes.cardCategoryWhite}>
@@ -33,6 +34,7 @@ export default function Icons() {
              
             </p>
           </CardHeader>
+          
           <CardBody>
            <GridContainer>
            <GridItem xs={12} sm={12} md={4}>
