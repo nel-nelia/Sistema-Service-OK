@@ -15,6 +15,7 @@ import CardFooter from "components/Card/CardFooter.js";
 
 import avatar from "assets/img/faces/marc.jpg";
 
+import Listaractividades from './ListarActividades';
 const styles = {
   cardCategoryWhite: {
     color: "rgba(255,255,255,.62)",
@@ -54,9 +55,14 @@ export default function UserProfile() {
                   <select>
                     
                   <option value="">Tipo de Actividad</option>
+
+                
+         
+          
+         
                   </select>
                 
-                   
+                  <Listaractividades>    </Listaractividades>
                 </GridItem>
                 <GridItem xs={12} sm={12} md={3}>
                   <CustomInput
