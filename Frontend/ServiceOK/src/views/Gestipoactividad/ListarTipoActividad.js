@@ -11,18 +11,18 @@ import CardHeader from "components/Card/CardHeader.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrashAlt, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
-import { Modal, ModalBody, ModalFooter, ModalHeader, ListGroup } from 'reactstrap'; 
+import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap'; 
 
-class ListarActividades extends Component{
+class ListarTipoActividades extends Component{
 
     state={
-      cursos:[],
+      ActividadTipo:[],
+
       modalInsertar: false,
       form:{
-        actividadId:'',
-        nombre:'',
-        descripcion:'',
-        flagActivo:''
+        ActividadTipoID:'',
+        Nombre:'',
+        FlagActivo:''
       }
     }
  
@@ -43,7 +43,7 @@ class ListarActividades extends Component{
     }
     //peticion post
     peticionPost=async()=>{
-     await axios.post("https://serviceokapi.azurewebsites.net/api/Actividades",this.state.form).then(response=>{
+     await axios.post("https://serviceokapi.azurewebsites.net/api/ActividadTipos",this.state.form).then(response=>{
         this.modalInsertar();
         this.componentDidMount();
       }).catch(error=>{
@@ -52,25 +52,24 @@ class ListarActividades extends Component{
     }
 
     componentDidMount() {      
-        axios.get("https://serviceokapi.azurewebsites.net/api/Actividades")
+        axios.get("https://serviceokapi.azurewebsites.net/api/ActividadTipos")
             .then((Response) =>{
       
-              const cursos = Response.data;
-          this.setState({ cursos})
+              const ActividadTipo = Response.data;
+          this.setState({ ActividadTipo})
         } );
-        console.log(this.state.cursos)
+        console.log(this.state.ActividadTipo)
       }
 
       render(){
     const {form}=this.state;
        
-        let cursos = this.state.cursos.map((curso)=>
+        let ActividadTipo = this.state.ActividadTipo.map((ActividadTipos)=>
         {
             return(                  
                 <tr>
-                  <td>{curso.nombre}</td> 
-                   <td>{curso.descripcion}</td>
-                    <td>{curso.flagActivo}</td>
+                  <td>{ActividadTipos.nombre}</td> 
+                   <td>{ActividadTipos.FlagActivo}</td>
                     <td>
                       <button className="btn btn-primary" ><FontAwesomeIcon icon={faEdit}/></button>
                       {" "}
@@ -89,14 +88,13 @@ class ListarActividades extends Component{
              <table className="table" tableHeader Color="primary" WIDTH="70%" color='#FFFFFF'>
             <thead>
              <tr>
-                 <th><center>Nombre</center> </th>
-                  <th><center>Descripcion</center></th>
-                  <th><center>Estado</center></th>
-                  <th><center>Acciones</center></th>
+                 <th>Nombre </th>
+                  <th>Estado</th>
+                  <th>Acciones</th>
                 </tr>
                 </thead>
                 <tbody>
-                {cursos}
+                {ActividadTipo}
 
                     </tbody>
              </table>
@@ -110,25 +108,15 @@ class ListarActividades extends Component{
               </ModalHeader>
               <ModalBody>
                 <div className="form-group">
-                  <label htmlFor="actividadId">Actividad ID</label>
-                  <input className="form-control" type="text" name="actividadId" id="actividadId" readOnly onChange={this.handlechange} value={this.state.cursos.length+1}/>
+                  <label htmlFor="actividadTipoID">ActividadTipoID </label>
+                  <input className="form-control" type="text" name="actividadTipoId" id="actividadTipoID" readOnly onChange={this.handlechange} value={this.state.ActividadTipo.length+1}/>
                   <br />
                   <label htmlFor="nombre">Nombre</label>
-                  <input className="form-control" type="text" name="nombre" id="nombre" onChange={this.handlechange} value={form.nombre}/>
-                  <br />
-                  <label htmlFor="descripcion">Descripcion</label>
-                  <input className="form-control" type="text" name="descripcion" id="descripcion" onChange={this.handlechange} value={form.descripcion}/>
+                  <input className="form-control" type="text" name="Nombre" id="Nombre" onChange={this.handlechange} value={form.Nombre}/>
                   <br />
                   <label htmlFor="flagActivo">Flag Activo</label>
-                  <input className="form-control" type="text" name="flagActivo" id="flagActivo" onChange={this.handlechange} value={form.flagActivo}/>
-                  <br />
-                  <label htmlFor="actividadTipoId">Tipo Actividad</label>
-                  <br />
-                  <div className="btn-group">
-                    <button className="btn btn-danger" type="button" id="actividadTipoId" >Seleccione</button>
-
-                  </div>
-
+                  <input className="form-control" type="text" name="FlagActivo" id="FlagActivo" onChange={this.handlechange} value={form.FlagActivo}/>
+                  
                 </div>
               </ModalBody>
               <ModalFooter>
@@ -148,4 +136,4 @@ class ListarActividades extends Component{
           )
       }
   }
-  export default ListarActividades;
+  export default ListarTipoActividades;

@@ -31,6 +31,10 @@ import CardFooter from "components/Card/CardFooter.js";
 
 import { bugs, website, server } from "variables/general.js";
 
+import ListarTipoActividades from './ListarTipoActividad';
+//bootstrap
+import axios from "axios";
+
 import {
   dailySalesChart,
   emailsSubscriptionChart,
@@ -49,8 +53,13 @@ export default function Dashboard() {
         <GridItem xs={12} sm={12} md={12}>
         <CardHeader color="primary">
               <h4 className={classes.cardTitleWhite}>Gestionar Tipo Actividad</h4>
-              <p className={classes.cardCategoryWhite}>Completa los campos</p>
+           
             </CardHeader>
+
+            <CardBody>
+
+            <ListarTipoActividades>    </ListarTipoActividades>
+            </CardBody>
         
 
         </GridItem>
@@ -64,15 +73,12 @@ export default function Dashboard() {
             tabs={[
          
               {
-                tabName: "Tipo de Actividad",
-                tabIcon: Cloud,
-                tabContent: (
-                  <Tasks
-                    checkedIndexes={[1]}
-                    tasksIndexes={[0, 1, 2]}
-                    tasks={server}
-                  />
-                )
+                
+               
+
+
+                  
+                
               }
               
             ]}
@@ -80,7 +86,8 @@ export default function Dashboard() {
         </GridItem>
         <GridItem xs={12} sm={12} md={6}>
          
-      
+        
+             
         </GridItem>
       </GridContainer>
       
