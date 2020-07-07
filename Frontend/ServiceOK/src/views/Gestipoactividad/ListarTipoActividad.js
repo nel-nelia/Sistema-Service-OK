@@ -22,7 +22,7 @@ class ListarTipoActividades extends Component{
       form:{
         ActividadTipoID:'',
         Nombre:'',
-        FlagActivo:''
+        flagActivo:''
       }
     }
  
@@ -69,7 +69,7 @@ class ListarTipoActividades extends Component{
             return(                  
                 <tr>
                   <td>{ActividadTipos.nombre}</td> 
-                   <td>{ActividadTipos.FlagActivo}</td>
+                   <td>{ActividadTipos.flagActivo}</td>
                     <td>
                       <button className="btn btn-primary" ><FontAwesomeIcon icon={faEdit}/></button>
                       {" "}
