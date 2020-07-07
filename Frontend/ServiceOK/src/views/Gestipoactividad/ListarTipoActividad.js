@@ -1,14 +1,14 @@
 import React, { Component} from 'react';
 import axios from 'axios';
 import CardBody from "components/Card/CardBody.js";
-import Table from "components/Table/Table.js";
+import Table from "views/GestionarEstablecimientos/node_modules/components/Table/Table.js.js";
 import GridItem from "components/Grid/GridItem.js";
 import GridContainer from "components/Grid/GridContainer.js";
 
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 
-import "bootstrap/dist/css/bootstrap.min.css";
+import "views/GestionarEstablecimientos/node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrashAlt, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap'; 

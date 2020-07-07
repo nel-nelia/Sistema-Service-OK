@@ -18,19 +18,19 @@ import BugReport from "@material-ui/icons/BugReport";
 import Code from "@material-ui/icons/Code";
 import Cloud from "@material-ui/icons/Cloud";
 // core components
-import Button from "components/CustomButtons/Button.js";
-import GridItem from "components/Grid/GridItem.js";
-import GridContainer from "components/Grid/GridContainer.js";
-import Table from "components/Table/Table.js";
+import Button from "views/GestionarEstablecimientos/node_modules/components/CustomButtons/Button.js.js";
+import GridItem from "views/GestionarEstablecimientos/node_modules/components/Grid/GridItem.js.js";
+import GridContainer from "views/GestionarEstablecimientos/node_modules/components/Grid/GridContainer.js.js";
+import Table from "views/GestionarEstablecimientos/node_modules/components/Table/Table.js.js";
 import Tasks from "components/Tasks/Tasks.js";
 import CustomTabs from "components/CustomTabs/CustomTabs.js";
 import Danger from "components/Typography/Danger.js";
-import Card from "components/Card/Card.js";
-import CardHeader from "components/Card/CardHeader.js";
-import CardAvatar from "components/Card/CardAvatar.js";
+import Card from "views/GestionarEstablecimientos/node_modules/components/Card/Card.js.js";
+import CardHeader from "views/GestionarEstablecimientos/node_modules/components/Card/CardHeader.js.js";
+import CardAvatar from "views/GestionarEstablecimientos/node_modules/components/Card/CardAvatar.js.js";
 import CardIcon from "components/Card/CardIcon.js";
-import CardBody from "components/Card/CardBody.js";
-import CardFooter from "components/Card/CardFooter.js";
+import CardBody from "views/GestionarEstablecimientos/node_modules/components/Card/CardBody.js.js";
+import CardFooter from "views/GestionarEstablecimientos/node_modules/components/Card/CardFooter.js.js";
 import SnackbarContent from "components/Snackbar/SnackbarContent.js";
 
 import {

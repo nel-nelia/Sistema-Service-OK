@@ -20,27 +20,31 @@ import ListarEstablecimientos from './ListarEstablecimiento';
 
 const useStyles = makeStyles(styles);
 
-export default function Icons() {
+export default function UserProfile() {
   const classes = useStyles();
   return (
-    <GridContainer>
-      <GridItem xs={12} sm={12} md={12}>
-        <Card plain>
+    <div>
+      <GridContainer>
+        <GridItem xs={12} sm={12} md={12}>
+          <Card>
+            <CardHeader color="primary">
+              <h4 className={classes.cardTitleWhite}>Gestionar Actividad</h4>            
+            </CardHeader>
+            <CardBody>
 
-          <CardHeader plain color="primary">
-            <h4 className={classes.cardTitleWhite}>Consultas Estado de Establecimientos</h4>
-            <p className={classes.cardCategoryWhite}> Consultar Estado de Establecimientos
-             
-            </p>
-          </CardHeader>
-          
-          <CardBody>
+            <Listaractividades>    </Listaractividades>
 
-          <ListarEstablecimientos>           </ListarEstablecimientos>   
+              <GridContainer>
+                                             
 
-          </CardBody>
+              </GridContainer>
+
+            </CardBody>
         </Card>
-      </GridItem>
-    </GridContainer>
+
+        </GridItem>
+        
+      </GridContainer>
+    </div>
   );
 }

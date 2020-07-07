@@ -3,22 +3,22 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import InputLabel from "@material-ui/core/InputLabel";
 // core components
-import GridItem from "components/Grid/GridItem.js";
-import GridContainer from "components/Grid/GridContainer.js";
-import CustomInput from "components/CustomInput/CustomInput.js";
-import Button from "components/CustomButtons/Button.js";
-import Card from "components/Card/Card.js";
-import CardHeader from "components/Card/CardHeader.js";
-import CardAvatar from "components/Card/CardAvatar.js";
-import CardBody from "components/Card/CardBody.js";
-import CardFooter from "components/Card/CardFooter.js";
+import GridItem from "views/GestionarEstablecimientos/node_modules/components/Grid/GridItem.js.js";
+import GridContainer from "views/GestionarEstablecimientos/node_modules/components/Grid/GridContainer.js.js";
+import CustomInput from "views/GestionarEstablecimientos/node_modules/components/CustomInput/CustomInput.js.js";
+import Button from "views/GestionarEstablecimientos/node_modules/components/CustomButtons/Button.js.js";
+import Card from "views/GestionarEstablecimientos/node_modules/components/Card/Card.js.js";
+import CardHeader from "views/GestionarEstablecimientos/node_modules/components/Card/CardHeader.js.js";
+import CardAvatar from "views/GestionarEstablecimientos/node_modules/components/Card/CardAvatar.js.js";
+import CardBody from "views/GestionarEstablecimientos/node_modules/components/Card/CardBody.js.js";
+import CardFooter from "views/GestionarEstablecimientos/node_modules/components/Card/CardFooter.js.js";
 
 import avatar from "assets/img/faces/marc.jpg";
 
 import Listaractividades from './ListarActividades';
 //bootstrap
 import axios from "axios";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "views/GestionarEstablecimientos/node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { Modal, ModalBody, ModalFooter, ModalHeader, Dropdown, ButtonDropdown } from 'reactstrap';

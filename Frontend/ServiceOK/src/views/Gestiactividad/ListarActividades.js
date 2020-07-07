@@ -1,13 +1,13 @@
 import React, { Component} from 'react';
 import axios from 'axios';
-import CardBody from "components/Card/CardBody.js";
-import Table from "components/Table/Table.js";
-import GridItem from "components/Grid/GridItem.js";
-import GridContainer from "components/Grid/GridContainer.js";
+import CardBody from "views/GestionarEstablecimientos/node_modules/components/Card/CardBody.js.js";
+import Table from "views/GestionarEstablecimientos/node_modules/components/Table/Table.js.js";
+import GridItem from "views/GestionarEstablecimientos/node_modules/components/Grid/GridItem.js.js";
+import GridContainer from "views/GestionarEstablecimientos/node_modules/components/Grid/GridContainer.js.js";
 
-import Card from "components/Card/Card.js";
-import CardHeader from "components/Card/CardHeader.js";
-import "bootstrap/dist/css/bootstrap.min.css";
+import Card from "views/GestionarEstablecimientos/node_modules/components/Card/Card.js.js";
+import CardHeader from "views/GestionarEstablecimientos/node_modules/components/Card/CardHeader.js.js";
+import "views/GestionarEstablecimientos/node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrashAlt, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import { Modal, ModalBody, ModalFooter, ModalHeader, ListGroup } from 'reactstrap'; 
