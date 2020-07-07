@@ -53,8 +53,7 @@ export default function UserProfile() {
         <GridItem xs={12} sm={12} md={12}>
           <Card>
             <CardHeader color="primary">
-              <h4 className={classes.cardTitleWhite}>Gestionar Actividad</h4>
-              <p className={classes.cardCategoryWhite}>Completa los campos</p>
+              <h4 className={classes.cardTitleWhite}>Gestionar Actividad</h4>            
             </CardHeader>
             <CardBody>
 
