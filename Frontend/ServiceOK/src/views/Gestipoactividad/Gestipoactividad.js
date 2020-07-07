@@ -71,31 +71,6 @@ export default function Dashboard() {
         </GridItem>
       </GridContainer>
       
-      <GridContainer> 
-        <GridItem xs={12} sm={12} md={12}>
-          <CustomTabs
-            title=":"
-            headerColor="primary"
-            tabs={[
-         
-              {
-                
-               
-
-
-                  
-                
-              }
-              
-            ]}
-          />
-        </GridItem>
-        <GridItem xs={12} sm={12} md={6}>
-         
-        
-             
-        </GridItem>
-      </GridContainer>
       
     </div>
   );

@@ -89,10 +89,10 @@ class ListarActividades extends Component{
              <table className="table" tableHeader Color="primary" WIDTH="70%" color='#FFFFFF'>
             <thead>
              <tr>
-                 <th><center>Nombre</center> </th>
-                  <th><center>Descripcion</center></th>
-                  <th><center>Estado</center></th>
-                  <th><center>Acciones</center></th>
+                 <th>Nombre </th>
+                  <th>Descripcion</th>
+                  <th>Estado</th>
+                  <th>Acciones</th>
                 </tr>
                 </thead>
                 <tbody>
