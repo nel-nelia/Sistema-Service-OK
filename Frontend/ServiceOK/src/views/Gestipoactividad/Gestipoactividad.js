@@ -47,40 +47,24 @@ export default function Dashboard() {
     <div>
       <GridContainer>
         <GridItem xs={12} sm={12} md={12}>
-          
+        <CardHeader color="primary">
+              <h4 className={classes.cardTitleWhite}>Gestionar Tipo Actividad</h4>
+              <p className={classes.cardCategoryWhite}>Completa los campos</p>
+            </CardHeader>
+        
+
         </GridItem>
       </GridContainer>
       
-      <GridContainer>
+      <GridContainer> 
         <GridItem xs={12} sm={12} md={12}>
           <CustomTabs
             title=":"
             headerColor="primary"
             tabs={[
-           //   {
-            //    tabName: "Bugs",
-              //  tabIcon: BugReport,
-              //  tabContent: (
-               //   <Tasks
-               //     checkedIndexes={[0, 3]}
-                //    tasksIndexes={[0, 1, 2, 3]}
-                 //   tasks={bugs}
-                 // />
-               // )
-             // },
-            /*  {
-                tabName: "Website",
-                tabIcon: Code,
-                tabContent: (
-                  <Tasks
-                    checkedIndexes={[0]}
-                    tasksIndexes={[0, 1]}
-                    tasks={website}
-                  />
-                )
-              },*/
+         
               {
-                tabName: "Gestionar Tipo de Actividad",
+                tabName: "Tipo de Actividad",
                 tabIcon: Cloud,
                 tabContent: (
                   <Tasks

@@ -52,7 +52,9 @@ export default function UserProfile() {
 
 
             <Listaractividades>    </Listaractividades>
+
               <GridContainer>
+                
                 <GridItem xs={12} sm={12} md={3}>
                   
                   <select>
