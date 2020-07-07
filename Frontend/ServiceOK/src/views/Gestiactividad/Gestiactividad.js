@@ -57,88 +57,18 @@ export default function UserProfile() {
             </CardHeader>
             <CardBody>
 
-
             <Listaractividades>    </Listaractividades>
 
               <GridContainer>
-                
-                <GridItem xs={12} sm={12} md={3}>
-                  
-                  <select>
-                    
-                  <option value="">Tipo de Actividad</option>
-
-                
-         
-          
-         
-                  </select>
-                
-                  
-                </GridItem>
-                <GridItem xs={12} sm={12} md={3}>
-                  <CustomInput
-                    labelText="Tipo Actividad"
-                    id="tip_actividad"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-
-                <GridItem xs={12} sm={12} md={3}>
-                  <CustomInput
-                    labelText="Nombre Actividad"
-                    id="nom_actividad"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-
-                <GridItem xs={12} sm={12} md={4}>
-                  <CustomInput
-                    labelText="Descripcion "
-                    id="nom_actividad"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
+                                             
 
               </GridContainer>
 
-
             </CardBody>
-            <CardFooter>
-              <Button color="primary">Aceptar</Button>
-            </CardFooter>
-
         </Card>
 
         </GridItem>
-        <GridItem xs={12} sm={12} md={4}>
-          <Card profile>
-            <CardAvatar profile>
-              <a href="#pablo" onClick={e => e.preventDefault()}>
-                <img src={avatar} alt="..." />
-              </a>
-            </CardAvatar>
-            <CardBody profile>
-              <h6 className={classes.cardCategory}>CEO / CO-FOUNDER</h6>
-              <h4 className={classes.cardTitle}>Alec Thompson</h4>
-              <p className={classes.description}>
-                Don{"'"}t be scared of the truth because we need to restart the
-                human foundation in truth And I love you like Kanye loves Kanye
-                I love Rick Owens’ bed design but the back is...
-              </p>
-              <Button color="primary" round>
-                Follow
-              </Button>
-            </CardBody>
-          </Card>  
-
-        </GridItem>
+        
       </GridContainer>
     </div>
   );
