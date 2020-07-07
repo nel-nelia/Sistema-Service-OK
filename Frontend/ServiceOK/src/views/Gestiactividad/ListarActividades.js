@@ -16,13 +16,15 @@ import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 class ListarActividades extends Component{
 
     state={
-      cursos:[]
-      
+      cursos:[],
+      modalInsertar: false,
     }
  
-    componentDidMount() {
-     
-      
+    //metodo
+    modalInsertar=()=>{
+      this.setState({modalInsertar: !this.state.modalInsertar});
+    }
+    componentDidMount() {      
         axios.get("https://serviceokapi.azurewebsites.net/api/Actividades")
             .then((Response) =>{
       
@@ -37,9 +39,7 @@ class ListarActividades extends Component{
        
         let cursos = this.state.cursos.map((curso)=>
         {
-            return(
-            
-                    
+            return(                  
                 <tr>
                   <td>{curso.nombre}</td> 
                    <td>{curso.descripcion}</td>
@@ -50,12 +50,7 @@ class ListarActividades extends Component{
                       <button className="btn btn-danger" ><FontAwesomeIcon icon={faTrashAlt}/></button>
                     </td>
                 </tr>
-
-               
-            
-               
-            
-      
+ 
           )
         })
 
@@ -79,34 +74,43 @@ class ListarActividades extends Component{
                     </tbody>
              </table>
              <br />
-             <button className="btn btn-primary"><FontAwesomeIcon icon={faPlusCircle}/></button>
+             <button className="btn btn-primary" onClick={()=>this.modalInsertar()}><FontAwesomeIcon icon={faPlusCircle}/></button>
              </GridItem>
 
-             <GridItem xs={12} sm={12} md={12}>
-        <Card>
-        
-          <CardBody>
-            <Table
-              tableHeaderColor="primary"
-              tableHead={["Name", "Country", "City", "Salary"]}
-              tableData={[
-                ["Dakota Rice", "Niger", "Oud-Turnhout", "$36,738"],
-                ["Minerva Hooper", "Curaçao", "Sinaai-Waas", "$23,789"],
-                ["Sage Rodriguez", "Netherlands", "Baileux", "$56,142"],
-                ["Philip Chaney", "Korea, South", "Overland Park", "$38,735"],
-                ["Doris Greene", "Malawi", "Feldkirchen in Kärnten", "$63,542"],
-                ["Mason Porter", "Chile", "Gloucester", "$78,615"]
-              ]}
-            />
-          </CardBody>
-        </Card>
-
-      </GridItem>
+            <Modal isOpen={this.state.modalInsertar}>
+              <ModalHeader style={{display: 'block'}}>
+                <span style={{float:'right'}}>x</span>
+              </ModalHeader>
+              <ModalBody>
+                <div className="form-group">
+                  <label htmlFor="actividadId">Actividad ID</label>
+                  <input className="form-control" type="text" name="actividadId" id="actividadId" readOnly/>
+                  <br />
+                  <label htmlFor="nombre">Nombre</label>
+                  <input className="form-control" type="text" name="nombre" id="nombre"/>
+                  <br />
+                  <label htmlFor="descripcion">Descripcion</label>
+                  <input className="form-control" type="text" name="descripcion" id="descripcion"/>
+                  <br />
+                  <label htmlFor="flagActivo">Flag Activo</label>
+                  <input className="form-control" type="text" name="flagActivo" id="flagActivo"/>
+                  
+                </div>
+              </ModalBody>
+              <ModalFooter>
+                <button className="btn btn-success">Insertar</button>
+                <button className="btn btn-danger" onClick={()=>this.modalInsertar()}>Cancelar</button>
+              </ModalFooter>
+            </Modal>
+             
            
       
             
         
           </div>
+
+
+
           )
       }
   }
