@@ -31,7 +31,7 @@ class ListarTipoActividades extends Component{
       this.setState({modalInsertar: !this.state.modalInsertar});
     }
 
-    handlechange=async e=>{
+    handleChange=async e=>{
       e.persist();
       await this.setState({
         form:{
@@ -44,7 +44,8 @@ class ListarTipoActividades extends Component{
     //peticion post
     peticionPost=async()=>{
       
-     await axios.post("https://serviceokapi.azurewebsites.net/api/ActividadTipos").then(response=>{
+      axios.post("https://serviceokapi.azurewebsites.net/api/ActividadTipos").then(response=>{
+       const ActividadTipo = Response.form;
         this.modalInsertar();
         this.componentDidMount();
       }).catch(error=>{
@@ -110,13 +111,13 @@ class ListarTipoActividades extends Component{
               <ModalBody>
                 <div className="form-group">
                   <label htmlFor="actividadTipoID">ActividadTipoID </label>
-                  <input className="form-control" type="text" name="actividadTipoId" id="actividadTipoID" readOnly onChange={this.handlechange} value={this.state.ActividadTipo.length+1}/>
+                  <input className="form-control" type="text" name="actividadTipoId" id="actividadTipoID" readOnly onChange={this.handleChange} value={this.state.ActividadTipo.length+1}/>
                   <br />
                   <label htmlFor="nombre">Nombre</label>
-                  <input className="form-control" type="text" name="nombre" id="nombre" onChange={this.handlechange} value={form.nombre}/>
+                  <input className="form-control" type="text" name="nombre" id="nombre" onChange={this.handleChange} value={form.nombre}/>
                   <br />
                   <label htmlFor="flagActivo">Flag Activo</label>
-                  <input className="form-control" type="text" name="flagActivo" id="flagActivo" onChange={this.handlechange} value={form.flagActivo}/>
+                  <input className="form-control" type="text" name="flagActivo" id="flagActivo" onChange={this.handleChange} value={form.flagActivo}/>
                   
                 </div>
               </ModalBody>

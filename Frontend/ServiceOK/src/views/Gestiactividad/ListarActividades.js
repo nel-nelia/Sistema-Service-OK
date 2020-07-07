@@ -12,6 +12,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrashAlt, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import { Modal, ModalBody, ModalFooter, ModalHeader, ListGroup } from 'reactstrap'; 
+//
 
 class ListarActividades extends Component{
 
@@ -22,7 +23,8 @@ class ListarActividades extends Component{
         actividadId:'',
         nombre:'',
         descripcion:'',
-        flagActivo:''
+        flagActivo:'',
+        actividadTipoId:''
       }
     }
  
@@ -31,12 +33,12 @@ class ListarActividades extends Component{
       this.setState({modalInsertar: !this.state.modalInsertar});
     }
 
-    handlechange=async e=>{
+    handleChange=async e=>{
       e.persist();
       await this.setState({
         form:{
           ...this.state.form,
-          [e.target.name]: e.target.value
+          [e.target.name]: e.target.value //de acuerdo al nombre sera como se guarde en el estado
         }
       });
       console.log(this.state.form);
@@ -111,21 +113,22 @@ class ListarActividades extends Component{
               <ModalBody>
                 <div className="form-group">
                   <label htmlFor="actividadId">Actividad ID</label>
-                  <input className="form-control" type="text" name="actividadId" id="actividadId" readOnly onChange={this.handlechange} value={this.state.cursos.length+1}/>
+                  <input className="form-control" type="text" name="actividadId" id="actividadId" readOnly onChange={this.handleChange} value={this.state.cursos.length+1}/>
                   <br />
                   <label htmlFor="nombre">Nombre</label>
-                  <input className="form-control" type="text" name="nombre" id="nombre" onChange={this.handlechange} value={form.nombre}/>
+                  <input className="form-control" type="text" name="nombre" id="nombre" onChange={this.handleChange} value={form.nombre}/>
                   <br />
                   <label htmlFor="descripcion">Descripcion</label>
-                  <input className="form-control" type="text" name="descripcion" id="descripcion" onChange={this.handlechange} value={form.descripcion}/>
+                  <input className="form-control" type="text" name="descripcion" id="descripcion" onChange={this.handleChange} value={form.descripcion}/>
                   <br />
                   <label htmlFor="flagActivo">Flag Activo</label>
-                  <input className="form-control" type="text" name="flagActivo" id="flagActivo" onChange={this.handlechange} value={form.flagActivo}/>
+                  <input className="form-control" type="text" name="radio1" id="flagActivo" onChange={this.handleChange} value={form.flagActivo}/>
+                 
                   <br />
                   <label htmlFor="actividadTipoId">Tipo Actividad</label>
                   <br />
                   <div className="btn-group">
-                    <button className="btn btn-danger" type="button" id="actividadTipoId" >Seleccione</button>
+                    <button className="btn btn-danger" type="button" id="actividadTipoId"  onChange={this.handleChange} value={form.actividadTipoId} >Seleccione</button>
 
                   </div>
 
