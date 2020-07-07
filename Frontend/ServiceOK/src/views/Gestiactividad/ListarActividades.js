@@ -7,6 +7,12 @@ import GridContainer from "components/Grid/GridContainer.js";
 
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap'; 
+
 class ListarActividades extends Component{
 
     state={
@@ -51,15 +57,18 @@ class ListarActividades extends Component{
           return(
             
             <div>
+              <button className="btn btn-sucess">Agregar Actividad</button>
+              <br /> <br />
                 <GridItem xs={12} sm={12} md={12}>
-             <table tableHeader Color="primary" WIDTH="70%" color='#FFFFFF'>
-            
+             <table className="table" tableHeader Color="primary" WIDTH="70%" color='#FFFFFF'>
+            <thead>
              <tr>
                  <th><center>Nombre</center> </th>
                   <th><center>Descripcion</center></th>
                   <th><center>Estado</center></th>
                   <th><center>Acciones</center></th>
                 </tr>
+                </thead>
                 <tbody>
                 {cursos}
 
