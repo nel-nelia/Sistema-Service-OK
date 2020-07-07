@@ -44,6 +44,11 @@ class ListarActividades extends Component{
                   <td>{curso.nombre}</td> 
                    <td>{curso.descripcion}</td>
                     <td>{curso.flagActivo}</td>
+                    <td>
+                      <button className="btn btn-primary" ><FontAwesomeIcon icon={faEdit}/></button>
+                      {" "}
+                      <button className="btn btn-danger" ><FontAwesomeIcon icon={faTrashAlt}/></button>
+                    </td>
                 </tr>
 
                
@@ -57,7 +62,7 @@ class ListarActividades extends Component{
           return(
             
             <div>
-              <button className="btn btn-sucess">Agregar Actividad</button>
+              <button color="primary" className="btn btn-sucess">Agregar Actividad</button>
               <br /> <br />
                 <GridItem xs={12} sm={12} md={12}>
              <table className="table" tableHeader Color="primary" WIDTH="70%" color='#FFFFFF'>
