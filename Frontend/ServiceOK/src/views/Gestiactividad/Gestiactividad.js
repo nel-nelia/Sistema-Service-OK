@@ -49,6 +49,9 @@ export default function UserProfile() {
               <p className={classes.cardCategoryWhite}>Completa los campos</p>
             </CardHeader>
             <CardBody>
+
+
+            <Listaractividades>    </Listaractividades>
               <GridContainer>
                 <GridItem xs={12} sm={12} md={3}>
                   
@@ -62,7 +65,7 @@ export default function UserProfile() {
          
                   </select>
                 
-                  <Listaractividades>    </Listaractividades>
+                  
                 </GridItem>
                 <GridItem xs={12} sm={12} md={3}>
                   <CustomInput
