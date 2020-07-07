@@ -20,8 +20,8 @@ class ListarTipoActividades extends Component{
 
       modalInsertar: false,
       form:{
-        ActividadTipoID:'',
-        Nombre:'',
+        actividadTipoID:'',
+        nombre:'',
         flagActivo:''
       }
     }
@@ -43,7 +43,8 @@ class ListarTipoActividades extends Component{
     }
     //peticion post
     peticionPost=async()=>{
-     await axios.post("https://serviceokapi.azurewebsites.net/api/ActividadTipos",this.state.form).then(response=>{
+      
+     await axios.post("https://serviceokapi.azurewebsites.net/api/ActividadTipos").then(response=>{
         this.modalInsertar();
         this.componentDidMount();
       }).catch(error=>{
@@ -112,10 +113,10 @@ class ListarTipoActividades extends Component{
                   <input className="form-control" type="text" name="actividadTipoId" id="actividadTipoID" readOnly onChange={this.handlechange} value={this.state.ActividadTipo.length+1}/>
                   <br />
                   <label htmlFor="nombre">Nombre</label>
-                  <input className="form-control" type="text" name="Nombre" id="Nombre" onChange={this.handlechange} value={form.Nombre}/>
+                  <input className="form-control" type="text" name="nombre" id="nombre" onChange={this.handlechange} value={form.nombre}/>
                   <br />
                   <label htmlFor="flagActivo">Flag Activo</label>
-                  <input className="form-control" type="text" name="FlagActivo" id="FlagActivo" onChange={this.handlechange} value={form.FlagActivo}/>
+                  <input className="form-control" type="text" name="flagActivo" id="flagActivo" onChange={this.handlechange} value={form.flagActivo}/>
                   
                 </div>
               </ModalBody>
