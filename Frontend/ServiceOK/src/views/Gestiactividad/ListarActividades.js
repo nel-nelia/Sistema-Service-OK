@@ -18,12 +18,39 @@ class ListarActividades extends Component{
     state={
       cursos:[],
       modalInsertar: false,
+      form:{
+        actividadId:'',
+        nombre:'',
+        descripcion:'',
+        flagActivo:''
+      }
     }
  
     //metodo
     modalInsertar=()=>{
       this.setState({modalInsertar: !this.state.modalInsertar});
     }
+
+    handlechange=async e=>{
+      e.persist();
+      await this.setState({
+        form:{
+          ...this.state.form,
+          [e.target.name]: e.target.value
+        }
+      });
+      console.log(this.state.form);
+    }
+    //peticion post
+    peticionPost=async()=>{
+     await axios.post("https://serviceokapi.azurewebsites.net/api/Actividades",this.state.form).then(response=>{
+        this.modalInsertar();
+        this.componentDidMount();
+      }).catch(error=>{
+        console.log(error.message);
+      })
+    }
+
     componentDidMount() {      
         axios.get("https://serviceokapi.azurewebsites.net/api/Actividades")
             .then((Response) =>{
@@ -35,7 +62,7 @@ class ListarActividades extends Component{
       }
 
       render(){
-    
+    const {form}=this.state;
        
         let cursos = this.state.cursos.map((curso)=>
         {
@@ -84,21 +111,21 @@ class ListarActividades extends Component{
               <ModalBody>
                 <div className="form-group">
                   <label htmlFor="actividadId">Actividad ID</label>
-                  <input className="form-control" type="text" name="actividadId" id="actividadId" readOnly/>
+                  <input className="form-control" type="text" name="actividadId" id="actividadId" readOnly onChange={this.handlechange} value={this.state.cursos.length+1}/>
                   <br />
                   <label htmlFor="nombre">Nombre</label>
-                  <input className="form-control" type="text" name="nombre" id="nombre"/>
+                  <input className="form-control" type="text" name="nombre" id="nombre" onChange={this.handlechange} value={form.nombre}/>
                   <br />
                   <label htmlFor="descripcion">Descripcion</label>
-                  <input className="form-control" type="text" name="descripcion" id="descripcion"/>
+                  <input className="form-control" type="text" name="descripcion" id="descripcion" onChange={this.handlechange} value={form.descripcion}/>
                   <br />
                   <label htmlFor="flagActivo">Flag Activo</label>
-                  <input className="form-control" type="text" name="flagActivo" id="flagActivo"/>
+                  <input className="form-control" type="text" name="flagActivo" id="flagActivo" onChange={this.handlechange} value={form.flagActivo}/>
                   
                 </div>
               </ModalBody>
               <ModalFooter>
-                <button className="btn btn-success">Insertar</button>
+                <button className="btn btn-success" onClick={()=>this.peticionPost()}>Insertar</button>
                 <button className="btn btn-danger" onClick={()=>this.modalInsertar()}>Cancelar</button>
               </ModalFooter>
             </Modal>
