@@ -10,7 +10,7 @@ import CardHeader from "components/Card/CardHeader.js";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faEdit, faTrashAlt, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap'; 
 
 class ListarActividades extends Component{
@@ -79,7 +79,7 @@ class ListarActividades extends Component{
                     </tbody>
              </table>
              <br />
-             <button color="primary" className="btn btn-primary">Agregar Actividad</button>
+             <button className="btn btn-primary"><FontAwesomeIcon icon={faPlusCircle}/></button>
              </GridItem>
 
              <GridItem xs={12} sm={12} md={12}>
