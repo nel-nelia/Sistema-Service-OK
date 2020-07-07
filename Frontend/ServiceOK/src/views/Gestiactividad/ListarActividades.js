@@ -11,7 +11,7 @@ import CardHeader from "components/Card/CardHeader.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrashAlt, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
-import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap'; 
+import { Modal, ModalBody, ModalFooter, ModalHeader, ListGroup } from 'reactstrap'; 
 
 class ListarActividades extends Component{
 
@@ -121,7 +121,14 @@ class ListarActividades extends Component{
                   <br />
                   <label htmlFor="flagActivo">Flag Activo</label>
                   <input className="form-control" type="text" name="flagActivo" id="flagActivo" onChange={this.handlechange} value={form.flagActivo}/>
-                  
+                  <br />
+                  <label htmlFor="actividadTipoId">Tipo Actividad</label>
+                  <br />
+                  <div className="btn-group">
+                    <button className="btn btn-danger" type="button" id="actividadTipoId" >Seleccione</button>
+
+                  </div>
+
                 </div>
               </ModalBody>
               <ModalFooter>
