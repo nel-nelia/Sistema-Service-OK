@@ -50,17 +50,23 @@ export default function Dashboard() {
   return (
     <div>
       <GridContainer>
-        <GridItem xs={12} sm={12} md={12}>
-        <CardHeader color="primary">
+      <GridItem xs={12} sm={12} md={12}>
+          <Card>
+            <CardHeader color="primary">
               <h4 className={classes.cardTitleWhite}>Gestionar Tipo Actividad</h4>
-           
+              
             </CardHeader>
-
             <CardBody>
 
             <ListarTipoActividades>    </ListarTipoActividades>
+
+              <GridContainer>
+                                             
+
+              </GridContainer>
+
             </CardBody>
-        
+        </Card>
 
         </GridItem>
       </GridContainer>
