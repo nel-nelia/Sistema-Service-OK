@@ -51,13 +51,13 @@ const dashboardRoutes = [
   {
     path: "/gestiactividad",
     name: "Gestionar Actividad",
-    rtlName: "ملف تعريفي للمستخدم",
+    rtlName: "ملف تعريفي للمستخدم",  
     icon: LibraryBooks,
     component: Gestiactividad,
     layout: "/admin"
   },
   {
-    path: "/table",
+    path: "/Consultaestable",
     name: "Gestionar Establecimiento",
     rtlName: "قائمة الجدول",
     icon: LibraryBooks,
@@ -73,7 +73,7 @@ const dashboardRoutes = [
     layout: "/admin"
   },
   {
-    path: "/consultaestaestable",
+    path: "/Consultaestaestable",
     name: "Consultar Estado de Establecimiento",
     rtlName: "الرموز",
     icon: LibraryBooks,

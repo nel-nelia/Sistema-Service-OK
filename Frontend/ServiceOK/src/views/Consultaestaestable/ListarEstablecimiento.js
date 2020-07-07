@@ -7,23 +7,32 @@ import GridContainer from "components/Grid/GridContainer.js";
 
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
+
+
+import axios from "axios";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrashAlt, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import { Modal, ModalBody, ModalFooter, ModalHeader, ListGroup } from 'reactstrap'; 
 //
 
-class ListarActividades extends Component{
+class ListarEstablecimientos extends Component{
 
     state={
-      cursos:[],
+      Establecimientos:[],
       modalInsertar: false,
       form:{
-        actividadId:'',
+        establecimientoId:'',
         nombre:'',
-        descripcion:'',
-        flagActivo:'',
-        actividadTipoId:''
+        telefono:'',
+        whatsappUrl:'',
+        delivery:'',
+        permiso:'',
+        ruc:'',
+        coordenadaX:'',
+        coordenadaY:'',
+        representanteId:''
       }
     }
  
@@ -44,7 +53,7 @@ class ListarActividades extends Component{
     }
     //peticion post
     peticionPost=async()=>{
-     await axios.post("https://serviceokapi.azurewebsites.net/api/Actividades",this.state.form).then(response=>{
+     await axios.post("https://serviceokapi.azurewebsites.net/api/Establecimientos",this.state.form).then(response=>{
         this.modalInsertar();
         this.componentDidMount();
       }).catch(error=>{
@@ -53,25 +62,29 @@ class ListarActividades extends Component{
     }
 
     componentDidMount() {      
-        axios.get("https://serviceokapi.azurewebsites.net/api/Actividades")
+        axios.get("https://serviceokapi.azurewebsites.net/api/Establecimientos")
             .then((Response) =>{
       
-              const cursos = Response.data;
-          this.setState({ cursos})
+              const Establecimientos = Response.data;
+          this.setState({ Establecimientos})
         } );
-        console.log(this.state.cursos)
+        console.log(this.state.Establecimientos)
       }
 
       render(){
     const {form}=this.state;
-       
-        let cursos = this.state.cursos.map((curso)=>
+        let Establecimientos = this.state.Establecimientos.map((Establecimiento)=>
         {
             return(                  
                 <tr>
-                  <td>{curso.nombre}</td> 
-                   <td>{curso.descripcion}</td>
-                    <td>{curso.flagActivo}</td>
+                  <td>{Establecimiento.nombre}</td> 
+                   <td>{Establecimiento.telefono}</td>
+                    <td>{Establecimiento.whatsappUrl}</td>
+                    <td>{Establecimiento.delivery}</td>
+                    <td>{Establecimiento.permiso}</td>
+                    <td>{Establecimiento.ruc}</td>
+                    <td>{Establecimiento.coordenadaX}</td>
+                    <td>{Establecimiento.coordenadaY}</td>
                     <td>
                       <button className="btn btn-primary" ><FontAwesomeIcon icon={faEdit}/></button>
                       {" "}
@@ -83,6 +96,7 @@ class ListarActividades extends Component{
         })
 
           return(
+
             
             <div>
               <br /> <br />
@@ -91,13 +105,18 @@ class ListarActividades extends Component{
             <thead>
              <tr>
                  <th>Nombre </th>
-                  <th>Descripcion</th>
-                  <th>Estado</th>
+                  <th>Telefono</th>
+                  <th>Whatsapp-URL</th>
+                  <th>Delivery</th>
+                  <th>Permiso</th>
+                  <th>Ruc</th>
+                  <th>CoordenadasX</th>
+                  <th>CoordenadasY</th>
                   <th>Acciones</th>
                 </tr>
                 </thead>
                 <tbody>
-                {cursos}
+                {Establecimientos}
 
                     </tbody>
              </table>
@@ -105,24 +124,29 @@ class ListarActividades extends Component{
              <button className="btn btn-primary" onClick={()=>this.modalInsertar()}><FontAwesomeIcon icon={faPlusCircle}/></button>
              </GridItem>
 
+
+
             <Modal isOpen={this.state.modalInsertar}>
               <ModalHeader style={{display: 'block'}}>
                 <span style={{float:'right'}}>x</span>
               </ModalHeader>
               <ModalBody>
                 <div className="form-group">
-                  <label htmlFor="actividadId">Actividad ID</label>
-                  <input className="form-control" type="text" name="actividadId" id="actividadId" readOnly onChange={this.handleChange} value={this.state.cursos.length+1}/>
+                  <label htmlFor="establecimientoId">Establecimiento ID</label>
+                  <input className="form-control" type="text" name="establecimientoId" id="establecimientoId" readOnly onChange={this.handleChange} value={this.state.Establecimientos.length+1}/>
                   <br />
                   <label htmlFor="nombre">Nombre</label>
                   <input className="form-control" type="text" name="nombre" id="nombre" onChange={this.handleChange} value={form.nombre}/>
                   <br />
-                  <label htmlFor="descripcion">Descripcion</label>
-                  <input className="form-control" type="text" name="descripcion" id="descripcion" onChange={this.handleChange} value={form.descripcion}/>
+                  <label htmlFor="descripcion">Telefono</label>
+                  <input className="form-control" type="text" name="telefono" id="telefono" onChange={this.handleChange} value={form.telefono}/>
                   <br />
-                  <label htmlFor="flagActivo">Flag Activo</label>
-                  <input className="form-control" type="text" name="radio1" id="flagActivo" onChange={this.handleChange} value={form.flagActivo}/>
-                 
+                  <label htmlFor="whatsappUrl">whatsappUrl</label>
+                  <input className="form-control" type="text" name="whatsappUrl" id="whatsappUrl" onChange={this.handleChange} value={form.whatsappUrl}/>
+                  <label htmlFor="delivery">Delivery</label>
+                  <input className="form-control" type="text" name="delivery" id="delivery" onChange={this.handleChange} value={form.delivery}/>
+                  <label htmlFor="delivery">Delivery</label>
+                  <input className="form-control" type="text" name="delivery" id="delivery" onChange={this.handleChange} value={form.delivery}/>
                   <br />
                   <label htmlFor="actividadTipoId">Tipo Actividad</label>
                   <br />
@@ -150,4 +174,4 @@ class ListarActividades extends Component{
           )
       }
   }
-  export default ListarActividades;
+  export default ListarEstablecimientos;
