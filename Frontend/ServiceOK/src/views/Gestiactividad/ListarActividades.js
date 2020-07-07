@@ -58,7 +58,7 @@ class ListarActividades extends Component{
                  <th><center>Nombre</center> </th>
                   <th><center>Descripcion</center></th>
                   <th><center>Estado</center></th>
-                  
+                  <th><center>Acciones</center></th>
                 </tr>
                 <tbody>
                 {cursos}
