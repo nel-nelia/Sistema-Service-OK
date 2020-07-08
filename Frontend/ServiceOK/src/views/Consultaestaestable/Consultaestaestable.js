@@ -14,7 +14,7 @@ import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
 
-
+import ListarEstablecimientos from './ListarEstablecimiento';
 import styles from "assets/jss/material-dashboard-react/views/iconsStyle.js";
 
 
@@ -23,72 +23,29 @@ const useStyles = makeStyles(styles);
 export default function Icons() {
   const classes = useStyles();
   return (
-    <GridContainer>
-      <GridItem xs={12} sm={12} md={12}>
-        <Card plain>
 
-          <CardHeader plain color="primary">
-            <h4 className={classes.cardTitleWhite}>Consultas Estado de Establecimientos</h4>
-            <p className={classes.cardCategoryWhite}>
-              Consultar Estado de Establecimientos
-             
-            </p>
-          </CardHeader>
-          
-          <CardBody>
-           <GridContainer>
-           <GridItem xs={12} sm={12} md={4}>
-                  <CustomInput
-                    labelText="Nombre"
-                    id="nom_actividad"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
+    <div>
+      <GridContainer>
+        <GridItem xs={12} sm={12} md={12}>
+          <Card>
+            <CardHeader color="primary">
+              <h4 className={classes.cardTitleWhite}>Gestionar Establecimiento</h4>            
+            </CardHeader>
+            <CardBody>
 
-                <GridItem xs={12} sm={12} md={4}>
-                  <CustomInput
-                    labelText="Direccion"
-                    id="dir_actividad"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={4}>
-                  <CustomInput
-                    labelText="Telefono"
-                    id="tel_actividad"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-                </GridContainer>
-                <GridContainer>
-                <GridItem xs={12} sm={12} md={4}>
-                  <CustomInput
-                    labelText="Whatsapp"
-                    id="what_actividad"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={4}>
-                  <CustomInput
-                    labelText="Delivery"
-                    id="deli_actividad"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-           </GridContainer>
-          </CardBody>
+            <ListarEstablecimientos>    </ListarEstablecimientos>
+
+              <GridContainer>
+                                             
+
+              </GridContainer>
+
+            </CardBody>
         </Card>
-      </GridItem>
-    </GridContainer>
+
+        </GridItem>
+        
+      </GridContainer>
+    </div>
   );
 }

@@ -57,11 +57,11 @@ const dashboardRoutes = [
     layout: "/admin"
   },
   {
-    path: "/table",
+    path: "/Consultaestaestable",
     name: "Gestionar Establecimiento",
     rtlName: "قائمة الجدول",
     icon: LibraryBooks,
-    component: TableList,
+    component: Consultaestaestable,
     layout: "/admin"
   },
   {
@@ -73,11 +73,11 @@ const dashboardRoutes = [
     layout: "/admin"
   },
   {
-    path: "/consultaestaestable",
+    path: "/RTLPage",
     name: "Consultar Estado de Establecimiento",
     rtlName: "الرموز",
     icon: LibraryBooks,
-    component: Consultaestaestable,
+    component: RTLPage,
     layout: "/admin"
   },
   {
