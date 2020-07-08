@@ -18,6 +18,7 @@ class ListarActividades extends Component{
     state={
       cursos:[],
       modalInsertar: false,
+      modalEliminar:false,
       form:{
         actividadId:'',
         nombre:'',
@@ -52,6 +53,12 @@ class ListarActividades extends Component{
       })
     }
 
+    peticionDelete=()=>{
+      axios.delete("https://serviceokapi.azurewebsites.net/api/Actividades"+this.state.form.actividadId).then(response=>{
+        this.setState({modalEliminar:false});
+        this.componentDidMount();
+      })
+    }
     componentDidMount() {      
         axios.get("https://serviceokapi.azurewebsites.net/api/Actividades")
             .then((Response) =>{
@@ -69,13 +76,14 @@ class ListarActividades extends Component{
         {
             return(                  
                 <tr>
+                  <td>{curso.actividadId}</td>
                   <td>{curso.nombre}</td> 
                    <td>{curso.descripcion}</td>
                     <td>{curso.flagActivo}</td>
                     <td>
                       <button className="btn btn-primary" ><FontAwesomeIcon icon={faEdit}/></button>
                       {" "}
-                      <button className="btn btn-danger" ><FontAwesomeIcon icon={faTrashAlt}/></button>
+                      <button className="btn btn-danger" onClick={()=>{this.curso(curso);this.setState({modalEliminar:true})}} ><FontAwesomeIcon icon={faTrashAlt}/></button>
                     </td>
                 </tr>
  
@@ -90,6 +98,7 @@ class ListarActividades extends Component{
              <table className="table" tableHeader Color="primary" WIDTH="70%" color='#FFFFFF'>
             <thead>
              <tr>
+               <th>ID</th>
                  <th>Nombre </th>
                   <th>Descripcion</th>
                   <th>Estado</th>
@@ -139,7 +148,15 @@ class ListarActividades extends Component{
               </ModalFooter>
             </Modal>
              
-           
+           <Modal isOpen={this.state.modalEliminar}>
+             <ModalBody>
+               Estas seguro que desea eliminar a la empresa {form && form.actividadId}
+             </ModalBody>
+             <ModalFooter>
+               <button className="btn btn-danger" onClick={()=>this.peticionDelete()}>Si</button>
+               <button className="btn btn-secundary" onClick={()=>this.setState({modalEliminar:false})}>No</button>
+             </ModalFooter>
+           </Modal>
       
             
         

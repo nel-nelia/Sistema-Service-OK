@@ -14,60 +14,74 @@ import { faEdit, faTrashAlt, faPlusCircle } from '@fortawesome/free-solid-svg-ic
 import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap'; 
 
 
-class ListarTipoActividades extends Component{
+class RegistrarTipoActividad extends Component{
 
-    state={
-      ActividadTipo:[],
-      modalInsertar: false,
-      form:{
-        actividadTipoId:'',
+  constructor(props){
+    super(props);
+    let registrado = false;
+    this.state={
+      data:[],
+      actividadTipoId:'',
         nombre:'',
         flagActivo:'',
         flagActivoTexto:''
-      }
+
     }
+    this.onChange = this.onChange.bind(this)
+  this.submitForm = this.submitForm.bind(this)
  
-    //metodo
-    modalInsertar=()=>{
-      this.setState({modalInsertar: !this.state.modalInsertar});
-    }
+  }  
+        
+        componentDidMount() {     
+          let idact= localStorage.getItem('actividadTipoId'); 
+          console.log(idact);
+        axios.get(`https://serviceokapi.azurewebsites.net/api/ActividadTipos/${actv}`,{
+          headers:{Authorization}
 
-    handleChange=async e=>{
-      e.persist();
-      await this.setState({
-        form:{
-          ...this.state.form,
-          [e.target.name]: e.target.value
-        }
-      });
-      console.log(this.state.form);
-    }
-    //peticion post
-    peticionPost=async()=>{
-      
-      axios.post("https://serviceokapi.azurewebsites.net/api/ActividadTipos").then(response=>{
-       const ActividadTipo = Response.form;
-        this.modalInsertar();
-       // this.componentDidMount();
-      }).catch(error=>{
-        console.log(error.message);
-      })
-    }
-
-    componentDidMount() {      
-        axios.get("https://serviceokapi.azurewebsites.net/api/ActividadTipos")
+        })
             .then((Response) =>{
-      
-              const ActividadTipo = Response.data;
-          this.setState({ ActividadTipo})
+      this.state.actividad = Response.data.actividadTipoId;
+         console.log(this.state.actividad)
         } );
-        console.log(this.state.ActividadTipo)
+        //console.log(this.state.ActividadTipo)
       }
+onChange(e){
+  this.setState(
+    {
+      [e.target.name]: e.target.value
+    }
+  )
+  console.log(this.state)
+}
 
+submitForm(e)
+{
+  e.preventDefault()
+  const{nombre,flagActivo,flagActivoTexto} = this.state;
+  axios.post(`https://serviceokapi.azurewebsites.net/api/ActividadTipos/`,{
+    "actividadTipoId" : this.state.actividad,
+    "nombre":nombre,
+    "flagActivo":flagActivo,
+    "flagActivoTexto":flagActivoTexto
+  },{
+    headers:{Authorization}
+  })
+  .then(res =>{
+    console.log(res);
+    console.log(res.data);
+    this.setState({
+      registrado:true
+    })
+  })
+  .catch(function(error)
+  {
+    console.log(error)
+  })
+  console.log(this.state.nombre)
+}
       render(){
 
-        
-    const {form}=this.state;
+    
        
         let ActividadTipo = this.state.ActividadTipo.map((ActividadTipos)=>
         {
