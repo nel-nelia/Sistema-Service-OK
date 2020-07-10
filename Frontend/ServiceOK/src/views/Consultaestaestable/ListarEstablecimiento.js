@@ -128,7 +128,8 @@ class ListarEstablecimientos extends Component{
                 <span style={{float:'right'}}>x</span>
               </ModalHeader>
               <ModalBody>
-                <div className="form-group" >
+                <div className="form-group"  class="thead-dark">
+                
                 
                   <label htmlFor="establecimientoId">Establecimiento ID</label>
                   <input className="form-control" type="text" name="establecimientoId" id="establecimientoId" readOnly onChange={this.handleChange} value={this.state.Establecimientos.length+1}/>
@@ -150,6 +151,7 @@ class ListarEstablecimientos extends Component{
                   <br />
                   <div className="btn-group">
                     <button className="btn btn-danger" type="button" id="actividadTipoId"  onChange={this.handleChange} value={form.actividadTipoId} >Seleccione</button>
+                  
 
                   </div>
 
