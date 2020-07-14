@@ -12,10 +12,12 @@ import CardHeader from "components/Card/CardHeader.js";
 import CardAvatar from "components/Card/CardAvatar.js";
 import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
-
+//import { Form, Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import avatar from "assets/img/faces/marc.jpg";
 
 import Listaractividades from './ListarActividades';
+
+
 //bootstrap
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";

@@ -4,7 +4,8 @@ import CardBody from "components/Card/CardBody.js";
 import Table from "components/Table/Table.js";
 import GridItem from "components/Grid/GridItem.js";
 import GridContainer from "components/Grid/GridContainer.js";
-
+//import { useForm } from "react-bootstrap";
+//import { Form, Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 
@@ -19,20 +20,22 @@ class ListarActividades extends Component{
       cursos:[],
       modalInsertar: false,
       modalEliminar:false,
+
       form:{
-        actividadId:'',
         nombre:'',
         descripcion:'',
         flagActivo:'',
         actividadTipoId:''
       }
+
+    
     }
  
     //metodo
     modalInsertar=()=>{
       this.setState({modalInsertar: !this.state.modalInsertar});
     }
-
+    //metodo
     handleChange=async e=>{
       e.persist();
       await this.setState({
@@ -43,6 +46,47 @@ class ListarActividades extends Component{
       });
       console.log(this.state.form);
     }
+
+    onChange(e){
+      this.setState(
+        {
+          [e.target.name]: e.target.value
+        }
+      )    
+      console.log(this.state)    
+     }
+
+    submitForm(e)
+    {
+   e.preventDefault()
+
+const{actividadId, nombre, descripcion, flagActivo, actividadTipoId} = this.state;
+
+axios.post(`https://serviceokapi.azurewebsites.net/api/Actividades`, { 
+  
+  "actividadId":this.state.cursos,
+  "nombre": nombre,
+  "Descripcion": descripcion,
+  "flagActivo": "True",
+  "actividadTipo": "E"
+ },
+)
+    .then(res => {
+      console.log(res);
+      console.log(res.data);
+      this.setState({
+        registrado: true
+        
+      })
+    })
+        .catch(function(error)
+        {
+        console.log(error)
+        }
+      )
+
+console.log(this.state.descripcion)
+ }
     //peticion post
     peticionPost=async()=>{
      await axios.post("https://serviceokapi.azurewebsites.net/api/Actividades",this.state.form).then(response=>{
@@ -59,8 +103,11 @@ class ListarActividades extends Component{
         this.componentDidMount();
       })
     }
+
+
+    
     componentDidMount() {      
-        axios.get("https://serviceokapi.azurewebsites.net/api/Actividades")
+      axios.get(`https://serviceokapi.azurewebsites.net/api/Actividades`)
             .then((Response) =>{
       
               const cursos = Response.data;
@@ -116,13 +163,12 @@ class ListarActividades extends Component{
 
             <Modal isOpen={this.state.modalInsertar}>
               <ModalHeader style={{display: 'block'}}>
-                <span style={{float:'right'}}>x</span>
+                
               </ModalHeader>
+         
               <ModalBody>
-                <div className="form-group">
-                  <label htmlFor="actividadId">Actividad ID</label>
-                  <input className="form-control" type="text" name="actividadId" id="actividadId" readOnly onChange={this.handleChange} value={this.state.cursos.length+1}/>
-                  <br />
+                <div className="form-group" onSubmit={this.submitForm}>
+                 
                   <label htmlFor="nombre">Nombre</label>
                   <input className="form-control" type="text" name="nombre" id="nombre" onChange={this.handleChange} value={form.nombre}/>
                   <br />
@@ -130,21 +176,23 @@ class ListarActividades extends Component{
                   <input className="form-control" type="text" name="descripcion" id="descripcion" onChange={this.handleChange} value={form.descripcion}/>
                   <br />
                   <label htmlFor="flagActivo">Flag Activo</label>
-                  <input className="form-control" type="text" name="radio1" id="flagActivo" onChange={this.handleChange} value={form.flagActivo}/>
+                  <input className="form-control" type="text" name="flagActivo" id="flagActivo" onChange={this.handleChange} value={form.flagActivo}/>
+                 
+                  
+                  <label htmlFor="actividadTipoId">Tipo Actividad</label>
+                  <input className="form-control" type="text" name="actividadTipoId" id="actividadTipoId" onChange={this.handleChange} value={form.actividadTipoId}/>
                  
                   <br />
-                  <label htmlFor="actividadTipoId">Tipo Actividad</label>
-                  <br />
-                  <div className="btn-group">
-                    <button className="btn btn-danger" type="button" id="actividadTipoId"  onChange={this.handleChange} value={form.actividadTipoId} >Seleccione</button>
 
-                  </div>
+                  <br></br>
+                  <button className="btn btn-success" onClick={()=>this.peticionPost()}>Insertar</button>
+                <button className="btn btn-danger" onClick={()=>this.modalInsertar()}>Cancelar</button>
 
                 </div>
               </ModalBody>
+              
               <ModalFooter>
-                <button className="btn btn-success" onClick={()=>this.peticionPost()}>Insertar</button>
-                <button className="btn btn-danger" onClick={()=>this.modalInsertar()}>Cancelar</button>
+               
               </ModalFooter>
             </Modal>
              
