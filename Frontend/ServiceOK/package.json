@@ -3,7 +3,6 @@
   "version": "1.9.0",
   "description": "Material Dashboard React. Coded by Creative Tim",
   "private": false,
-  "proxy":"https://serviceokapi.azurewebsites.net/api/Actividades",
   "main": "dist/index.js",
   "dependencies": {
     "-": "0.0.1",
