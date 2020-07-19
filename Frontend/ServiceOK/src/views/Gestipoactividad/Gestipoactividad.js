@@ -58,7 +58,7 @@ export default function Dashboard() {
             </CardHeader>
             <CardBody>
 
-            <ListarTipoActividades>    </ListarTipoActividades>
+              <ListarTipoActividades>    </ListarTipoActividades>  
 
               <GridContainer>
                                              

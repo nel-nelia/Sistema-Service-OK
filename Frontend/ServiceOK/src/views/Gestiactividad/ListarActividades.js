@@ -35,6 +35,7 @@ class ListarActividades extends Component{
     modalInsertar=()=>{
       this.setState({modalInsertar: !this.state.modalInsertar});
     }
+
     //metodo
     handleChange=async e=>{
       e.persist();
@@ -70,6 +71,7 @@ axios.post(`https://serviceokapi.azurewebsites.net/api/Actividades`, {
   "flagActivo": "True",
   "actividadTipo": "E"
  },
+
 )
     .then(res => {
       console.log(res);
@@ -107,56 +109,54 @@ console.log(this.state.descripcion)
 
     
     componentDidMount() {      
-      axios.get(`https://serviceokapi.azurewebsites.net/api/Actividades`)
+      axios.get("https://serviceokapi.azurewebsites.net/api/Actividades")
             .then((Response) =>{
-      
-              const cursos = Response.data;
+          const cursos = Response.data;
           this.setState({ cursos})
         } );
-        console.log(this.state.cursos)
-      }
+            console.log(this.state.cursos)
+       }
 
       render(){
-    const {form}=this.state;
-       
-        let cursos = this.state.cursos.map((curso)=>
-        {
+               const {form}=this.state;
+               let cursos = this.state.cursos.map((curso)=>
+              {
             return(                  
                 <tr>
-                  <td>{curso.actividadId}</td>
-                  <td>{curso.nombre}</td> 
-                   <td>{curso.descripcion}</td>
+                    <td>{curso.actividadId}</td>
+                    <td>{curso.nombre}</td> 
+                    <td>{curso.descripcion}</td>
                     <td>{curso.flagActivo}</td>
                     <td>
+
                       <button className="btn btn-primary" ><FontAwesomeIcon icon={faEdit}/></button>
                       {" "}
                       <button className="btn btn-danger" onClick={()=>{this.curso(curso);this.setState({modalEliminar:true})}} ><FontAwesomeIcon icon={faTrashAlt}/></button>
                     </td>
                 </tr>
  
-          )
-        })
+                  )
+              })
 
-          return(
-            
+          return(   
             <div>
               <br /> <br />
                 <GridItem xs={12} sm={12} md={12}>
-             <table className="table" tableHeader Color="primary" WIDTH="70%" color='#FFFFFF'>
-            <thead>
-             <tr>
-               <th>ID</th>
-                 <th>Nombre </th>
-                  <th>Descripcion</th>
-                  <th>Estado</th>
-                  <th>Acciones</th>
-                </tr>
-                </thead>
-                <tbody>
-                {cursos}
+                <table className="table" tableHeader Color="primary" WIDTH="70%" color='#FFFFFF'>
+                  <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Nombre </th>
+                    <th>Descripcion</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                  </tr>
+                    </thead>
 
-                    </tbody>
-             </table>
+                    <tbody>
+                    {cursos}
+                  </tbody>
+                 </table>
              <br />
              <button className="btn btn-primary" onClick={()=>this.modalInsertar()}><FontAwesomeIcon icon={faPlusCircle}/></button>
              </GridItem>

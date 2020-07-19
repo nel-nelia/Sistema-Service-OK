@@ -23,7 +23,7 @@ class ListarTipoActividades extends Component{
         actividadTipoId:'',
         nombre:'',
         flagActivo:'',
-        flagActivoTexto:''
+        flagActivoTexto:''   
       }
     }
  
@@ -117,22 +117,20 @@ class ListarTipoActividades extends Component{
               <ModalHeader style={{display: 'block'}}>
                 <span style={{float:'right'}}>x</span>
               </ModalHeader>
-              <ModalBody>
-                <div className="form-group">
-                  <label htmlFor="actividadTipoID">ActividadTipoID </label>
-                  <input className="form-control" type="text" name="actividadTipoId" id="actividadTipoID" readOnly onChange={this.handleChange} value={this.state.ActividadTipo.length+1}/>
-                  <br />
-                  <label htmlFor="nombre">Nombre</label>
-                  <input className="form-control" type="text" name="nombre" id="nombre" onChange={this.handleChange} value={form.nombre}/>
-                  <br />
-                  <label htmlFor="flagActivoTexto">Estado Activo</label>
-                  <input className="form-control" type="text" name="flagActivoTexto" id="flagActivoTexto" onChange={this.handleChange} value={form.flagActivoTexto}/>
-                  <br />
-                  <label htmlFor="flagActivo">Estado Activo</label>
-                  <input className="form-control" type="text" name="flagActivo" id="flagActivo" onChange={this.handleChange} value={form.flagActivo}/>
-                  
-                </div>
-              </ModalBody>
+                <ModalBody>
+                  <div className="form-group">
+                    <label htmlFor="actividadTipoID">ActividadTipoID </label>
+                    <input className="form-control" type="text" name="actividadTipoId" id="actividadTipoID" readOnly onChange={this.handleChange} value={this.state.ActividadTipo.length+1}/>
+                    <br />
+                    <label htmlFor="nombre">Nombre</label>
+                    <input className="form-control" type="text" name="nombre" id="nombre" onChange={this.handleChange} value={form.nombre}/>
+                    <br />
+
+                    <label htmlFor="flagActivo">Estado Activo</label>
+                    <input className="form-control" type="text" name="flagActivo" id="flagActivo" onChange={this.handleChange} value={form.flagActivo}/>
+                    
+                  </div>
+                </ModalBody>
               <ModalFooter>
                 
                 <button onSubmit="submit" className="btn btn-success" onClick={()=>this.peticionPost()}>Insertar</button>
