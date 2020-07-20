@@ -26,20 +26,21 @@ echo "<table class='table'>
   </thead>
   <tbody>";
 
-          while ($row = MySQLI_fetch_array($result)) {
-            $actividadid=$row['EstablecimientoID'];
-            $nombre=$row['Nombre'];
-            $flagactivo=$row['Telefono'];
-            $actividadid=$row['WhatsappURL'];
-            $nombre=$row['Delivery'];
-            $flagactivo=$row['Permiso'];
-            $actividadid=$row['RUC'];
-            $nombre=$row['CoordenadaX'];
-            $flagactivo=$row['CoordenadaY'];
-            $actividadid=$row['FlagActivo'];
-            $nombre=$row['ActividadID'];
-            $flagactivo=$row['RepresentanteID'];
-            
+          while ($row = mysqli_fetch_array($result)) {
+            echo "<tr>";
+            echo "<td scope='col'>" .$row['EstablecimientoID']."</td>";
+            echo "<td scope='col'>" .$row['Nombre']."</td>";
+            echo "<td scope='col'>" .$row['Telefono']."</td>";
+            echo "<td scope='col'>" .$row['WhatsappURL']."</td>";
+            echo "<td scope='col'>" .$row['Delivery']."</td>";
+            echo "<td scope='col'>" .$row['Permiso']."</td>";
+            echo "<td scope='col'>" .$row['RUC']."</td>";
+            echo "<td scope='col'>" .$row['CoordenadaX']."</td>";
+            echo "<td scope='col'>" .$row['CoordenadaY']."</td>";
+            echo "<td scope='col'>" .$row['FlagActivo']."</td>";
+            echo "<td scope='col'>" .$row['ActividadID']."</td>";
+            echo "<td scope='col'>" .$row['RepresentanteID']."</td>";
+            echo "</tr>";
         }
         echo "</tbody></table>";
         echo "</div>";
