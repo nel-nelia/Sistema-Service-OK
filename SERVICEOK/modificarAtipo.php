@@ -138,7 +138,7 @@
                                     }
                                     ?>
 
-                                <form action="procesos/modificarActividadtipo.php" method="POST">
+                                <form action="procesos/modificarActividadtipo.php" method="POST"> 
                                
                                 <input type="hidden" value="<?php echo $ActividadTipoID; ?>" name="id">
                                                                     

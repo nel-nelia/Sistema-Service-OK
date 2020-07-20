@@ -1,3 +1,6 @@
+<!-- 
+* Copyright 2016 Carlos Eduardo Alfaro Orellana
+-->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -43,8 +46,8 @@
                 <ul class="list-unstyled">
                     <li><a href="home.html"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio</a></li>
                     <li><a href="tipoactividad.php"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; GESTIONAR TIPO ACTIVIDAD</a></li>
-                    <li><a href="actividad.php"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; GESTIONAR ACTIVIDAD</a></li>
-                    <li><a href="establecimiento.php"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; GESTIONAR ESTABLECIMIENTO</a></li>
+                    <li><a href="home.html"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; GESTIONAR ACTIVIDAD</a></li>
+                    <li><a href="home.html"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; GESTIONAR ESTABLECIMIENTO</a></li>
                     <li><a href="home.html"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; CONSULTAR ESTADO ESTABLECIMIENTO</a></li>
 
                     <li>
@@ -115,65 +118,50 @@
             </ul>
         </nav>
 
-        <div class="card shadow mb-4">
-            <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">LISTADO DE ACTIVIDADES</h6>
-            </div>
-            <div class="card-body">
-              <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="30%" cellspacing="0">
-                    <thead class="thead-dark">
-                        <tr>
-                        <th>N°</th>
-                        <th>NOMBRE</th>
-                        <th>DESCRIPCION</th>
-                        <th>ESTADO</th>
-                        <th>TIPO DE ACTIVIDAD</th>
-                        <th>ACCIONES</th>
-                        
-                        </tr>
-                    </thead>
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                            <h6 class="m-0 font-weight-bold text-primary">MODIFICAR ACTIVIDADES</h6>
+                            </div>
+                            <div class="card-body">                         
+                                    <!---modificar datos -->                                 
 
+                                    <?php
+                                    include 'conexion.php' ; 
+                                    $RepresentanteID=$_POST['id'];
 
-                  <?php
-                      include ('conexion.php');          
-                      $sql = "SELECT * FROM Actividad";
+                                    $datoscomp="SELECT * FROM Representante WHERE RepresentanteID='".$RepresentanteID."' ";
+                                                    $resp=mysqli_query($con,$datoscomp);
+                                                    while ($rw=MySQLI_fetch_array($resp)) {
+                                                    $RUC=$rw['RUC'];
+                                                    $CorreoEmpresarial=$rw['CorreoEmpresarial'];
+                                    }
+                                    ?>
 
-                      $query=mysqli_query($con, $sql);
+                                <form action="procesos/modificaRepresentantes.php" method="POST">
+                               
+                                <input type="hidden" value="<?php echo $RepresentanteID; ?>" name="id">
+                                                                    
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">RUC</label></div>
+                                        <div class="col-12 col-md-9"><input type="text" name="RUC" class="form-control" value="<?php echo $RUC; ?>" required></div>
+                                    </div>
 
-                      while ($row= MySQLI_fetch_array($query)){
-                        $actividadid=$row['ActividadID'];
-                        $nombre=$row['Nombre'];
-                        $descripcion=$row['Descripcion'];
-                        $flagactivo=$row['FlagActivo'];
-                        $actividadTipoID=$row['ActividadTipoID'];
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">CORREO</label></div>
+                                        <div class="col-12 col-md-9"><input type="text" name="CorreoEmpresarial" class="form-control" value="<?php echo $CorreoEmpresarial; ?>" required></div>
+                                    </div>
 
-                  ?>
-                        <tr>
-                        <td><?php echo $actividadid;?></td>
-                        <td><?php echo $nombre;?></td>
-                        <td><?php echo $descripcion;?></td>
-                        <td><?php echo $flagactivo;?></td>
-                        <td><?php echo $actividadTipoID;?></td>
-                        <td>
-                        <form method="POST" action="modificarActividad.php">
-                        <input type="hidden" value="<?php echo $actividadid; ?>" name="id">
-                        <button type="submit" class="btn btn-success btn-sm"><i class="fa fa-pencil-square-o"> </i>&nbsp; Ver</button><p></p>
-                        </form> 
-                      </td>
-                        
-                        
-                        </tr>
-                        <?php
-                          }
-                        ?>	
-                  <tbody>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            
-          </div>
+                                    <div class="text-right">
+                                        <button type="submit" class="btn btn-primary btn-sm"> <i class="fa fa-plus"></i> Guardar
+                                    </div>
+                                    
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+     
     
 
         <div class="modal fade" tabindex="-1" role="dialog" id="ModalHelp">

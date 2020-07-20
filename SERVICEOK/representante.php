@@ -1,3 +1,6 @@
+<!-- 
+* Copyright 2016 Carlos Eduardo Alfaro Orellana
+-->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -45,6 +48,7 @@
                     <li><a href="tipoactividad.php"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; GESTIONAR TIPO ACTIVIDAD</a></li>
                     <li><a href="actividad.php"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; GESTIONAR ACTIVIDAD</a></li>
                     <li><a href="establecimiento.php"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; GESTIONAR ESTABLECIMIENTO</a></li>
+                    <li><a href="representante.php"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; REPRESENTANTE</a></li>
                     <li><a href="home.html"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; CONSULTAR ESTADO ESTABLECIMIENTO</a></li>
 
                     <li>
@@ -117,7 +121,7 @@
 
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">LISTADO DE ACTIVIDADES</h6>
+              <h6 class="m-0 font-weight-bold text-primary">LISTADO DE TIPO DE ACTIVIDADES</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -125,44 +129,36 @@
                     <thead class="thead-dark">
                         <tr>
                         <th>N°</th>
-                        <th>NOMBRE</th>
-                        <th>DESCRIPCION</th>
-                        <th>ESTADO</th>
-                        <th>TIPO DE ACTIVIDAD</th>
-                        <th>ACCIONES</th>
-                        
+                        <th>RUC</th>
+                        <th>CORREO</th>    
+                        <th>ACCIONES</th>               
                         </tr>
                     </thead>
 
 
                   <?php
                       include ('conexion.php');          
-                      $sql = "SELECT * FROM Actividad";
+                      $sql = "SELECT * FROM Representante";
 
                       $query=mysqli_query($con, $sql);
 
                       while ($row= MySQLI_fetch_array($query)){
-                        $actividadid=$row['ActividadID'];
-                        $nombre=$row['Nombre'];
-                        $descripcion=$row['Descripcion'];
-                        $flagactivo=$row['FlagActivo'];
-                        $actividadTipoID=$row['ActividadTipoID'];
+                        $RepresentanteID=$row['RepresentanteID'];
+                        $RUC=$row['RUC'];
+                        $CorreoEmpresarial=$row['CorreoEmpresarial'];
 
                   ?>
                         <tr>
-                        <td><?php echo $actividadid;?></td>
-                        <td><?php echo $nombre;?></td>
-                        <td><?php echo $descripcion;?></td>
-                        <td><?php echo $flagactivo;?></td>
-                        <td><?php echo $actividadTipoID;?></td>
+                        <td><?php echo $RepresentanteID;?></td>
+                        <td><?php echo $RUC;?></td>
+                        <td><?php echo $CorreoEmpresarial;?></td>
+                        
                         <td>
-                        <form method="POST" action="modificarActividad.php">
-                        <input type="hidden" value="<?php echo $actividadid; ?>" name="id">
-                        <button type="submit" class="btn btn-success btn-sm"><i class="fa fa-pencil-square-o"> </i>&nbsp; Ver</button><p></p>
+                        <form method="POST" action="modificarrepresentante.php">
+                        <input type="hidden" value="<?php echo $RepresentanteID; ?>" name="id">
+                        <button type="submit" class="btn btn-success btn-sm"><i class="fa fa-pencil-square-o"> </i>&nbsp; Modificar</button><p></p>
                         </form> 
-                      </td>
-                        
-                        
+                      </td>                    
                         </tr>
                         <?php
                           }

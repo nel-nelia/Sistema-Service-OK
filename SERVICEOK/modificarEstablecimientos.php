@@ -1,3 +1,6 @@
+<!-- 
+* Copyright 2016 Carlos Eduardo Alfaro Orellana
+-->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -43,8 +46,8 @@
                 <ul class="list-unstyled">
                     <li><a href="home.html"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio</a></li>
                     <li><a href="tipoactividad.php"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; GESTIONAR TIPO ACTIVIDAD</a></li>
-                    <li><a href="actividad.php"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; GESTIONAR ACTIVIDAD</a></li>
-                    <li><a href="establecimiento.php"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; GESTIONAR ESTABLECIMIENTO</a></li>
+                    <li><a href="home.html"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; GESTIONAR ACTIVIDAD</a></li>
+                    <li><a href="home.html"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; GESTIONAR ESTABLECIMIENTO</a></li>
                     <li><a href="home.html"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; CONSULTAR ESTADO ESTABLECIMIENTO</a></li>
 
                     <li>
@@ -115,65 +118,105 @@
             </ul>
         </nav>
 
-        <div class="card shadow mb-4">
-            <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">LISTADO DE ACTIVIDADES</h6>
-            </div>
-            <div class="card-body">
-              <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="30%" cellspacing="0">
-                    <thead class="thead-dark">
-                        <tr>
-                        <th>N°</th>
-                        <th>NOMBRE</th>
-                        <th>DESCRIPCION</th>
-                        <th>ESTADO</th>
-                        <th>TIPO DE ACTIVIDAD</th>
-                        <th>ACCIONES</th>
-                        
-                        </tr>
-                    </thead>
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                            <h6 class="m-0 font-weight-bold text-primary">MODIFICAR ACTIVIDADES</h6>
+                            </div>
+                            <div class="card-body">                         
+                                    <!---modificar datos -->                                 
 
+                                    <?php
+                                    include 'conexion.php' ; 
+                                    $EstablecimientoID=$_POST['id'];
 
-                  <?php
-                      include ('conexion.php');          
-                      $sql = "SELECT * FROM Actividad";
+                                    $datoscomp="SELECT * FROM Establecimiento WHERE EstablecimientoID='".$EstablecimientoID."' ";
+                                                    $resp=mysqli_query($con,$datoscomp);
+                                                    while ($rw=MySQLI_fetch_array($resp)) {
+                                                    $nombre=$rw['Nombre'];
+                                                    $telefono=$rw['Telefono'];
+                                                    $whatsappurl=$rw['WhatsappURL'];
+                                                    $delivery=$rw['Delivery'];
+                                                    $permiso=$rw['Permiso'];
+                                                    $ruc=$rw['RUC'];
+                                                    $cordenadax=$rw['CoordenadaX'];
+                                                    $cordenaday=$rw['CoordenadaY'];
+                                                    $flagactivo=$rw['FlagActivo'];
+                                                    $actividadid=$rw['ActividadID'];
+                                                    $representanteid=$rw['RepresentanteID'];
+                                    }
+                                    ?>
 
-                      $query=mysqli_query($con, $sql);
+                                <form action="procesos/modificarEstablecimiento.php" method="POST">
+                               
+                                <input type="hidden" value="<?php echo $EstablecimientoID; ?>" name="id">
+                                                                    
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">Nombre</label></div>
+                                        <div class="col-12 col-md-9"><input type="text" name="Nombre" class="form-control" value="<?php echo $nombre; ?>" required></div>
+                                    </div>
 
-                      while ($row= MySQLI_fetch_array($query)){
-                        $actividadid=$row['ActividadID'];
-                        $nombre=$row['Nombre'];
-                        $descripcion=$row['Descripcion'];
-                        $flagactivo=$row['FlagActivo'];
-                        $actividadTipoID=$row['ActividadTipoID'];
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">Telefono</label></div>
+                                        <div class="col-12 col-md-9"><input type="text" name="Telefono" class="form-control" value="<?php echo $telefono; ?>" required></div>
+                                    </div>
 
-                  ?>
-                        <tr>
-                        <td><?php echo $actividadid;?></td>
-                        <td><?php echo $nombre;?></td>
-                        <td><?php echo $descripcion;?></td>
-                        <td><?php echo $flagactivo;?></td>
-                        <td><?php echo $actividadTipoID;?></td>
-                        <td>
-                        <form method="POST" action="modificarActividad.php">
-                        <input type="hidden" value="<?php echo $actividadid; ?>" name="id">
-                        <button type="submit" class="btn btn-success btn-sm"><i class="fa fa-pencil-square-o"> </i>&nbsp; Ver</button><p></p>
-                        </form> 
-                      </td>
-                        
-                        
-                        </tr>
-                        <?php
-                          }
-                        ?>	
-                  <tbody>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            
-          </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">Whatsapp</label></div>
+                                        <div class="col-12 col-md-9"><input type="text" name="WhatsappURL" class="form-control" value="<?php echo $whatsappurl; ?>" required></div>
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">Delivery</label></div>
+                                        <div class="col-12 col-md-9"><input type="text" name="Delivery" class="form-control" value="<?php echo $delivery; ?>" required></div>
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">Permiso</label></div>
+                                        <div class="col-12 col-md-9"><input type="text" name="Permiso" class="form-control" value="<?php echo $permiso; ?>" required></div>
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">RUC</label></div>
+                                        <div class="col-12 col-md-9"><input type="text" name="RUC" class="form-control" value="<?php echo $ruc; ?>" required></div>
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">LATITUD</label></div>
+                                        <div class="col-12 col-md-9"><input type="text" name="CoordenadaX" class="form-control" value="<?php echo $cordenadax; ?>" required></div>
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">LONGITUD</label></div>
+                                        <div class="col-12 col-md-9"><input type="text" name="CoordenadaY" class="form-control" value="<?php echo $cordenaday; ?>" required></div>
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">ESTADO</label></div>
+                                        <div class="col-12 col-md-9"><input type="text" name="FlagActivo" class="form-control" value="<?php echo $flagactivo; ?>" required></div>
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">ACTIVIDAD</label></div>
+                                        <div class="col-12 col-md-9"><input type="text" name="ActividadID" class="form-control" value="<?php echo $actividadid; ?>" required></div>
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">REPRESENTANTE</label></div>
+                                        <div class="col-12 col-md-9"><input type="text" name="RepresentanteID" class="form-control" value="<?php echo $representanteid; ?>" required></div>
+                                    </div>
+
+                                    <div class="text-right">
+                                        <button type="submit" class="btn btn-primary btn-sm">
+                                            <i class="fa fa-plus"></i> Guardar
+                                    </div>
+                                    
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+     
     
 
         <div class="modal fade" tabindex="-1" role="dialog" id="ModalHelp">

@@ -45,6 +45,7 @@
                     <li><a href="tipoactividad.php"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; GESTIONAR TIPO ACTIVIDAD</a></li>
                     <li><a href="actividad.php"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; GESTIONAR ACTIVIDAD</a></li>
                     <li><a href="establecimiento.php"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; GESTIONAR ESTABLECIMIENTO</a></li>
+                    <li><a href="representante.php"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; REPRESENTANTE</a></li>
                     <li><a href="home.html"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; CONSULTAR ESTADO ESTABLECIMIENTO</a></li>
 
                     <li>
@@ -175,8 +176,8 @@
                         <td><?php echo $actividadid;?></td>
                         <td><?php echo $representanteid;?></td>
                         <td>
-                        <form method="POST" action="ver_convocatoria.php">
-                        <input type="hidden" value="<?php echo $idcon; ?>" name="id">
+                        <form method="POST" action="modificarEstablecimientos.php">
+                        <input type="hidden" value="<?php echo $establecimientoid; ?>" name="id">
                         <button type="submit" class="btn btn-success btn-sm"><i class="fa fa-pencil-square-o"> </i>&nbsp; Ver</button><p></p>
                         </form> 
                       </td>

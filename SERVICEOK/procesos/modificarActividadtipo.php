@@ -1,7 +1,7 @@
 <?php 
 include '../conexion.php';
 
-$ActividadTipoID=$_POST['id'];
+$ActividadID=$_POST['id'];
 
 $nombre=strtoupper($_POST['Nombre']);
 $flagactivo=$_POST['FlagActivo'];
