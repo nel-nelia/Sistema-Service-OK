@@ -34,13 +34,13 @@
         <div class="full-reset container-menu-movile custom-scroll-containers">
             <div class="logo full-reset all-tittles">
                 <i class="visible-xs zmdi zmdi-close pull-left mobile-menu-button" style="line-height: 55px; cursor: pointer; padding: 0 10px; margin-left: 7px;"></i> 
-                sistema bibliotecario
+                Service OK
             </div>
             <div class="full-reset" style="background-color:#2B3D51; padding: 10px 0; color:#fff;">
                 <figure>
                     <img src="assets/img/logo.png" alt="Biblioteca" class="img-responsive center-box" style="width:55%;">
                 </figure>
-                <p class="text-center" style="padding-top: 15px;">Sistema Bibliotecario</p>
+                <p class="text-center" style="padding-top: 15px;">SERVICE OK</p>
             </div>
             <div class="full-reset nav-lateral-list-menu">
                 <ul class="list-unstyled">
@@ -156,7 +156,7 @@
                         <td>
                         <form method="POST" action="modificarAtipo.php">
                         <input type="hidden" value="<?php echo $actividadid; ?>" name="id">
-                        <button type="submit" class="btn btn-success btn-sm"><i class="fa fa-pencil-square-o"> </i>&nbsp; Ver</button><p></p>
+                        <button type="submit" class="btn btn-success btn-sm"><i class="fa fa-pencil-square-o"> </i>&nbsp; Modificar</button><p></p>
                         </form> 
                       </td>                    
                         </tr>
