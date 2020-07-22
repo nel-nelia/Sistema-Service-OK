@@ -1,6 +1,3 @@
-<!-- 
-* Copyright 2016 Carlos Eduardo Alfaro Orellana
--->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -117,69 +114,42 @@
                 </li>
             </ul>
         </nav>
+                 <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                            <h6 class="m-0 font-weight-bold text-primary">AGREGAR TIPO DE ACTIVIDADES</h6>
+                            </div>
+                            <div class="card-body">                         
+                                   
+                                    <!---modificar datos -->                                 
+                   
 
-        <div class="card shadow mb-4">
-            <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">LISTADO DE TIPO DE ACTIVIDADES</h6>
-            </div>
+                                <form action="procesos/agregartipoactividad.php" method="POST">  
+                                    
 
-          
-          
-            <div class="card-body">
-
-            <form action="agregartipoactividad.php">
-                        <input type="hidden" value="<?php echo $actividadid; ?>" name="id">
-                        <button type="submit" class="btn btn-success btn-sm"><i class="fa fa-pencil-square-o"> </i>&nbsp; Agregar</button><p></p>
-            </form> 
-              <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="30%" cellspacing="0">
-                    <thead class="thead-dark">
-                        <tr>
-                        <th>N°</th>
-                        <th>NOMBRE</th>
-                        <th>ESTADO</th>
-                        <th>ACCIONES</th>
-                        
-                        </tr>
-                    </thead>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nombres</label></div>
+                                        <div class="col-12 col-md-9"><input type="text" id="Nombre" name="Nombre" class="form-control" required><small class="form-text text-muted">Nombres completos</small></div>
+                                    </div>  
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nombres</label></div>
+                                        <div class="col-12 col-md-9"><input type="text" id="FlagActivo" name="FlagActivo" class="form-control" required></div>
+                                    </div>                            
+                                                                    
 
 
-                  <?php
-                      include ('conexion.php');          
-                      $sql = "SELECT * FROM ActividadTipo";
+                                    <div class="text-right">
+                                        <button type="submit" class="btn btn-primary btn-sm">
+                                            <i class="fa fa-plus"></i> Guardar
 
-                      $query=mysqli_query($con, $sql);
-
-                      while ($row= MySQLI_fetch_array($query)){
-                        $actividadid=$row['ActividadTipoID'];
-                        $nombre=$row['Nombre'];
-                        $flagactivo=$row['FlagActivo'];
-
-                  ?>
-                        <tr>
-                        <td><?php echo $actividadid;?></td>
-                        <td><?php echo $nombre;?></td>
-                        <td><?php echo $flagactivo;?></td>
-                        
-                        <td>
-
-                        
-                        <form method="POST" action="modificarAtipo.php">
-                        <input type="hidden" value="<?php echo $actividadid; ?>" name="id">
-                        <button type="submit" class="btn btn-success btn-sm"><i class="fa fa-pencil-square-o"> </i>&nbsp; Modificar</button><p></p>
-                        </form> 
-                      </td>                    
-                        </tr>
-                        <?php
-                          }
-                        ?>	
-                  <tbody>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            
-          </div>
+                                    </div>
+                                    
+                                    
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
     
 
         <div class="modal fade" tabindex="-1" role="dialog" id="ModalHelp">

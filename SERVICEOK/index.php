@@ -1,74 +1,71 @@
-<!-- 
-* Copyright 2016 Carlos Eduardo Alfaro Orellana
--->
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <title>Inicio</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="Shortcut Icon" type="image/x-icon" href="assets/icons/book.ico" />
-    <script src="js/sweet-alert.min.js"></script>
-    <link rel="stylesheet" href="css/sweet-alert.css">
-    <link rel="stylesheet" href="css/material-design-iconic-font.min.css">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
-    <script src="js/modernizr.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="js/main.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <style type="text/css">
-        #mapa{
-            
-            height: 50vh;
-
-        }
-        .h2{
-            font-size: 3vh;
-        }
-        
-    </style>
-</head>
-<body>
-  
-        </div>
-        
-    </div>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
     
-    <div id="borde">
-         <nav class="navbar-user-top full-reset">
-            <ul class="list-unstyled full-reset">
-                <figure>
-                   <img src="assets/img/user01.png" alt="user-picture" class="img-responsive img-circle center-box">
-                </figure>
-                <li style="color:#fff; cursor:default;">
-                    <span class="all-tittles">Admin Name</span>
-                </li>
-                <li  class="tooltips-general exit-system-button" data-href="index.html" data-placement="bottom" title="Salir del sistema">
-                    <i class="zmdi zmdi-power"></i>
-                </li>
-                <li  class="tooltips-general search-book-button" data-href="searchbook.html" data-placement="bottom" title="Buscar libro">
-                    <i class="zmdi zmdi-search"></i>
-                </li>
-                <li  class="tooltips-general btn-help" data-placement="bottom" title="Ayuda">
-                    <i class="zmdi zmdi-help-outline zmdi-hc-fw"></i>
-                </li>
-                <li class="mobile-menu-button visible-xs" style="float: left !important;">
-                    <i class="zmdi zmdi-menu"></i>
-                </li>
-            </ul>
-        </nav> 
-       <!--mapa-->
-        <div class="pccp mt-5 mb-3">
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle"
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="http://nubecolectiva.com/favicon.ico" />
+
+    <meta name="theme-color" content="#000000" />
+
+    <title>Cargar una ubicación desde la Base de Datos MySQL con PHP y Google Maps Javascript API </title>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style type="text/css">
+      #mapa {
+            height: 50vh;
+      }
+      .h2s {
+        font-size: 3vh;
+      }
+    </style>          
+
+  </head>
+
+  <body> 
+
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="http://nubecolectiva.com"><img src="http://nubecolectiva.com/img/logo.png" class="img-fluid"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExample07">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+            <a class="nav-link" href="http://nubecolectiva.com">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://blog.nubecolectiva.com" target="_blank">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contacto</a>
+          </li> 
+          </ul>
+          <form name="bencc" method="get" action="http://www.google.com/search" id="bencc" class="form-inline mt-2 mt-md-0" target="_blank">
+            <input type="hidden" name="domains" value="blog.nubecolectiva.com">
+            <input type="hidden" name="sitesearch" value="blog.nubecolectiva.com">
+            <input class="form-control mr-sm-2" type="text" placeholder="Buscar..." aria-label="Buscar...">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="document.getElementById('bencc').submit()">Buscar</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    </header>
+
+    <div class="pccp mt-5 mb-3" align="center">
+              <!-- P -->
+              <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+              
+              <ins class="adsbygoogle"
                    style="display:block"
                    data-ad-client="ca-pub-2390065838671224"
                    data-ad-slot="1441100372"
@@ -77,67 +74,101 @@
               <script>
               (adsbygoogle = window.adsbygoogle || []).push({});
               </script>
-              </div>
-        <!--mapa-->
-        <main role="main">
+              <!-- End P -->
+    </div>
+
+    <main role="main">
 
         <div class="container text-center mt-5">
 
           <div class="row">
 
             <div class="col-md-12">
-            <h1 class="mb-4">Cargar una ubicación desde la Base de Datos MySQL con PHP y Google Maps Javascript API </h1>
 
-<p>"Coloca el puntero del Mouse en cada marcador rojo del Mapa para ver la dirección correspondiente"</p>
+              <h1 class="mb-4">Cargar una ubicación desde la Base de Datos MySQL con PHP y Google Maps Javascript API </h1>
 
-<p>
-  <strong>Nota:</strong><br>
-  El mapa, marcadores y direcciones pueden dar errores de visualización por restricciones de haber excedido la quota diaria gratis de la API de Google Maps Javascript </p>
+              <p>"Coloca el puntero del Mouse en cada marcador rojo del Mapa para ver la dirección correspondiente"</p>
 
-<!-- Contenedor del Mapa de Google --> 
-<div id="mapa"></div>               
+              <p>
+                <strong>Nota:</strong><br>
+                El mapa, marcadores y direcciones pueden dar errores de visualización por restricciones de haber excedido la quota diaria gratis de la API de Google Maps Javascript </p>
 
-</div>
+              <!-- Contenedor del Mapa de Google --> 
+              <div id="mapa"></div>               
 
-</div>
-
-<div class="row mt-3">
-
-<div class="col-md-12">
-
-<h2 class="h2s">Direcciónes en la Base de Datos MySQL</h2>
-
-<!-- Archivo PHP con la lógica para mostrar una tabla con las ubicaciones -->
-<?php include('app.php'); ?> 
-
-</div>
-
-</div>  
-
-      
-       
-       <footer class="footer full-reset">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-6">
-                        <h4 class="all-tittles">Acerca de</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam quam dicta et, ipsum quo. Est saepe deserunt, adipisci eos id cum, ducimus rem, dolores enim laudantium eum repudiandae temporibus sapiente.
-                        </p>
-                    </div>
-                    <div class="col-xs-12 col-sm-6">
-                        <h4 class="all-tittles">Desarrollador</h4>
-                        <ul class="list-unstyled">
-                            <li><i class="zmdi zmdi-check zmdi-hc-fw"></i>&nbsp; Carlos Alfaro <i class="zmdi zmdi-facebook zmdi-hc-fw footer-social"></i><i class="zmdi zmdi-twitter zmdi-hc-fw footer-social"></i></li>
-                        </ul>
-                    </div>
-                </div>
             </div>
-            <div class="footer-copyright full-reset all-tittles">© 2016 Carlos Alfaro</div>
-        </footer>
-    </div>
+
+          </div>
+
+          <div class="row mt-3">
+
+            <div class="col-md-12">
+
+              <h2 class="h2s">Direcciónes en la Base de Datos MySQL</h2>
+
+              <!-- Archivo PHP con la lógica para mostrar una tabla con las ubicaciones -->
+              <?php include('app.php'); ?> 
+              
+            </div>
+            
+          </div>  
 
 
+          <hr>
+
+          <div class="row">
+
+            <div class="col-md-12">
+
+              <p class="lead">En <a href="http://nubecolectiva.com/" target="_blank"> Nube Colectiva </a> hablamos sobre:</p>
+
+            </div>
+
+          </div>
+
+          <div class="row">
+
+              <div class="col-md-3">
+                <h3>Frontend</h3>
+                <a href="http://blog.nubecolectiva.com/category/frontend/" target="_blank">
+                  <img class="img-fluid" src="http://blog.nubecolectiva.com/wp-content/uploads/2018/11/img_destacada_blog_devs-11-300x169.png">
+                </a>
+              </div>
+
+              <div class="col-md-3">
+                <h3>Backend</h3>                
+                <a href="http://blog.nubecolectiva.com/category/backend/" target="_blank">
+                  <img class="img-fluid" src="http://blog.nubecolectiva.com/wp-content/uploads/2018/11/img_destacada_blog_devs-8-300x169.png">
+                </a>
+              </div>              
+
+              <div class="col-md-3">
+                <h3>Android</h3>
+                <a href="http://blog.nubecolectiva.com/category/android/" target="_blank">
+                  <img class="img-fluid" src="http://blog.nubecolectiva.com/wp-content/uploads/2018/11/img_destacada_blog_devs-9-300x169.png">
+                </a>
+              </div>
+
+              <div class="col-md-3">
+                <h3>Otros</h3>
+                <a href="http://blog.nubecolectiva.com/category/articulos/" target="_blank">
+                  <img class="img-fluid" src="http://blog.nubecolectiva.com/wp-content/uploads/2018/09/edit_img_destacada_blog_devs-300x169.png">
+                </a>
+              </div>
+
+          </div>           
+          
+          
+        </div>
+
+    </main>
+
+
+    <footer class="text-muted mt-3 mb-3">
+        <div align="center">
+          Desarrollado por <a href="http://www.nubecolectiva.com" target="_blank">Nube Colectiva</a>
+      </div> 
+    </footer>    
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -207,5 +238,6 @@
       // Lanzamos la función 'initMap' para que muestre el Mapa con Los Marcadores y toda la configuración realizada 
       google.maps.event.addDomListener(window, 'load', initMap);
     </script>
-</body>
+    
+  </body>
 </html>

@@ -9,6 +9,6 @@
     ['<div class="info_content">' + '<h3><?php echo $row['Nombre']; ?></h3>' + '<p><?php echo $row['WhatsappURL']; ?></p>' + '</div>'], 
 
     <?php }
-  }
+  }    
 
 ?>
