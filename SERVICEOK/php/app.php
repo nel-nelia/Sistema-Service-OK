@@ -16,7 +16,7 @@
               <th scope='col'>Dirección</th>
               <th scope='col'>Latitud</th>
               <th scope='col'>Longitud</th>
-              <th scope='col'>País</th>
+
             </tr>
             </thead>
             <tbody>";
@@ -27,7 +27,6 @@
       echo "<td scope='col'>" . preg_replace('/\\\\u([\da-fA-F]{4})/', '&#x\1;', $row['direccion']) . "</td>";
       echo "<td scope='col'>" . $row['lat'] . "</td>";
       echo "<td scope='col'>" . $row['lng'] . "</td>";
-      echo "<td scope='col'>" . $row['pais'] . "</td>";
       echo "</tr>";
   }
   echo "</tbody></table>";
