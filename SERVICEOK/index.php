@@ -30,28 +30,23 @@
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="http://nubecolectiva.com"><img src="http://nubecolectiva.com/img/logo.png" class="img-fluid"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+       
+       
 
         <div class="collapse navbar-collapse" id="navbarsExample07">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-            <a class="nav-link" href="http://nubecolectiva.com">Home <span class="sr-only">(current)</span></a>
+           
+          <li class="nav-item">
+           
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://blog.nubecolectiva.com" target="_blank">Blog</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contacto</a>
+           
           </li> 
           </ul>
-          <form name="bencc" method="get" action="http://www.google.com/search" id="bencc" class="form-inline mt-2 mt-md-0" target="_blank">
-            <input type="hidden" name="domains" value="blog.nubecolectiva.com">
-            <input type="hidden" name="sitesearch" value="blog.nubecolectiva.com">
-            <input class="form-control mr-sm-2" type="text" placeholder="Buscar..." aria-label="Buscar...">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="document.getElementById('bencc').submit()">Buscar</button>
+          <form name="bencc" method="get"  id="bencc" class="form-inline mt-2 mt-md-0" target="_blank">
+           
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="document.getElementById('bencc').submit()">SERVICE OK</button>
           </form>
         </div>
       </div>
