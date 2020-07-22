@@ -6,11 +6,11 @@
     
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="http://nubecolectiva.com/favicon.ico" />
+   <!--  <link rel="shortcut icon" href="http://nubecolectiva.com/favicon.ico" /> -->
 
     <meta name="theme-color" content="#000000" />
 
-    <title>Cargar una ubicación desde la Base de Datos MySQL con PHP y Google Maps Javascript API </title>
+ 
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -44,9 +44,9 @@
            
           </li> 
           </ul>
-          <form name="bencc" method="get"  id="bencc" class="form-inline mt-2 mt-md-0" target="_blank">
+          <form name="bencc" method="get"  id="bencc" class="form-inline mt-2 mt-md-0" target="_blank" >
            
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="document.getElementById('bencc').submit()">SERVICE OK</button>
+          <h2 class="h2s">SERVICE OK</h2>
           </form>
         </div>
       </div>
@@ -100,10 +100,6 @@
 
 
           <hr>
-
-
-
-
 
     </main>
 
