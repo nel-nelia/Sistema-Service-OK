@@ -45,7 +45,6 @@
                     <li><a href="tipoactividad.php"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; GESTIONAR TIPO ACTIVIDAD</a></li>
                     <li><a href="actividad.php"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; GESTIONAR ACTIVIDAD</a></li>
                     <li><a href="establecimiento.php"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; GESTIONAR ESTABLECIMIENTO</a></li>
-                    <li><a href="representante.php"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; REPRESENTANTE</a></li>
                     <li><a href="home.html"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; CONSULTAR ESTADO ESTABLECIMIENTO</a></li>
 
                     <li>
@@ -115,90 +114,83 @@
                 </li>
             </ul>
         </nav>
+                 <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                            <h6 class="m-0 font-weight-bold text-primary">AGREGAR ESTABLECIMIENTO</h6>
+                            </div>
+                            <div class="card-body">                         
+                                   
+                                    <!---modificar datos -->                              
+                   
+                                  
+                                <form action="procesos/agregarestablecimiento.php" method="POST">                              
+  
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nombres</label></div>
+                                        <div class="col-12 col-md-9"><input type="text" id="Nombre" name="Nombre" class="form-control" required></div>
+                                    </div>   
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Telefono</label></div>
+                                        <div class="col-12 col-md-9"><input type="text" id="Telefono" name="Telefono" class="form-control" required></div>
+                                    </div> 
 
-        <div class="card shadow mb-4">
-            <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">LISTADO DE ESTABLECIMIENTOS</h6>
-            </div>
-            <div class="card-body">
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Whatssap</label></div>
+                                        <div class="col-12 col-md-9"><input type="text" id="WhatsappURL" name="WhatsappURL" class="form-control" required></div>
+                                    </div> 
 
-            <form action="agregarestablecimiento.php">
-                     
-            <button type="submit" class="btn btn-success btn-sm"><i class="fa fa-pencil-square-o"> </i>&nbsp; Agregar</button><p></p>
-            </form> 
-              <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="30%" cellspacing="0">
-                    <thead class="thead-dark">
-                        <tr>
-                        <th>N°</th>
-                        <th>NOMBRE</th>
-                        <th>TELEFONO</th>
-                        <th>WHATSAPP</th>
-                        <th>DELIVERY</th>
-                        <th>PERMISO</th>
-                        <th>RUC</th>
-                        <th>CORDENADAS X</th>
-                        <th>CORDENADAS Y</th>
-                        <th>ESTADO</th>
-                        <th>ACTIVIDAD</th>
-                        <th>REPRESENTANTE</th>
-                        <th>ACCIONES</th>
-                        </tr>
-                    </thead>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Delivery</label></div>
+                                        <div class="col-12 col-md-9"><input type="text" id="Delivery" name="Delivery" class="form-control" required></div>
+                                    </div> 
 
+                                   
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Permiso</label></div>
+                                        <div class="col-12 col-md-9"><input type="text" id="Permiso" name="Permiso" class="form-control" required></div>
+                                    </div> 
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">RUC</label></div>
+                                        <div class="col-12 col-md-9"><input type="text" id="RUC" name="RUC" class="form-control" required></div>
+                                    </div> 
 
-                  <?php
-                      include ('conexion.php');          
-                      $sql = "SELECT * FROM Establecimiento";
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Latitud</label></div>
+                                        <div class="col-12 col-md-9"><input type="text" id="CoordenadaX" name="CoordenadaX" class="form-control" required></div>
+                                    </div>   
 
-                      $query=mysqli_query($con, $sql);
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Longitud</label></div>
+                                        <div class="col-12 col-md-9"><input type="text" id="CoordenadaY" name="CoordenadaY" class="form-control" required></div>
+                                    </div>  
 
-                      while ($row= MySQLI_fetch_array($query)){
-                        $establecimientoid=$row['EstablecimientoID'];
-                        $nombre=$row['Nombre'];
-                        $telefono=$row['Telefono'];
-                        $whatsappurl=$row['WhatsappURL'];
-                        $delivery=$row['Delivery'];
-                        $permiso=$row['Permiso'];
-                        $ruc=$row['RUC'];
-                        $cordenadax=$row['CoordenadaX'];
-                        $cordenaday=$row['CoordenadaY'];
-                        $flagactivo=$row['FlagActivo'];
-                        $actividadid=$row['ActividadID'];
-                        $representanteid=$row['RepresentanteID'];
-                  ?>
-                        <tr>
-                        <td><?php echo $establecimientoid;?></td>
-                        <td><?php echo $nombre;?></td>
-                        <td><?php echo $telefono;?></td>
-                        <td><?php echo $whatsappurl;?></td>
-                        <td><?php echo $delivery;?></td>
-                        <td><?php echo $permiso;?></td>
-                        <td><?php echo $ruc;?></td>
-                        <td><?php echo $cordenadax;?></td>
-                        <td><?php echo $cordenaday;?></td>
-                        <td><?php echo $flagactivo;?></td>
-                        <td><?php echo $actividadid;?></td>
-                        <td><?php echo $representanteid;?></td>
-                        <td>
-                        <form method="POST" action="modificarEstablecimientos.php">
-                        <input type="hidden" value="<?php echo $establecimientoid; ?>" name="id">
-                        <button type="submit" class="btn btn-success btn-sm"><i class="fa fa-pencil-square-o"> </i>&nbsp; Modificar</button><p></p>
-                        </form> 
-                      </td>
-                        
-                        
-                        </tr>
-                        <?php
-                          }
-                        ?>	
-                  <tbody>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            
-          </div>
+                                    
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Estado</label></div>
+                                        <div class="col-12 col-md-9"><input type="text" id="FlagActivo" name="FlagActivo" class="form-control" required></div>
+                                    </div>       
+
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Actividad</label></div>
+                                        <div class="col-12 col-md-9"><input type="text" id="ActividadID" name="ActividadID" class="form-control" required></div>
+                                    </div>  
+
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Representante</label></div>
+                                        <div class="col-12 col-md-9"><input type="text" id="RepresentanteID" name="RepresentanteID" class="form-control" required></div>
+                                    </div>               
+                                                                    
+                                    <div class="text-right">
+                                        <button type="submit" class="btn btn-primary btn-sm">
+                                            <i class="fa fa-plus"></i> Guardar
+                                    </div>                                 
+                                    
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
     
 
         <div class="modal fade" tabindex="-1" role="dialog" id="ModalHelp">

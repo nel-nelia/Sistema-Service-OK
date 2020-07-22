@@ -23,3 +23,4 @@ header('Location: ../actividad.php');
 mysqli_close($con);
 
 ?>
+
