@@ -33,3 +33,4 @@ INSERT INTO `Establecimiento` (`EstablecimientoID`, `Nombre`, `Telefono`, `Whats
 ALTER TABLE `Establecimiento`
   MODIFY `EstablecimientoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
+
