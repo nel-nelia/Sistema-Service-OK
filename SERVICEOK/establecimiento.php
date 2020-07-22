@@ -84,6 +84,11 @@
               <h6 class="m-0 font-weight-bold text-primary">LISTADO DE ESTABLECIMIENTOS</h6>
             </div>
             <div class="card-body">
+
+            <form action="agregarestablecimiento.php">
+                     
+            <button type="submit" class="btn btn-success btn-sm"><i class="fa fa-pencil-square-o"> </i>&nbsp; Agregar</button><p></p>
+            </form> 
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="30%" cellspacing="0">
                     <thead class="thead-dark">
@@ -141,7 +146,7 @@
                         <td>
                         <form method="POST" action="modificarEstablecimientos.php">
                         <input type="hidden" value="<?php echo $establecimientoid; ?>" name="id">
-                        <button type="submit" class="btn btn-success btn-sm"><i class="fa fa-pencil-square-o"> </i>&nbsp; Ver</button><p></p>
+                        <button type="submit" class="btn btn-success btn-sm"><i class="fa fa-pencil-square-o"> </i>&nbsp; Modificar</button><p></p>
                         </form> 
                       </td>
                         
