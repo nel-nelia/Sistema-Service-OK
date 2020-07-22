@@ -90,7 +90,7 @@
 
                                     <div class="row form-group">
                                         <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nombres</label></div>
-                                        <div class="col-12 col-md-9"><input type="text" id="Nombre" name="Nombre" class="form-control" required><small class="form-text text-muted">Nombres completos</small></div>
+                                        <div class="col-12 col-md-9"><input type="text" id="Nombre" name="Nombre" class="form-control" required><small class="form-text text-muted">Nombre del tipo de actividad</small></div>
                                     </div>  
                                     <div class="row form-group">
                                         <div class="col col-md-3"><label for="text-input" class=" form-control-label">Estado Actividad</label></div>
