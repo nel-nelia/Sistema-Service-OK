@@ -114,70 +114,50 @@
                 </li>
             </ul>
         </nav>
+                 <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                            <h6 class="m-0 font-weight-bold text-primary">AGREGAR ACTIVIDAD</h6>
+                            </div>
+                            <div class="card-body">                         
+                                   
+                                    <!---modificar datos -->                                 
+                   
+                                  
+                                <form action="procesos/agregaractividad.php" method="POST">                              
+  
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nombres</label></div>
+                                        <div class="col-12 col-md-9"><input type="text" id="Nombre" name="Nombre" class="form-control" required></div>
+                                    </div>   
 
-        <div class="card shadow mb-4">
-            <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">LISTADO DE ACTIVIDADES</h6>
-            </div>
-            <div class="card-body">
-            <form action="agregaractividad.php">
-                       
-                        <button type="submit" class="btn btn-success btn-sm"><i class="fa fa-pencil-square-o"> </i>&nbsp; Agregar</button><p></p>
-            </form> 
-              <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="30%" cellspacing="0">
-                    <thead class="thead-dark">
-                        <tr>
-                        <th>N°</th>
-                        <th>NOMBRE</th>
-                        <th>DESCRIPCION</th>
-                        <th>ESTADO</th>
-                        <th>TIPO DE ACTIVIDAD</th>
-                        <th>ACCIONES</th>
-                        
-                        </tr>
-                    </thead>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Descripcion</label></div>
+                                        <div class="col-12 col-md-9"><input type="text" id="Descripcion" name="Descripcion" class="form-control" required></div>
+                                    </div>   
 
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Estado</label></div>
+                                        <div class="col-12 col-md-9"><input type="text" id="FlagActivo" name="FlagActivo" class="form-control" required></div>
+                                    </div>  
 
-                  <?php
-                      include ('conexion.php');          
-                      $sql = "SELECT * FROM Actividad";
+                                    
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Tipo Actividad</label></div>
+                                        <div class="col-12 col-md-9"><input type="text" id="ActividadTipoID" name="ActividadTipoID" class="form-control" required></div>
+                                    </div>                    
+                                                                    
+                                    <div class="text-right">
+                                        <button type="submit" class="btn btn-primary btn-sm">
+                                            <i class="fa fa-plus"></i> Guardar
 
-                      $query=mysqli_query($con, $sql);
-
-                      while ($row= MySQLI_fetch_array($query)){
-                        $actividadid=$row['ActividadID'];
-                        $nombre=$row['Nombre'];
-                        $descripcion=$row['Descripcion'];
-                        $flagactivo=$row['FlagActivo'];
-                        $actividadTipoID=$row['ActividadTipoID'];
-
-                  ?>
-                        <tr>
-                        <td><?php echo $actividadid;?></td>
-                        <td><?php echo $nombre;?></td>
-                        <td><?php echo $descripcion;?></td>
-                        <td><?php echo $flagactivo;?></td>
-                        <td><?php echo $actividadTipoID;?></td>
-                        <td>
-                        <form method="POST" action="modificarActividad.php">
-                        <input type="hidden" value="<?php echo $actividadid; ?>" name="id">
-                        <button type="submit" class="btn btn-success btn-sm"><i class="fa fa-pencil-square-o"> </i>&nbsp;Modificar</button><p></p>
-                        </form> 
-                      </td>
-                        
-                        
-                        </tr>
-                        <?php
-                          }
-                        ?>	
-                  <tbody>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            
-          </div>
+                                    </div>                                 
+                                    
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
     
 
         <div class="modal fade" tabindex="-1" role="dialog" id="ModalHelp">
