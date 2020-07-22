@@ -9,18 +9,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="Shortcut Icon" type="image/x-icon" href="assets/icons/book.ico" />
     <script src="js/sweet-alert.min.js"></script>
-    <link rel="stylesheet" href="css/sweet-alert.css">
-    <link rel="stylesheet" href="css/material-design-iconic-font.min.css">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/sweet-alert.css">
+    <link rel="stylesheet" href="/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="/css/style.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
-    <script src="js/modernizr.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="/js/modernizr.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="/js/main.js"></script>
 </head>
 <body>
     <div class="navbar-lateral full-reset">
@@ -124,7 +124,7 @@
                     <img src="assets/img/section.png" alt="user" class="img-responsive center-box" style="max-width: 110px;">
                 </div>
                 <div class="col-xs-12 col-sm-8 col-md-8 text-justify lead">
-                    Bienvenido a la sección donde se encuentra el listado de las secciones de la institución, puedes eliminar una sección siempre y cuando no haya alumnos o docentes registrados en ella
+                    Bienvenido a la sección para registrar nuevas secciones al sistema, debes de seleccionar los datos en el siguiente formulario para registrar una sección
                 </div>
             </div>
         </div>
@@ -132,55 +132,57 @@
             <div class="row">
                 <div class="col-xs-12 lead">
                     <ol class="breadcrumb">
-                      <li><a href="section.html">Nueva sección</a></li>
-                      <li class="active">Listado de secciones</li>
+                      <li class="active">Nueva sección</li>
+                      <li><a href="listsection.html">Listado de secciones</a></li>
                     </ol>
                 </div>
             </div>
         </div>
         <div class="container-fluid">
-            <h2 class="text-center all-tittles">Lista de secciones</h2>
-            <div class="div-table">
-                <div class="div-table-row div-table-head">
-                    <div class="div-table-cell">#</div>
-                    <div class="div-table-cell">Nombre</div>
-                    <div class="div-table-cell">Eliminar</div>
-                </div>
-                <div class="div-table-row">
-                    <div class="div-table-cell">#</div>
-                    <div class="div-table-cell">Nombre</div>
-                    <div class="div-table-cell">
-                        <button class="btn btn-danger btn-xs"><i class="zmdi zmdi-delete"></i> &nbsp;&nbsp; Eliminar</button>
-                    </div>      
-                </div>
-                <div class="div-table-row">
-                    <div class="div-table-cell">#</div>
-                    <div class="div-table-cell">Nombre</div>
-                    <div class="div-table-cell">
-                        <button class="btn btn-danger btn-xs"><i class="zmdi zmdi-delete"></i> &nbsp;&nbsp; Eliminar</button>
-                    </div>      
-                </div>
-                <div class="div-table-row">
-                    <div class="div-table-cell">#</div>
-                    <div class="div-table-cell">Nombre</div>
-                    <div class="div-table-cell">
-                        <button class="btn btn-danger btn-xs"><i class="zmdi zmdi-delete"></i> &nbsp;&nbsp; Eliminar</button>
-                    </div>      
-                </div>
-                <div class="div-table-row">
-                    <div class="div-table-cell">#</div>
-                    <div class="div-table-cell">Nombre</div>
-                    <div class="div-table-cell">
-                        <button class="btn btn-danger btn-xs"><i class="zmdi zmdi-delete"></i> &nbsp;&nbsp; Eliminar</button>
-                    </div>      
-                </div>
-                <div class="div-table-row">
-                    <div class="div-table-cell">#</div>
-                    <div class="div-table-cell">Nombre</div>
-                    <div class="div-table-cell">
-                        <button class="btn btn-danger btn-xs"><i class="zmdi zmdi-delete"></i> &nbsp;&nbsp; Eliminar</button>
-                    </div>      
-                </div>
+            <div class="container-flat-form">
+                <div class="title-flat-form title-flat-blue">Agregar una nueva sección</div>
+                <form>
+                    <div class="row">
+                       <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+                            <div class="group-material">
+                                <span>Año</span>
+                                <select class="material-control tooltips-general" data-toggle="tooltip" data-placement="top" title="Elige el año">
+                                    <option value="" disabled="" selected="">Selecciona una opción</option>
+                                    <option value="1° año ">1°</option>
+                                    <option value="2° año ">2°</option>
+                                    <option value="3° año ">3°</option>
+                                </select>
+                            </div>
+                            <div class="group-material">
+                                <span>Especialidad</span>
+                                <select class="material-control tooltips-general" data-toggle="tooltip" data-placement="top" title="Elige la especialidad">
+                                    <option value="" disabled="" selected="">Selecciona una opción</option>
+                                    <option value="Asistente.Ad. ">Asistente Ad.</option>
+                                    <option value="Contador ">Contador</option>
+                                    <option value="Electrotécnia ">Electrotécnia</option>
+                                    <option value="General ">General</option>
+                                    <option value="Informática ">Informática</option>
+                                    <option value="Salud ">Salud</option>
+                                    <option value="M. Automotriz ">M. Automotriz</option>
+                                </select>
+                            </div>
+                            <div class="group-material">
+                                <span>Sección</span>
+                                <select class="material-control tooltips-general" data-toggle="tooltip" data-placement="top" title="Elige la sección">
+                                    <option value="" disabled="" selected="">Selecciona una opción</option>
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                </select>
+                            </div>
+                            <p class="text-center">
+                                <button type="reset" class="btn btn-info" style="margin-right: 20px;"><i class="zmdi zmdi-roller"></i> &nbsp;&nbsp; Limpiar</button>
+                                <button type="submit" class="btn btn-primary"><i class="zmdi zmdi-floppy"></i> &nbsp;&nbsp; Guardar</button>
+                            </p> 
+                       </div>
+                   </div>
+                </form>
             </div>
         </div>
         <div class="modal fade" tabindex="-1" role="dialog" id="ModalHelp">

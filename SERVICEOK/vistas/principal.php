@@ -1,57 +1,89 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <title>Administradores</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SERVICE OK</title>
+    <link rel="stylesheet" href="sidemenu.css">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="Shortcut Icon" type="image/x-icon" href="assets/icons/book.ico" />
+    
     <script src="js/sweet-alert.min.js"></script>
     <link rel="stylesheet" href="css/sweet-alert.css">
     <link rel="stylesheet" href="css/material-design-iconic-font.min.css">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
+    
+    
+    
     <link rel="stylesheet" href="css/style.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
-    <script src="js/modernizr.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    
+    
     <script src="js/main.js"></script>
+    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
+    
 </head>
 <body>
-    <div class="navbar-lateral full-reset">
-        <div class="visible-xs font-movile-menu mobile-menu-button"></div>
-        <div class="full-reset container-menu-movile custom-scroll-containers">
-            <div class="logo full-reset all-tittles">
-                <i class="visible-xs zmdi zmdi-close pull-left mobile-menu-button" style="line-height: 55px; cursor: pointer; padding: 0 10px; margin-left: 7px;"></i> 
-                SERVICE OK
+<header class="main-header">
+        <div class="container container--flex">
+            <div class="logo-container column column--50">
+                <h1 class="logo">SERVICE OK</h1>
             </div>
-            <div class="full-reset" style="background-color:#2B3D51; padding: 10px 0; color:#fff;">
-                <figure>
-                    <img src="vistas/serviceook.png" alt="Biblioteca" class="img-responsive center-box" style="width:55%;">
-                </figure>
-                <p class="text-center" style="padding-top: 15px;">SERVICE OK</p>
-            </div>
-            <div class="full-reset nav-lateral-list-menu">
-                <ul class="list-unstyled">
-                    <li><a href="#"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio</a></li>
-                    <li><a href="tipoactividad.php"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; GESTIONAR TIPO ACTIVIDAD</a></li>
-                    <li><a href="actividad.php"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; GESTIONAR ACTIVIDAD</a></li>
-                    <li><a href="establecimiento.php"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; GESTIONAR ESTABLECIMIENTO</a></li>
-                    <li><a href="home.html"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; CONSULTAR ESTADO ESTABLECIMIENTO</a></li>
-
-         
-                </ul>
+            <div class="main-header__contactInfo column column--50">
+                
+            <p class="main-header__contacInfo__adress">
+                <span class="icon-map">UPT - Tacna</span>
+            </p>
             </div>
         </div>
+    </header>
+    <div id="sidemenu" class="menu-collapsed">
+        <div id="header">
+            <div id="title"><span></span></div>
+            <div id="menu-btn">
+            <div class="btn-hamburger"></div>
+            <div class="btn-hamburger"></div>
+            <div class="btn-hamburger"></div>
+            </div>
+        </div>
+     
+        <div id="profile">
+        <div id="photo"><img src="fondo.png" alt=""></div>
+
+        <div id="name"><span>SERVICE OK</span></div>
+        </div>
+
+        <div id="menu-items">
+            <div class="item">
+                <a href="../agregartipoactividad.php">
+                    <div class="icon"><img src="carpeta.png"></div>
+                    <div class="title"><span> Gestionar Tipo Actividad</span></div>
+                </a>
+            </div>
+            <div class="item separator">
+                
+            </div>
+            <div class="item">
+                <a href="../actividad.php">
+                    <div class="icon"><img src="grafico-circular.png"></div>
+                    <div class="title"><span> Gestionar Actividad</span></div>
+                </a>
+            </div>
+            <div class="item separator">
+                
+            </div>
+            <div class="item">
+                <a href="../establecimiento">
+                    <div class="icon"><img src="reloj.png"></div>
+                    <div class="title"><span> Gestionar Establecimiento</span></div>
+                </a>
+            </div>
+        </div>       
+        
     </div>
+    <body>
+    
     <div class="content-page-container full-reset custom-scroll-containers">
         <nav class="navbar-user-top full-reset">
             <ul class="list-unstyled full-reset">
@@ -153,27 +185,40 @@
             </div>
           </div>
         </div>
-        <footer class="footer full-reset">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-6">
-                        <h4 class="all-tittles">Acerca de</h4>
-                        <p>
-                           Service Ok es un proyecto de los alumnos de Construccion de Software II para das soluciones a los tiempos del covid
-                        </p>
-                    </div>
-                    <div class="col-xs-12 col-sm-6">
-                        <h4 class="all-tittles">Desarrolladores</h4>
-                        <ul class="list-unstyled">
-                            <li><i class="zmdi zmdi-check zmdi-hc-fw"></i>&nbsp; Gisela Flores <i class="zmdi zmdi-facebook zmdi-hc-fw footer-social"></i><i class="zmdi zmdi-twitter zmdi-hc-fw footer-social"></i></li>
-                            <li><i class="zmdi zmdi-check zmdi-hc-fw"></i>&nbsp; Nelia Escalante <i class="zmdi zmdi-facebook zmdi-hc-fw footer-social"></i><i class="zmdi zmdi-twitter zmdi-hc-fw footer-social"></i></li>
-                            <li><i class="zmdi zmdi-check zmdi-hc-fw"></i>&nbsp; Kevin Montes Oca <i class="zmdi zmdi-facebook zmdi-hc-fw footer-social"></i><i class="zmdi zmdi-twitter zmdi-hc-fw footer-social"></i></li>
-                        </ul>
-                    </div>
+
+        <script>
+            const btn = document.querySelector('#menu-btn');
+            const menu = document.querySelector('#sidemenu');
+            btn.addEventListener('click', e => {
+                menu.classList.toggle("menu-expanded");
+                menu.classList.toggle("menu-collapsed");
+
+                document.querySelector('body').classList.toggle('body-expanded');
+            });
+        </script>
+
+<footer class="main-footer">
+            <div class="container container--flex">
+                <div class="column column--33">
+                    <h2 class="column__title">Porque Visitarnos</h2>
+                    <p class="column__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque voluptate suscipit, cum deleniti omnis esse, maxime, laudantium non praesentium amet at, repudiandae inventore. Dicta sint quas, molestiae corporis tempora, aliquid.</p>
                 </div>
+                <div class="column column--33">
+                    <h2 class="column__title">Contactanos</h2>
+                    <p class="column__txt">Urb las Dunas 123 - Tacna</p>
+                    <p class="column__txt">telefono - 999 999 999</p>
+                    <p class="column__txt">consultas@gmail.com</p>
+                </div>
+                <div class="column column--33">
+                    <h2 class="column__title">Siguenos en nuestras redes</h2>
+                    <p class="column__txt"><a href="" class="icon-facebook"></a>facebook</p>
+                    <p class="column__txt"><a href="" class="icon-twitter"></a>twitter</p>
+                    <p class="column__txt"><a href="" class="icon-youtube"></a>youtube</p>
+                </div>
+                <p class="copy">2020 Luis Fernandez | Todos los derechos reservados</p>
             </div>
-            <div class="footer-copyright full-reset all-tittles">© 2020 Construccion Software II</div>
-        </footer>
-    </div>
+    </footer>
+    
 </body>
+
 </html>

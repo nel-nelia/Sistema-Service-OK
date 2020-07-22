@@ -90,7 +90,7 @@ span.label-mhover{
 .div-table-row-list .div-table-cell:first-child{ border-left: none; }
 /*********==========Navs*/
 .navbar-user-top{
-    background-color: #33414E;
+    background-color: #4fdf5b;
     height: 55px;
     position: relative;
     top: 0;
@@ -105,7 +105,7 @@ span.label-mhover{
 .navbar-user-top > ul > li{
     display: inline-block;
     float: right;
-    color: rgba(255,255,255,.4);
+    color: rgba(53, 233, 30, 0.4);
     height: 55px;
     margin: 0 12px;
     text-align: center;
@@ -116,7 +116,7 @@ span.label-mhover{
   color: #FFD559;  
 }
 .navbar-user-top > ul > li:hover span.badge{
-    background-color: #E34724;
+    background-color: #7FBF3F;
 }
 .navbar-user-top > ul > li > i{
     font-size: 27px;
@@ -126,7 +126,7 @@ span.label-mhover{
     width: 45px;
     float: right;
     height: 45px;
-    border: 2px solid #728890;
+    border: 2px solid #7FBF3F;
     margin-top: 5px;
 }
 .navbar-lateral{
@@ -138,13 +138,13 @@ span.label-mhover{
     z-index: 1;
 }
 .container-menu-movile{
-    background-color: #2D3945;
+    background-color: #30d654;
     height: 100% !important;
 }
 .logo{
     height: 55px;
     line-height: 55px;
-    background-color: #E34724;
+    background-color: #30f75b;
     color: #fff;
     text-align: center;
     font-size: 21px;
@@ -175,7 +175,7 @@ span.label-mhover{
     font-size: 14px;
     text-decoration: none;
     color: #fff;
-    border-bottom: 1px solid rgba(230,233,238,.1);
+    border-bottom: 1px solid rgba(12, 207, 87, 0.1);
     transition: .3s all ease-in-out;
     -moz-transition: .3s all ease-in-out;
     -ms-transition: .3s all ease-in-out;
@@ -186,7 +186,7 @@ span.label-mhover{
     line-height: 45px;
 }
 .nav-lateral-list-menu ul li a:hover{
-    background-color: #E75A5A;
+    background-color: #58e617;
 }
 .nav-lateral-list-menu ul li a:active,
 .nav-lateral-list-menu ul li a:focus{
@@ -204,7 +204,7 @@ span.label-mhover{
     color: #fff;
 }
 .nav-lateral-list-menu ul li ul{
-    background-color: rgb(43,61,81);
+    background-color: rgb(96, 238, 78);
     display: none;
 }
 .nav-lateral-list-menu ul li div{
@@ -215,7 +215,7 @@ span.label-mhover{
 }
 /*Pie de pagina================*/
 .footer{
-    background-color: #33414E;
+    background-color: #18dd22;
     height: auto;
     color: #fff;
     padding-top: 20px;
@@ -227,7 +227,7 @@ span.label-mhover{
     color: #fff;
     text-align: center;
     font-size: 17px;
-    background-color: #2B3D51;
+    background-color: #45f345;
 }
 .footer-social{
     cursor: pointer;
@@ -248,7 +248,7 @@ span.label-mhover{
     padding-bottom: 25px;
 }
 .title-flat-form{
-   background-color: #E34724;
+   background-color: #1fec18;
    height: 50px;
    color: #fff;
    text-align: center;
@@ -292,7 +292,7 @@ select.no-style{
 input.material-control:focus,
 select.material-control{ 
     outline:none;
-    border-bottom:1px solid #5264AE;
+    border-bottom:1px solid #5aae52;
 }
 /*Label de formularios material desing ================*/
 .group-material label{
