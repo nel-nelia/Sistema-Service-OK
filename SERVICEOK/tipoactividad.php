@@ -83,8 +83,6 @@
               <h6 class="m-0 font-weight-bold text-primary">LISTADO DE TIPO DE ACTIVIDADES</h6>
             </div>
 
-          
-          
             <div class="card-body">
 
             <form action="agregartipoactividad.php">
