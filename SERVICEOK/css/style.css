@@ -186,7 +186,7 @@ span.label-mhover{
     line-height: 45px;
 }
 .nav-lateral-list-menu ul li a:hover{
-    background-color: #58e617;
+    background-color: #5940e7;
 }
 .nav-lateral-list-menu ul li a:active,
 .nav-lateral-list-menu ul li a:focus{
@@ -204,7 +204,7 @@ span.label-mhover{
     color: #fff;
 }
 .nav-lateral-list-menu ul li ul{
-    background-color: rgb(96, 238, 78);
+    background-color: rgb(106, 115, 240);
     display: none;
 }
 .nav-lateral-list-menu ul li div{
@@ -215,7 +215,7 @@ span.label-mhover{
 }
 /*Pie de pagina================*/
 .footer{
-    background-color: #18dd22;
+    background-color: #5940e7;
     height: auto;
     color: #fff;
     padding-top: 20px;
@@ -227,7 +227,7 @@ span.label-mhover{
     color: #fff;
     text-align: center;
     font-size: 17px;
-    background-color: #45f345;
+    background-color: #5940e7;
 }
 .footer-social{
     cursor: pointer;
@@ -248,7 +248,7 @@ span.label-mhover{
     padding-bottom: 25px;
 }
 .title-flat-form{
-   background-color: #1fec18;
+   background-color: #5940e7;
    height: 50px;
    color: #fff;
    text-align: center;
@@ -292,7 +292,7 @@ select.no-style{
 input.material-control:focus,
 select.material-control{ 
     outline:none;
-    border-bottom:1px solid #5aae52;
+    border-bottom:1px solid #5940e7;
 }
 /*Label de formularios material desing ================*/
 .group-material label{
