@@ -49,6 +49,7 @@
                     <li><a href="establecimiento.php"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; GESTIONAR ESTABLECIMIENTO</a></li>
                     <li><a href="representante.php"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; REPRESENTANTE</a></li>
                     <li><a href="vistas/index.php"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; CONSULTAR ESTADO ESTABLECIMIENTO</a></li>
+                    <li><a href="index.php"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; MOSTRAR ESTABLECIMIENTO</a></li>
 
                 </ul>
             </div>

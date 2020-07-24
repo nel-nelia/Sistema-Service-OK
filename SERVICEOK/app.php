@@ -1,51 +1,38 @@
 <?php
-include('conexion.php');
 
-$result = mysqli_query($con, "SELECT * FROM Establecimiento");
-//listamos las direcciones con todos sus datos 
+  // Archivo de Conexión a la Base de Datos 
+  include('conexion.php');
 
-// Creamos una tabla para listar los datos 
-echo "<div class='table-responsive'>";
+  // Listamos las direcciones con todos sus datos (lat, lng, dirección, etc.)
+  $result = mysqli_query($con, "SELECT * FROM google_maps_php_mysql");
 
-echo "<table class='table'>
-<thead class='thead-dark'>
-  <tr>
-    <th scope='col'>N°</th>
-    <th scope='col'>Nombre</th>
-    <th scope='col'>Telefono</th>
-    <th scope='col'>WhatsappURL</th>
-    <th scope='col'>Delivery</th>
-    <th scope='col'>Permiso</th>
-    <th scope='col'>RUC</th>
-    <th scope='col'>CoordenadaX</th>
-    <th scope='col'>CoordenadaY</th>
-    <th scope='col'>FlagActivo</th>
-    <th scope='col'>ActividadID</th>
-    <th scope='col'>RepresentanteID</th>
-  </tr>
-  </thead>
-  <tbody>";
+  // Creamos una tabla para listar los datos 
+  echo "<div class='table-responsive'>";
 
-          while ($row = mysqli_fetch_array($result)) {
-            echo "<tr>";
-            echo "<td scope='col'>" .$row['EstablecimientoID']."</td>";
-            echo "<td scope='col'>" .$row['Nombre']."</td>";
-            echo "<td scope='col'>" .$row['Telefono']."</td>";
-            echo "<td scope='col'>" .$row['WhatsappURL']."</td>";
-            echo "<td scope='col'>" .$row['Delivery']."</td>";
-            echo "<td scope='col'>" .$row['Permiso']."</td>";
-            echo "<td scope='col'>" .$row['RUC']."</td>";
-            echo "<td scope='col'>" .$row['CoordenadaX']."</td>";
-            echo "<td scope='col'>" .$row['CoordenadaY']."</td>";
-            echo "<td scope='col'>" .$row['FlagActivo']."</td>";
-            echo "<td scope='col'>" .$row['ActividadID']."</td>";
-            echo "<td scope='col'>" .$row['RepresentanteID']."</td>";
-            echo "</tr>";
-        }
-        echo "</tbody></table>";
-        echo "</div>";
-      
-        mysqli_close($con);
-      
-      ?> 
-    
+  echo "<table class='table'>
+          <thead class='thead-dark'>
+            <tr>
+              <th scope='col'>Nombre</th>
+              <th scope='col'>Dirección</th>
+              <th scope='col'>Latitud</th>
+              <th scope='col'>Longitud</th>
+              <th scope='col'>País</th>
+            </tr>
+            </thead>
+            <tbody>";
+
+  while ($row = mysqli_fetch_array($result)) {
+      echo "<tr>";
+      echo "<td scope='col'>" . $row['nombre'] . "</td>";
+      echo "<td scope='col'>" . preg_replace('/\\\\u([\da-fA-F]{4})/', '&#x\1;', $row['direccion']) . "</td>";
+      echo "<td scope='col'>" . $row['lat'] . "</td>";
+      echo "<td scope='col'>" . $row['lng'] . "</td>";
+      echo "<td scope='col'>" . $row['pais'] . "</td>";
+      echo "</tr>";
+  }
+  echo "</tbody></table>";
+  echo "</div>";
+
+  mysqli_close($con);
+
+?> 
