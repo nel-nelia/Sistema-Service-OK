@@ -88,7 +88,7 @@
 
                                     <?php
                                     include 'conexion.php' ; 
-                                    $ActividadID=$_POST['id'];
+                                    $ActividadID=$_POST['id'];  
 
                                     $datoscomp="SELECT * FROM Actividad WHERE ActividadID='".$ActividadID."' ";
                                                     $resp=mysqli_query($con,$datoscomp);
