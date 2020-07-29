@@ -131,15 +131,35 @@
                                         <div class="col-12 col-md-9"><input type="text" id="FlagActivo" name="FlagActivo" class="form-control" required></div>
                                     </div>       
 
-                                    <div class="row form-group">
-                                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Actividad</label></div>
-                                        <div class="col-12 col-md-9"><input type="text" id="ActividadID" name="ActividadID" class="form-control" required></div>
-                                    </div>  
+                                    <div class="col-md-4 col-sm-6 mb-2 mb-sm-0">
+                                        <label for="name1">Actividad</label>
+                                        <select id="ActividadID" class="form-control" name="ActividadID" required>
+                                            <?php
+                                            include "conexion.php";  
+                                            $query=$con->query("select * from actividad");
+                                            $countries = array();
+                                            while($r=$query->fetch_object()){ $countries[]=$r; }
+                                            ?>
+                                            <?php foreach($countries as $c):?>
+                                                <option value="<?php echo $c->ActividadID; ?>"><?php echo $c->Nombre; ?></option>
+                                            <?php endforeach; ?>
+                                        </select> 
+                                    </div>
 
-                                    <div class="row form-group">
-                                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Representante</label></div>
-                                        <div class="col-12 col-md-9"><input type="text" id="RepresentanteID" name="RepresentanteID" class="form-control" required></div>
-                                    </div>               
+                                    <div class="col-md-4 col-sm-6 mb-2 mb-sm-0">
+                                        <label for="name1">Representante</label>
+                                        <select id="RepresentanteID" class="form-control" name="RepresentanteID" required>
+                                            <?php
+                                            include "conexion.php";  
+                                            $query=$con->query("select * from representante");
+                                            $countries = array();
+                                            while($r=$query->fetch_object()){ $countries[]=$r; }
+                                            ?>
+                                            <?php foreach($countries as $c):?>
+                                                <option value="<?php echo $c->RepresentanteID; ?>"><?php echo $c->CorreoEmpresarial; ?></option>
+                                            <?php endforeach; ?>
+                                        </select> 
+                                    </div>              
                                                                     
                                     <div class="text-right">
                                         <button type="submit" class="btn btn-primary btn-sm">
@@ -189,5 +209,13 @@
             <div class="footer-copyright full-reset all-tittles">© 2016 Carlos Alfaro</div>
         </footer>
     </div>
+
+    <script src="assets/jquery-1.12.4-jquery.min.js"></script> 
+
+<!-- Bootstrap core JavaScript
+    ================================================== --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+
+<script src="dist/js/bootstrap.min.js"></script>
 </body>
 </html>
