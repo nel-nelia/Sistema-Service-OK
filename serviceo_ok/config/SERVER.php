@@ -2,7 +2,7 @@
 const SERVER="localhost";
 const DB="serviceok";
 const USER="root";
-const PASS="";
+const PASS="123456";
 
 const SGBD="mysql:host=".SERVER.";dbname=".DB;
 
