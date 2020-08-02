@@ -34,7 +34,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="brand">
 
     <a href="index.html" class="logo">
-        VISITORS
+        SERVICE OK
     </a>
     <div class="sidebar-toggle-box">
         <div class="fa fa-bars"></div>

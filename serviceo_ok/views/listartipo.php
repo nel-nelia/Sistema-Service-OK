@@ -313,27 +313,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           </tr>
         </thead>
         <tbody>
+
+        <?php if(count($model)>0): ?>
+        
+            <?php foreach($model as $m): ?>
+
           <tr>
-            <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-            <td>Idrawfast prototype design prototype design prototype design prototype design prototype design</td>
-            <td><span class="text-ellipsis">{item.PrHelpText1}</span></td>
-            <td><span class="text-ellipsis">{item.PrHelpText1}</span></td>
+            <td><?php echo $m->ActividadTipoID; ?></td> 
+            <td><?php echo $m->Nombre; ?></td>
+            <td><?php echo $m->FlagActivo; ?></span></td>
+            
             <td>
               <a href="" class="active" ui-toggle-class=""><i class="fa fa-pencil-square-o"></i><i class="fa fa-times text-danger text"></i></a>
             </td>
           </tr>
-          <tr>
-            <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-            <td>Formasa</td>
-            <td>8c</td>
-            <td>Jul 22, 2013</td>
+         
 
-            <td>
-                
-              <a href="" ui-toggle-class=""><i class="fa fa-pencil-square-o"></i><i class="fa fa-times text-danger text"></i></a>
-            </td>
+          <?php endforeach; ?>
+        <?php endif; ?>
 
-          </tr>
           <div class="col-sm-3">
         <div class="input-group">
         <a href="agregartipo.php">
