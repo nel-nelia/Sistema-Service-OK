@@ -26,10 +26,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //font-awesome icons -->
 <script src="js/jquery2.0.3.min.js"></script>
 
-  <!-- Custom fonts for this template-->
-  <link rel="icon" type="image/png" href="img/icono_diresa.png" />
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+  
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.css" rel="stylesheet">
@@ -308,14 +305,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
 
     <div class="card shadow mb-4">
-            <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">LISTADO DE TIPO DE ACTIVIDADES</h6>
-            </div>
+            
 
             <div class="card-body">
 
             <div class="col-6 p-2 d-flex justify-content-center">
-                <button class="btn btn btn-primary" data-toggle="modal" data-target="#datos_profesionales">+ <i class="fas fa-graduation-cap"> Agregar</i></button>
+                <button class="btn btn btn-primary" data-toggle="modal" data-target="#tipo">+ <i class="fas fa-graduation-cap"> Agregar</i></button>
              </div>
               <div class="table-responsive">
                 <table class="table table-hover" id="dataTable" width="30%" cellspacing="0">
@@ -369,41 +364,42 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           </div>
 
 
-          <div class="modal fade bd-example-modal-lg" id="datos_profesionales" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal fade bd-example-modal-lg" id="tipo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Agregar Tipo</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <button class="close" type="button"  data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <form action="procesos/guardar_datos_prof.php" method="POST">
+            <form action="../controladores/guardartipoactividad.php" method="POST">
             <div class="modal-body ">  
-            <form role="form">
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Nombre</label>
-                    <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Enter email">
-                </div>
-                 <!--<div class="checkbox">
-                    <label>
-                    <input type="checkbox"> Estado
-                    </label>
-                    </div> -->
-                     
-                     </form>
-                    <div class="form-group">
-                    <label for="exampleInputPassword1">Estado</label>
-                    <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Password">
+
+                    <div class="col-sm-12 col-md-6">
+                            <div class="row form-group">
+                                <div class="col col-md-5"><label for="selectSm" class=" form-control-label">Nombre</label></div>
+                                <div class="col-12 col-md-7"><input type="text"id="Nombre" name="Nombre" placeholder="Ejemplo: 'Recursos Ordinarios'" class="form-control">
+                                </div>
+                                </div>
+                    </div>
+
+                    <div class="col-sm-12 col-md-6">
+                            <div class="row form-group">
+                                <div class="col col-md-5"><label for="selectSm" class=" form-control-label">Estado</label></div>
+                                <div class="col-12 col-md-7"><input type="text" id="FlagActivo" name="FlagActivo" placeholder="Ejemplo: 'Recursos Ordinarios'" class="form-control">
+                                </div><br><br>
+                                </div>
                     </div>
                     
-                    
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                <button class="btn btn-primary" type="submit">Guardar</button>
-            </div>
+                </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                        <button class="btn btn-primary"  type="submit">Guardar</button>
+                </div>
+     
             </form>
+
         </div>
         </div>
     </div>
