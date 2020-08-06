@@ -89,6 +89,7 @@
             <form action="agregartipoactividad.php">
                      
             <button type="submit" class="btn btn-success btn-sm"><i class="fa fa-pencil-square-o"> </i>&nbsp; Agregar</button><p></p>
+            <button class="btn btn btn-primary" data-toggle="modal" data-target="#datos_profesionales">+ <i class="fas fa-graduation-cap"></i></button>
             </form> 
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="30%" cellspacing="0">

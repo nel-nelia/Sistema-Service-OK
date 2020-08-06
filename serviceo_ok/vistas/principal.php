@@ -266,7 +266,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-university"></i>
-                        <span>Gestión Tipo</span>
+                        <span>Gestión Tipo Actividad</span>
                     </a>
                     <ul class="sub">
 						<li><a href="listartipo.php">Listar</a></li>

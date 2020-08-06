@@ -274,6 +274,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="panel-heading">
       Listar Tipo de Actividad
     </div>
+
     <div class="row w3-res-tb">
       <div class="col-sm-5 m-b-xs">
         <select class="input-sm form-control w-sm inline v-middle">
@@ -296,55 +297,115 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
       </div>
     </div>
-    <div class="table-responsive">
-      <table class="table table-striped b-t b-light">
-        <thead>
-          <tr>
-            <th style="width:20px;">
-              <label class="i-checks m-b-none">
-                <input type="checkbox"><i></i>
-              </label>
-            </th>
-            <th>N°</th>
-            <th>Nombre</th>
-            <th>Estado</th>
-            <th>Acciones</th>
-            <th style="width:30px;"></th>
-          </tr>
-        </thead>
-        <tbody>
 
-        <?php if(count($model)>0): ?>
-        
-            <?php foreach($model as $m): ?>
+    <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">LISTADO DE TIPO DE ACTIVIDADES</h6>
+            </div>
 
-          <tr>
-            <td><?php echo $m->ActividadTipoID; ?></td> 
-            <td><?php echo $m->Nombre; ?></td>
-            <td><?php echo $m->FlagActivo; ?></span></td>
+            <div class="card-body">
+
+            <div class="col-6 p-2 d-flex justify-content-center">
+                <button class="btn btn btn-primary" data-toggle="modal" data-target="#datos_profesionales">+ <i class="fas fa-graduation-cap"> Agregar</i></button>
+             </div>
+              <div class="table-responsive">
+                <table class="table table-hover" id="dataTable" width="30%" cellspacing="0">
+                    <thead class="thead-dark">
+                        <tr>
+                        <th>N°</th>
+                        <th>NOMBRE</th>
+                        <th>ESTADO</th>
+                        <th>ACCIONES</th>
+                        
+                        </tr>
+                    </thead>
+
+
+                  <?php
+                      include ('conexion.php');          
+                      $sql = "SELECT * FROM ActividadTipo";
+
+                      $query=mysqli_query($con, $sql);
+
+                      while ($row= MySQLI_fetch_array($query)){
+                        $actividadid=$row['ActividadTipoID'];
+                        $nombre=$row['Nombre'];
+                        $flagactivo=$row['FlagActivo'];
+
+                  ?>
+                        <tr>
+                        <td><?php echo $actividadid;?></td>
+                        <td><?php echo $nombre;?></td>
+                        <td><?php echo $flagactivo;?></td>
+                        
+                        <td>
+
+                        
+                        <form method="POST" action="modificarAtipo.php">
+                        <input type="hidden" value="<?php echo $actividadid; ?>" name="id">
+                        <button type="submit" class="btn btn-success btn-sm"><i class="fa fa-pencil-square-o"> </i>&nbsp; Modificar</button><p></p>
+                        </form> 
+
+                      </td>                    
+                        </tr>
+                        <?php
+                          }
+                        ?>	
+                  <tbody>
+                  </tbody>
+                </table>
+              </div>
+            </div>
             
-            <td>
-              <a href="" class="active" ui-toggle-class=""><i class="fa fa-pencil-square-o"></i><i class="fa fa-times text-danger text"></i></a>
-            </td>
-          </tr>
-         
+          </div>
 
-          <?php endforeach; ?>
-        <?php endif; ?>
 
-          <div class="col-sm-3">
-        <div class="input-group">
-        <a href="agregartipo.php">
-          <span class="input-group-btn">
-            <button class="btn btn-sm btn-primary" type="button">Agregar</button>
-          </span>
-          
+          <div class="modal fade bd-example-modal-lg" id="datos_profesionales" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Mis datos profesionales son:</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <form action="procesos/guardar_datos_prof.php" method="POST">
+            <div class="modal-body ">  
+                <div class="form-row">
+                    <input type="hidden" id="dni" name="dni" value="<?php echo $dni; ?>">
+                    <input type="hidden" id="idpostulante" name="idpostulante" value="<?php echo $idpostulante; ?>">
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4">Profesión</label>
+                        <input type="text" class="form-control" id="profesion" name="profesion">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputPassword4">Fecha colegiatura</label>
+                        <input type="date" class="form-control" id="fecha_cole" name="fecha_cole">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPassword4">Lugar de colegiatura</label>
+                        <input type="text" class="form-control" id="lugar_cole" name="lugar_cole">
+                    </div>
+                
+                    <div class="form-group col-md-3">
+                        <label for="inputPassword4">Fecha de habilitación</label>
+                        <input type="date" class="form-control" id="fech_habi" name="fech_habi">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputPassword4">N° de colegiatura</label>
+                        <input type="text" class="form-control" id="num_cole" name="num_cole">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                <button class="btn btn-primary" type="submit">Guardar</button>
+            </div>
+            </form>
         </div>
-      </div>
-          
-        </tbody>
-      </table>
+        </div>
     </div>
+    
     <footer class="panel-footer">
       <div class="row">
         
