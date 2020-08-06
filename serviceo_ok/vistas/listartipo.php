@@ -364,38 +364,31 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Mis datos profesionales son:</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Agregar Tipo</h5>
                 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
             <form action="procesos/guardar_datos_prof.php" method="POST">
             <div class="modal-body ">  
-                <div class="form-row">
-                    <input type="hidden" id="dni" name="dni" value="<?php echo $dni; ?>">
-                    <input type="hidden" id="idpostulante" name="idpostulante" value="<?php echo $idpostulante; ?>">
-                    <div class="form-group col-md-6">
-                        <label for="inputEmail4">Profesión</label>
-                        <input type="text" class="form-control" id="profesion" name="profesion">
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label for="inputPassword4">Fecha colegiatura</label>
-                        <input type="date" class="form-control" id="fecha_cole" name="fecha_cole">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="inputPassword4">Lugar de colegiatura</label>
-                        <input type="text" class="form-control" id="lugar_cole" name="lugar_cole">
-                    </div>
-                
-                    <div class="form-group col-md-3">
-                        <label for="inputPassword4">Fecha de habilitación</label>
-                        <input type="date" class="form-control" id="fech_habi" name="fech_habi">
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label for="inputPassword4">N° de colegiatura</label>
-                        <input type="text" class="form-control" id="num_cole" name="num_cole">
-                    </div>
+            <form role="form">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Nombre</label>
+                    <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Enter email">
                 </div>
+                 <!--<div class="checkbox">
+                    <label>
+                    <input type="checkbox"> Estado
+                    </label>
+                    </div> -->
+                     
+                     </form>
+                    <div class="form-group">
+                    <label for="exampleInputPassword1">Estado</label>
+                    <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Password">
+                    </div>
+                    
+                    
             </div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
