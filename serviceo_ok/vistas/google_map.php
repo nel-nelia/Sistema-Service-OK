@@ -20,17 +20,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <!-- //font-awesome icons -->
 <script src="js/jquery2.0.3.min.js"></script>
+<link rel="stylesheet" href="css/jquery.gmaps.css">
 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 <style type="text/css">
       #mapa {
-            height: 90vh;
+            height: 100vh;
       }
       .h2s {
         font-size: 3vh;
       }
     </style> 
-    
+
 </head>
 
 
@@ -41,7 +43,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--logo start-->
 <div class="brand">
     <a href="index.html" class="logo">
-        VISITORS
+        SERVICE OK
     </a>
     <div class="sidebar-toggle-box">
         <div class="fa fa-bars"></div>
@@ -253,24 +255,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </header>
 <!--header end-->
 <!--sidebar start-->
-<aside>
-    <div id="sidebar" class="nav-collapse">
-        <!-- sidebar menu start-->
-        <div class="leftside-navigation">
-            <ul class="sidebar-menu" id="nav-accordion">
-                <li>
-                    <a href="principal.php">
-                        <i class="fa fa-hand-o-left"></i>
-                        <span>Atras</span>
-                    </a>
-                </li>
-                
-               
-            </ul>            
-        </div>
-        <!-- sidebar menu end-->
-    </div>
-</aside>
+
 
 <!--sidebar end-->
 <!--main content start-->
@@ -312,6 +297,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </header>
 <main role="main">
 
+<div class="card shadow mb-4">
+<div class="card-body">
         <div class="container text-center mt-20">
 
           <div class="row">
@@ -325,21 +312,54 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
 
           </div>
-
-          <div class="row mt-3">
+          <div class="table-responsive">
+            <div class="row mt-3">
 
             <div class="col-md-12">
+            <table class="table table-hover" id="dataTable" width="30%" cellspacing="0">
+                    <thead class="thead-dark">
+                    <h2 class="h2s">Lista de Estableccimientos</h2>
 
-              <h2 class="h2s">Estableccimientos</h2>
+                    <div class="col-6 p-2 d-flex justify-content-center">
 
+
+            </div>
+            <div class="col-6 p-2 d-flex justify-content-center">
+                <button class="btn btn btn-primary" data-toggle="modal" data-target="#tipo"> Agregar</button>
+             </div>
               <!-- Archivo PHP con la lógica para mostrar una tabla con las ubicaciones -->
-              <?php include('../php/app.php'); ?> 
+              <?php include('../php/app.php'); ?> 	
+                  <tbody>
+                  </tbody>
+                </table>
+               
               
             </div>
             
-          </div>  
+           </div> 
 
 
+
+
+           
+           </br>
+           
+             <div class="col-6 p-2 d-flex justify-content-center">
+             <a href="principal.php">
+                        <i class="fa fa-hand-o-left"></i>
+                        <span>Atras</span>
+                    </a>
+               
+             </div>
+
+
+        
+
+             
+          </div> 
+          
+         </div>
+</div>
           <hr>
 
     </main>
@@ -376,6 +396,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           // Creamos la ventana de información para cada Marcador
           var ventanaInfo = [
               <?php include('../php/info_marcadores.php'); ?>
+             
           ];
 
           // Creamos la ventana de información con los marcadores 
@@ -439,5 +460,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="js/jquery.nicescroll.js"></script>
 <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
 <script src="js/jquery.scrollTo.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery.gmaps.js"></script>
 </body>
 </html>

@@ -299,9 +299,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
     <div class="card shadow mb-4">
-            <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">LISTADO DE TIPO DE ACTIVIDADES</h6>
-            </div>
+            
 
             <div class="card-body">
 
@@ -358,8 +356,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                   <tbody>
                   </tbody>
                 </table>
-              </div>
             </div>
+    </div>
 
 
             <div class="modal fade bd-example-modal-sm" id="tipo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
