@@ -306,7 +306,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="card-body">
 
             <div class="col-6 p-2 d-flex justify-content-center">
-                <button class="btn btn btn-primary" data-toggle="modal" data-target="#datos_profesionales">+ <i class="fas fa-graduation-cap"> Agregar</i></button>
+                <button class="btn btn btn-primary" data-toggle="modal" data-target="#tipo"> Agregar</button>
              </div>
               <div class="table-responsive">
                 <table class="table table-hover" id="dataTable" width="30%" cellspacing="0">
@@ -360,8 +360,81 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </table>
               </div>
             </div>
+
+
+            <div class="modal fade bd-example-modal-sm" id="tipo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Agregar Tipo</h5>
+                <button class="close" type="button"  data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">X</span>
+                </button>
+            </div>
+            <form action="../controladores/guardaractividad.php" method="POST">
+            <div class="modal-body ">  
+
+                    <div class="col-sm-12 col-md-6">
+                            <div class="row form-group">
+                                <div class="col col-md-5"><label for="selectSm" class=" form-control-label">Nombre</label></div>
+                                <div class="col-12 col-md-7"><input type="text"id="Nombre" name="Nombre"  class="form-control"> </div>
+                            </div>
+                    </div> <br> <br> <br>
+
+                    <div class="col-sm-12 col-md-6">
+                            <div class="row form-group">
+                                <div class="col col-md-5"><label for="selectSm" class=" form-control-label">Descripcion</label></div>
+                                <div class="col-12 col-md-7"><input type="text"id="Descripcion" name="Descripcion"  class="form-control"> </div>
+                            </div>
+                    </div> <br> <br> <br>
+
+
+                    <div class="col-sm-12 col-md-6">
+                            <div class="row form-group">
+                                <div class="col col-md-5">Tipo Actividad</div>
+                                <div class="col-12 col-md-7"> 
+
+                                <select id="ActividadTipoID" name="ActividadTipoID"  class="form-control">
+                                                <?php
+                                                $sql="SELECT * FROM actividadtipo";
+                                                $res=mysqli_query($con,$sql);
+                                                while ($rw= mysqli_fetch_array($res)){
+                                                    echo "<option value=".$rw["ActividadTipoID"].">".$rw["Nombre"]."</option> ";
+                                                } 
+                                                ?>
+                                </select>
+                                </div>
+
+                            </div>
+                    </div> <br> <br> <br>
+
+                   
+
+                    <div class="col-sm-12 col-md-6">
+                            <div class="row form-group">
+                                <div class="col col-md-5"><label for="selectSm" class=" form-control-label">Estado</label></div>
+                                <div class="col-12 col-md-7"><input type="text" id="FlagActivo" name="FlagActivo" class="form-control"></div>
+                                </div>
+                    </div>
+                    
+                </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                        <button class="btn btn-primary"  type="submit">Guardar</button>
+                </div>
+
+
+                
+     
+            </form>
+
+                </div>
+            </div>
             
           </div>
+
+
+          
 
 
     <footer class="panel-footer">

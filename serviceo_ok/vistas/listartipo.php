@@ -310,8 +310,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="card-body">
 
             <div class="col-6 p-2 d-flex justify-content-center">
-                <button class="btn btn btn-primary" data-toggle="modal" data-target="#tipo">+ <i class="fas fa-graduation-cap"> Agregar</i></button>
+                <button class="btn btn btn-primary" data-toggle="modal" data-target="#tipo"> Agregar</button>
              </div>
+             
               <div class="table-responsive">
                 <table class="table table-hover" id="dataTable" width="30%" cellspacing="0">
                     <thead class="thead-dark">
@@ -364,13 +365,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           </div>
 
 
-          <div class="modal fade bd-example-modal-lg" id="tipo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal fade bd-example-modal-sm" id="tipo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Agregar Tipo</h5>
                 <button class="close" type="button"  data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
+                    <span aria-hidden="true">X</span>
                 </button>
             </div>
             <form action="../controladores/guardartipoactividad.php" method="POST">
@@ -379,16 +380,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="col-sm-12 col-md-6">
                             <div class="row form-group">
                                 <div class="col col-md-5"><label for="selectSm" class=" form-control-label">Nombre</label></div>
-                                <div class="col-12 col-md-7"><input type="text"id="Nombre" name="Nombre" placeholder="Ejemplo: 'Recursos Ordinarios'" class="form-control">
-                                </div>
-                                </div>
-                    </div>
+                                <div class="col-12 col-md-7"><input type="text"id="Nombre" name="Nombre"  class="form-control"> </div>
+                            </div>
+                    </div> <br> <br> <br>
 
                     <div class="col-sm-12 col-md-6">
                             <div class="row form-group">
                                 <div class="col col-md-5"><label for="selectSm" class=" form-control-label">Estado</label></div>
-                                <div class="col-12 col-md-7"><input type="text" id="FlagActivo" name="FlagActivo" placeholder="Ejemplo: 'Recursos Ordinarios'" class="form-control">
-                                </div><br><br>
+                                <div class="col-12 col-md-7"><input type="text" id="FlagActivo" name="FlagActivo" class="form-control"></div>
                                 </div>
                     </div>
                     
