@@ -172,7 +172,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <td>
 
                         
-                        <form method="POST" action="modificarAtipo.php">
+                        <form method="POST" action="modificartipo.php">
                         <input type="hidden" value="<?php echo $actividadid; ?>" name="id">
                         <button type="submit" class="btn btn-success btn-sm"><i class="fa fa-pencil-square-o"> </i>&nbsp; Modificar</button><p></p>
                         </form> 

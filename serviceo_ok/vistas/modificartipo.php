@@ -102,48 +102,47 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
        
         <section class="panel">
             <header class="panel-heading">
-                Agregar Establecimiento
+               Modificar Establecimiento
             </header>
             <div class="panel-body">
 
-            <form action="procesos/agregarestablecimiento.php" method="POST">
+            <?php
+                include 'conexion.php' ; 
+                $ActividadTipoID=$_POST['id'];
+
+                $datoscomp="SELECT * FROM ActividadTipo WHERE ActividadTipoID='".$ActividadTipoID."' ";
+                $resp=mysqli_query($con,$datoscomp);
+                while ($rw=MySQLI_fetch_array($resp)) {
+                $nombre=$rw['Nombre'];
+                $flagactivo=$rw['FlagActivo'];
+                    }
+                ?>
+
+            <form action="../controladores/modificartipo.php" method="POST">
+                <input type="hidden" value="<?php echo $ActividadTipoID; ?>" name="id">
+               
                 <div class="form-group">
-
-          <!--       <div class="form-group">
-                        <label class="col-sm-3 control-label col-lg-3" for="inputSuccess">Estado</label>
-                        <div class="col-lg-6">
-                            <label class="checkbox-inline">
-                                <input type="checkbox" id="inlineCheckbox1" value="option1"> Activo
-                            </label>
-                            <label class="checkbox-inline">
-                                <input type="checkbox" id="inlineCheckbox2" value="option2"> Inactivo
-                            </label>                         
-                        </div>
-                </div> -->
-                </div>
-                   
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label col-lg-3">Nombre</label>
-                        <div class="col-lg-6">
-                            <div class="input-group m-bot15">
-                                <span class="input-group-addon btn-white"><i class="fa fa-user"></i></span>
-                                <input type="text" class="form-control" placeholder="Username">
+                                    
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label col-lg-3">Nombre</label>
+                            <div class="col-lg-6">
+                                <div class="input-group m-bot15">
+                                    <span class="input-group-addon btn-white"><i class="fa fa-user"></i></span>
+                                    <input type="text" class="form-control" name="Nombre" value="<?php echo $nombre; ?>" placeholder="Username">
+                                </div>
                             </div>
+                        </div><br><br><br>
+                    
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label col-lg-3">Estado</label>
+                            <div class="col-lg-6">
+                                <div class="input-group m-bot15">
+                                    <span class="input-group-addon btn-white"><i class="fa fa-phone"></i></span>
+                                    <input type="text" class="form-control" name="FlagActivo" value="<?php echo $flagactivo; ?>"placeholder="Username">
+                                </div>
 
-                        </div>
-                    </div>
-
-                    <br><br><br>
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label col-lg-3">Estado</label>
-                        <div class="col-lg-6">
-                            <div class="input-group m-bot15">
-                                <span class="input-group-addon btn-white"><i class="fa fa-phone"></i></span>
-                                <input type="text" class="form-control" placeholder="Username">
                             </div>
-
                         </div>
-                    </div>
                     <br>
                     <br>
 
@@ -152,10 +151,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <i class="fa fa-plus"></i> Guardar
                     </div>
 
-                    
+                </div>
 
             </form>
-            </div>
+        </div>
         </section>
 
         </div>
