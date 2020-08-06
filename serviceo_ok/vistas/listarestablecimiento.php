@@ -272,7 +272,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="table-agile-info">
   <div class="panel panel-default">
     <div class="panel-heading">
-      Listar Establecimiento
+      Establecimiento
     </div>
     <div class="row w3-res-tb">
       <div class="col-sm-5 m-b-xs">
@@ -297,32 +297,38 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       </div>
     </div>
 
-    <div class="table-responsive">
-    <div class="col-6 p-2 d-flex justify-content-center">
-                <button class="btn btn btn-primary" data-toggle="modal" data-target="#datos_profesionales">+ <i class="fas fa-graduation-cap"> Agregar</i></button>
-             </div>
-      <table class="table table-striped b-t b-light">
-        <thead>
-          <tr>
-           
-            <th>N°</th>
-            <th>Nombre</th>
-            <th>Telefono</th>
-            <th>Whatsapp</th>
-            <th>Delivery</th>
-            <th>Permiso</th>
-            <th>RUC</th>
-            <th>Coordenadas X</th>
-            <th>Coordenadas Y</th>
-            <th>Estado</th>
-            <th>Actividad</th>
-            <th>Representante</th>
-            <th>Acciones</th>
-            <th style="width:30px;"></th>
-          </tr>
-        </thead>
 
-        <?php
+    <div class="card shadow mb-4">
+           
+
+            <div class="card-body">
+
+            <div class="col-6 p-2 d-flex justify-content-center">
+                <button class="btn btn btn-primary" data-toggle="modal" data-target="#tipo"> Agregar</button>
+             </div>
+              <div class="table-responsive">
+                <table class="table table-hover" id="dataTable" width="30%" cellspacing="0">
+                    <thead class="thead-dark">
+                    <tr>
+                    <th>N°</th>
+                    <th>Nombre</th>
+                    <th>Telefono</th>
+                    <th>Whatsapp</th>
+                    <th>Delivery</th>
+                    <th>Permiso</th>
+                    <th>RUC</th>
+                    <th>Coordenadas X</th>
+                    <th>Coordenadas Y</th>
+                    <th>Estado</th>
+                    <th>Actividad</th>
+                    <th>Representante</th>
+                    <th>Acciones</th>
+                        
+                        </tr>
+                    </thead>
+
+
+                    <?php
                       include ('conexion.php');          
                       $sql = "SELECT * FROM Establecimiento";
 
@@ -342,42 +348,161 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         $actividadID=$row['ActividadID'];
                         $representanteID=$row['RepresentanteID'];
                   ?>
-        <tbody>
-          <tr>
-          <td><?php echo $establecimeintoId;?></td>
+                        <tr>
+                        <td><?php echo $establecimeintoId;?></td>
             
-            <td><?php echo $nombre;?></td>
-            <td><?php echo $telefono;?></td>
-            <td><?php echo $whatsappURL;?></td>
-            <td><?php echo $delivery;?></td>
-            <td><?php echo $permiso;?></td>
-            <td><?php echo $ruc;?></td>
-            <td><?php echo $coordenadaX;?></td>
-            <td><?php echo $coordenadaY;?></td>
-            <td><?php echo $flagactivo;?></td>
-            <td><?php echo $actividadID;?></td>
-            <td><?php echo $representanteID;?></td>
+                        <td><?php echo $nombre;?></td>
+                        <td><?php echo $telefono;?></td>
+                        <td><?php echo $whatsappURL;?></td>
+                        <td><?php echo $delivery;?></td>
+                        <td><?php echo $permiso;?></td>
+                        <td><?php echo $ruc;?></td>
+                        <td><?php echo $coordenadaX;?></td>
+                        <td><?php echo $coordenadaY;?></td>
+                        <td><?php echo $flagactivo;?></td>
+                        <td><?php echo $actividadID;?></td>
+                        <td><?php echo $representanteID;?></td>
             
-            <td>
-              
-              <form method="POST" action="modificarAtipo.php">
+                        <td>
+                        <form method="POST" action="modificarAtipo.php">
                         <input type="hidden" value="<?php echo $actividadid; ?>" name="id">
                         <button type="submit" class="btn btn-success btn-sm"><i class="fa fa-pencil-square-o"> </i>&nbsp; Modificar</button><p></p>
                         </form> 
-            </td>
-
-            
-          </tr>
-          
-      
+                         </td>
+                        
+                        
+                        </tr>
                         <?php
                           }
-                        ?>
-                       
-        </tbody>
-      </table>
-    </div>
-    </div>
+                        ?>	
+                  <tbody>
+                  </tbody>
+                </table>
+              </div>
+            </div> 
+
+
+            <div class="modal fade bd-example-modal-sm" id="tipo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Agregar Tipo</h5>
+                            <button class="close" type="button"  data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">X</span>
+                            </button>
+                    </div>
+                    <form action="../controladores/guardarestablecimiento.php" method="POST">
+                            <div class="modal-body ">  
+                                <div class="form-row">
+
+                                    <div class="form-group col-md-6">
+                                        <label for="selectSm">Nombre</label>
+                                        <input type="text" id="Nombre" name="Nombre" class="form-control" >
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="selectSm">Celular</label>
+                                        <input type="text"  id="Telefono" name="Telefono" class="form-control">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="selectSm">Whatsapp</label>
+                                        <input type="text"  id="WhatsappURL" name="WhatsappURL" class="form-control">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="selectSm">Delivery</label>
+                                        <input type="text" id="Delivery" name="Delivery"  class="form-control">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="selectSm">Permiso</label>
+                                        <input type="text"  id="Permiso" name="Permiso" class="form-control">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="selectSm">RUC</label>
+                                        <input type="text" id="RUC" name="RUC"  class="form-control">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="selectSm">Latitud</label>
+                                        <input type="text"  id="CoordenadaX" name="CoordenadaX" class="form-control">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="selectSm">Latitud</label>
+                                        <input type="text"  id="CoordenadaY" name="CoordenadaY" class="form-control">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="selectSm">Estado</label>
+                                        <input type="text"  id="FlagActivo" name="FlagActivo" class="form-control">
+                                    </div>
+
+
+                                    
+
+                                <div class="col-sm-12 col-md-6">
+                                    <div class="row form-group">
+                                        <div class="col col-md-5"> Actividad</div>
+                                        <div class="col-12 col-md-7"> 
+
+                                         <select id="ActividadID" name="ActividadID"  class="form-control">
+                                                                <?php
+                                                                $sql="SELECT * FROM Actividad";
+                                                                $res=mysqli_query($con,$sql);
+                                                                while ($rw= mysqli_fetch_array($res)){
+                                                                    echo "<option value=".$rw["ActividadID"].">".$rw["Nombre"]."</option> ";
+                                                                } 
+                                                                ?>
+                                        </select>
+                                        </div>
+
+                                    </div> 
+                                </div>
+
+                                <div class="col-sm-12 col-md-6">
+                                    <div class="row form-group">
+                                        <div class="col col-md-5"> Representante</div>
+                                        <div class="col-12 col-md-7"> 
+
+                                        <select id="RepresentanteID" name="RepresentanteID"  class="form-control">
+                                                                <?php
+                                                                $sql="SELECT * FROM Representante";
+                                                                $res=mysqli_query($con,$sql);
+                                                                while ($rw= mysqli_fetch_array($res)){
+                                                                    echo "<option value=".$rw["RepresentanteID"].">".$rw["Nombre"]."</option> ";
+                                                                } 
+                                                                ?>
+                                        </select>
+                                        </div>
+
+                                    </div> 
+                                </div>
+
+                                  
+
+                                </div>
+                      
+                            </div>
+
+                            <div class="modal-footer">
+                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                                <button class="btn btn-primary"  type="submit">Guardar</button>
+                            </div>
+     
+                    </form>
+
+                </div>
+            </div>
+            
+        </div>
+
+
+          
+
+
     <footer class="panel-footer">
       <div class="row">
         

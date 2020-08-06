@@ -403,7 +403,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 </select>
                                 </div>
 
-                            </div>
+                            </div> 
                     </div> <br> <br> <br>
 
                    
