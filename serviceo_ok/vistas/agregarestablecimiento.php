@@ -279,7 +279,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 Agregar Establecimiento
             </header>
             <div class="panel-body">
-                <form class="form-horizontal bucket-form" method="get">
+
+            <form class="form-horizontal bucket-form" method="get">
                 <div class="form-group">
 
                 <div class="form-group">
@@ -409,7 +410,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div>
                     </div>
 
-                </form>
+            </form>
             </div>
         </section>
 

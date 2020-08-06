@@ -13,18 +13,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- bootstrap-css -->
-<link rel="stylesheet" href="tipo/css/bootstrap.min.css" >
+<link rel="stylesheet" href="css/bootstrap.min.css" >
 <!-- //bootstrap-css -->
 <!-- Custom CSS -->
-<link href="tipo/css/style.css" rel='stylesheet' type='text/css' />
+<link href="css/style.css" rel='stylesheet' type='text/css' />
 <link href="css/style-responsive.css" rel="stylesheet"/>
 <!-- font CSS -->
 <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 <!-- font-awesome icons -->
 <link rel="stylesheet" href="css/font.css" type="text/css"/>
-<link href="tipo/css/font-awesome.css" rel="stylesheet"> 
+<link href="css/font-awesome.css" rel="stylesheet"> 
 <!-- //font-awesome icons -->
-<script src="tipo/js/jquery2.0.3.min.js"></script>
+<script src="js/jquery2.0.3.min.js"></script>
 </head>
 <body>
 <section id="container">
@@ -276,12 +276,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
        
         <section class="panel">
             <header class="panel-heading">
-                Agregar Tipo Actividad
+                Agregar Establecimiento
             </header>
             <div class="panel-body">
-                <form class="form-horizontal bucket-form" method="get">
 
+            <form action="procesos/agregarestablecimiento.php" method="POST">
                 <div class="form-group">
+
+          <!--       <div class="form-group">
                         <label class="col-sm-3 control-label col-lg-3" for="inputSuccess">Estado</label>
                         <div class="col-lg-6">
                             <label class="checkbox-inline">
@@ -291,8 +293,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <input type="checkbox" id="inlineCheckbox2" value="option2"> Inactivo
                             </label>                         
                         </div>
+                </div> -->
                 </div>
-
+                   
                     <div class="form-group">
                         <label class="col-sm-3 control-label col-lg-3">Nombre</label>
                         <div class="col-lg-6">
@@ -303,26 +306,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                         </div>
                     </div>
+
+                    <br><br><br>
                     <div class="form-group">
-                        <label class="col-sm-3 control-label col-lg-3">Descripción</label>
+                        <label class="col-sm-3 control-label col-lg-3">Estado</label>
                         <div class="col-lg-6">
                             <div class="input-group m-bot15">
-                                <span class="input-group-addon btn-white"><i class="fa fa-audio-description"></i></span>
+                                <span class="input-group-addon btn-white"><i class="fa fa-phone"></i></span>
                                 <input type="text" class="form-control" placeholder="Username">
                             </div>
 
                         </div>
                     </div>
-                    <div class="col-sm-3">
-                        <div class="input-group">
-                    <a href="listartipo.php">
-                    <span class="input-group-btn">
-                    <button class="btn btn-sm btn-primary" type="button">Guardar</button>
-                    </span>
-          
+                    <br>
+                    <br>
+
+                    <div class="text-right">
+                        <button type="submit" class="btn btn-primary btn-sm">
+                        <i class="fa fa-plus"></i> Guardar
                     </div>
-                    </div>
-                </form>
+
+                    
+
+            </form>
             </div>
         </section>
 
@@ -354,3 +360,4 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="js/jquery.scrollTo.js"></script>
 </body>
 </html>
+

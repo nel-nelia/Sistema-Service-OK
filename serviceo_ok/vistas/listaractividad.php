@@ -296,50 +296,74 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
       </div>
     </div>
-    <div class="table-responsive">
-      <table class="table table-striped b-t b-light">
-        <thead>
-          <tr>
-            <th style="width:20px;">
-              <label class="i-checks m-b-none">
-                <input type="checkbox"><i></i>
-              </label>
-            </th>
-            <th>N°</th>
-            <th>Nombre</th>
-            <th>Descripcion</th>
-            <th>Estado</th>
-            <th>Tipo de Actividad</th>
-            <th>Acciones</th>
-            <th style="width:30px;"></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-            <td>Idrawfast prototype design type design</td>
-            <td><span class="text-ellipsis">{item.PrHelpText1}</span></td>
-            <td><span class="text-ellipsis">{item.PrHelpText1}</span></td>
-            <td><span class="text-ellipsis">{item.PrHelpText1}</span></td>
-            <td><span class="text-ellipsis">{item.PrHelpText1}</span></td>
-            <td>
-              <a href="" class="active" ui-toggle-class=""><i class="fa fa-pencil-square-o"></i><i class="fa fa-times text-danger text"></i></a>
-            </td>
-          </tr>
-          
-          <div class="col-sm-3">
-        <div class="input-group">
-        <a href="agregaractividad.php">
-          <span class="input-group-btn">
-            <button class="btn btn-sm btn-primary" type="button">Agregar</button>
-          </span>
-          
-        </div>
-      </div>
-          
-        </tbody>
-      </table>
-    </div>
+
+
+    <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">LISTADO DE TIPO DE ACTIVIDADES</h6>
+            </div>
+
+            <div class="card-body">
+
+            <div class="col-6 p-2 d-flex justify-content-center">
+                <button class="btn btn btn-primary" data-toggle="modal" data-target="#datos_profesionales">+ <i class="fas fa-graduation-cap"> Agregar</i></button>
+             </div>
+              <div class="table-responsive">
+                <table class="table table-hover" id="dataTable" width="30%" cellspacing="0">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th>N°</th>
+                        <th>NOMBRE</th>
+                        <th>DESCRIPCION</th>
+                        <th>ESTADO</th>
+                        <th>TIPO DE ACTIVIDAD</th>
+                        <th>ACCIONES</th>
+                        
+                        </tr>
+                    </thead>
+
+
+                  <?php
+                      include ('conexion.php');          
+                      $sql = "SELECT * FROM Actividad";
+
+                      $query=mysqli_query($con, $sql);
+
+                      while ($row= MySQLI_fetch_array($query)){
+                        $actividadid=$row['ActividadID'];
+                        $nombre=$row['Nombre'];
+                        $descripcion=$row['Descripcion'];
+                        $flagactivo=$row['FlagActivo'];
+                        $actividadTipoID=$row['ActividadTipoID'];
+
+                  ?>
+                        <tr>
+                        <td><?php echo $actividadid;?></td>
+                        <td><?php echo $nombre;?></td>
+                        <td><?php echo $descripcion;?></td>
+                        <td><?php echo $flagactivo;?></td>
+                        <td><?php echo $actividadTipoID;?></td>
+                        <td>
+                        <form method="POST" action="modificarActividad.php">
+                        <input type="hidden" value="<?php echo $actividadid; ?>" name="id">
+                        <button type="submit" class="btn btn-success btn-sm"><i class="fa fa-pencil-square-o"> </i>&nbsp;Modificar</button><p></p>
+                        </form> 
+                      </td>
+                        
+                        
+                        </tr>
+                        <?php
+                          }
+                        ?>	
+                  <tbody>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            
+          </div>
+
+
     <footer class="panel-footer">
       <div class="row">
         
