@@ -1,7 +1,7 @@
 <?php 
 
   // Nos conectamos a la Base de Datos MySQL
-  $con = mysqli_connect("localhost", "root", "123456", "serviceok");
+  $con = mysqli_connect("localhost", "root", "root", "serviceok");
  
   // Verificamos la conexión a la Base de Datos MySQL 
   if (mysqli_connect_errno()) {
