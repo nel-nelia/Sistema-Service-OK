@@ -426,10 +426,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
      
             </form>
 
-                </div>
+            </div>
             </div>
             
-          </div>
+        </div>
 
 
           
