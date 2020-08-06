@@ -25,23 +25,32 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <!-- //font-awesome icons -->
 <script src="js/jquery2.0.3.min.js"></script>
+
+<style type="text/css">
+      #mapa {
+            height: 50vh;
+      }
+      .h2s {
+        font-size: 3vh;
+      }
+    </style>   
 </head>
+
+
 <body>
 <section id="container">
 <!--header start-->
 <header class="header fixed-top clearfix">
 <!--logo start-->
 <div class="brand">
-
     <a href="index.html" class="logo">
-        SERVICE OK
+        VISITORS
     </a>
     <div class="sidebar-toggle-box">
         <div class="fa fa-bars"></div>
     </div>
 </div>
 <!--logo end-->
-
 <div class="nav notify-row" id="top_menu">
     <!--  notification start -->
     <ul class="nav top-menu">
@@ -265,150 +274,163 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <!-- sidebar menu end-->
     </div>
 </aside>
+
 <!--sidebar end-->
 <!--main content start-->
-<section id="main-content">
-	<section class="wrapper">
-		<div class="table-agile-info">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      Listar Establecimiento
-    </div>
-    <div class="row w3-res-tb">
-      <div class="col-sm-5 m-b-xs">
-        <select class="input-sm form-control w-sm inline v-middle">
-          <option value="0">Bulk action</option>
-          <option value="1">Delete selected</option>
-          <option value="2">Bulk edit</option>
-          <option value="3">Export</option>
-        </select>
-        <button class="btn btn-sm btn-default">Filtrar</button>                
-      </div>
-      <div class="col-sm-4">
-      </div>
-      <div class="col-sm-3">
-        <div class="input-group">
-          <input type="text" class="input-sm form-control" placeholder="Search">
-          <span class="input-group-btn">
-            <button class="btn btn-sm btn-default" type="button">Buscar!</button>
-          </span>
-          
-        </div>
-      </div>
-    </div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 
-    <div class="table-responsive">
-    <div class="col-6 p-2 d-flex justify-content-center">
-                <button class="btn btn btn-primary" data-toggle="modal" data-target="#datos_profesionales">+ <i class="fas fa-graduation-cap"> Agregar</i></button>
-             </div>
-      <table class="table table-striped b-t b-light">
-        <thead>
-          <tr>
-           
-            <th>N°</th>
-            <th>Nombre</th>
-            <th>Telefono</th>
-            <th>Whatsapp</th>
-            <th>Delivery</th>
-            <th>Permiso</th>
-            <th>RUC</th>
-            <th>Coordenadas X</th>
-            <th>Coordenadas Y</th>
-            <th>Estado</th>
-            <th>Actividad</th>
-            <th>Representante</th>
-            <th>Acciones</th>
-            <th style="width:30px;"></th>
-          </tr>
-        </thead>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-        <?php
-                      include ('conexion.php');          
-                      $sql = "SELECT * FROM Establecimiento";
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHUMaudNC3W-f3XO7NXbXBJP7wytJF4SI&callback=initMap"></script>
 
-                      $query=mysqli_query($con, $sql);
-
-                      while ($row= MySQLI_fetch_array($query)){
-                        $establecimeintoId=$row['EstablecimientoID'];
-                        $nombre=$row['Nombre'];
-                        $telefono=$row['Telefono'];
-                        $whatsappURL=$row['WhatsappURL'];
-                        $delivery=$row['Delivery'];
-                        $permiso=$row['Permiso'];
-                        $ruc=$row['RUC'];
-                        $coordenadaX=$row['CoordenadaX'];
-                        $coordenadaY=$row['CoordenadaY'];
-                        $flagactivo=$row['FlagActivo'];
-                        $actividadID=$row['ActividadID'];
-                        $representanteID=$row['RepresentanteID'];
-                  ?>
-        <tbody>
-          <tr>
-          <td><?php echo $establecimeintoId;?></td>
-            
-            <td><?php echo $nombre;?></td>
-            <td><?php echo $telefono;?></td>
-            <td><?php echo $whatsappURL;?></td>
-            <td><?php echo $delivery;?></td>
-            <td><?php echo $permiso;?></td>
-            <td><?php echo $ruc;?></td>
-            <td><?php echo $coordenadaX;?></td>
-            <td><?php echo $coordenadaY;?></td>
-            <td><?php echo $flagactivo;?></td>
-            <td><?php echo $actividadID;?></td>
-            <td><?php echo $representanteID;?></td>
-            
-            <td>
-              
-              <form method="POST" action="modificarAtipo.php">
-                        <input type="hidden" value="<?php echo $actividadid; ?>" name="id">
-                        <button type="submit" class="btn btn-success btn-sm"><i class="fa fa-pencil-square-o"> </i>&nbsp; Modificar</button><p></p>
-                        </form> 
-            </td>
-
-            
-          </tr>
-          
-      
-                        <?php
-                          }
-                        ?>
-                       
-        </tbody>
-      </table>
-    </div>
-    </div>
-    <footer class="panel-footer">
-      <div class="row">
-        
-        <div class="col-sm-5 text-center">
-          <small class="text-muted inline m-t-sm m-b-sm">showing 20-30 of 50 items</small>
-        </div>
-        <div class="col-sm-7 text-right text-center-xs">                
-          <ul class="pagination pagination-sm m-t-none m-b-none">
-            <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
-            <li><a href="">1</a></li>
-            <li><a href="">2</a></li>
-            <li><a href="">3</a></li>
-            <li><a href="">4</a></li>
-            <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
-          </ul>
-        </div>
-      </div>
-    </footer>
-  </div>
-</div>
-</section>
  <!-- footer -->
-		  <div class="footer">
+ <main role="main">
+ <body> 
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+   
+   
+
+    <div class="collapse navbar-collapse" id="navbarsExample07">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+       
+      <li class="nav-item">
+       
+      </li>
+      <li class="nav-item">
+       
+      </li> 
+      </ul>
+      <form name="bencc" method="get"  id="bencc" class="form-inline mt-2 mt-md-0" target="_blank" >
+       
+      <h2 class="h2s">SERVICE OK</h2>
+      </form>
+    </div>
+  </div>
+</nav>
+</header>
+
+
+<main role="main">
+
+    <div class="container text-center mt-20">
+
+      <div class="row">
+
+        <div class="col-md-12">
+
+          
+          <!-- Contenedor del Mapa de Google --> 
+          <div id="mapa"></div>               
+
+        </div>
+
+      </div>
+
+      <div class="row mt-3">
+
+        <div class="col-md-12">
+
+          <h2 class="h2s">Estableccimientos</h2> 
+
+          <!-- Archivo PHP con la lógica para mostrar una tabla con las ubicaciones -->
+          <?php include('../php/app.php'); ?> 
+          
+        </div>
+        
+      </div>  
+
+
+      <hr>
+
+</main>
+
+
+  
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHUMaudNC3W-f3XO7NXbXBJP7wytJF4SI&callback=initMap"></script>
+
+<script type="text/javascript">
+  function initMap() {
+      var map;
+      var bounds = new google.maps.LatLngBounds();
+      var mapOptions = {
+          mapTypeId: 'roadmap'
+      };
+
+      map = new google.maps.Map(document.getElementById('mapa'), {
+          mapOptions
+      });
+
+      map.setTilt(50);
+
+      // Crear múltiples marcadores desde la Base de Datos 
+      var marcadores = [
+          <?php include('../php/marcadores.php'); ?>
+      ];
+
+      // Creamos la ventana de información para cada Marcador
+   var ventanaInfo = [
+          <?php include('../php/info_marcadores.php'); ?>
+    ];
+
+      // Creamos la ventana de información con los marcadores 
+      var mostrarMarcadores = new google.maps.InfoWindow(),
+          marcadores, i;
+
+      // Colocamos los marcadores en el Mapa de Google 
+      for (i = 0; i < marcadores.length; i++) {
+          var position = new google.maps.LatLng(marcadores[i][1], marcadores[i][2]);
+          bounds.extend(position);
+          marker = new google.maps.Marker({
+              position: position,
+              map: map,
+              title: marcadores[i][0]
+          });
+
+          // Colocamos la ventana de información a cada Marcador del Mapa de Google 
+          google.maps.event.addListener(marker, 'click', (function(marker, i) {
+              return function() {
+                  mostrarMarcadores.setContent(ventanaInfo[i][0]);
+                  mostrarMarcadores.open(map, marker);
+              }
+          })(marker, i));
+
+          // Centramos el Mapa de Google para que todos los marcadores se puedan ver 
+          map.fitBounds(bounds);
+      }
+
+      // Aplicamos el evento 'bounds_changed' que detecta cambios en la ventana del Mapa de Google, también le configramos un zoom de 14 
+      var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
+          this.setZoom(14);
+          google.maps.event.removeListener(boundsListener);
+      });
+
+  }
+
+  // Lanzamos la función 'initMap' para que muestre el Mapa con Los Marcadores y toda la configuración realizada 
+  google.maps.event.addDomListener(window, 'load', initMap);
+</script>
+
+</body>
+</script>
+  <!-- / footer -->
+</section>
+<div class="footer">
 			<div class="wthree-copyright">
 			  <p>© 2020 Service OK. All rights reserved | Design by <a href="">C II</a></p>
 			</div>
-		  </div>
-  <!-- / footer -->
-</section>
-
-<!--main content end-->
+</div>
+<!-- main content end -->
 </section>
 <script src="js/bootstrap.js"></script>
 <script src="js/jquery.dcjqaccordion.2.7.js"></script>

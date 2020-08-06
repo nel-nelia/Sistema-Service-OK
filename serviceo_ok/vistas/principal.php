@@ -313,8 +313,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <span>Mostrar Establecimiento</span>
                     </a>
                     <ul class="sub">
-                        <li><a href="google_map.html">Google Map</a></li>
-                        <li><a href="vector_map.html">Vector Map</a></li>
+                        <li><a href="google_map.php">Google Map</a></li>
+                        <li><a href="vector_map.php">Vector Map</a></li>
                     </ul>
                 </li>
                 <li class="sub-menu">

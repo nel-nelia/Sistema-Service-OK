@@ -6,7 +6,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE html>
 <head>
-<title>Service OK</title>
+<title>Visitors an Admin Panel Category Bootstrap Responsive Website Template | Vector_map :: w3layouts</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -18,6 +18,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- Custom CSS -->
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <link href="css/style-responsive.css" rel="stylesheet"/>
+<link href="css/jqvmap.css" media="screen" rel="stylesheet" type="text/css"/>
 <!-- font CSS -->
 <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 <!-- font-awesome icons -->
@@ -34,7 +35,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="brand">
 
     <a href="index.html" class="logo">
-        SERVICE OK
+        VISITORS
     </a>
     <div class="sidebar-toggle-box">
         <div class="fa fa-bars"></div>
@@ -251,17 +252,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div id="sidebar" class="nav-collapse">
         <!-- sidebar menu start-->
         <div class="leftside-navigation">
-            <ul class="sidebar-menu" id="nav-accordion">
-                <li>
-                    <a href="principal.php">
-                        <i class="fa fa-hand-o-left"></i>
-                        <span>Atras</span>
-                    </a>
-                </li>
-                
-               
-            </ul>            
-        </div>
+                      </div>
         <!-- sidebar menu end-->
     </div>
 </aside>
@@ -269,145 +260,97 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--main content start-->
 <section id="main-content">
 	<section class="wrapper">
-		<div class="table-agile-info">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      Listar Establecimiento
-    </div>
-    <div class="row w3-res-tb">
-      <div class="col-sm-5 m-b-xs">
-        <select class="input-sm form-control w-sm inline v-middle">
-          <option value="0">Bulk action</option>
-          <option value="1">Delete selected</option>
-          <option value="2">Bulk edit</option>
-          <option value="3">Export</option>
-        </select>
-        <button class="btn btn-sm btn-default">Filtrar</button>                
-      </div>
-      <div class="col-sm-4">
-      </div>
-      <div class="col-sm-3">
-        <div class="input-group">
-          <input type="text" class="input-sm form-control" placeholder="Search">
-          <span class="input-group-btn">
-            <button class="btn btn-sm btn-default" type="button">Buscar!</button>
-          </span>
-          
+		   <!-- page start-->
+
+        <div class="row">
+            <div class="col-sm-12 vec-wthree">
+                <section class="panel">
+                    <header class="panel-heading">
+                        WORLD MAP
+                        <span class="tools pull-right">
+                            <a href="javascript:;" class="fa fa-chevron-down"></a>
+                            <a href="javascript:;" class="fa fa-cog"></a>
+                            <a href="javascript:;" class="fa fa-times"></a>
+                         </span>
+                    </header>
+                    <div class="panel-body">
+                        <div id="world-vmap" style="width:100%; height: 400px;"></div>
+
+                    </div>
+                </section>
+            </div>
         </div>
-      </div>
-    </div>
+        <div class="row">
+                <div class="col-sm-12 vec-wthree">
+                    <section class="panel">
+                        <header class="panel-heading">
+                           EUROPE
+                        <span class="tools pull-right">
+                            <a href="javascript:;" class="fa fa-chevron-down"></a>
+                            <a href="javascript:;" class="fa fa-cog"></a>
+                            <a href="javascript:;" class="fa fa-times"></a>
+                         </span>
+                        </header>
+                        <div class="panel-body">
 
-    <div class="table-responsive">
-    <div class="col-6 p-2 d-flex justify-content-center">
-                <button class="btn btn btn-primary" data-toggle="modal" data-target="#datos_profesionales">+ <i class="fas fa-graduation-cap"> Agregar</i></button>
-             </div>
-      <table class="table table-striped b-t b-light">
-        <thead>
-          <tr>
-           
-            <th>N°</th>
-            <th>Nombre</th>
-            <th>Telefono</th>
-            <th>Whatsapp</th>
-            <th>Delivery</th>
-            <th>Permiso</th>
-            <th>RUC</th>
-            <th>Coordenadas X</th>
-            <th>Coordenadas Y</th>
-            <th>Estado</th>
-            <th>Actividad</th>
-            <th>Representante</th>
-            <th>Acciones</th>
-            <th style="width:30px;"></th>
-          </tr>
-        </thead>
+                            <div id="europe-vmap" style="width: 100%; height: 520px;"></div>
 
-        <?php
-                      include ('conexion.php');          
-                      $sql = "SELECT * FROM Establecimiento";
 
-                      $query=mysqli_query($con, $sql);
+                        </div>
+                    </section>
+                </div>
+            </div>
+        <div class="row">
+                <div class="col-sm-6 vec-wthree">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            ASIA
+                        <span class="tools pull-right">
+                            <a href="javascript:;" class="fa fa-chevron-down"></a>
+                            <a href="javascript:;" class="fa fa-cog"></a>
+                            <a href="javascript:;" class="fa fa-times"></a>
+                         </span>
+                        </header>
+                        <div class="panel-body">
 
-                      while ($row= MySQLI_fetch_array($query)){
-                        $establecimeintoId=$row['EstablecimientoID'];
-                        $nombre=$row['Nombre'];
-                        $telefono=$row['Telefono'];
-                        $whatsappURL=$row['WhatsappURL'];
-                        $delivery=$row['Delivery'];
-                        $permiso=$row['Permiso'];
-                        $ruc=$row['RUC'];
-                        $coordenadaX=$row['CoordenadaX'];
-                        $coordenadaY=$row['CoordenadaY'];
-                        $flagactivo=$row['FlagActivo'];
-                        $actividadID=$row['ActividadID'];
-                        $representanteID=$row['RepresentanteID'];
-                  ?>
-        <tbody>
-          <tr>
-          <td><?php echo $establecimeintoId;?></td>
-            
-            <td><?php echo $nombre;?></td>
-            <td><?php echo $telefono;?></td>
-            <td><?php echo $whatsappURL;?></td>
-            <td><?php echo $delivery;?></td>
-            <td><?php echo $permiso;?></td>
-            <td><?php echo $ruc;?></td>
-            <td><?php echo $coordenadaX;?></td>
-            <td><?php echo $coordenadaY;?></td>
-            <td><?php echo $flagactivo;?></td>
-            <td><?php echo $actividadID;?></td>
-            <td><?php echo $representanteID;?></td>
-            
-            <td>
-              
-              <form method="POST" action="modificarAtipo.php">
-                        <input type="hidden" value="<?php echo $actividadid; ?>" name="id">
-                        <button type="submit" class="btn btn-success btn-sm"><i class="fa fa-pencil-square-o"> </i>&nbsp; Modificar</button><p></p>
-                        </form> 
-            </td>
 
-            
-          </tr>
-          
-      
-                        <?php
-                          }
-                        ?>
-                       
-        </tbody>
-      </table>
-    </div>
-    </div>
-    <footer class="panel-footer">
-      <div class="row">
-        
-        <div class="col-sm-5 text-center">
-          <small class="text-muted inline m-t-sm m-b-sm">showing 20-30 of 50 items</small>
-        </div>
-        <div class="col-sm-7 text-right text-center-xs">                
-          <ul class="pagination pagination-sm m-t-none m-b-none">
-            <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
-            <li><a href="">1</a></li>
-            <li><a href="">2</a></li>
-            <li><a href="">3</a></li>
-            <li><a href="">4</a></li>
-            <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
-          </ul>
-        </div>
-      </div>
-    </footer>
-  </div>
-</div>
+                            <div id="asia-vmap" style="width: 100%; height: 520px;"></div>
+
+
+                        </div>
+                    </section>
+                </div>
+                <div class="col-sm-6 vec-wthree">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            Australia
+                        <span class="tools pull-right">
+                            <a href="javascript:;" class="fa fa-chevron-down"></a>
+                            <a href="javascript:;" class="fa fa-cog"></a>
+                            <a href="javascript:;" class="fa fa-times"></a>
+                         </span>
+                        </header>
+                        <div class="panel-body">
+
+
+                            <div id="australia-vmap" style="width: 100%; height: 520px;"></div>
+
+                        </div>
+                    </section>
+                </div>
+
+            </div>
+        <!-- page end-->
+
 </section>
  <!-- footer -->
 		  <div class="footer">
 			<div class="wthree-copyright">
-			  <p>© 2020 Service OK. All rights reserved | Design by <a href="">C II</a></p>
+			  <p>© 2017 Visitors. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
 			</div>
 		  </div>
   <!-- / footer -->
 </section>
-
 <!--main content end-->
 </section>
 <script src="js/bootstrap.js"></script>
@@ -417,5 +360,81 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="js/jquery.nicescroll.js"></script>
 <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
 <script src="js/jquery.scrollTo.js"></script>
+<script src="js/jquery.vmap.js"></script>
+<script src="js/jquery.vmap.world.js"></script>
+<script src="js/jquery.vmap.sampledata.js"></script>
+<script src="js/jquery.vmap.europe.js"></script>
+<script src="js/jquery.vmap.asia.js"></script>
+<script src="js/jquery.vmap.australia.js"></script> 
+<script>
+    jQuery('#world-vmap').vectorMap({
+        map: 'world_en',
+        backgroundColor: null,
+        color: '#ffffff',
+        hoverOpacity: 0.7,
+        selectedColor: '#666666',
+        enableZoom: true,
+        borderWidth:1,
+        showTooltip: true,
+        values: sample_data,
+        scaleColors: ['#C8EEFF', '#006491'],
+        normalizeFunction: 'polynomial'
+    });
+</script>
+
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        jQuery('#europe-vmap').vectorMap({
+            map: 'europe_en',
+            backgroundColor: null,
+            color: '#ffffff',
+            borderWidth:1,
+            hoverOpacity: 0.7,
+            selectedColor: '#666666',
+            enableZoom: false,
+            showTooltip: false,
+            values: sample_data,
+            scaleColors: ['#C8EEFF', '#006491'],
+            normalizeFunction: 'polynomial'
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        jQuery('#asia-vmap').vectorMap({
+            map: 'asia_en',
+            backgroundColor: null,
+            color: '#ffffff',
+            borderWidth:1,
+            hoverOpacity: 0.7,
+            selectedColor: '#666666',
+            enableZoom: false,
+            showTooltip: false,
+            values: sample_data,
+            scaleColors: ['#C8EEFF', '#006491'],
+            normalizeFunction: 'polynomial'
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        jQuery('#australia-vmap').vectorMap({
+            map: 'australia_en',
+            backgroundColor: null,
+            color: '#ffffff',
+            borderWidth:1,
+            hoverOpacity: 0.7,
+            selectedColor: '#666666',
+            enableZoom: false,
+            showTooltip: false,
+            values: sample_data,
+            scaleColors: ['#C8EEFF', '#006491'],
+            normalizeFunction: 'polynomial'
+        });
+    });
+</script>
+
 </body>
 </html>

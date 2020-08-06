@@ -15,24 +15,24 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- bootstrap-css -->
-<link rel="stylesheet" href="views/css/bootstrap.min.css" >
+<link rel="stylesheet" href="vistas/css/bootstrap.min.css" >
 <!-- //bootstrap-css -->
 <!-- Custom CSS -->
-<link href="views/css/style.css" rel='stylesheet' type='text/css' />
-<link href="views/css/style-responsive.css" rel="stylesheet"/>
+<link href="vistas/css/style.css" rel='stylesheet' type='text/css' />
+<link href="vistas/css/style-responsive.css" rel="stylesheet"/>
 <!-- font CSS -->
 <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 <!-- font-awesome icons -->
 <link rel="stylesheet" href="css/font.css" type="text/css"/>
-<link href="views/css/font-awesome.css" rel="stylesheet"> 
-<link rel="stylesheet" href="views/css/morris.css" type="text/css"/>
+<link href="vistas/css/font-awesome.css" rel="stylesheet"> 
+<link rel="stylesheet" href="vistas/css/morris.css" type="text/css"/>
 <!-- calendar -->
-<link rel="stylesheet" href="views/css/monthly.css">
+<link rel="stylesheet" href="vistas/css/monthly.css">
 <!-- //calendar -->
 <!-- //font-awesome icons -->
-<script src="views/js/jquery2.0.3.min.js"></script>
-<script src="views/js/raphael-min.js"></script>
-<script src="views/js/morris.js"></script>
+<script src="vistas/js/jquery2.0.3.min.js"></script>
+<script src="vistas/js/raphael-min.js"></script>
+<script src="vistas/js/morris.js"></script>
 </head>
 <body>
 <section id="container">
@@ -196,13 +196,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </section>
 <!--main content end-->
 </section>
-<script src="views/js/bootstrap.js"></script>
-<script src="views/js/jquery.dcjqaccordion.2.7.js"></script>
-<script src="views/js/scripts.js"></script>
-<script src="views/js/jquery.slimscroll.js"></script>
-<script src="views/js/jquery.nicescroll.js"></script>
+<script src="vistas/js/bootstrap.js"></script>
+<script src="vistas/js/jquery.dcjqaccordion.2.7.js"></script>
+<script src="vistas/js/scripts.js"></script>
+<script src="vistas/js/jquery.slimscroll.js"></script>
+<script src="vistas/js/jquery.nicescroll.js"></script>
 <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
-<script src="views/js/jquery.scrollTo.js"></script>
+<script src="vistas/js/jquery.scrollTo.js"></script>
 <!-- morris JavaScript -->	
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBW0td9v69m95iy5Q2YiMebpIO7ztCnuPU&language=en&callback=initMap" async defer></script>
