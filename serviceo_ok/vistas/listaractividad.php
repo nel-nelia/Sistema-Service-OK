@@ -322,17 +322,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
                   <?php
-                      include ('conexion.php');          
-                      $sql = "SELECT * FROM Actividad";
+                      include ('conexion.php');     
+
+                      $sql = "SELECT det.ActividadID, det.Nombre, det.Descripcion, det.FlagActivo, pos.Nombre
+                                    FROM actividad det
+                                    INNER JOIN actividadtipo pos ON det.ActividadTipoID= pos.ActividadTipoID";
+
+                  
 
                       $query=mysqli_query($con, $sql);
 
                       while ($row= MySQLI_fetch_array($query)){
+                        
                         $actividadid=$row['ActividadID'];
                         $nombre=$row['Nombre'];
                         $descripcion=$row['Descripcion'];
                         $flagactivo=$row['FlagActivo'];
-                        $actividadTipoID=$row['ActividadTipoID'];
+                        $actividadTipoID=$row['Nombre'];
 
                   ?>
                         <tr>
@@ -342,13 +348,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <td><?php echo $flagactivo;?></td>
                         <td><?php echo $actividadTipoID;?></td>
                         <td>
-                        <form method="POST" action="modificarActividad.php">
+                        <form method="POST" action="modificaractividad.php">
                         <input type="hidden" value="<?php echo $actividadid; ?>" name="id">
                         <button type="submit" class="btn btn-success btn-sm"><i class="fa fa-pencil-square-o"> </i>&nbsp;Modificar</button><p></p>
                         </form> 
-                      </td>
-                        
-                        
+                      </td>                     
                         </tr>
                         <?php
                           }

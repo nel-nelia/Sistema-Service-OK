@@ -1,9 +1,4 @@
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
+
 <!DOCTYPE html>
 <head>
 <title>Service OK</title>
@@ -45,6 +40,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- menu-->
 <?php include 'menu.html';?>
     <!-- menu-->
+
 <div class="top-nav clearfix">
     <!--search & user info start-->
     <ul class="nav pull-right top-menu">
@@ -101,70 +97,91 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
        
         <section class="panel">
             <header class="panel-heading">
-                Agregar Actividad
+                Modificar Actividad
             </header>
             <div class="panel-body">
-                <form class="form-horizontal bucket-form" method="get">
-                <div class="form-group">
 
+            <?php
+                    include 'conexion.php' ; 
+                    $ActividadID=$_POST['id'];  
+
+                    $datoscomp="SELECT * FROM Actividad WHERE ActividadID='".$ActividadID."' ";
+                    $resp=mysqli_query($con,$datoscomp);
+                    while ($rw=MySQLI_fetch_array($resp)) {
+                    $nombre=$rw['Nombre'];
+                    $descripcion=$rw['Descripcion'];
+                    $flagactivo=$rw['FlagActivo'];
+                    $actividadTipoID=$rw['ActividadTipoID'];
+                        }
+                        ?>
+
+            <form action="../controladores/modificaractividad.php" method="POST">
+            <input type="hidden" value="<?php echo $ActividadID; ?>" name="id">
+               
                 <div class="form-group">
-                        <label class="col-sm-3 control-label col-lg-3" for="inputSuccess">Estado</label>
-                        <div class="col-lg-6">
-                            <label class="checkbox-inline">
-                                <input type="checkbox" id="inlineCheckbox1" value="option1"> Activo
-                            </label>
-                            <label class="checkbox-inline">
-                                <input type="checkbox" id="inlineCheckbox2" value="option2"> Inactivo
-                            </label>                         
+                                    
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label col-lg-3">Nombre</label>
+                            <div class="col-lg-6">
+                                <div class="input-group m-bot15">
+                                    <span class="input-group-addon btn-white"><i class="fa fa-user"></i></span>
+                                    <input type="text" class="form-control" name="Nombre" value="<?php echo $nombre; ?>" >
+                                </div>
+                            </div>
+                        </div><br><br><br>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label col-lg-3">Descripcion</label>
+                            <div class="col-lg-6">
+                                <div class="input-group m-bot15">
+                                    <span class="input-group-addon btn-white"><i class="fa fa-user"></i></span>
+                                    <input type="text" class="form-control" name="Descripcion" value="<?php echo $descripcion; ?>" placeholder="Username">
+                                </div>
+                            </div>
+                        </div><br><br>
+                    
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label col-lg-3">Estado</label>
+                            <div class="col-lg-6">
+                                <div class="input-group m-bot15">
+                                    <span class="input-group-addon btn-white"><i class="fa fa-phone"></i></span>
+                                    <input type="text" class="form-control" name="FlagActivo" value="<?php echo $flagactivo; ?>"placeholder="Username">
+                                </div>
+
+                            </div>
+                        </div><br><br>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label col-lg-3">Tipo Actividad</label>
+                            <div class="col-lg-6">
+                                <div class="input-group m-bot15">
+                                    <span class="input-group-addon btn-white"><i class="fa fa-phone"></i></span>
+                                    <select id="ActividadTipoID" name="ActividadTipoID"  class="form-control">
+                                                <?php
+                                                $sql="SELECT * FROM actividadtipo";
+                                                $res=mysqli_query($con,$sql);
+                                                while ($rw= mysqli_fetch_array($res)){
+                                                    echo "<option value=".$rw["ActividadTipoID"].">".$rw["Nombre"]."</option> ";
+                                                } 
+                                                ?>
+                                    </select>
+                                </div>
+
+                            </div>
                         </div>
+
+       
+                    <br>
+                    <br>
+
+                    <div class="text-right">
+                        <button type="submit" class="btn btn-primary btn-sm">
+                        <i class="fa fa-plus"></i> Guardar
+                    </div>
+
                 </div>
 
-
-                </div>
-                   
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label col-lg-3">Nombre</label>
-                        <div class="col-lg-6">
-                            <div class="input-group m-bot15">
-                                <span class="input-group-addon btn-white"><i class="fa fa-user"></i></span>
-                                <input type="text" class="form-control" placeholder="Username">
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label col-lg-3">Descripción</label>
-                        <div class="col-lg-6">
-                            <div class="input-group m-bot15">
-                                <span class="input-group-addon btn-white"><i class="fa fa-audio-description"></i></span>
-                                <input type="text" class="form-control" placeholder="Username">
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label col-lg-3">Tipo Actividad</label>
-                        <div class="col-lg-6">
-                        <select class="form-control m-bot15">
-                                <option>Option 1</option>
-                                <option>Option 2</option>
-                                <option>Option 3</option>
-                            </select>
-
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="input-group">
-                    <a href="listaractividad.php">
-                    <span class="input-group-btn">
-                    <button class="btn btn-sm btn-primary" type="button">Guardar</button>
-                    </span>
-          
-                    </div>
-                    </div>
-
-                </form>
+            </form>
             </div>
         </section>
 
