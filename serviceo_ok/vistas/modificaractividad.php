@@ -1,4 +1,13 @@
+<?php 
+session_start();
+$usuario = $_SESSION['username'];
 
+if( !isset($usuario)){
+	header ("location: ../index.php");
+}else{
+	
+}
+?>
 <!DOCTYPE html>
 <head>
 <title>Service OK</title>

@@ -29,7 +29,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 <div class="reg-w3">
 <div class="w3layouts-main">
-	<h2>Registrate Ahora</h2>
+	<h2>Registra tu establecimiento Ahora</h2>
 		<form action="#" method="post">
 			<input type="text" class="ggg" name="Name" placeholder="INGRESA TU RUC - BODEGA" required="">
 			<input type="email" class="ggg" name="Email" placeholder="E-MAIL" required="">
