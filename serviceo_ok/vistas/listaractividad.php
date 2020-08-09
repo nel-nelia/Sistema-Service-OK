@@ -324,7 +324,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                   <?php
                       include ('conexion.php');     
 
-                      $sql = "SELECT det.ActividadID, det.Nombre, det.Descripcion, det.FlagActivo, pos.Nombre
+                      $sql = "SELECT det.ActividadID, det.Nombrea, det.Descripcion, det.FlagActivo, pos.Nombre
                                     FROM actividad det
                                     INNER JOIN actividadtipo pos ON det.ActividadTipoID= pos.ActividadTipoID";
 
@@ -335,7 +335,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                       while ($row= MySQLI_fetch_array($query)){
                         
                         $actividadid=$row['ActividadID'];
-                        $nombre=$row['Nombre'];
+                        $nombre=$row['Nombrea'];
                         $descripcion=$row['Descripcion'];
                         $flagactivo=$row['FlagActivo'];
                         $actividadTipoID=$row['Nombre'];
@@ -348,10 +348,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <td><?php echo $flagactivo;?></td>
                         <td><?php echo $actividadTipoID;?></td>
                         <td>
-                        <form method="POST" action="modificaractividad.php">
-                        <input type="hidden" value="<?php echo $actividadid; ?>" name="id">
-                        <button type="submit" class="btn btn-success btn-sm"><i class="fa fa-pencil-square-o"> </i>&nbsp;Modificar</button><p></p>
-                        </form> 
+
+                        <a href="modificaractividad.php?id=<?php echo $row["ActividadID"];?>" class="btn btn-sm btn-success"> <i class="fa fa-pencil-square-o"> </i>Editar</a>
+                        <a href="../controladores/eliminaractividad.php?id=<?php echo $row["ActividadID"];?>" class="btn btn-sm btn-danger"><i class="fa fa-trash-o"> </i> Eliminar</a> 
                       </td>                     
                         </tr>
                         <?php
@@ -379,7 +378,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="col-sm-12 col-md-6">
                             <div class="row form-group">
                                 <div class="col col-md-5"><label for="selectSm" class=" form-control-label">Nombre</label></div>
-                                <div class="col-12 col-md-7"><input type="text"id="Nombre" name="Nombre"  class="form-control"> </div>
+                                <div class="col-12 col-md-7"><input type="text"id="Nombrea" name="Nombrea"  class="form-control"> </div>
                             </div>
                     </div> <br> <br> <br>
 
