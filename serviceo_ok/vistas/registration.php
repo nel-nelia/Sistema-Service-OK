@@ -1,9 +1,4 @@
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
+
 <!DOCTYPE html>
 <head>
 <title>Service OK</title>
@@ -30,17 +25,38 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="reg-w3">
 <div class="w3layouts-main">
 	<h2>Registra tu establecimiento Ahora</h2>
-		<form action="#" method="post">
-			<input type="text" class="ggg" name="Name" placeholder="INGRESA TU RUC - BODEGA" required="">
+	<form action="../controladores/guardarregistro.php" method="post">
+			<label>RUC BODEGA</label>
+			<input type="text" class="ggg" name="ruc" placeholder="INGRESA RUC - BODEGA" required="">
+			<?php ?>
+			<label>NOMBRE REPRESENTANTE</label>
+			<input type="text" class="ggg" name="nombrerepresentante" placeholder="NOMBRE REPRESENTANTE" required="">
+			<label>APELLIDO REPRESENTANTE</label>
+			<input type="text" class="ggg" name="apellidorepresentante" placeholder="APELLIDO REPRESENTANTE" required="">
+			<label>NOMBRE ESTABLECIMIENTO</label>
+			<input type="text" class="ggg" name="nombreestablecimiento" placeholder="NOMBRE ESTABLECIMIENTO" required="">
+			<label>CELULAR</label>
+			<input type="text" class="ggg" name="phone" placeholder="CELULAR" required="">
+			<label>E-MAIL</label>
 			<input type="email" class="ggg" name="Email" placeholder="E-MAIL" required="">
-			<input type="text" class="ggg" name="Phone" placeholder="PHONE" required="">
-			<input type="password" class="ggg" name="Password" placeholder="PASSWORD" required="">
-			<h4><input type="checkbox" />I agree to the Terms of Service and Privacy Policy</h4>
+			<label>DIRECCION</label>
+			<input type="text" class="ggg" name="direccion" placeholder="DIRECCION" required="">
+			<label>DELIVERY</label>
+			<select class="form-control input-lg m-bot15" required="">
+			<option value="si">Si</option>
+			<option value="no">No</option>                            
+            </select>
+			<label>PERMISO</label>
+			<select class="form-control input-lg m-bot15" required="">
+			<option value="si">Si</option>
+			<option value="no">No</option>                              
+            </select>
+			<h4><input type="checkbox" />Estoy de acuerdo con las Politicas de Seguridad</h4>
 			
 				<div class="clearfix"></div>
 				<input type="submit" value="submit" name="register">
 		</form>
-		<p>Already Registered.<a href="views/php">Login</a></p>
+		
 </div>
 </div>
 <script src="js/bootstrap.js"></script>
