@@ -103,12 +103,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
             <?php
                     include 'conexion.php' ; 
-                    $ActividadID=$_POST['id'];  
+                    $ActividadID=$_GET['id'];  
+                
 
                     $datoscomp="SELECT * FROM Actividad WHERE ActividadID='".$ActividadID."' ";
                     $resp=mysqli_query($con,$datoscomp);
                     while ($rw=MySQLI_fetch_array($resp)) {
-                    $nombre=$rw['Nombre'];
+                    $nombre=$rw['Nombrea'];
                     $descripcion=$rw['Descripcion'];
                     $flagactivo=$rw['FlagActivo'];
                     $actividadTipoID=$rw['ActividadTipoID'];
@@ -116,7 +117,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         ?>
 
             <form action="../controladores/modificaractividad.php" method="POST">
-            <input type="hidden" value="<?php echo $ActividadID; ?>" name="id">
+            <input type="hidden" value="<?php echo $ActividadID; ?>" name="id"> 
                
                 <div class="form-group">
                                     
@@ -125,7 +126,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <div class="col-lg-6">
                                 <div class="input-group m-bot15">
                                     <span class="input-group-addon btn-white"><i class="fa fa-user"></i></span>
-                                    <input type="text" class="form-control" name="Nombre" value="<?php echo $nombre; ?>" >
+                                    <input type="text" class="form-control" name="Nombrea" value="<?php echo $nombre; ?>" >
                                 </div>
                             </div>
                         </div><br><br><br>
@@ -192,15 +193,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
         <!-- page end-->
         </div>
-</section>
- <!-- footer -->
-		  <div class="footer">
-			<div class="wthree-copyright">
-			  <p>© 2017 Visitors. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
-			</div>
-		  </div>
-  <!-- / footer -->
-</section>
+        </section>
+        <!-- footer -->
+                <div class="footer">
+                    <div class="wthree-copyright">
+                    <p>© 2017 Visitors. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+                    </div>
+                </div>
+        <!-- / footer -->
+        </section>
 
 <!--main content end-->
 </section>

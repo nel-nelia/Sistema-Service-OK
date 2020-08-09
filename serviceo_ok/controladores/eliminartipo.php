@@ -10,3 +10,5 @@ header('Location: ../vistas/listartipo.php');
 mysqli_close($con); 
  
 ?>
+
+ 

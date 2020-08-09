@@ -173,8 +173,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                         <a href="modificartipo.php?id=<?php echo $row["ActividadTipoID"];?>" class="btn btn-sm btn-success"> <i class="fa fa-pencil-square-o"> </i>Editar</a>
 
-                        <a href="../controladores/eliminartipo.php?id=<?php echo $row["ActividadTipoID"];?>" class="btn btn-sm btn-danger"><i class="fa fa-trash-o"> </i> Eliminar</a> 
-
+                        <a href="../controladores/eliminartipo.php?id=<?php echo $row["ActividadTipoID"];?>" class="btn btn-sm btn-danger"><i class="fa fa-trash-o"> </i> Eliminar</a>                      
                       </td>                    
                         </tr>
                         <?php

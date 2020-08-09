@@ -3,12 +3,12 @@ include 'conexion.php';
 
 $ActividadID=$_POST['id'];
 
-$nombre=$_POST['Nombre'];
+$nombre=$_POST['Nombrea'];
 $descripcion=$_POST['Descripcion'];
 $flagactivo=$_POST['FlagActivo'];
 $actividadTipoID=$_POST['ActividadTipoID'];
 
-$sql= "UPDATE actividad SET Nombre='$nombre',
+$sql= "UPDATE actividad SET Nombrea='$nombre',
                             Descripcion='$descripcion',
                             FlagActivo='$flagactivo',
                             ActividadTipoID='$actividadTipoID' WHERE ActividadID='$ActividadID'";
