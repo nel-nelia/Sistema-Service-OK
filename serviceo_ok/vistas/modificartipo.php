@@ -108,7 +108,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
             <?php
                 include 'conexion.php' ; 
-                $ActividadTipoID=$_POST['id'];
+                $ActividadTipoID=$_GET['id'];
 
                 $datoscomp="SELECT * FROM ActividadTipo WHERE ActividadTipoID='".$ActividadTipoID."' ";
                 $resp=mysqli_query($con,$datoscomp);
