@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <head>
+
 <title>Service OK</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -229,14 +230,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <!-- user login dropdown start-->
         <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                <img alt="" src="vistas/images/2.png">
-                <span class="username">John Doe</span>
+                <img alt="" src="">
+                <span class="username">Login</span>
                 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu extended logout">
-                <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
-                <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-                <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
+                <li><a href="vistas/login.php"><i class=" fa fa-suitcase"></i>Ingresar</a></li>
+                
             </ul>
         </li>
         <!-- user login dropdown end -->

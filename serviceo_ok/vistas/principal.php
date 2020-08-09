@@ -1,9 +1,13 @@
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
+<?php 
+session_start();
+$usuario = $_SESSION['username'];
+
+if( !isset($usuario)){
+	header ("location: ../index.php");
+}else{
+	
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <title>Service OK</title>
@@ -152,18 +156,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 </span>
                     </a>
                 </li>
-                <li>
-                    <a href="#">
-                        <span class="photo"><img alt="avatar" src="images/3.png"></span>
-                                <span class="subject">
-                                <span class="from">Tasi sam</span>
-                                <span class="time">2 days ago</span>
-                                </span>
-                                <span class="message">
-                                    This is an example msg.
-                                </span>
-                    </a>
-                </li>
+                
                 <li>
                     <a href="#">
                         <span class="photo"><img alt="avatar" src="images/2.png"></span>
@@ -234,13 +227,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                 <img alt="" src="images/2.png">
-                <span class="username">John Doe</span>
+               <?php echo " $usuario"?>
                 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu extended logout">
                 <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
                 <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-                <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
+                <li><a href="../logica/salir.php"><i class="fa fa-key"></i> Log Out</a></li>
             </ul>
         </li>
         <!-- user login dropdown end -->
