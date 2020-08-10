@@ -1,13 +1,9 @@
-<?php 
-session_start();
-$usuario = $_SESSION['username'];
-
-if( !isset($usuario)){
-	header ("location: ../index.php");
-}else{
-	
-}
-?>
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
 <!DOCTYPE html>
 <head>
 <title>Service OK</title>
@@ -112,7 +108,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
             <?php
                 include 'conexion.php' ; 
-                $ActividadTipoID=$_GET['id'];
+                $ActividadTipoID=$_GET['id']; 
 
                 $datoscomp="SELECT * FROM ActividadTipo WHERE ActividadTipoID='".$ActividadTipoID."' ";
                 $resp=mysqli_query($con,$datoscomp);
