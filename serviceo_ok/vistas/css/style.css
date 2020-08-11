@@ -2417,7 +2417,7 @@ input.ggg{
     font-size: 18px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    background: #45b366;
+    background: #288981;
     color: white;
     border: none;
     outline: none;
@@ -2431,7 +2431,7 @@ input.ggg{
     -ms-transition: 0.5s all;
 }
 .w3layouts-main input[type="submit"]:hover {
-	background:#1CC09F;
+	background:#999999;
 	transition:0.5s all;
 	-webkit-transition:0.5s all;
 	-o-transition:0.5s all;

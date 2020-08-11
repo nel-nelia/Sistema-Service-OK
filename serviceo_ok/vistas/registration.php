@@ -58,7 +58,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<h4><input type="checkbox" />Estoy de acuerdo con las Politicas de Seguridad</h4>
 			
 				<div class="clearfix"></div>
-				<input type="submit" value="submit" name="register">
+				<input type="submit" value="registrar" name="register" class="btn btn-info">
 		</form>
 		
 </div>
