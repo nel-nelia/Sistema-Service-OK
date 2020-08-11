@@ -17,7 +17,7 @@ $result = MYSQLI_query($con, $sql);
 
 
 if ($result) {
-    header('Location: ../vistas/listaregistro.php');
+    header('Location: ../vistas/plantilla.php');
 }else{
     echo "ERROR DE INGRESO";
 }
