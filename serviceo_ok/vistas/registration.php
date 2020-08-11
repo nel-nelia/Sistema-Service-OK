@@ -24,7 +24,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 <div class="reg-w3">
 <div class="w3layouts-main">
-	<h2>Registra tu establecimiento Ahora</h2>
+	<h2 style="color:#0E0D0D"; >Registra tu establecimiento Ahora</h2>
 	<form action="../controladores/guardarregistro.php" method="post">
 			<label>RUC BODEGA</label>
 			<input type="text" class="ggg" name="ruc" placeholder="INGRESA RUC - BODEGA" required="">

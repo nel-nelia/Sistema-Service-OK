@@ -12,8 +12,9 @@ html, body{
 	font-family: 'Roboto', sans-serif;
     font-size: 100%;
     overflow-x: hidden;
-    background: url(../images/ron3.png) no-repeat 0px 0px;
-	background-size:cover;
+    background: url(../images/fondo.png) no-repeat 0px 0px;
+    background-size:cover;
+    
 }
 body a{
 	transition: 0.5s all ease;
@@ -661,7 +662,7 @@ ul.top-menu>li>a:hover,ul.top-menu>li>a:focus {
     display:inline-block;
     font-size:15px;
     padding:10px;
-    color: #bfbfc1;
+    color: #bfbfc1;  
 }
 /*--market--*/
 .market-update-block {
@@ -2364,7 +2365,7 @@ ul.inbox-pagination li {
 .w3layouts-main {
     width: 30%;
     margin:5em auto;
-    background:rgba(171, 119, 157, 0.27);
+    background:rgba(10, 192, 153, 0.726);
     padding: 42px 35px;
 }
 /*--//header--*/
