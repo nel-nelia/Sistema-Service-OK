@@ -3,6 +3,6 @@
 class TemplateController{
 
     public function template(){
-        include "vistas/plantilla.php";
+        include "vistas/modalinicio.php";
     }
 }

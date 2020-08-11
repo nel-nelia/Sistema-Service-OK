@@ -51,6 +51,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<option value="si">Si</option>
 			<option value="no">No</option>                              
             </select>
+
+	<input type="file" class="ggg" name="Email" placeholder="E-MAIL" required="">
+			<label>DIRECCION</label>
+
 			<h4><input type="checkbox" />Estoy de acuerdo con las Politicas de Seguridad</h4>
 			
 				<div class="clearfix"></div>

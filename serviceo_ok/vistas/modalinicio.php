@@ -1,7 +1,7 @@
 <html>
 <head>
    <meta charset="utf-8">
-   <title>Mostrar Ventane Modal de forma Automático</title>
+   <title>Bienvenido - Service OK</title>
 
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
@@ -35,28 +35,18 @@
       <div class="modal-dialog">
         <div class="modal-content">
            <div class="modal-header">
-              <h3>SERVICE OK</h3>
+              <h3>Bienvenido !!</h3>
            </div>
-           <div class="modal-body">
+           <div id="centro" class="modal-body">
 
 
-           <form id="form"  action="../vistas/google_map.php" method="POST">
-
-            <div class="form-group">
-                        <label class="col-sm-3 control-label col-lg-3">Correo Electronico:</label>
-                        <div class="col-lg-6">
-                            <div class="input-group m-bot15">
-                                <span class="input-group-addon btn-white"><i class="fa fa-user"></i></span>
-                                <input type="text" class="form-control" name="name">
-                            </div>
-
-                        </div>
-            </div>
+           <form id="form"  action="vistas/plantilla.php" method="POST">
+            <center>
 
              <div  class="g-recaptcha" data-sitekey="6Lc1trwZAAAAAF2bw2a3moWEsl5hmIb8CeXVoKgW"></div><br><br>
-            <br>
-       <input type="submit" name="login" class="btn btn-info" value="Confirmar">
-			
+          
+       <input type="submit" name="login" class="btn btn-danger" value="Confirmar">
+       </center>
         </form>
 
        </div>
