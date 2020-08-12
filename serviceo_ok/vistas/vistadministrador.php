@@ -108,7 +108,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="table-agile-info">
   <div class="panel panel-default">
     <div class="panel-heading">
-      Listar Tipo de Actividad
+      Listar Administradores
     </div>
 
     <div class="row w3-res-tb">
@@ -147,9 +147,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <table class="table table-hover" id="dataTable" width="30%" cellspacing="0">
                     <thead class="thead-dark">
                         <tr>
-                        <th>N°</th>
-                        <th>NOMBRE</th>
-                        <th>ESTADO</th>
+                        <th>USUARIO</th>
+                        <th>CLAVE</th>
+                        
                         <th>ACCIONES</th>
                         
                         </tr>
@@ -158,36 +158,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                   <?php
                       include ('conexion.php');          
-                      $sql = "SELECT * FROM ActividadTipo";
+                      $sql = "SELECT * FROM usuarios";
 
                       $query=mysqli_query($con, $sql);
 
                       while ($row= MySQLI_fetch_array($query)){
-                        $actividadid=$row['ActividadTipoID'];
-                        $nombre=$row['Nombre'];
-                        $flagactivo=$row['FlagActivo'];
+                        $usuario=$row['usuario'];
+                        $clave=$row['clave'];
+                        
 
                   ?>
                         <tr>
-                        <td><?php echo $actividadid;?></td>  
-                        <td><?php echo $nombre;?></td>
-                        <td><?php 
-                        $FlagActivo =0;
-                        $FlagActivo =1;
-                        if($FlagActivo == 0 ){
-                          echo '<span class="label label-primary">Habilitado</span>';
-
-                        } else if($FlagActivo == 1){
-                            echo '<span class="label label-danger">Deshabilitado</span>';
-                        
-                        }
-                        ?></td>
+                        <td><?php echo $usuario;?></td>  
+                        <td><?php echo $clave;?></td>
                         
                         <td>
 
-                        <a href="modificartipo.php?id=<?php echo $row["ActividadTipoID"];?>" class="btn btn-sm btn-success"> <i class="fa fa-pencil-square-o"> </i>Editar</a>
+                        <a href="modificaradmin.php?id=<?php echo $row["usuario"];?>" class="btn btn-sm btn-success"> <i class="fa fa-pencil-square-o"> </i>Editar</a>
 
-                        <a href="../controladores/eliminartipo.php?id=<?php echo $row["ActividadTipoID"];?>" class="btn btn-sm btn-danger"><i class="fa fa-trash-o"> </i> Eliminar</a>                      
+                        <a href="../controladores/eliminaradministrador.php?id=<?php echo $row["usuario"];?>" class="btn btn-sm btn-danger"><i class="fa fa-trash-o"> </i> Eliminar</a>                      
                       </td>                    
                         </tr>
                         <?php
@@ -206,25 +195,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Agregar Tipo</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Agregar Administrador</h5>
                 <button class="close" type="button"  data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">X</span>
                 </button>
             </div>
-            <form action="../controladores/guardartipoactividad.php" method="POST">
+            <form action="../controladores/guardaradministrador.php" method="POST">
             <div class="modal-body ">  
 
                     <div class="col-sm-12 col-md-6">
                             <div class="row form-group">
-                                <div class="col col-md-5"><label for="selectSm" class=" form-control-label">Nombre</label></div>
-                                <div class="col-12 col-md-7"><input type="text"id="Nombre" name="Nombre"  class="form-control"> </div>
+                                <div class="col col-md-5"><label for="selectSm" class=" form-control-label">Usuario</label></div>
+                                <div class="col-12 col-md-7"><input type="text"id="usuario" name="usuario"  class="form-control"> </div>
                             </div>
                     </div> <br> <br> <br>
 
                     <div class="col-sm-12 col-md-6">
                             <div class="row form-group">
-                                <div class="col col-md-5"><label for="selectSm" class=" form-control-label">Estado</label></div>
-                                <div class="col-12 col-md-7"><input type="text" id="FlagActivo" name="FlagActivo" class="form-control"></div>
+                                <div class="col col-md-5"><label for="selectSm" class=" form-control-label">Clave</label></div>
+                                <div class="col-12 col-md-7"><input type="password" id="clave" name="clave" class="form-control"></div>
                                 </div>
                     </div>
                     

@@ -307,12 +307,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </li>
                 <li class="sub-menu">
                     <a href="javascript:;">
-                        <i class="fa fa-glass"></i>
-                        <span>Extra</span>
+                        <i class="fa fa-unlock-alt"></i>
+                        <span>Gestionar Administrador</span>
                     </a>
                     <ul class="sub">
-                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="vistadministrador.php">Listar Administrador</a></li>
 						<li><a href="404.html">404 Error</a></li>
+						
                         <li><a href="registration.html">Registration</a></li>
                     </ul>
                 </li>
