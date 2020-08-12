@@ -239,7 +239,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
           // Aplicamos el evento 'bounds_changed' que detecta cambios en la ventana del Mapa de Google, también le configramos un zoom de 14 
           var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
-              this.setZoom(14);
+              this.setZoom(16);
               google.maps.event.removeListener(boundsListener);
           });
 
