@@ -107,7 +107,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<section class="wrapper">
 		<div class="table-agile-info">
   <div class="panel panel-default">
-    <div class="panel-heading">
+    <div class="panel-heading" >
       Listar Tipo de Actividad
     </div>
 
@@ -145,7 +145,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
              
               <div class="table-responsive">
                 <table class="table table-hover" id="dataTable" width="30%" cellspacing="0">
-                    <thead class="thead-dark">
+                    <thead class="thead-dark" >
                         <tr>
                         <th>N°</th>
                         <th>NOMBRE</th>
