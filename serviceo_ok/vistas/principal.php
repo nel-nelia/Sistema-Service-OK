@@ -318,6 +318,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li><a href="registration.html">Registration</a></li>
                     </ul>
                 </li>
+				<li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-unlock-alt"></i>
+                        <span>Gestionar Usuario</span>
+                    </a>
+                    <ul class="sub">
+                        <li><a href="vistadministrador.php">Listar Usuario</a></li>
+						<li><a href="404.html">404 Error</a></li>
+						
+                    </ul>
+                </li>
                 <li>
                     <a href="login.html">
                         <i class="fa fa-user"></i>
