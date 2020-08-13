@@ -271,6 +271,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <ul class="sub">
                         <li><a href="listaractividad.php">Listar</a></li>
                         <li><a href="agregaractividad.php">Agregar</a></li>
+						<li><a href="pdf.php">Reporte</a></li>
                     </ul>
                 </li>
                 <li class="sub-menu">
