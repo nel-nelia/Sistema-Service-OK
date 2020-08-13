@@ -365,7 +365,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="col-md-8 market-update-left">
 					<h4>Usuarios</h4>
-						<h3>1,250</h3>
+						<h3>
+						<?php
+						require 'conexion.php';
+						$sql="SELECT * FROM RegistroUsuario";
+						$total =0;
+						echo $total;
+						?></h3>
 						<p>Other hand, we denounce</p>
 					</div>
 				  <div class="clearfix"> </div>

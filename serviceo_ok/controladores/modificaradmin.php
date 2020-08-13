@@ -9,7 +9,7 @@ $sql= "UPDATE usuarios SET Nombre='$usuario',FlagActivo='$clave' WHERE usuario='
 
 $result=mysqli_query($con,$sql);
 
-header('Location: ../vistas/listaradministrador.php');
+header('Location: ../vistas/vistadministrador.php');
 mysqli_close($con); 
  
 ?>
