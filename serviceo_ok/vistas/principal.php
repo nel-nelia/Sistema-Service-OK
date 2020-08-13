@@ -352,7 +352,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<i class="fa fa-users" ></i>
 					</div>
 					<div class="col-md-8 market-update-left">
-					<h4>Users</h4>
+					<h4>Usuarios</h4>
 						<h3>1,250</h3>
 						<p>Other hand, we denounce</p>
 					</div>
