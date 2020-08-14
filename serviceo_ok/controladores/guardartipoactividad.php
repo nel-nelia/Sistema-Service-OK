@@ -4,10 +4,10 @@ include 'conexion.php';
 
 
 $Nombre=$_POST['Nombre'];
-$FlagActivo=$_POST['FlagActivo'];
+$Estado=$_POST['Estado'];
 
 
-$sql="INSERT INTO ActividadTipo (Nombre, FlagActivo) VALUES ('$Nombre','$FlagActivo')";
+$sql="INSERT INTO ActividadTipo (Nombre, Estado) VALUES ('$Nombre','$Estado')";
 
 $result = MYSQLI_query($con, $sql);
 

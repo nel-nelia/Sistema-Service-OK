@@ -165,7 +165,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                       while ($row= MySQLI_fetch_array($query)){
                         $actividadid=$row['ActividadTipoID'];
                         $nombre=$row['Nombre'];
-                        $flagactivo=$row['FlagActivo'];
+                        $flagactivo=$row['Estado'];
 
                   ?>
                         <tr>
@@ -203,37 +203,39 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
     <div class="modal fade bd-example-modal-sm" id="tipo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Agregar Tipo</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Agregar Tipo de Actividad</h5>
                 <button class="close" type="button"  data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">X</span>
                 </button>
             </div>
             <form action="../controladores/guardartipoactividad.php" method="POST">
-            <div class="modal-body ">  
+                <div class="modal-body ">  
 
-                    <div class="col-sm-12 col-md-6">
-                            <div class="row form-group">
-                                <div class="col col-md-5"><label for="selectSm" class=" form-control-label">Nombre</label></div>
-                                <div class="col-12 col-md-7"><input type="text"id="Nombre" name="Nombre"  class="form-control"> </div>
+                  <div class="form-row">
+
+                            <div class="form-group col-md-12">
+                                <label  for="selectSm">Nombre</label>
+                                <input type="text" id="Nombre" name="Nombre" class="form-control" >
                             </div>
-                    </div> <br> <br> <br>
 
-                    <div class="col-sm-12 col-md-6">
-                            <div class="row form-group">
-                                <div class="col col-md-5"><label for="selectSm" class=" form-control-label">Estado</label></div>
-                                <div class="col-12 col-md-7"><input type="text" id="FlagActivo" name="FlagActivo" class="form-control"></div>
-                                </div>
-                    </div>
-                    
+                            <div class="form-group col-md-12">
+                                <label for="selectSm">Estado</label>
+                                <select class="form-control" id="Estado" name="Estado">
+                                                <option selected>Elegir...</option>
+                                                <option value="Activo">Activo</option>
+                                                <option value="Inactivo">Inactivo</option>
+                                            </select> 
+                            </div> <br><br><br><br><br><br>                     
+                  </div>
                 </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                        <button class="btn btn-primary"  type="submit">Guardar</button>
-                </div>
-     
+                      <div class="modal-footer">
+                          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                          <button class="btn btn-primary"  type="submit">Guardar</button>
+
+                      </div>
             </form>
 
         </div>

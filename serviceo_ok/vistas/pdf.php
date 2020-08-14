@@ -48,7 +48,7 @@ $pdf->AddPage();
 $pdf->SetFont('Arial','',16);
 
 while($row = $resultado->fetch_assoc()){
-    $pdf->Cell(80, 10, $row['Nombre'], 1,0,'C',0);
+    $pdf->Cell(80, 10, $row['Nombrea'], 1,0,'C',0);
     $pdf->Cell(70, 10, $row['Descripcion'], 1,0,'C',0);
     $pdf->Cell(40, 10, $row['FlagActivo'], 1,1,'C',0);
     

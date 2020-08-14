@@ -19,12 +19,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link rel="stylesheet" href="css/font.css" type="text/css"/>
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <!-- //font-awesome icons -->
-<script src="js/jquery2.0.3.min.js"></script>
+<script src="js/jquery2.0.3.min.js"></script> 
 </head>
 <body>
 <div class="reg-w3">
 <div class="w3layouts-main">
-	<h2 style="color:#0E0D0D"; >Registra tu establecimiento Ahora</h2>
+	<h2  >Registra tu establecimiento Ahora</h2>
 	<form action="../controladores/guardarregistro.php" method="post">
 			<label>RUC BODEGA</label>
 			<input type="text" class="ggg" name="ruc" placeholder="INGRESA RUC - BODEGA" required="">
@@ -58,7 +58,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<h4><input type="checkbox" />Estoy de acuerdo con las Politicas de Seguridad</h4>
 			
 				<div class="clearfix"></div>
-				<input type="submit" value="registrar" name="register" class="btn btn-info">
+				<input type="submit" value="registrar" name="register" >
 		</form>
 		
 </div>
