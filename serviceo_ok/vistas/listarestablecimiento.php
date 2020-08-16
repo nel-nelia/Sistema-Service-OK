@@ -126,15 +126,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       </div>
     </div>
 
+    <section class="principal">
+      <h1>BUSQUEDA DE JUGADORES</h1>
+        <div class="formulario">
+          <label for="caja_busqueda">Buscar</label>
+          <input type="text" name="caja_busqueda" id="caja_busqueda"></input> 
+        </div>
+      <div id="datos"></div>     
+    </section>
+    <br><br>
+
 
     <div class="card shadow mb-4">
-           
-
             <div class="card-body">
-
             <div class="col-6 p-2 d-flex justify-content-center">
                 <button class="btn btn btn-primary" data-toggle="modal" data-target="#tipo"> Agregar</button>
-             </div>
+             </div>            
               <div class="table-responsive">
                 <table class="table table-hover" id="dataTable" width="30%" cellspacing="0">
                     <thead class="thead-dark">
@@ -149,8 +156,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         
                         </tr>
                     </thead>
-
-
                     <?php
                       include ('conexion.php');          
                       $sql = "SELECT * FROM google_maps_php_mysql";
@@ -172,9 +177,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <td><?php echo $telefono;?></td>
                         <td><?php echo $whatsappURL;?></td>
                         <td><?php echo $delivery;?></td>
-                        <td><?php echo $permiso;?></td>
-            
+                        <td><?php echo $permiso;?></td>          
                         <td>
+
                         <form method="POST" action="modificarAtipo.php">
                         <input type="hidden" value="<?php echo $actividadid; ?>" name="id">
                         <button type="submit" class="btn btn-success btn-sm"><i class="fa fa-pencil-square-o"> </i>&nbsp; Modificar</button><p></p>
@@ -191,7 +196,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </table>
               </div>
             </div> 
-
 
             <div class="modal fade bd-example-modal-sm" id="tipo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg" role="document">
@@ -262,17 +266,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
                                 <button class="btn btn-primary"  type="submit">Guardar</button>
                             </div>
-     
                     </form>
 
                 </div>
-            </div>
-            
-        </div>
-
-
-          
-
+            </div>       
+        </div>     
 
     <footer class="panel-footer">
       <div class="row">
@@ -313,5 +311,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="js/jquery.nicescroll.js"></script>
 <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
 <script src="js/jquery.scrollTo.js"></script>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

@@ -332,8 +332,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     FROM actividad det
                                     INNER JOIN actividadtipo pos ON det.ActividadTipoID= pos.ActividadTipoID";
 
-                  
-
                       $query=mysqli_query($con, $sql);
 
                       while ($row= MySQLI_fetch_array($query)){
@@ -376,7 +374,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <span aria-hidden="true">X</span>
                 </button>
             </div>
-            <form action="../controladores/guardaractividad.php" method="POST">
+            <form action="../controladores/guardaractividad.php" method="POST"> 
             <div class="modal-body ">  
 
                     <div class="col-sm-12 col-md-6">
