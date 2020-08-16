@@ -215,7 +215,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Agregar Tipo</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Agregar Establecimiento</h5>
                             <button class="close" type="button"  data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">X</span>
                             </button>
@@ -225,92 +225,53 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <div class="form-row">
 
                                     <div class="form-group col-md-6">
-                                        <label for="selectSm">Nombre</label>
-                                        <input type="text" id="Nombre" name="Nombre" class="form-control" >
+                                        <label for="selectSm">Establecimiento</label>
+                                        <input type="text" id="registrousuarioID" name="registrousuarioID"  class="form-control">
                                     </div>
 
-                                    <div class="form-group col-md-6">
-                                        <label for="selectSm">Celular</label>
-                                        <input type="text"  id="Telefono" name="Telefono" class="form-control">
+                                    <div class="form-group col-md-3">
+                                        <label for="selectSm">Direccion</label>
+                                        <input type="text" id="direccion" name="direccion"  class="form-control">
                                     </div>
 
-                                    <div class="form-group col-md-6">
+                               <!--     <div class="form-group col-md-6">
                                         <label for="selectSm">Whatsapp</label>
-                                        <input type="text"  id="WhatsappURL" name="WhatsappURL" class="form-control">
-                                    </div>
+                                        <select id="whatsapp" name="whatsapp"  class="form-control">
+                                                    <?php
+                                                    $sql="SELECT * FROM registrousuario";
+                                                    $res=mysqli_query($con,$sql);
+                                                    while ($rw= mysqli_fetch_array($res)){
+                                                    echo "<option value=".$rw["RegistrousuarioID"].">".$rw["phone"]."</option> ";
+                                                    } 
+                                                    ?>
+                                        </select>
+                                    </div> -->
 
-                                    <div class="form-group col-md-6">
-                                        <label for="selectSm">Delivery</label>
-                                        <input type="text" id="Delivery" name="Delivery"  class="form-control">
-                                    </div>
-
-                                    <div class="form-group col-md-6">
-                                        <label for="selectSm">Permiso</label>
-                                        <input type="text"  id="Permiso" name="Permiso" class="form-control">
-                                    </div>
-
-                                    <div class="form-group col-md-6">
-                                        <label for="selectSm">RUC</label>
-                                        <input type="text" id="RUC" name="RUC"  class="form-control">
-                                    </div>
-
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-3">
                                         <label for="selectSm">Latitud</label>
-                                        <input type="text"  id="CoordenadaX" name="CoordenadaX" class="form-control">
+                                        <input type="text" id="latitud" name="latitud"  class="form-control">
+                                    </div>
+
+                                    <div class="form-group col-md-3">
+                                        <label for="selectSm">Longitud</label>
+                                        <input type="text"  id="longitud" name="longitud" class="form-control">
                                     </div>
 
                                     <div class="form-group col-md-6">
-                                        <label for="selectSm">Latitud</label>
-                                        <input type="text"  id="CoordenadaY" name="CoordenadaY" class="form-control">
+                                        <label for="selectSm">Departamento</label>
+                                        <input type="text" id="Departamento" name="Departamento"  class="form-control">
                                     </div>
-
-                                    <div class="form-group col-md-6">
-                                        <label for="selectSm">Estado</label>
-                                        <input type="text"  id="FlagActivo" name="FlagActivo" class="form-control">
-                                    </div>
-
 
                                     
-
-                                <div class="col-sm-12 col-md-6">
-                                    <div class="row form-group">
-                                        <div class="col col-md-5"> Actividad</div>
-                                        <div class="col-12 col-md-7"> 
-
-                                         <select id="ActividadID" name="ActividadID"  class="form-control">
-                                                                <?php
-                                                                $sql="SELECT * FROM Actividad";
-                                                                $res=mysqli_query($con,$sql);
-                                                                while ($rw= mysqli_fetch_array($res)){
-                                                                    echo "<option value=".$rw["ActividadID"].">".$rw["Nombre"]."</option> ";
-                                                                } 
-                                                                ?>
-                                        </select>
-                                        </div>
-
-                                    </div> 
-                                </div>
-
-                                <div class="col-sm-12 col-md-6">
-                                    <div class="row form-group">
-                                        <div class="col col-md-5"> Representante</div>
-                                        <div class="col-12 col-md-7"> 
-
-                                        <select id="RepresentanteID" name="RepresentanteID"  class="form-control">
-                                                                <?php
-                                                                $sql="SELECT * FROM Representante";
-                                                                $res=mysqli_query($con,$sql);
-                                                                while ($rw= mysqli_fetch_array($res)){
-                                                                    echo "<option value=".$rw["RepresentanteID"].">".$rw["Nombre"]."</option> ";
-                                                                } 
-                                                                ?>
-                                        </select>
-                                        </div>
-
-                                    </div> 
-                                </div>
-
-                                  
+                                  <!--                      
+                                    <div class="form-group col-md-6">
+                                        <label for="selectSm">Estado</label>
+                                        <select class="form-control" id="Estado" name="Estado">
+                                                        <option selected>Elegir...</option>
+                                                        <option value="Activo">Activo</option>
+                                                        <option value="Inactivo">Inactivo</option>
+                                        </select> 
+                                    </div> -->                                 
 
                                 </div>
                       
