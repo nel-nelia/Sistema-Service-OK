@@ -145,12 +145,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <th>Whatsapp</th>
                     <th>Delivery</th>
                     <th>Permiso</th>
-                    <th>RUC</th>
-                    <th>Coordenadas X</th>
-                    <th>Coordenadas Y</th>
-                    <th>Estado</th>
-                    <th>Actividad</th>
-                    <th>Representante</th>
                     <th>Acciones</th>
                         
                         </tr>
@@ -159,23 +153,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                     <?php
                       include ('conexion.php');          
-                      $sql = "SELECT * FROM Establecimiento";
+                      $sql = "SELECT * FROM google_maps_php_mysql";
 
                       $query=mysqli_query($con, $sql);
 
                       while ($row= MySQLI_fetch_array($query)){
-                        $establecimeintoId=$row['EstablecimientoID'];
-                        $nombre=$row['Nombre'];
-                        $telefono=$row['Telefono'];
-                        $whatsappURL=$row['WhatsappURL'];
-                        $delivery=$row['Delivery'];
-                        $permiso=$row['Permiso'];
-                        $ruc=$row['RUC'];
-                        $coordenadaX=$row['CoordenadaX'];
-                        $coordenadaY=$row['CoordenadaY'];
-                        $flagactivo=$row['FlagActivo'];
-                        $actividadID=$row['ActividadID'];
-                        $representanteID=$row['RepresentanteID'];
+                        $establecimeintoId=$row['id'];
+                        $nombre=$row['nombre'];
+                        $telefono=$row['direccion'];
+                        $whatsappURL=$row['lat'];
+                        $delivery=$row['lng'];
+                        $permiso=$row['pais'];
                   ?>
                         <tr>
                         <td><?php echo $establecimeintoId;?></td>
@@ -185,12 +173,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <td><?php echo $whatsappURL;?></td>
                         <td><?php echo $delivery;?></td>
                         <td><?php echo $permiso;?></td>
-                        <td><?php echo $ruc;?></td>
-                        <td><?php echo $coordenadaX;?></td>
-                        <td><?php echo $coordenadaY;?></td>
-                        <td><?php echo $flagactivo;?></td>
-                        <td><?php echo $actividadID;?></td>
-                        <td><?php echo $representanteID;?></td>
             
                         <td>
                         <form method="POST" action="modificarAtipo.php">
@@ -223,13 +205,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <form action="../controladores/guardarestablecimiento.php" method="POST">
                             <div class="modal-body ">  
                                 <div class="form-row">
-
                                     <div class="form-group col-md-6">
                                         <label for="selectSm">Establecimiento</label>
                                         <input type="text" id="registrousuarioID" name="registrousuarioID"  class="form-control">
                                     </div>
 
-                                    <div class="form-group col-md-3">
+                                    <div class="form-group col-md-6">
                                         <label for="selectSm">Direccion</label>
                                         <input type="text" id="direccion" name="direccion"  class="form-control">
                                     </div>
