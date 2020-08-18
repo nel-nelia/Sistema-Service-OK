@@ -316,9 +316,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <tr>
                         <th>N°</th>
                         <th>NOMBRE</th>
-                        <th>DESCRIPCION</th>
                         <th>ESTADO</th>
-                        <th>TIPO DE ACTIVIDAD</th>
                         <th>ACCIONES</th>
                         
                         </tr>
@@ -328,9 +326,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                   <?php
                       include ('conexion.php');     
 
-                      $sql = "SELECT det.ActividadID, det.Nombrea, det.Descripcion, det.FlagActivo, pos.Nombre
-                                    FROM actividad det
-                                    INNER JOIN actividadtipo pos ON det.ActividadTipoID= pos.ActividadTipoID";
+                      $sql = "SELECT * FROM Actividad";
 
                       $query=mysqli_query($con, $sql);
 
@@ -338,17 +334,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         
                         $actividadid=$row['ActividadID'];
                         $nombre=$row['Nombrea'];
-                        $descripcion=$row['Descripcion'];
-                        $flagactivo=$row['FlagActivo'];
-                        $actividadTipoID=$row['Nombre'];
+                        $estado=$row['Estado'];
 
                   ?>
                         <tr>
                         <td><?php echo $actividadid;?></td>
                         <td><?php echo $nombre;?></td>
-                        <td><?php echo $descripcion;?></td>
-                        <td><?php echo $flagactivo;?></td>
-                        <td><?php echo $actividadTipoID;?></td>
+                        <td><?php echo $estado;?></td>
                         <td>
 
                         <a href="modificaractividad.php?id=<?php echo $row["ActividadID"];?>" class="btn btn-sm btn-success"> <i class="fa fa-pencil-square-o"> </i>Editar</a>
@@ -366,70 +358,41 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
             <div class="modal fade bd-example-modal-sm" id="tipo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Agregar Tipo</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Agregar Actividad</h5>
                 <button class="close" type="button"  data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">X</span>
                 </button>
             </div>
-            <form action="../controladores/guardaractividad.php" method="POST"> 
-            <div class="modal-body ">  
+                    <form action="../controladores/guardaractividad.php" method="POST"> 
+                        <div class="modal-body ">  
 
-                    <div class="col-sm-12 col-md-6">
-                            <div class="row form-group">
-                                <div class="col col-md-5"><label for="selectSm" class=" form-control-label">Nombre</label></div>
-                                <div class="col-12 col-md-7"><input type="text"id="Nombrea" name="Nombrea"  class="form-control"> </div>
-                            </div>
-                    </div> <br> <br> <br>
+                            <div class="form-row">
 
-                    <div class="col-sm-12 col-md-6">
-                            <div class="row form-group">
-                                <div class="col col-md-5"><label for="selectSm" class=" form-control-label">Descripcion</label></div>
-                                <div class="col-12 col-md-7"><input type="text"id="Descripcion" name="Descripcion"  class="form-control"> </div>
-                            </div>
-                    </div> <br> <br> <br>
-
-
-                    <div class="col-sm-12 col-md-6">
-                            <div class="row form-group">
-                                <div class="col col-md-5">Tipo Actividad</div>
-                                <div class="col-12 col-md-7"> 
-
-                                <select id="ActividadTipoID" name="ActividadTipoID"  class="form-control">
-                                                <?php
-                                                $sql="SELECT * FROM actividadtipo";
-                                                $res=mysqli_query($con,$sql);
-                                                while ($rw= mysqli_fetch_array($res)){
-                                                    echo "<option value=".$rw["ActividadTipoID"].">".$rw["Nombre"]."</option> ";
-                                                } 
-                                                ?>
-                                </select>
+                                <div class="form-group col-md-12">
+                                    <label  for="selectSm">Nombre</label>
+                                    <input type="text" id="Nombre" name="Nombre" class="form-control" >
                                 </div>
 
-                            </div> 
-                    </div> <br> <br> <br>
+                                <div class="form-group col-md-12">
+                                    <label for="selectSm">Estado</label>
+                                    <select class="form-control" id="Estado" name="Estado">
+                                                    <option selected>Elegir...</option>
+                                                    <option value="Activo">Activo</option>
+                                                    <option value="Inactivo">Inactivo</option>
+                                                </select> 
+                                </div> <br><br><br><br><br><br>                     
+                            </div>
 
-                   
-
-                    <div class="col-sm-12 col-md-6">
-                            <div class="row form-group">
-                                <div class="col col-md-5"><label for="selectSm" class=" form-control-label">Estado</label></div>
-                                <div class="col-12 col-md-7"><input type="text" id="FlagActivo" name="FlagActivo" class="form-control"></div>
-                                </div>
-                    </div>
-                    
-                </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                        <button class="btn btn-primary"  type="submit">Guardar</button>
-                </div>
-
-
-                
-     
-            </form>
+                        </div>
+                        
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                            <button class="btn btn-primary"  type="submit">Guardar</button>
+                        </div>
+                    </form>
 
             </div>
             </div>

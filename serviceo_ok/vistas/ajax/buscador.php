@@ -6,8 +6,8 @@
 	if($action == 'ajax'){
 		// escaping, additionally removing everything that could be (html/javascript-) code
          $q = mysqli_escape_string($con,(strip_tags(strtoupper($_REQUEST['q']), ENT_QUOTES)));
-		 $aColumns = array('nombre', 'direccion', 'lat', 'lng', 'pais');//Columnas de busqueda
-		 $sTable = "google_maps_php_mysql";
+		 $aColumns = array('nombre', 'direccion', 'lat', 'lng', 'Distrito');//Columnas de busqueda
+		 $sTable = "establecimiento";
 		 $sWhere = ""; 
 		if ( $_GET['q'] != "" )
 		{
@@ -56,19 +56,22 @@
                         <th>Direccion</th>
                         <th>Latitud</th>
                         <th>Longitud </th>
-                        <th>Departamento </th>
+                        <th>Distrito </th>
+                        <th>Acciones </th>
                         
                         </tr>
                     </thead>
 
+
                     <?php
+                         
                         while ($row=mysqli_fetch_array($query)){
 
                             $nombre=$row['nombre'];
                             $direccion=$row['direccion'];
                             $latitud=$row['lat'];
                             $longitud=$row['lng'];
-                            $pais=$row['pais'];
+                            $pais=$row['Distrito'];
                             $id=$row['id'];
 
                     ?>
@@ -80,8 +83,8 @@
                         <td><?php echo $longitud; ?></td>
                         <td><?php echo $pais; ?></td>
 						<td> 
-                        <a href="./modificaractividad.php?id=<?php echo $row["id"];?>" class="btn btn-sm btn-success"> <i class="fa fa-pencil-square-o"> </i>Editar</a>
-                        <a href="../controladores/eliminaractividad.php?id=<?php echo $row["ActividadID"];?>" class="btn btn-sm btn-danger"><i class="fa fa-trash-o"> </i> Eliminar</a>						
+                        <a href="./modificarestablecimiento.php?id=<?php echo $row["id"];?>" class="btn btn-sm btn-success"> <i class="fa fa-pencil-square-o"> </i>Editar</a>
+                        <a href="../controladores/eliminarestablecimiento.php?id=<?php echo $row["id"];?>" class="btn btn-sm btn-danger"><i class="fa fa-trash-o"> </i> Eliminar</a>						
 						</td>
                     
                         </tr>
@@ -100,14 +103,14 @@
                             <h5 class="modal-title" id="exampleModalLabel">Agregar Establecimiento</h5>
                             <button class="close" type="button"  data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">X</span>
-                            </button>
+                            </button> 
                           </div>
                           <form action="../controladores/guardarestablecimiento.php" method="POST">
                             <div class="modal-body ">  
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="selectSm">Establecimiento</label>
-                                        <input type="text" id="registrousuarioID" name="registrousuarioID"  class="form-control">
+                                        <input type="text" id="establecimiento" name="establecimiento"  class="form-control">
                                     </div>
 
                                     <div class="form-group col-md-6">
@@ -115,18 +118,37 @@
                                         <input type="text" id="direccion" name="direccion"  class="form-control">
                                     </div>
 
-                               <!--     <div class="form-group col-md-6">
-                                        <label for="selectSm">Whatsapp</label>
-                                        <select id="whatsapp" name="whatsapp"  class="form-control">
-                                                    <?php
-                                                    $sql="SELECT * FROM registrousuario";
-                                                    $res=mysqli_query($con,$sql);
-                                                    while ($rw= mysqli_fetch_array($res)){
-                                                    echo "<option value=".$rw["RegistrousuarioID"].">".$rw["phone"]."</option> ";
-                                                    } 
-                                                    ?>
-                                        </select>
-                                    </div> -->
+                                    <div class="form-group col-md-3">
+                                        <label for="selectSm">Telefono</label>
+                                        <input type="text" id="Telefono" name="Telefono"  class="form-control">
+                                    </div>
+
+                                    <div class="form-group col-md-3">
+                                        <label for="selectSm">Delivery</label>
+                                        <select class="form-control" id="delivery" name="delivery">
+                                                <option selected>Elegir...</option>
+                                                <option value="SI">SI</option>
+                                                <option value="NO">NO</option>
+                                            </select> 
+                                    </div>
+
+                                    <div class="form-group col-md-3">
+                                        <label for="selectSm">RUC</label>
+                                        <input type="text" id="ruc" name="ruc"  class="form-control">
+                                    </div>
+
+                                    <div class="form-group col-md-3">
+                                        <label for="selectSm">Tipo Actividad</label>
+                                        <select id="ActividadID" name="ActividadID"  class="form-control">
+                                                            <?php
+                                                            $sql="SELECT * FROM actividad";
+                                                            $res=mysqli_query($con,$sql);
+                                                            while ($rw= mysqli_fetch_array($res)){
+                                                                echo "<option value=".$rw["ActividadID"].">".$rw["Nombrea"]."</option> ";
+                                                            } 
+                                                            ?>
+                                                </select>
+                                    </div>
 
                                     <div class="form-group col-md-3">
                                         <label for="selectSm">Latitud</label>
@@ -138,21 +160,19 @@
                                         <input type="text"  id="longitud" name="longitud" class="form-control">
                                     </div>
 
-                                    <div class="form-group col-md-6">
-                                        <label for="selectSm">Departamento</label>
-                                        <input type="text" id="Departamento" name="Departamento"  class="form-control">
-                                    </div>
+                                    <div class="form-group col-md-3">
+                                        <label for="selectSm">Distrito</label>
+                                        <input type="text" id="Distrito" name="Distrito"  class="form-control">
+                                    </div>               
 
-                                    
-                                  <!--                      
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-3">
                                         <label for="selectSm">Estado</label>
-                                        <select class="form-control" id="Estado" name="Estado">
-                                                        <option selected>Elegir...</option>
-                                                        <option value="Activo">Activo</option>
-                                                        <option value="Inactivo">Inactivo</option>
-                                        </select> 
-                                    </div> -->                                 
+                                        <select class="form-control" id="estado" name="estado">
+                                                <option selected>Elegir...</option>
+                                                <option value="Activo">Activo</option>
+                                                <option value="Inactivo">Inactivo</option>
+                                            </select> 
+                                    </div>                 
 
                                 </div>
                       

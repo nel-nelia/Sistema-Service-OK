@@ -1,9 +1,9 @@
 <?php 
 
 include 'conexion.php';
+$establecimientoID=$_POST['id'];
 
-
-$Nombre=$_POST['establecimiento'];
+$Nombre=$_POST['Nombre'];
 $direccion=$_POST['direccion'];
 $Telefono=$_POST['Telefono'];
 $delivery=$_POST['delivery'];
@@ -14,8 +14,8 @@ $longitud=$_POST['longitud'];
 $Distrito=$_POST['Distrito'];
 $estado=$_POST['estado'];
 
-$sql="INSERT INTO establecimiento (nombre, direccion, Telefono, Delivery, RUC, lat, lng, Distrito, Estado, ActividadID) 
-VALUES ('".$Nombre."','".$direccion."','".$Telefono."','".$delivery."','".$ruc."','".$latitud."','".$longitud."','".$Distrito."','".$estado."','".$ActividadID."')";
+$sql="UPDATE establecimiento SET nombre='$Nombre',direccion='$direccion', Telefono='$Telefono', Delivery='$delivery', RUC='$ruc',
+                                 lat='$latitud', lng='$longitud', Distrito='$Distrito', Estado='$estado', ActividadID='$ActividadID' WHERE id='$establecimientoID' ";
 
 $result = MYSQLI_query($con, $sql);
 

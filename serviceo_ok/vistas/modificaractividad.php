@@ -119,9 +119,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     $resp=mysqli_query($con,$datoscomp);
                     while ($rw=MySQLI_fetch_array($resp)) {
                     $nombre=$rw['Nombrea'];
-                    $descripcion=$rw['Descripcion'];
-                    $flagactivo=$rw['FlagActivo'];
-                    $actividadTipoID=$rw['ActividadTipoID'];
+                    $estado=$rw['Estado'];
+                   
                         }
                         ?>
 
@@ -139,50 +138,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 </div>
                             </div>
                         </div><br><br><br>
-
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label col-lg-3">Descripcion</label>
-                            <div class="col-lg-6">
-                                <div class="input-group m-bot15">
-                                    <span class="input-group-addon btn-white"><i class="fa fa-user"></i></span>
-                                    <input type="text" class="form-control" name="Descripcion" value="<?php echo $descripcion; ?>" placeholder="Username">
-                                </div>
-                            </div>
-                        </div><br><br>
                     
                         <div class="form-group">
                             <label class="col-sm-3 control-label col-lg-3">Estado</label>
                             <div class="col-lg-6">
                                 <div class="input-group m-bot15">
-                                    <span class="input-group-addon btn-white"><i class="fa fa-phone"></i></span>
-                                    <input type="text" class="form-control" name="FlagActivo" value="<?php echo $flagactivo; ?>"placeholder="Username">
+                                    <span class="input-group-addon btn-white"><i class="fa fa-phone"></i></span>                  
+                                            <select class="form-control" id="estado" name="estado" value="<?php echo $estado; ?>" >
+                                                <option value="Activo">Activo</option>
+                                                <option value="Inactivo">Inactivo</option>
+                                            </select> 
                                 </div>
 
                             </div>
                         </div><br><br>
-
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label col-lg-3">Tipo Actividad</label>
-                            <div class="col-lg-6">
-                                <div class="input-group m-bot15">
-                                    <span class="input-group-addon btn-white"><i class="fa fa-phone"></i></span>
-                                    <select id="ActividadTipoID" name="ActividadTipoID"  class="form-control">
-                                                <?php
-                                                $sql="SELECT * FROM actividadtipo";
-                                                $res=mysqli_query($con,$sql);
-                                                while ($rw= mysqli_fetch_array($res)){
-                                                    echo "<option value=".$rw["ActividadTipoID"].">".$rw["Nombre"]."</option> ";
-                                                } 
-                                                ?>
-                                    </select>
-                                </div>
-
-                            </div>
-                        </div>
-
-       
-                    <br>
-                    <br>
 
                     <div class="text-right">
                         <button type="submit" class="btn btn-primary btn-sm">

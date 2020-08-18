@@ -4,13 +4,9 @@ include 'conexion.php';
 $ActividadID=$_POST['id'];
 
 $nombre=$_POST['Nombrea'];
-$descripcion=$_POST['Descripcion'];
-$flagactivo=$_POST['FlagActivo'];
-$actividadTipoID=$_POST['ActividadTipoID'];
+$estado=$_POST['estado'];
 
-$sql= "UPDATE actividad SET Nombrea='$nombre', Descripcion='$descripcion',
-                            FlagActivo='$flagactivo',
-                            ActividadTipoID='$actividadTipoID' WHERE ActividadID='$ActividadID'";
+$sql= "UPDATE actividad SET Nombrea='$nombre', Estado='$estado' WHERE ActividadID='$ActividadID'";
 
 $result=mysqli_query($con,$sql);
 

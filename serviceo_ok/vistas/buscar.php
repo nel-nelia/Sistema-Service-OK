@@ -1,15 +1,7 @@
 <?php
 
     
-	$servername = "localhost";
-    $username = "root";
-  	$password = "123456";
-  	$dbname = "serviceok";
-
-	$con = new mysqli($servername, $username, $password, $dbname);
-      if($con->connect_error){
-        die("Conexión fallida: ".$con->connect_error);
-      } 
+include ('conexion.php');   
  
     $salida = "";
 
