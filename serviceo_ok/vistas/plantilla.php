@@ -55,20 +55,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <li>
             <input type="text" class="form-control search" placeholder=" Search">
         </li>
-        <!-- user login dropdown start-->
-        <li class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                <img alt="" src="">
-                <span class="username">Login</span>
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu extended logout">
-                <li><a href="login.php"><i class=" fa fa-suitcase"></i>Ingresar</a></li>
-                
-            </ul>
-        </li>
-        <!-- user login dropdown end -->
-       
+             
     </ul>
     <!--search & user info end-->
 </div>
@@ -85,27 +72,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <span>Registrate Aqui</span>
                     </a>
                 </li>
-                
-                
-                <li class="sub-menu">
-                    <a href="javascript:;">
+                <li>
+                    <a class="active" href="#">
                         <i class="fa fa-bullhorn"></i>
-                        <span>Sé el servicio más seguro</span>
+                        <span>Manual de Bioseguridad</span>
                     </a>
-                        
-                    <ul class="sub">
-                        <li><a href="basic_table.html">Manual de Bioseguridad</a></li>
-                        <li><a href="responsive_table.html">Cuida a tu servicio</a></li>
-                    </ul>
-                   
                 </li>
-                <li class="sub-menu">
-                    <a href="javascript:;">
+                <li>
+                    <a class="active" href="#">
+                        <i class="fa fa-bullhorn"></i>
+                        <span>Cuida a tu servicio</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="active" href="#">
                         <i class="fa fa-envelope"></i>
                         <span>Preguntas Frecuentes</span>
                     </a>
-                    
                 </li>
+                
                           
                 <li class="sub-menu">
                     <a href="javascript:;">
@@ -117,6 +102,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li><a href="404.html">404 Error</a></li>
                         <li><a href="registration.html">Registration</a></li>
                     </ul>
+                </li>
+                <li>
+                    <a href="informate.php">
+                        <i class="fa fa-info"></i>
+                        <span>Informate sobre el Covid</span>
+                    </a>
                 </li>
                 <li>
                     <a href="login.php">

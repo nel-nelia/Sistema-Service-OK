@@ -1,4 +1,6 @@
 <?php 
+
+require 'conexion.php';
 session_start();
 $usuario = $_SESSION['username'];
 
@@ -35,15 +37,52 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.css" rel="stylesheet">
   <link href="css/estilos.css" rel="stylesheet">
+</head>
+<body>
+<section id="container">
+<!--header start-->
+<header class="header fixed-top clearfix">
+<!--logo start-->
+<div class="brand">
 
-  <?php 
-  include 'menu.php';
-  ?>
+    <a href="index.html" class="logo">
+        SERVICE OK
+    </a>
+    <div class="sidebar-toggle-box">
+        <div class="fa fa-bars"></div>
+    </div>
+</div>
+<!--logo end-->
 
+    <!-- menu-->
+    <?php include 'menu.php';?>
+    <!-- menu-->
 
-
-
-
+<div class="top-nav clearfix">
+    <!--search & user info start-->
+    <ul class="nav pull-right top-menu">
+        <li>
+            <input type="text" class="form-control search" placeholder=" Search">
+        </li>
+        <!-- user login dropdown start-->
+        <li class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                <img alt="" src="images/2.png">
+                <span class="username">John Doe</span>
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu extended logout">
+                <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
+                <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+                <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
+            </ul>
+        </li>
+        <!-- user login dropdown end -->
+       
+    </ul>
+    <!--search & user info end-->
+</div>
+</header>
 <!--header end-->
 <!--sidebar start-->
 <aside>
@@ -57,9 +96,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <span>Atras</span>
                     </a>
                 </li>
-                
-               
-            </ul>            
+            </ul>        
         </div>
         <!-- sidebar menu end-->
     </div>
@@ -67,6 +104,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--sidebar end-->
 <!--main content start-->
 <section id="main-content">
+
+
 	<section class="wrapper">
 		<div class="table-agile-info">
   <div class="panel panel-default">
@@ -86,9 +125,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       </div>
       <div class="col-sm-4">
       </div>
+
+
       <div class="col-sm-3">
       <form action="buscar_usuario.php" method="get" class="form_search">
-    <input type ="text" name="busqueda" id="busqueda" placeholder="Buscar">  
+    <input type ="text" name="busqueda" id="busqueda" placeholder="Buscar" value="<?php echo $busqueda; ?>">  
     <input type ="submit" value="Buscar" class="btn_search">
 
       </form>
@@ -98,10 +139,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
     </div>
+    
+
 
         <div class="card shadow mb-4">
             
-
+        
             <div class="card-body">
 
                 <div class="col-6 p-2 d-flex justify-content-center">
@@ -122,7 +165,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 
 
                   <?php
-                      include ('conexion.php');       
+                           
                       
                     
                       
@@ -160,6 +203,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <?php
                           }
                         ?>	
+
+
+
 
                   <tbody>
                   </tbody>

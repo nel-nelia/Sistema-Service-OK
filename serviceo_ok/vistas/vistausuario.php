@@ -35,13 +35,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.css" rel="stylesheet">
   <link href="css/estilos.css" rel="stylesheet">
+</head>
+<body>
+<section id="container">
+<!--header start-->
+<header class="header fixed-top clearfix">
+<!--logo start-->
+<div class="brand">
 
-  <?php 
-  include 'menu.php';
-  ?>
+    <a href="index.html" class="logo">
+        SERVICE OK
+    </a>
+    <div class="sidebar-toggle-box">
+        <div class="fa fa-bars"></div>
+    </div>
+</div>
+<!--logo end-->
 
-
-
+    <!-- menu-->
+    <?php include 'menu.php';?>
+    <!-- menu-->
 
 
 <!--header end-->
@@ -70,8 +83,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<section class="wrapper">
 		<div class="table-agile-info">
   <div class="panel panel-default">
-    <div class="panel-heading" >
-      Listar Tipo de Actividad
+    <div class="panel-heading">
+      Listar Usuarios
     </div>
 
     <div class="row w3-res-tb">
@@ -87,16 +100,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       <div class="col-sm-4">
       </div>
       <div class="col-sm-3">
-      <form action="buscar_usuario.php" method="get" class="form_search">
-    <input type ="text" name="busqueda" id="busqueda" placeholder="Buscar">  
-    <input type ="submit" value="Buscar" class="btn_search">
-
-      </form>
+        <div class="input-group">
+          <input type="text" class="input-sm form-control" placeholder="Search">
+          <span class="input-group-btn">
+            <button class="btn btn-sm btn-default" type="button">Buscar!</button>
+          </span>
+          
+        </div>
       </div>
-
-      
-
-
     </div>
 
         <div class="card shadow mb-4">
@@ -110,57 +121,43 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
              
               <div class="table-responsive">
                 <table class="table table-hover" id="dataTable" width="30%" cellspacing="0">
-                    <thead class="thead-dark" >
+                    <thead class="thead-dark">
                         <tr>
-                        <th>N°</th>
-                        <th>NOMBRE</th>
-                        <th>ESTADO</th>
+                        <th>USUARIO</th>
+                        <th>CLAVE</th>
+                        
                         <th>ACCIONES</th>
                         
                         </tr>
                     </thead>
-                
+
 
                   <?php
-                      include ('conexion.php');       
-                      
-                    
-                      
-                      $sql = "SELECT * FROM ActividadTipo";
-                      if(isset($_POST['btnFiltrar'])){
-                        $filtro = $_POST['buscar'];
-                        $consulta = "SELECT * FROM ActividadTipo
-                        WHERE ActividadTipoID = '$filtro' or Nombre like '%%' or
-                        "
-                        ;
-                      }
-                      
+                      include ('conexion.php');          
+                      $sql = "SELECT * FROM usuarios";
 
                       $query=mysqli_query($con, $sql);
 
                       while ($row= MySQLI_fetch_array($query)){
-                        $actividadid=$row['ActividadTipoID'];
-                        $nombre=$row['Nombre'];
-                        $estado=$row['Estado'];
+                        $usuario=$row['usuario'];
+                        $clave=$row['clave'];
+                        
 
                   ?>
                         <tr>
-                        <td><?php echo $actividadid;?></td>  
-                        <td><?php echo $nombre;?></td>
-                        <td><?php echo $estado;          
-                        ?></td>
+                        <td><?php echo $usuario;?></td>  
+                        <td><?php echo $clave;?></td>
                         
                         <td>
 
-                        <a href="modificartipo.php?id=<?php echo $row["ActividadTipoID"];?>" class="btn btn-sm btn-success"> <i class="fa fa-pencil-square-o"> </i>Editar</a>
+                        <a href="modificaradmin.php?id=<?php echo $row["usuario"];?>" class="btn btn-sm btn-success"> <i class="fa fa-pencil-square-o"> </i>Editar</a>
 
-                        <a href="../controladores/eliminartipo.php?id=<?php echo $row["ActividadTipoID"];?>" class="btn btn-sm btn-danger"><i class="fa fa-trash-o"> </i> Eliminar</a>                      
+                        <a href="../controladores/eliminaradministrador.php?id=<?php echo $row["usuario"];?>" class="btn btn-sm btn-danger"><i class="fa fa-trash-o"> </i> Eliminar</a>                      
                       </td>                    
                         </tr>
                         <?php
                           }
                         ?>	
-
                   <tbody>
                   </tbody>
                 </table>
@@ -171,39 +168,37 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
     <div class="modal fade bd-example-modal-sm" id="tipo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Agregar Tipo de Actividad</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Agregar Administrador</h5>
                 <button class="close" type="button"  data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">X</span>
                 </button>
             </div>
-            <form action="../controladores/guardartipoactividad.php" method="POST">
-                <div class="modal-body ">  
+            <form action="../controladores/guardaradministrador.php" method="POST">
+            <div class="modal-body ">  
 
-                  <div class="form-row">
-
-                            <div class="form-group col-md-12">
-                                <label  for="selectSm">Nombre</label>
-                                <input type="text" id="Nombre" name="Nombre" class="form-control" >
+                    <div class="col-sm-12 col-md-6">
+                            <div class="row form-group">
+                                <div class="col col-md-5"><label for="selectSm" class=" form-control-label">Usuario</label></div>
+                                <div class="col-12 col-md-7"><input type="text"id="usuario" name="usuario"  class="form-control"> </div>
                             </div>
+                    </div> <br> <br> <br>
 
-                            <div class="form-group col-md-12">
-                                <label for="selectSm">Estado</label>
-                                <select class="form-control" id="Estado" name="Estado">
-                                                <option selected>Elegir...</option>
-                                                <option value="Activo">Activo</option>
-                                                <option value="Inactivo">Inactivo</option>
-                                            </select> 
-                            </div> <br><br><br><br><br><br>                     
-                  </div>
+                    <div class="col-sm-12 col-md-6">
+                            <div class="row form-group">
+                                <div class="col col-md-5"><label for="selectSm" class=" form-control-label">Clave</label></div>
+                                <div class="col-12 col-md-7"><input type="password" id="clave" name="clave" class="form-control"></div>
+                                </div>
+                    </div>
+                    
                 </div>
-                      <div class="modal-footer">
-                          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                          <button class="btn btn-primary"  type="submit">Guardar</button>
-
-                      </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                        <button class="btn btn-primary"  type="submit">Guardar</button>
+                </div>
+     
             </form>
 
         </div>
@@ -242,7 +237,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <!--main content end-->
 </section>
-<script src="confirmacion.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="js/jquery.dcjqaccordion.2.7.js"></script>
 <script src="js/scripts.js"></script>
@@ -250,5 +244,40 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="js/jquery.nicescroll.js"></script>
 <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
 <script src="js/jquery.scrollTo.js"></script>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+
+    <script type="text/javascript">
+      function myFunction() {
+        $.ajax({
+          url: "../php/notificaciones.php",
+          type: "POST",
+          processData:false,
+          success: function(data){
+            $("#notification-count").remove();                  
+            $("#notification-latest").show();$("#notification-latest").html(data);
+          },
+          error: function(){}           
+        });
+      }
+                                 
+      $(document).ready(function() {
+        $('body').click(function(e){
+          if ( e.target.id != 'notification-icon'){
+            $("#notification-latest").hide();
+          }
+        });
+      });                                     
+    </script>
+    
 </body>
 </html>

@@ -328,7 +328,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                   <?php
                       include ('conexion.php');     
 
-                      $sql = "SELECT det.ActividadID, det.Nombrea, det.Descripcion, det.FlagActivo, pos.Nombre
+                      $sql = "SELECT det.ActividadID, det.Nombrea, det.Descripcion, det.Estado, pos.Nombre
                                     FROM actividad det
                                     INNER JOIN actividadtipo pos ON det.ActividadTipoID= pos.ActividadTipoID";
 
@@ -336,12 +336,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                       $query=mysqli_query($con, $sql);
 
-                      while ($row= MySQLI_fetch_array($query)){
+                      while ($row= mysqli_fetch_array($query)){
                         
                         $actividadid=$row['ActividadID'];
                         $nombre=$row['Nombrea'];
                         $descripcion=$row['Descripcion'];
-                        $flagactivo=$row['FlagActivo'];
+                        $estado=$row['Estado'];
                         $actividadTipoID=$row['Nombre'];
 
                   ?>
@@ -349,7 +349,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <td><?php echo $actividadid;?></td>
                         <td><?php echo $nombre;?></td>
                         <td><?php echo $descripcion;?></td>
-                        <td><?php echo $flagactivo;?></td>
+                        <td><?php echo $estado;?></td>
                         <td><?php echo $actividadTipoID;?></td>
                         <td>
 
@@ -474,6 +474,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <!--main content end-->
 </section>
+<script src="confirmacion.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="js/jquery.dcjqaccordion.2.7.js"></script>
 <script src="js/scripts.js"></script>
