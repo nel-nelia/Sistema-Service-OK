@@ -274,11 +274,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <section id="main-content">
 	<section class="wrapper">
 		<div class="table-agile-info">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      Listar Actividad
-    </div>
-    <div class="row w3-res-tb">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+        Listar Actividad
+        </div>
+        <div class="row w3-res-tb">
       <div class="col-sm-5 m-b-xs">
         <select class="input-sm form-control w-sm inline v-middle">
           <option value="0">Bulk action</option>
@@ -299,10 +299,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           
         </div>
       </div>
-    </div>
+     </div>
 
 
-    <div class="card shadow mb-4">
+     <div class="card shadow mb-4">
             
 
             <div class="card-body">
@@ -362,7 +362,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                   </tbody>
                 </table>
             </div>
-    </div>
+     </div>
 
 
             <div class="modal fade bd-example-modal-sm" id="tipo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -440,25 +440,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           
 
 
-    <footer class="panel-footer">
-      <div class="row">
-        
-        <div class="col-sm-5 text-center">
-          <small class="text-muted inline m-t-sm m-b-sm">showing 20-30 of 50 items</small>
+        <footer class="panel-footer">
+        <div class="row">
+            
+            <div class="col-sm-5 text-center">
+            <small class="text-muted inline m-t-sm m-b-sm">showing 20-30 of 50 items</small>
+            </div>
+            <div class="col-sm-7 text-right text-center-xs">                
+            <ul class="pagination pagination-sm m-t-none m-b-none">
+                <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
+                <li><a href="">1</a></li>
+                <li><a href="">2</a></li>
+                <li><a href="">3</a></li>
+                <li><a href="">4</a></li>
+                <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
+            </ul>
+            </div>
         </div>
-        <div class="col-sm-7 text-right text-center-xs">                
-          <ul class="pagination pagination-sm m-t-none m-b-none">
-            <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
-            <li><a href="">1</a></li>
-            <li><a href="">2</a></li>
-            <li><a href="">3</a></li>
-            <li><a href="">4</a></li>
-            <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
-          </ul>
-        </div>
-      </div>
-    </footer>
-  </div>
+        </footer>
+    </div>
 </div>
 </section>
  <!-- footer -->
