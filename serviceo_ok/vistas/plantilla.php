@@ -31,7 +31,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             width: 108%;
       }
       
-    </style> 
+    </style>  
 
 </head>
 <body>
@@ -46,6 +46,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </a>
     <div class="sidebar-toggle-box">
         <div class="fa fa-bars"></div>
+    </div>
+
+    <div class="sidebar-toggle-boxx">
+        <div class="fa fa-barss"></div>
     </div>
 </div>
 
@@ -128,6 +132,64 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <!-- sidebar menu end-->
     </div>
 </aside>
+
+
+<aside>
+    <div id="sidebar" class="nav-collapse">
+        <!-- sidebar menu start-->
+        <div class="leftside-navigation">
+            <ul class="sidebar-menu" id="nav-accordion">
+                <li>
+                    <a class="active" href="registration.php">
+                        <i class="fa fa-dashboard"></i>
+                        <span>Registrate Aqui</span>
+                    </a>
+                </li>
+                
+                
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-bullhorn"></i>
+                        <span>Sé el servicio más seguro</span>
+                    </a>
+                        
+                    <ul class="sub">
+                        <li><a href="basic_table.html">Manual de Bioseguridad</a></li>
+                        <li><a href="responsive_table.html">Cuida a tu servicio</a></li>
+                    </ul>
+                   
+                </li>
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-envelope"></i>
+                        <span>Preguntas Frecuentes</span>
+                    </a>
+                    
+                </li>
+                          
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-glass"></i>
+                        <span>Extra</span>
+                    </a>
+                    <ul class="sub">
+                        <li><a href="gallery.html">Gallery</a></li>
+						<li><a href="404.html">404 Error</a></li>
+                        <li><a href="registration.html">Registration</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="login.php">
+                        <i class="fa fa-user"></i>
+                        <span>Login Page</span>
+                    </a>
+                </li>
+            </ul>            </div>
+        <!-- sidebar menu end-->
+    </div>
+</aside>
+
+
 
 </header>
 <!--header end-->
