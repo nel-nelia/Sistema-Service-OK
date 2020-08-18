@@ -1,26 +1,22 @@
-$(buscar_datos());
+jQuery(document).ready(function($){
+	load(1);
+});  
 
-function buscar_datos(consulta){
+function load(page){
+	var q= $("#q").val();
+	$("#loader").fadeIn('slow');
 	$.ajax({
-		url: 'buscar.php' ,
-		type: 'POST' ,
-		dataType: 'html',
-		data: {consulta: consulta},
+		url:'/ajax/buscador.php?action=ajax&page='+page+'&q='+q,
+		 beforeSend: function(objeto){
+		 $('#loader').html('<img src="./images/ajax-loader.gif"> Cargando...');
+	  },
+		success:function(data){ 
+			$(".outer_div").html(data).fadeIn('slow');
+			$('#loader').html('');
+			
+		},
+		error:function(error){
+			console.log(error);
+		}
 	})
-	.done(function(respuesta){
-		$("#datos").html(respuesta);
-	})
-	.fail(function(){
-		console.log("error");
-	});
 }
-
-
-$(document).on('keyup','#caja_busqueda', function(){
-	var valor = $(this).val();
-	if (valor != "") {
-		buscar_datos(valor);
-	}else{
-		buscar_datos();
-	}
-});

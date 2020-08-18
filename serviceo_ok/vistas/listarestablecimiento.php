@@ -29,6 +29,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <!-- //font-awesome icons -->
 <script src="js/jquery2.0.3.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/style.css"> 
 </head>
 <body>
 <section id="container">
@@ -98,200 +100,36 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--main content start-->
 <section id="main-content">
 	<section class="wrapper">
-		<div class="table-agile-info">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      Establecimiento
-    </div>
-    <div class="row w3-res-tb">
-      <div class="col-sm-5 m-b-xs">
-        <select class="input-sm form-control w-sm inline v-middle">
-          <option value="0">Bulk action</option>
-          <option value="1">Delete selected</option>
-          <option value="2">Bulk edit</option>
-          <option value="3">Export</option>
-        </select>
-        <button class="btn btn-sm btn-default">Filtrar</button>                
-      </div>
-      <div class="col-sm-4">
-      </div>
-      <div class="col-sm-3">
-        <div class="input-group">
-          <input type="text" class="input-sm form-control" placeholder="Search">
-          <span class="input-group-btn">
-            <button class="btn btn-sm btn-default" type="button">Buscar!</button>
-          </span>
-          
-        </div>
-      </div>
-    </div>
+		
+  
 
-    <section class="principal">
-      <h1>BUSQUEDA DE JUGADORES</h1>
-        <div class="formulario">
-          <label for="caja_busqueda">Buscar</label>
-          <input type="text" name="caja_busqueda" id="caja_busqueda"></input> 
-        </div>
-      <div id="datos"></div>     
-    </section>
-    <br><br>
-
-
-    <div class="card shadow mb-4">
-            <div class="card-body">
-            <div class="col-6 p-2 d-flex justify-content-center">
-                <button class="btn btn btn-primary" data-toggle="modal" data-target="#tipo"> Agregar</button>
-             </div>            
-              <div class="table-responsive">
-                <table class="table table-hover" id="dataTable" width="30%" cellspacing="0">
-                    <thead class="thead-dark">
-                    <tr>
-                    <th>N°</th>
-                    <th>Nombre</th>
-                    <th>Telefono</th>
-                    <th>Whatsapp</th>
-                    <th>Delivery</th>
-                    <th>Permiso</th>
-                    <th>Acciones</th>
-                        
-                        </tr>
-                    </thead>
-                    <?php
-                      include ('conexion.php');          
-                      $sql = "SELECT * FROM google_maps_php_mysql";
-
-                      $query=mysqli_query($con, $sql);
-
-                      while ($row= MySQLI_fetch_array($query)){
-                        $establecimeintoId=$row['id'];
-                        $nombre=$row['nombre'];
-                        $telefono=$row['direccion'];
-                        $whatsappURL=$row['lat'];
-                        $delivery=$row['lng'];
-                        $permiso=$row['pais'];
-                  ?>
-                        <tr>
-                        <td><?php echo $establecimeintoId;?></td>
-            
-                        <td><?php echo $nombre;?></td>
-                        <td><?php echo $telefono;?></td>
-                        <td><?php echo $whatsappURL;?></td>
-                        <td><?php echo $delivery;?></td>
-                        <td><?php echo $permiso;?></td>          
-                        <td>
-
-                        <form method="POST" action="modificarAtipo.php">
-                        <input type="hidden" value="<?php echo $actividadid; ?>" name="id">
-                        <button type="submit" class="btn btn-success btn-sm"><i class="fa fa-pencil-square-o"> </i>&nbsp; Modificar</button><p></p>
-                        </form> 
-                         </td>
-                        
-                        
-                        </tr>
-                        <?php
-                          }
-                        ?>	
-                  <tbody>
-                  </tbody>
-                </table>
-              </div>
-            </div> 
-
-            <div class="modal fade bd-example-modal-sm" id="tipo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Agregar Establecimiento</h5>
-                            <button class="close" type="button"  data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">X</span>
-                            </button>
-                    </div>
-                    <form action="../controladores/guardarestablecimiento.php" method="POST">
-                            <div class="modal-body ">  
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label for="selectSm">Establecimiento</label>
-                                        <input type="text" id="registrousuarioID" name="registrousuarioID"  class="form-control">
-                                    </div>
-
-                                    <div class="form-group col-md-6">
-                                        <label for="selectSm">Direccion</label>
-                                        <input type="text" id="direccion" name="direccion"  class="form-control">
-                                    </div>
-
-                               <!--     <div class="form-group col-md-6">
-                                        <label for="selectSm">Whatsapp</label>
-                                        <select id="whatsapp" name="whatsapp"  class="form-control">
-                                                    <?php
-                                                    $sql="SELECT * FROM registrousuario";
-                                                    $res=mysqli_query($con,$sql);
-                                                    while ($rw= mysqli_fetch_array($res)){
-                                                    echo "<option value=".$rw["RegistrousuarioID"].">".$rw["phone"]."</option> ";
-                                                    } 
-                                                    ?>
-                                        </select>
-                                    </div> -->
-
-                                    <div class="form-group col-md-3">
-                                        <label for="selectSm">Latitud</label>
-                                        <input type="text" id="latitud" name="latitud"  class="form-control">
-                                    </div>
-
-                                    <div class="form-group col-md-3">
-                                        <label for="selectSm">Longitud</label>
-                                        <input type="text"  id="longitud" name="longitud" class="form-control">
-                                    </div>
-
-                                    <div class="form-group col-md-6">
-                                        <label for="selectSm">Departamento</label>
-                                        <input type="text" id="Departamento" name="Departamento"  class="form-control">
-                                    </div>
-
-                                    
-                                  <!--                      
-                                    <div class="form-group col-md-6">
-                                        <label for="selectSm">Estado</label>
-                                        <select class="form-control" id="Estado" name="Estado">
-                                                        <option selected>Elegir...</option>
-                                                        <option value="Activo">Activo</option>
-                                                        <option value="Inactivo">Inactivo</option>
-                                        </select> 
-                                    </div> -->                                 
-
-                                </div>
-                      
-                            </div>
-
-                            <div class="modal-footer">
-                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                                <button class="btn btn-primary"  type="submit">Guardar</button>
-                            </div>
-                    </form>
-
+      <div class="content">
+            <div class="col-lg-12">
+                <div class="card">
+                          <div class="card-body">
+                              <div class="row">
+                                      <div class="col-sm-12 col-lg-12 text-center"><br>
+                                          <div class="input-group">
+                                              <div class="input-group-btn">
+                                                  <button class="btn btn-primary" onclick="load(1)">
+                                                      <i class="fa fa-search"></i> Buscar
+                                                  </button>
+                                              </div>
+                                              <input type="text" class="form-control" id="q" onkeyup="load(1)" style="text-transform: uppercase;">
+                                          </div>
+                                      </div><br><br><br>
+                                      <div id="loader" style="position: absolute; text-align: center; top: 55px;  width: 100%;display:none;" class="col-sm-12 text-center"></div><!-- Carga gif animado -->
+                                      <div class="col-sm-12 outer_div" ></div><!-- Datos ajax Final -->
+                                  </div>
+                              </div>
+                          </div>
                 </div>
-            </div>       
-        </div>     
-
-    <footer class="panel-footer">
-      <div class="row">
-        
-        <div class="col-sm-5 text-center">
-          <small class="text-muted inline m-t-sm m-b-sm">showing 20-30 of 50 items</small>
-        </div>
-        <div class="col-sm-7 text-right text-center-xs">                
-          <ul class="pagination pagination-sm m-t-none m-b-none">
-            <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
-            <li><a href="">1</a></li>
-            <li><a href="">2</a></li>
-            <li><a href="">3</a></li>
-            <li><a href="">4</a></li>
-            <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
-          </ul>
-        </div>
+            </div>
       </div>
-    </footer>
-  </div>
-</div>
+    
+   
+
+
 </section>
  <!-- footer -->
 		  <div class="footer">
@@ -314,5 +152,38 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
+<script src="js/main.js"></script>   
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+
+<script >
+jQuery(document).ready(function($){
+	load(1);
+});  
+
+function load(page){
+	var q= $("#q").val();
+	$("#loader").fadeIn('slow');
+	$.ajax({
+		url:'./ajax/buscador.php?action=ajax&page='+page+'&q='+q,
+		 beforeSend: function(objeto){
+		 $('#loader').html('<img src="./images/ajax-loader.gif"> Cargando...');
+	  },
+		success:function(data){ 
+			$(".outer_div").html(data).fadeIn('slow');
+			$('#loader').html('');
+			
+		},
+		error:function(error){
+			console.log(error);
+		}
+	})
+}
+
+</script>
 </body>
 </html>

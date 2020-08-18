@@ -6,7 +6,7 @@ include 'conexion.php';
 $Nombre=$_POST['registrousuarioID'];
 $direccion=$_POST['direccion'];
 $latitud=$_POST['latitud'];
-$longitud=$_POST['longitud'];
+$longitud=$_POST['longitud'];  
 $departamento=$_POST['Departamento'];
 
 $sql="INSERT INTO google_maps_php_mysql (nombre, direccion, lat, lng, pais) 
