@@ -29,6 +29,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <!-- //font-awesome icons -->
 <script src="js/jquery2.0.3.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/style.css"> 
 </head>
 <body>
 <section id="container">
@@ -73,260 +75,32 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--main content start-->
 <section id="main-content">
 	<section class="wrapper">
-		<div class="table-agile-info">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      Establecimiento
-    </div>
-    <div class="row w3-res-tb">
-      <div class="col-sm-5 m-b-xs">
-        <select class="input-sm form-control w-sm inline v-middle">
-          <option value="0">Bulk action</option>
-          <option value="1">Delete selected</option>
-          <option value="2">Bulk edit</option>
-          <option value="3">Export</option>
-        </select>
-        <button class="btn btn-sm btn-default">Filtrar</button>                
-      </div>
-      <div class="col-sm-4">
-      </div>
-      <div class="col-sm-3">
-        <div class="input-group">
-          <input type="text" class="input-sm form-control" placeholder="Search">
-          <span class="input-group-btn">
-            <button class="btn btn-sm btn-default" type="button">Buscar!</button>
-          </span>
-          
-        </div>
-      </div>
-    </div>
+		
+  
 
-
-    <div class="card shadow mb-4">
-           
-
-            <div class="card-body">
-
-            <div class="col-6 p-2 d-flex justify-content-center">
-                <button class="btn btn btn-primary" data-toggle="modal" data-target="#tipo"> Agregar</button>
-             </div>
-              <div class="table-responsive">
-                <table class="table table-hover" id="dataTable" width="30%" cellspacing="0">
-                    <thead class="thead-dark">
-                    <tr>
-                    <th>N°</th>
-                    <th>Nombre</th>
-                    <th>Telefono</th>
-                    <th>Whatsapp</th>
-                    <th>Delivery</th>
-                    <th>Permiso</th>
-                    <th>RUC</th>
-                    <th>Coordenadas X</th>
-                    <th>Coordenadas Y</th>
-                    <th>Estado</th>
-                    <th>Actividad</th>
-                    <th>Representante</th>
-                    <th>Acciones</th>
-                        
-                        </tr>
-                    </thead>
-
-
-                    <?php
-                      include ('conexion.php');          
-                      $sql = "SELECT * FROM Establecimiento";
-
-                      $query=mysqli_query($con, $sql);
-
-                      while ($row= MySQLI_fetch_array($query)){
-                        $establecimeintoId=$row['EstablecimientoID'];
-                        $nombre=$row['Nombre'];
-                        $telefono=$row['Telefono'];
-                        $whatsappURL=$row['WhatsappURL'];
-                        $delivery=$row['Delivery'];
-                        $permiso=$row['Permiso'];
-                        $ruc=$row['RUC'];
-                        $coordenadaX=$row['CoordenadaX'];
-                        $coordenadaY=$row['CoordenadaY'];
-                        $flagactivo=$row['FlagActivo'];
-                        $actividadID=$row['ActividadID'];
-                        $representanteID=$row['RepresentanteID'];
-                  ?>
-                        <tr>
-                        <td><?php echo $establecimeintoId;?></td>
-            
-                        <td><?php echo $nombre;?></td>
-                        <td><?php echo $telefono;?></td>
-                        <td><?php echo $whatsappURL;?></td>
-                        <td><?php echo $delivery;?></td>
-                        <td><?php echo $permiso;?></td>
-                        <td><?php echo $ruc;?></td>
-                        <td><?php echo $coordenadaX;?></td>
-                        <td><?php echo $coordenadaY;?></td>
-                        <td><?php echo $flagactivo;?></td>
-                        <td><?php echo $actividadID;?></td>
-                        <td><?php echo $representanteID;?></td>
-            
-                        <td>
-                        <form method="POST" action="modificarAtipo.php">
-                        <input type="hidden" value="<?php echo $actividadid; ?>" name="id">
-                        <button type="submit" class="btn btn-success btn-sm"><i class="fa fa-pencil-square-o"> </i>&nbsp; Modificar</button><p></p>
-                        </form> 
-                         </td>
-                        
-                        
-                        </tr>
-                        <?php
-                          }
-                        ?>	
-                  <tbody>
-                  </tbody>
-                </table>
-              </div>
-            </div> 
-
-
-            <div class="modal fade bd-example-modal-sm" id="tipo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Agregar Tipo</h5>
-                            <button class="close" type="button"  data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">X</span>
-                            </button>
-                    </div>
-                    <form action="../controladores/guardarestablecimiento.php" method="POST">
-                            <div class="modal-body ">  
-                                <div class="form-row">
-
-                                    <div class="form-group col-md-6">
-                                        <label for="selectSm">Nombre</label>
-                                        <input type="text" id="Nombre" name="Nombre" class="form-control" >
-                                    </div>
-
-                                    <div class="form-group col-md-6">
-                                        <label for="selectSm">Celular</label>
-                                        <input type="text"  id="Telefono" name="Telefono" class="form-control">
-                                    </div>
-
-                                    <div class="form-group col-md-6">
-                                        <label for="selectSm">Whatsapp</label>
-                                        <input type="text"  id="WhatsappURL" name="WhatsappURL" class="form-control">
-                                    </div>
-
-                                    <div class="form-group col-md-6">
-                                        <label for="selectSm">Delivery</label>
-                                        <input type="text" id="Delivery" name="Delivery"  class="form-control">
-                                    </div>
-
-                                    <div class="form-group col-md-6">
-                                        <label for="selectSm">Permiso</label>
-                                        <input type="text"  id="Permiso" name="Permiso" class="form-control">
-                                    </div>
-
-                                    <div class="form-group col-md-6">
-                                        <label for="selectSm">RUC</label>
-                                        <input type="text" id="RUC" name="RUC"  class="form-control">
-                                    </div>
-
-                                    <div class="form-group col-md-6">
-                                        <label for="selectSm">Latitud</label>
-                                        <input type="text"  id="CoordenadaX" name="CoordenadaX" class="form-control">
-                                    </div>
-
-                                    <div class="form-group col-md-6">
-                                        <label for="selectSm">Latitud</label>
-                                        <input type="text"  id="CoordenadaY" name="CoordenadaY" class="form-control">
-                                    </div>
-
-                                    <div class="form-group col-md-6">
-                                        <label for="selectSm">Estado</label>
-                                        <input type="text"  id="FlagActivo" name="FlagActivo" class="form-control">
-                                    </div>
-
-
-                                    
-
-                                <div class="col-sm-12 col-md-6">
-                                    <div class="row form-group">
-                                        <div class="col col-md-5"> Actividad</div>
-                                        <div class="col-12 col-md-7"> 
-
-                                         <select id="ActividadID" name="ActividadID"  class="form-control">
-                                                                <?php
-                                                                $sql="SELECT * FROM Actividad";
-                                                                $res=mysqli_query($con,$sql);
-                                                                while ($rw= mysqli_fetch_array($res)){
-                                                                    echo "<option value=".$rw["ActividadID"].">".$rw["Nombre"]."</option> ";
-                                                                } 
-                                                                ?>
-                                        </select>
-                                        </div>
-
-                                    </div> 
-                                </div>
-
-                                <div class="col-sm-12 col-md-6">
-                                    <div class="row form-group">
-                                        <div class="col col-md-5"> Representante</div>
-                                        <div class="col-12 col-md-7"> 
-
-                                        <select id="RepresentanteID" name="RepresentanteID"  class="form-control">
-                                                                <?php
-                                                                $sql="SELECT * FROM Representante";
-                                                                $res=mysqli_query($con,$sql);
-                                                                while ($rw= mysqli_fetch_array($res)){
-                                                                    echo "<option value=".$rw["RepresentanteID"].">".$rw["Nombre"]."</option> ";
-                                                                } 
-                                                                ?>
-                                        </select>
-                                        </div>
-
-                                    </div> 
-                                </div>
-
-                                  
-
-                                </div>
-                      
-                            </div>
-
-                            <div class="modal-footer">
-                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                                <button class="btn btn-primary"  type="submit">Guardar</button>
-                            </div>
-     
-                    </form>
-
+      <div class="content">
+            <div class="col-lg-12">
+                <div class="card">
+                          <div class="card-body">
+                              <div class="row">
+                                      <div class="col-sm-12 col-lg-12 text-center"><br>
+                                          <div class="input-group">
+                                              <div class="input-group-btn">
+                                                  <button class="btn btn-primary" onclick="load(1)">
+                                                      <i class="fa fa-search"></i> Buscar
+                                                  </button>
+                                              </div>
+                                              <input type="text" class="form-control" id="q" onkeyup="load(1)" style="text-transform: uppercase;">
+                                          </div>
+                                      </div><br><br><br>
+                                      <div id="loader" style="position: absolute; text-align: center; top: 55px;  width: 100%;display:none;" class="col-sm-12 text-center"></div><!-- Carga gif animado -->
+                                      <div class="col-sm-12 outer_div" ></div><!-- Datos ajax Final -->
+                                  </div>
+                              </div>
+                          </div>
                 </div>
             </div>
-            
-        </div>
-
-
-          
-
-
-    <footer class="panel-footer">
-      <div class="row">
-        
-        <div class="col-sm-5 text-center">
-          <small class="text-muted inline m-t-sm m-b-sm">showing 20-30 of 50 items</small>
-        </div>
-        <div class="col-sm-7 text-right text-center-xs">                
-          <ul class="pagination pagination-sm m-t-none m-b-none">
-            <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
-            <li><a href="">1</a></li>
-            <li><a href="">2</a></li>
-            <li><a href="">3</a></li>
-            <li><a href="">4</a></li>
-            <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
-          </ul>
-        </div>
       </div>
-    </footer>
-  </div>
-</div>
 </section>
  <!-- footer -->
 		  <div class="footer">
@@ -346,5 +120,39 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="js/jquery.nicescroll.js"></script>
 <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
 <script src="js/jquery.scrollTo.js"></script>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
+<script src="js/main.js"></script>   
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+
+        <script >
+        jQuery(document).ready(function($){
+            load(1);
+        });  
+        function load(page){
+            var q= $("#q").val();
+            $("#loader").fadeIn('slow');
+            $.ajax({
+                url:'./ajax/buscador.php?action=ajax&page='+page+'&q='+q,
+                beforeSend: function(objeto){
+                $('#loader').html('<img src="./images/ajax-loader.gif"> Cargando...');
+            },
+                success:function(data){ 
+                    $(".outer_div").html(data).fadeIn('slow');
+                    $('#loader').html('');
+                    
+                },
+                error:function(error){
+                    console.log(error);
+                }
+            })
+        }
+        </script>
 </body>
 </html>

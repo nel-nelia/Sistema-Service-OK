@@ -4,7 +4,7 @@
   include('conexion.php');
 
   // Listamos las direcciones con todos sus datos (lat, lng, dirección, etc.)
-  $result = mysqli_query($con, "SELECT * FROM google_maps_php_mysql");
+  $result = mysqli_query($con, "SELECT * FROM establecimiento");
 
   // Creamos una tabla para listar los datos 
   echo "<div class='table-responsive'>";

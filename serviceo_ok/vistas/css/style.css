@@ -3148,4 +3148,17 @@ div#graph1, div#graph4, div#graph5, div#graph6, div#graph7, div#graph8, div#grap
     text-align:center;
 }
 
+
+#titulo {
+    background-color: #508abb;
+    color: #FFFFFF;
+    border-color: #6ea1cc !important;
+    text-transform: uppercase;
+}
+
+#right-panel {
+    background: #f1f2f7;
+    margin-left: 280px;
+    margin-top: 55px; }
+
 }
