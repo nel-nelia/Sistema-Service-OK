@@ -326,9 +326,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                   <?php
                       include ('conexion.php');     
 
-                      $sql = "SELECT det.ActividadID, det.Nombrea, det.Descripcion, det.Estado, pos.Nombre
-                                    FROM actividad det
-                                    INNER JOIN actividadtipo pos ON det.ActividadTipoID= pos.ActividadTipoID";
+                      $sql = "SELECT * FROM actividad";
 
                   
 
@@ -338,17 +336,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         
                         $actividadid=$row['ActividadID'];
                         $nombre=$row['Nombrea'];
-                        $descripcion=$row['Descripcion'];
                         $estado=$row['Estado'];
-                        $actividadTipoID=$row['Nombre'];
 
                   ?>
                         <tr>
                         <td><?php echo $actividadid;?></td>
                         <td><?php echo $nombre;?></td>
-                        <td><?php echo $descripcion;?></td>
                         <td><?php echo $estado;?></td>
-                        <td><?php echo $actividadTipoID;?></td>
                         <td>
 
                         <a href="modificaractividad.php?id=<?php echo $row["ActividadID"];?>" class="btn btn-sm btn-success"> <i class="fa fa-pencil-square-o"> </i>Editar</a>
