@@ -21,7 +21,7 @@ $result = MYSQLI_query($con, $sql);
 
 
 if ($result) {
-    header('Location: ../vistas/listarestablecimiento.php');
+    header('Location: ../vistas/listarestablecimientos.php');
 }else{
     echo "ERROR DE INGRESO";
 }

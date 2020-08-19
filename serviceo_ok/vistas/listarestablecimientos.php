@@ -29,8 +29,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <!-- //font-awesome icons -->
 <script src="js/jquery2.0.3.min.js"></script>
-
-<link rel="stylesheet" type="text/css" href="css/style.css"> 
 </head>
 <body>
 <section id="container">
@@ -48,9 +46,35 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div>
 <!--logo end-->
 
-        <!-- menu-->
-    <?php include 'head.php';?>
 
+
+<?php include 'head.php';?>
+
+<div class="top-nav clearfix">
+    <!--search & user info start-->
+    <ul class="nav pull-right top-menu">
+        <li>
+            <input type="text" class="form-control search" placeholder=" Search">
+        </li>
+        <!-- user login dropdown start-->
+        <li class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                <img alt="" src="images/2.png">
+                <span class="username">John Doe</span>
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu extended logout">
+                <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
+                <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+                <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
+            </ul>
+        </li>
+        <!-- user login dropdown end -->
+       
+    </ul>
+    <!--search & user info end-->
+</div>
+</header>
 <!--header end-->
 <!--sidebar start-->
 <aside>
@@ -75,39 +99,76 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--main content start-->
 <section id="main-content">
 	<section class="wrapper">
-		
-    <div class="col-6 p-2 d-flex justify-content-center">
+		<div class="table-agile-info">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+        Establecimiento
+        </div>
+
+
+
+     <div class="card shadow mb-4">
+            
+
+            <div class="card-body"><br>
+            <div class="col-6 p-2 d-flex justify-content-center">
                 <button class="btn btn btn-primary" data-toggle="modal" data-target="#tipo"> Agregar</button>
              </div>
+              <div class="table-responsive">
+                <table class="table table-hover" id="dataTable" width="30%" cellspacing="0">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Direccion</th>
+                        <th>Latitud</th>
+                        <th>Longitud </th>
+                        <th>Distrito </th>
+                        <th>Acciones </th>
+                        
+                        </tr>
+                    </thead>
 
-      <div class="content">
-            <div class="col-lg-12">
-                <div class="card">
-                          <div class="card-body">
-                              <div class="row">
-                                      <div class="col-sm-12 col-lg-12 text-center"><br>
-                                          <div class="input-group">
-                                              <div class="input-group-btn">
-                                                  <button class="btn btn-primary" onclick="load(1)">
-                                                      <i class="fa fa-search"></i> Buscar
-                                                  </button>
-                                              </div>
-                                              <input type="text" class="form-control" id="q" onkeyup="load(1)" style="text-transform: uppercase;">
-                                          </div>
-                                      </div><br><br><br>
-                                      <div id="loader" style="position: absolute; text-align: center; top: 55px;  width: 100%;display:none;" class="col-sm-12 text-center"></div><!-- Carga gif animado -->
-                                      <div class="col-sm-12 outer_div" ></div><!-- Datos ajax Final -->
-                                  </div>
-                              </div>
-                          </div>
-                </div>
+
+                  <?php
+                      include ('conexion.php');     
+
+                      $sql = "SELECT * FROM establecimiento";
+
+                      $query=mysqli_query($con, $sql);
+
+                      while ($row= mysqli_fetch_array($query)){
+                        
+                            $nombre=$row['nombre'];
+                            $direccion=$row['direccion'];
+                            $latitud=$row['lat'];
+                            $longitud=$row['lng'];
+                            $pais=$row['Distrito'];
+                            $id=$row['id'];
+
+                  ?>
+                        <tr>
+                        <td><?php echo $nombre; ?></td>
+						<td><?php echo $direccion; ?></td>
+						<td><?php echo $latitud; ?></td>
+                        <td><?php echo $longitud; ?></td>
+                        <td><?php echo $pais; ?></td>
+                        <td> 
+                        <a href="modificarestablecimiento.php?id=<?php echo $row["id"];?>" class="btn btn-sm btn-success"> <i class="fa fa-pencil-square-o"> </i>Editar</a>
+                        <a href="../controladores/eliminarestablecimiento.php?id=<?php echo $row["id"];?>" class="btn btn-sm btn-danger"><i class="fa fa-trash-o"> </i> Eliminar</a>						
+						</td>   
+
+                        </tr>
+                        <?php
+                          }
+                        ?>	
+                  <tbody>
+                  </tbody>
+                </table>
             </div>
-
-        
-      </div>
+     </div>
 
 
-      <div class="modal fade bd-example-modal-sm" id="tipo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade bd-example-modal-sm" id="tipo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg" role="document">
                       <div class="modal-content">
                           <div class="modal-header">
@@ -199,6 +260,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>       
               </div> 
 
+
         <footer class="panel-footer">
         <div class="row">
             
@@ -218,8 +280,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
         </footer>
     </div>
-
-      
+</div>
 </section>
  <!-- footer -->
 		  <div class="footer">
@@ -232,6 +293,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <!--main content end-->
 </section>
+<script src="confirmacion.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="js/jquery.dcjqaccordion.2.7.js"></script>
 <script src="js/scripts.js"></script>
@@ -239,72 +301,5 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="js/jquery.nicescroll.js"></script>
 <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
 <script src="js/jquery.scrollTo.js"></script>
-
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
-<script src="js/main.js"></script>   
-<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
-
-        <script >
-        jQuery(document).ready(function($){
-            load(1);
-        });  
-        function load(page){
-            var q= $("#q").val();
-            $("#loader").fadeIn('slow');
-            $.ajax({
-                url:'./ajax/buscador.php?action=ajax&page='+page+'&q='+q,
-                beforeSend: function(objeto){
-                $('#loader').html('<img src="./images/ajax-loader.gif"> Cargando...');
-            },
-                success:function(data){ 
-                    $(".outer_div").html(data).fadeIn('slow');
-                    $('#loader').html('');
-                    
-                },
-                error:function(error){
-                    console.log(error);
-                }
-            })
-        }
-        </script>
-
-         <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="js/ie10-viewport-bug-workaround.js"></script>
-
-    <script type="text/javascript">
-      function myFunction() {
-        $.ajax({
-          url: "../php/notificaciones.php",
-          type: "POST",
-          processData:false,
-          success: function(data){
-            $("#notification-count").remove();                  
-            $("#notification-latest").show();$("#notification-latest").html(data);
-          },
-          error: function(){}           
-        });
-      }
-                                 
-      $(document).ready(function() {
-        $('body').click(function(e){
-          if ( e.target.id != 'notification-icon'){
-            $("#notification-latest").hide();
-          }
-        });
-      });                                     
-    </script>
 </body>
 </html>
