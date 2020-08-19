@@ -1,5 +1,5 @@
 <?php
-$con = new mysqli("localhost","root","root","serviceok");
+$con = new mysqli("localhost","root","123456","serviceok");
 
 $sql = "UPDATE datos SET estado = 1 WHERE estado = 0";	
 $result = mysqli_query($con, $sql);

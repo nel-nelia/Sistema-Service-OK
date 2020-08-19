@@ -43,7 +43,7 @@
     <div class="panel panel-default">
         
      <br>
-     <div class="card shadow mb-4">
+     <div class="card shadow mb-4"> 
             <div class="card-body">
             <div class="col-6 p-2 d-flex justify-content-center">
                 <button class="btn btn btn-primary" data-toggle="modal" data-target="#tipo"> Agregar</button>

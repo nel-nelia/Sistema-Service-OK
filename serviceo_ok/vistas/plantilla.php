@@ -31,7 +31,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             width: 108%;
       }
       
-    </style> 
+    </style>  
 
 </head>
 <body>
@@ -47,6 +47,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="sidebar-toggle-box">
         <div class="fa fa-bars"></div>
     </div>
+
 </div>
 
 <div class="top-nav clearfix">
@@ -119,6 +120,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <!-- sidebar menu end-->
     </div>
 </aside>
+
 
 </header>
 <!--header end-->
