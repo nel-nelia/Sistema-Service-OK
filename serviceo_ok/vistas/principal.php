@@ -67,14 +67,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </ul>
 		<?php
             include("conexion.php");
-        ?>                        
-</div>
-</div>
-<div class="top-nav clearfix">
-    <!--search & user info start-->
-    <ul class="nav pull-right top-menu">
-
-	<li>
+        ?>             
 		<div class="demo-content">
             <div id="notification-header">
               <div style="position:relative">
@@ -86,7 +79,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		
 		<?php if(isset($message)) { ?> <div class="error"><?php echo $message; ?></div> <?php } ?>
           <?php if(isset($success)) { ?> <div class="success"><?php echo $success;?></div> <?php } ?>
+           
+</div>
+</div>
 
+<div class="top-nav clearfix">
+
+    <!--search & user info start-->
+    <ul class="nav pull-right top-menu">
+	
+
+	<li>
+		
 
 		</li>
 		

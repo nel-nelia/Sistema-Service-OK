@@ -1,8 +1,7 @@
-
 /* div.demo-content{box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.20);color:#8d9090;} */
 #notification-header {
-	background: rgb(41, 235, 202);
-    padding: 0px;
+	background: #fff;
+    padding: 6px;
     text-align: right;
     /* margin-top: 4px; */
     border-radius: 5px;
@@ -20,41 +19,41 @@ button#notification-icon {
     left: -2px;
     top: -8px;
     font-size: 14px;
-    color: #fa8181;
+    color: #de5050;
     font-weight: bold;
 }
 #form-header {
 	font-size:1.5em;
 }
 #frmNotification {
-	padding:0px 0px;
+	padding:20px 30px;
 }
 .form-row{
-	padding-bottom:0px;
+	padding-bottom:20px;
 }
 #btn-send {
 	background: #258bdc;
-	color: rgb(170, 252, 159);
+	color: #FFF;
 	padding: 10px 40px;
 	border: 0px;
 }
 div.demo-content input[type='text'],textarea{
 	width: 100%;
-	padding: 5px 0px;
+	padding: 10px 5px;
 }
 #notification-latest {
 	color: #555;
- 
+  position: absolute;
   right: 0px;
-  background: #a7ee9e;
-  box-shadow: 0px 1px 1px rgba(36, 233, 36, 0.932);
+  background: #f5f5f5;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.20);
   /* max-width: 250px; */
   text-align: left;
   font-size: 12px;
 }
 .notification-item {
-	padding:0px;
-	border-bottom: #23e723 2px solid;
+	padding:10px;
+	border-bottom: #ce2078 2px solid;
 	cursor:pointer;
 }
 .notification-subject {		
