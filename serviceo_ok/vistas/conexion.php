@@ -1,7 +1,7 @@
 <?php 
 
   // Nos conectamos a la Base de Datos MySQL
-  $con = mysqli_connect("localhost", "root", "123456", "serviceok");
+  $con = mysqli_connect("localhost", "root", "root", "serviceok");
  
   $con = new mysqli("localhost","root","root","serviceok");
   $count = 0;

@@ -83,7 +83,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
               </div>          
 			</div>
 		</div>
-
+		
 		<?php if(isset($message)) { ?> <div class="error"><?php echo $message; ?></div> <?php } ?>
           <?php if(isset($success)) { ?> <div class="success"><?php echo $success;?></div> <?php } ?>
 
@@ -128,17 +128,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <ul class="sidebar-menu" id="nav-accordion">
                
                 
-                <li class="sub-menu">
-                    <a href="javascript:;">
-                        <i class="fa fa-university"></i>
-                        <span>Gestión Tipo Actividad</span>
-                    </a>
-                    <ul class="sub">
-						<li><a href="listartipo.php">Listar</a></li>
-						<li><a href="agregartipo.php">Agregar</a></li>
-                        
-                    </ul>
-                </li>
                 
                 <li class="sub-menu">
                     <a href="javascript:;">
@@ -206,12 +195,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						
                     </ul>
                 </li>
-                <li>
-                    <a href="login.html">
-                        <i class="fa fa-user"></i>
-                        <span>Login Page</span>
-                    </a>
-                </li>
+                
             </ul>            </div>
         <!-- sidebar menu end-->
     </div>

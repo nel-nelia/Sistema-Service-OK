@@ -52,7 +52,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       <label for="mensaje">MENSAJE </label>
       <textarea class="form-control" name="mensaje" id="mensaje" rows="3" placeholder="Mensaje" required></textarea>
       </div>
-		
+		 
 
 			<h4><input type="checkbox" />Estoy de acuerdo con las Politicas de Seguridad</h4>
 			
