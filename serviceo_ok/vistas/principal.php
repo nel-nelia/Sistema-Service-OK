@@ -146,7 +146,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <span>Gestión Establecimiento</span>
                     </a>
                     <ul class="sub">
-                        <li><a href="listarestablecimiento.php">Listar</a></li>
+                        <li><a href="listarestablecimientos.php">Listar</a></li>
                         <li><a href="agregarestablecimiento.php">Agregar</a></li>
 						
                     </ul>
