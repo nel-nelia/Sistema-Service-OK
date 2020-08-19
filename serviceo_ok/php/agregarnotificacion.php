@@ -1,7 +1,8 @@
 <?php
-	$con = new mysqli("localhost","root","root","serviceok");
+
+    include('conexion.php');
 	$count=0;
-	if(!empty($_POST['add'])) {
+	if(!empty($_POST['add'])) {  
 		$autor = mysqli_real_escape_string($con,$_POST["autor"]);
 		$apellidorepresentante = mysqli_real_escape_string($con,$_POST["apellidorepresentante"]);
 		$nombrestablecimiento = mysqli_real_escape_string($con,$_POST["nombreestablecimiento"]);
