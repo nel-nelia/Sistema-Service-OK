@@ -162,7 +162,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHUMaudNC3W-f3XO7NXbXBJP7wytJF4SI&callback=initMap"></script>
 
     <script type="text/javascript">
-      function initMap() {
+
+    navigator.geolocation.getCurrentPosition(function(location) {
+        console.log(location.coords.latitude);
+        console.log(location.coords.longitude);
+
+        
+        var center = {lat: location.coords.latitude, lng: location.coords.longitude};
+
+        function initMap() {
           var map;
           var bounds = new google.maps.LatLngBounds();
           var mapOptions = {
@@ -170,6 +178,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           };
 
           map = new google.maps.Map(document.getElementById('mapa'), {
+              center: center,
               mapOptions
           });
 
@@ -181,10 +190,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           ];
 
           // Creamos la ventana de información para cada Marcador
+
+          
           var ventanaInfo = [
               <?php include('../php/info_marcadores.php'); ?>
              
           ];
+
+          var marker = new google.maps.Marker({
+        position: {lat: location.coords.latitude, lng: location.coords.longitude},
+        map:map,
+        title: 'Ubicacion Actual'
+
+        });
 
           // Creamos la ventana de información con los marcadores 
           var mostrarMarcadores = new google.maps.InfoWindow(),
@@ -195,10 +213,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
               var position = new google.maps.LatLng(marcadores[i][1], marcadores[i][2]);
               bounds.extend(position);
               marker = new google.maps.Marker({
+                  position1: {lat: location.coords.latitude, lng: location.coords.longitude},
                   position: position,
                   map: map,
-                  title: marcadores[i][0]
-              });
+
+                  title: marcadores[i][0],
+                  icon: '../vistas/images/casa.png'
+            
+              });  
 
               // Colocamos la ventana de información a cada Marcador del Mapa de Google 
               google.maps.event.addListener(marker, 'click', (function(marker, i) {
@@ -217,11 +239,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
               this.setZoom(16);
               google.maps.event.removeListener(boundsListener);
           });
-
-      }
+        }
+        initMap();
 
       // Lanzamos la función 'initMap' para que muestre el Mapa con Los Marcadores y toda la configuración realizada 
       google.maps.event.addDomListener(window, 'load', initMap);
+     });
     </script>
     
 
