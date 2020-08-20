@@ -262,6 +262,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           // Creamos la ventana de información con los marcadores 
           var mostrarMarcadores = new google.maps.InfoWindow(),
               marcadores, i;
+             
 
           // Colocamos los marcadores en el Mapa de Google 
           for (i = 0; i < marcadores.length; i++) {
@@ -270,6 +271,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
               marker = new google.maps.Marker({
                   position: position,
                   map: map,
+                  
                   title: marcadores[i][0]
               });
 
@@ -290,6 +292,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
               this.setZoom(14);
               google.maps.event.removeListener(boundsListener);
           });
+
+          
 
       }
 

@@ -29,6 +29,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <!-- //font-awesome icons -->
 <script src="js/jquery2.0.3.min.js"></script>
+
+<!-- //swetalert -->
+<link rel="stylesheet" href="plugins/dist/sweetalert2.min.css">
 </head>
 <body>
 <section id="container">
@@ -228,6 +231,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
 
 
+
           
 
 
@@ -271,5 +275,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="js/jquery.nicescroll.js"></script>
 <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
 <script src="js/jquery.scrollTo.js"></script>
+<script src="plugins/dist/sweetalert2.all.min.js"></script>
 </body>
 </html>

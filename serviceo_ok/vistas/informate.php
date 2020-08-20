@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>COVID 19</title>
+        <title>Service OK - COVID 19</title>
         <style>
             body {
                 margin: 0;
@@ -64,7 +64,7 @@
                 map,
                 icon: './icon.png'
                 //personalizar nuestro icono 
-                
+                 
             })
             //asignandole eventos al marker
             marker.addListener('click', ()=>{
