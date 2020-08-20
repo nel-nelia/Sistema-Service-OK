@@ -1,6 +1,4 @@
 
-<!-- mi pan mi pan mi pan mi pan -->
-
 <link href="css/estilos.css" rel="stylesheet">
 
 </head>
