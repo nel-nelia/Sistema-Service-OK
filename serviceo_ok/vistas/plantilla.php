@@ -76,37 +76,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <span>Registrate Aqui</span>
                     </a>
                 </li>
+                
                 <li>
-                    <a class="active" href="#">
-                        <i class="fa fa-bullhorn"></i>
-                        <span>Manual de Bioseguridad</span>
-                    </a>
-                </li>
-                <li>
-                    <a class="active" href="#">
+                    <a class="active" href="manualseguridad.php">
                         <i class="fa fa-bullhorn"></i>
                         <span>Cuida a tu servicio</span>
                     </a>
                 </li>
-                <li>
-                    <a class="active" href="#">
-                        <i class="fa fa-envelope"></i>
-                        <span>Preguntas Frecuentes</span>
-                    </a>
-                </li>
                 
-                          
-                <li class="sub-menu">
-                    <a href="javascript:;">
-                        <i class="fa fa-glass"></i>
-                        <span>Extra</span>
-                    </a>
-                    <ul class="sub">
-                        <li><a href="gallery.html">Gallery</a></li>
-						<li><a href="404.html">404 Error</a></li>
-                        <li><a href="registration.html">Registration</a></li>
-                    </ul>
-                </li>
+                
+               
                 <li>
                     <a href="informate.php">
                         <i class="fa fa-info"></i>
