@@ -286,7 +286,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										</div>
 								</header>
 								<div class="agileits-box-body clearfix">
-									
+									<canvas id="chart">
 								</div>
 							</div>
 						</div>
