@@ -221,7 +221,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           var marker = new google.maps.Marker({
         position: {lat: location.coords.latitude, lng: location.coords.longitude},
         map:map,
-        title: 'Ubicacion Actual'
+        title: 'Ubicacion'
 
         });
 
