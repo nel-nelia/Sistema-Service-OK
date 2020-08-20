@@ -14,9 +14,11 @@ $result = MYSQLI_query($con, $sql);
 if ($result) {
     header('Location: ../vistas/listaractividad.php');
 }else{
-    echo "ERROR DE INGRESO";
+    echo "<script>swal({title:'ERROR DE INGRESO',text:'El registro no se pudo insertar',type:'error'});</script>";
+    alert ($result);
 }
 
 mysqli_close($con);
+
 
 ?>
