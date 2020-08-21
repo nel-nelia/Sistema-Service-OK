@@ -24,11 +24,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 <div class="log-w3">
 <div class="w3layouts-main">
-	<h2>Sign In Now</h2>
+	<h2>Iniciar Sesion</h2>
 		<form action="../logica/loguear.php" method="post">
 			<input type="text" class="ggg" name="usuario" placeholder="USUARIO" required="">
 			<input type="password" class="ggg" name="clave" placeholder="PASSWORD" required="">
-			<h6><a href="#">Forgot Password?</a></h6>
+			<h6><a href="#">Olvido su contraseña?</a></h6>
 				<div class="clearfix"></div>
 				<input type="submit"></input>
 		</form>
