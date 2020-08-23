@@ -102,6 +102,7 @@
                 <center>  
            <button type="submit" name="add" id="btn-send" value="Enviar" class="btn btn-black width-100">ENVIAR</button>
            </center>
+           
             </div>
 		</form>
     <small class="d-inline-block text-muted mt-5">Todos los derechos reservados | © 2020 SERVICE OK</small>

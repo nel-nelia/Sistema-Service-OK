@@ -1,46 +1,46 @@
 
 <!DOCTYPE html>
 <head>
-<title>Service OK</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- bootstrap-css -->
-<link rel="stylesheet" href="css/bootstrap.min.css" >
-<!-- //bootstrap-css -->
-<!-- Custom CSS -->
-<link href="css/style.css" rel='stylesheet' type='text/css' />
-<link href="css/style-responsive.css" rel="stylesheet"/>
-<!-- font CSS -->
-<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-<!-- font-awesome icons -->
-<link rel="stylesheet" href="css/font.css" type="text/css"/>
-<link href="css/font-awesome.css" rel="stylesheet"> 
-<!-- //font-awesome icons -->
-<script src="js/jquery2.0.3.min.js"></script>
+	<title>Service OK</title>
+	<link rel="stylesheet" type="text/css" href="css/tuti.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 </head>
 <body>
-<div class="log-w3">
-<div class="w3layouts-main">
-	<h2>Iniciar Sesion</h2>
+	<img class="wave" src="images/wave.png">
+	<div class="container">
+		<div class="img">
+			<img src="images/pirr.png">
+		</div>
+		<div class="login-content">
 		<form action="../logica/loguear.php" method="post">
-			<input type="text" class="ggg" name="usuario" placeholder="USUARIO" required="">
-			<input type="password" class="ggg" name="clave" placeholder="PASSWORD" required="">
-			<h6><a href="#">Olvido su contraseña?</a></h6>
-				<div class="clearfix"></div>
-				<input type="submit"></input>
+				<img src="images/avatar.svg">
+				<h2 class="title">Bienvenido</h2>	
+			<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+					  </div>
+					  <div class="div">
+           		   		<h5>Usuario</h5>
+			<input type="text" class="input" name="usuario" placeholder="" required="">
+			</div>
+		</div>
+		<div class="input-div pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Password</h5>
+			<input type="password" class="input" name="clave" placeholder="" required="">
+			</div>
+         </div>
+		<div class="clearfix"></div>
+				<input class="btn" type="submit"></input>
 		</form>
-		
 </div>
 </div>
-<script src="js/bootstrap.js"></script>
-<script src="js/jquery.dcjqaccordion.2.7.js"></script>
-<script src="js/scripts.js"></script>
-<script src="js/jquery.slimscroll.js"></script>
-<script src="js/jquery.nicescroll.js"></script>
-<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
-<script src="js/jquery.scrollTo.js"></script>
+<script type="text/javascript" src="js/tuti.js"></script>
 </body>
 </html>
