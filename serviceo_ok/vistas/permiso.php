@@ -13,6 +13,8 @@
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
     <link href="css/tilos.css" rel="stylesheet"> 
 </head>
+
+
 <section class="contact-box">
         <div class="row no-gutters bg-dark">
             <div class="col-xl-5 col-lg-12 register-bg">
@@ -23,7 +25,7 @@
             </div>
 
             <div class="col-xl-7 col-lg-12 d-flex">
-                <div class="container align-self-center p-6">
+                <div class="container align-self-center p-6"> 
                     <h1 class="font-weight-bold mb-3">Documento de autorizacion</h1>
 
             <form method="POST" action="../controladores/guardarpdf.php" enctype="multipart/form-data">
@@ -38,6 +40,7 @@
                         <select  name="DatosID"  class="form-control">
                              <?php
                              include("conexion.php");
+
                              $sql="SELECT * FROM datos";
                              $res=mysqli_query($con,$sql);
                              while ($rw= mysqli_fetch_array($res)){
@@ -55,6 +58,8 @@
                     </tr> <br> <br>
                     <tr>
                         <td><input type="submit" value="subir" name="subir"></td>
+
+                        
                         
                     </tr>
                
