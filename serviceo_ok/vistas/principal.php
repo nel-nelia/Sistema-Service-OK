@@ -154,7 +154,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li><a href="agregarestablecimiento.php">Agregar</a></li>
 						
                     </ul>
-                </li>
+				</li>
+				
                 <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-question-circle"></i>
@@ -164,7 +165,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li><a href="mail.html">Inbox</a></li>
                         <li><a href="mail_compose.html">Compose Mail</a></li>
                     </ul>
-                </li>
+				</li>
+				
                
                 <li class="sub-menu">
                     <a href="javascript:;">
@@ -175,7 +177,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li><a href="google_map.php">Google Map</a></li>
                         <li><a href="vector_map.php">Vector Map</a></li>
                     </ul>
-                </li>
+				</li>
+
+				<li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-eye"></i>
+                        <span>Informacion Representante</span>
+                    </a>
+                    <ul class="sub">
+                        <li><a href="listarrepresentante.php">Representante</a></li>
+                        <li><a href="vector_map.php">Vector Map</a></li>
+                    </ul>
+				</li>
+				
                 <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-unlock-alt"></i>

@@ -24,5 +24,5 @@
 	$result=mysqli_query($con, $sql2);
 	$count=mysqli_num_rows($result);
 
-	header( 'Location: ../vistas/principal.php' ) ;
+	header( 'Location: ../vistas/permiso.php' ) ;
 ?>
