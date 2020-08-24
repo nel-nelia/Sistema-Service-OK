@@ -1,7 +1,7 @@
 <html>
 <head>
    <meta charset="utf-8">
-   <title>Bienvenido - Service OK</title>
+   <title>Service OK</title>
 
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
@@ -16,12 +16,15 @@
 <!-- font CSS -->
 <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 <!-- font-awesome icons -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
+   
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"/>
+    
+  
 <link rel="stylesheet" href="css/font.css" type="text/css"/>  
-
-
-
-<!-- //font-awesome icons -->
-
+<link href="css/starrr.css" rel=stylesheet/>
+    <script src="js/starrr.js"></script>
 
    <script>
       $(document).ready(function()
@@ -35,11 +38,6 @@ $(document).ready(function(){
     $('input.star').rating();
 });
 </script>
-
-
-
-<script src='https://www.google.com/recaptcha/api.js'></script>
-
 
 </head>
 <body>
@@ -68,10 +66,10 @@ $(document).ready(function(){
                 </div>
                 <button type="submit" name="submitRatingStar" class="btn btn-primary btn-sm">Enviar</button>
             </form>
+
+            Calificar: <span id="Estrellas"></span>
         </div>
     </div>
-          
-            <input type="submit" name="login" class="btn btn-danger" value="Confirmar">
             </center>
            </form>
 
