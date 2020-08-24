@@ -21,6 +21,6 @@ and open the template in the editor.
                 <?php }else{ ?>
         <iframe src="archivos/<?php echo $datos['nombre_archivo']; ?>"></iframe>
                 
-                <?php } } ?>
+        <?php } } ?>
     </body>
 </html>

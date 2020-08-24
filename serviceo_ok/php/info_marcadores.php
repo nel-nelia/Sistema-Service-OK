@@ -2,7 +2,9 @@
 
   // Agregamos el nombre y dirección a la ventana de información de cada marcador, puedes agregar la información que desees, nosotros agregaremos 'nombre' y 'direccion' 
 
+    //termina 
   $result = mysqli_query($con, "SELECT * FROM establecimiento");
+
   if($result->num_rows > 0){
 
     while($row = $result->fetch_assoc()){ ?>

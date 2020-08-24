@@ -13,7 +13,6 @@
 
     <h1>Rating System</h1>
     <label>Name</label>
-
    <input type="text" name="name">
       <div class="ratings">
          <span class="fa fa-star-o"></span>
@@ -22,7 +21,7 @@
          <span class="fa fa-star-o"></span>
          <span class="fa fa-star-o"></span>
       </div>
-      <input type="text" id="rating-value">
+      <input type="text" name="rate" id="rating-value">
       <div><input type="submit" name="add"></div>
       </form>    
  </div>
@@ -35,8 +34,8 @@ require 'conexion.php';
 if($_SERVER["REQUEST_METHOD"]=="POST")
 {
     $name = $_POST["name"];
-    $rating = $_POST["rating"];
-    $sql= "INSERT INTO ratee(name, rate) VALUES ('$name','$rating')";
+    $rate = $_POST["rate"];
+    $sql= "INSERT INTO ratee(name, rate) VALUES ('$name','$rate')";
     if(mysqli_query($con, $sql))
     {
         echo "NEW RATE ADDDED";

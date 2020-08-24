@@ -1,3 +1,4 @@
+
 <html>
 <head>
    <meta charset="utf-8">
@@ -26,6 +27,11 @@
 <link href="css/starrr.css" rel=stylesheet/>
     <script src="js/starrr.js"></script>
 
+
+    <link rel="stylesheet" href="css/estrella.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
    <script>
       $(document).ready(function()
       {
@@ -38,36 +44,49 @@ $(document).ready(function(){
     $('input.star').rating();
 });
 </script>
+<style type="text/css">
+.modal-backdrop
+{
+    background-image: url('images/tutu.png');
+    opacity:0.5 !important;
+}
+
+
+
+</style>
 
 </head>
 <body>
+
    <div class="modal fade" id="mostrarmodal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
            <div class="modal-header">
-              <h3>¿Como estuvo el servicio solicitado?</h3>
+              <h1><b>¿Como estuvo el servicio solicitado?</b></h1>
            </div>
 
            <div id="centro" class="modal-body">
 
+           <form action="calificar.php" method="post">
 
-           <form id="form"  action="plantilla.php" method="POST"> 
-            <center>
+<div class="rating-box">
 
-            <div class="row">
-        <div id="content" class="col-lg-12">
-            <form action="index.php" method="post">
-                <div class="star_content">
-                    <input name="rate" value="1" type="radio" class="star"/> 
-                    <input name="rate" value="2" type="radio" class="star"/> 
-                    <input name="rate" value="3" type="radio" class="star"/> 
-                    <input name="rate" value="4" type="radio" class="star" checked="checked"/> 
-                    <input name="rate" value="5" type="radio" class="star"/>
-                </div>
-                <button type="submit" name="submitRatingStar" class="btn btn-primary btn-sm">Enviar</button>
-            </form>
+    <label>Name:<?php echo "$nombre"?></label>
+   <input type="text" name="name">
+      <div class="ratings">
+         <span class="fa fa-star-o"></span>
+         <span class="fa fa-star-o"></span>
+         <span class="fa fa-star-o"></span>
+         <span class="fa fa-star-o"></span>
+         <span class="fa fa-star-o"></span>
+      </div>
+      <input type="text" name="rate" id="rating-value">
+      <div><input type="submit" name="add"></div>
+      </form>    
+ </div>
 
-            Calificar: <span id="Estrellas"></span>
+<script src="js/tutiscript.js"></script>
+
         </div>
     </div>
             </center>
