@@ -45,8 +45,8 @@
 
              <div  class="g-recaptcha" data-sitekey="6Lc1trwZAAAAAF2bw2a3moWEsl5hmIb8CeXVoKgW"></div><br><br>
           
-       <input type="submit" name="login" class="btn btn-danger" value="Confirmar">
-       </center>
+            <input type="submit" name="login" class="btn btn-danger" value="Confirmar">
+            </center>
         </form>
 
        </div>
@@ -72,14 +72,7 @@
 			
 			$response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$captcha");
 			
-			$arr = json_decode($response, TRUE);
-			
-		        //	if($arr['success'])
-			    //{
-				//echo '<h2>Gracias</h2>';
-				//} else {
-				//echo '<h3>Error al comprobar Captcha </h3>';
-			    //}
+			$arr = json_decode($response, TRUE);	
 		}
 	}
 ?>
