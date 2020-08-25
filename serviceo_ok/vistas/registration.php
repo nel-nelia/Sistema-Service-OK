@@ -114,14 +114,7 @@
            
             </div>
 		</form>
-
-    <center> 
-
-    <form method="POST" action="permiso.php?id=<?php echo $row['id']?>">
-		<input type="hidden" value="<?php echo $row['id']; ?>">
-		<button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o"> </i>&nbsp; Guardar Archivo</button>	
-		</form>   
-    </center>            
+        
 
     
     <small class="d-inline-block text-muted mt-5">Todos los derechos reservados | © 2020 SERVICE OK</small>

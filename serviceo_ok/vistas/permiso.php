@@ -33,10 +33,10 @@
                         $iddato=$_GET['id'];   
                         $sql="SELECT * FROM datos  WHERE id='".$iddato."' ";
                                     $result=mysqli_query($con,$sql);
-                                    $fila=mysqli_fetch_array($result);
+                                    $fila=mysqli_fetch_array($result);  
                     ?>
             <form method="POST" action="../controladores/guardarpdf.php" enctype="multipart/form-data">
-            <input type="hidden" name="name"  value="<?php echo $id;?>" >
+            <input type="hidden" name="DatosID"  value="<?php echo $iddato;?>" >
 
              <div class="form-group mb-3">
                  <label class="font-weight-bold">NOMBRE<span class="text-danger">*</span></label>
