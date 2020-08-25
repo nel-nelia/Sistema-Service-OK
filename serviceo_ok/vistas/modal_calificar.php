@@ -64,25 +64,39 @@ $(document).ready(function(){
            <div class="modal-header">
               <h1><b>¿Como estuvo el servicio solicitado?</b></h1>
            </div>
+           <?php   
+                        include 'conexion.php'; 
+                        $id=$_GET['id'];  
+                        $sql="SELECT * FROM establecimiento  WHERE id='".$id."' ";
+                                    $result=mysqli_query($con,$sql);
+                                    $fila=mysqli_fetch_array($result);
+                    ?>
 
            <div id="centro" class="modal-body">
 
-           <form action="calificar.php" method="post">
+           <form action="calificar.php" method="POST"> 
+           <input type="hidden"  name="dni" id="dni" value="<?php echo $dni;?>" > 
+           <input type="hidden" name="name"  value="<?php echo $id;?>" >
+           <input type="hidden" name="rate" id="rating-value">
 
-<div class="rating-box">
+                <div class="rating-box">
 
-    <label>Name:<?php echo "$nombre"?></label>
-   <input type="text" name="name">
-      <div class="ratings">
-         <span class="fa fa-star-o"></span>
-         <span class="fa fa-star-o"></span>
-         <span class="fa fa-star-o"></span>
-         <span class="fa fa-star-o"></span>
-         <span class="fa fa-star-o"></span>
-      </div>
-      <input type="text" name="rate" id="rating-value">
-      <div><input type="submit" name="add"></div>
-      </form>    
+                   
+   
+ 
+                    <input type="text"  name="name1"  value="<?php echo $fila["nombre"]; ?>" >
+                   
+
+                        <div class="ratings">
+                            <span class="fa fa-star-o"></span>
+                            <span class="fa fa-star-o"></span>
+                            <span class="fa fa-star-o"></span>
+                            <span class="fa fa-star-o"></span>
+                            <span class="fa fa-star-o"></span>
+                        </div>
+                
+                        <div><input type="submit" name="add"></div>
+             </form>    
  </div>
 
 <script src="js/tutiscript.js"></script>
