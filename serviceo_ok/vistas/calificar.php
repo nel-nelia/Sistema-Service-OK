@@ -8,7 +8,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
     $sql= "INSERT INTO ratee(rate, EstablecimientoID) VALUES ('$rate','$name')";
     if(mysqli_query($con, $sql))
     {
-        echo "NEW RATE ADDDED";
+       // echo "NEW RATE ADDDED"; 
+        header( 'Location: agradecimiento.html' ) ;
+        
     }
     else{
         echo "Error: " .$sql."<br>".mysqli_error($con);
