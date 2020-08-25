@@ -14,6 +14,8 @@
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
     <link href="css/tilos.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="./css/pirata.css">    
+
 
     <script>
   function solonumeros(e){
@@ -37,11 +39,12 @@
 
 </head>
 <body>
-
+<div id="particles-js"></div>
 		<?php
             include("conexion.php");
         ?>
 <section class="contact-box">
+  
        <div class="row no-gutters bg-dark">
            <div class="col-xl-5 col-lg-12 register-bg">
             <div class="position-absolute testiomonial p-4">
@@ -51,6 +54,7 @@
            </div>
            <div class="col-xl-7 col-lg-12 d-flex">
                 <div class="container align-self-center p-6">
+                  
                     <h1 class="font-weight-bold mb-3">Registra tu Establecimiento Gratis</h1>
                     
                     <p class="text-muted mb-5">Ingresa la siguiente información para registrar tu establecimiento.</p>
@@ -116,6 +120,7 @@
  
 
 
+    
  <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -148,6 +153,11 @@
         });
       });                                     
 	</script>
-	
+  
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="js/app.js"></script>
+
 </body>
 </html>

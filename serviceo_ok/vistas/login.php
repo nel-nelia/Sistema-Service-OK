@@ -7,8 +7,12 @@
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+	<link rel="stylesheet" href="./css/pirata.css">  
+
 </head>
 <body>
+<div id="particles-js"></div>
 	<img class="wave" src="images/wave.png">
 	<div class="container">
 		<div class="img">
@@ -42,5 +46,10 @@
 </div>
 </div>
 <script type="text/javascript" src="js/tuti.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>

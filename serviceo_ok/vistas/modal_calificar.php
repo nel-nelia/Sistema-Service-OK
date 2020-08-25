@@ -81,13 +81,8 @@ $(document).ready(function(){
 
                 <div class="rating-box">
 
-                   
-   
- 
                     <input type="text"  name="name1"  value="<?php echo $fila["nombre"]; ?>" >
-                   
-
-                        <div class="ratings">
+                     <div class="ratings">
                             <span class="fa fa-star-o"></span>
                             <span class="fa fa-star-o"></span>
                             <span class="fa fa-star-o"></span>
@@ -112,32 +107,4 @@ $(document).ready(function(){
 </div>
 </body>
 
-<?php
-	
-	if(!empty($_POST)){
-		
-		$name = $_POST['name'];
-		$captcha = $_POST['g-recaptcha-response'];
-		
-		$secret = '6Lc1trwZAAAAAB2-glo_aMMgvWr2I9IclMLJe3ew';
-		
-		if(!$captcha){
- 
-			echo "Por favor verifica el captcha";
-			
-			} else {
-			
-			$response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$captcha");
-			
-			$arr = json_decode($response, TRUE);
-			
-		        //	if($arr['success'])
-			    //{
-				//echo '<h2>Gracias</h2>';
-				//} else {
-				//echo '<h3>Error al comprobar Captcha </h3>';
-			    //}
-		}
-	}
-?>
 </html>
