@@ -110,6 +110,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <th>Establecimiento</th>
                         <th>RUC</th>
                         <th>Celular</th>
+                        <th>Correo</th>
                         <th>Autorizacion</th>
                         <th>Acciones </th>
                         
@@ -142,7 +143,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <td><?php echo $correo; ?></td>
                         <td><?php echo $id; ?></td>
                        
-                        <td><a href="verpdf.php?id=<?php echo $row["id_documento"];?>" class="btn btn-sm btn-danger"><i class="fa fa-trash-o"> </i> Ver</a></td>						
+                        <td><a href="verpdf.php?id=<?php echo $row["id_documento"];?>" class="btn btn-sm btn-info""><i class="fa fa-eye"> </i> Ver</a></td>						
                 
                
 
@@ -156,105 +157,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
      </div>
 
-
-            <div class="modal fade bd-example-modal-sm" id="tipo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg" role="document">
-                      <div class="modal-content">
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Agregar Establecimiento</h5>
-                            <button class="close" type="button"  data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">X</span>
-                            </button> 
-                          </div>
-                          <form action="../controladores/guardarestablecimiento.php" method="POST">
-                            <div class="modal-body ">  
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label for="selectSm">Establecimiento</label>
-                                        <input type="text" id="establecimiento" name="establecimiento"  class="form-control">
-                                    </div>
-
-                                    <div class="form-group col-md-6">
-                                        <label for="selectSm">Direccion</label>
-                                        <input type="text" id="direccion" name="direccion"  class="form-control">
-                                    </div>
-
-                                    <div class="form-group col-md-3">
-                                        <label for="selectSm">Telefono</label>
-                                        <input type="text" id="Telefono" name="Telefono"  class="form-control">
-                                    </div>
-
-                                    <div class="form-group col-md-3">
-                                        <label for="selectSm">Delivery</label>
-                                        <select class="form-control" id="delivery" name="delivery">
-                                                <option selected>Elegir...</option>
-                                                <option value="SI">SI</option>
-                                                <option value="NO">NO</option>
-                                            </select> 
-                                    </div>
-
-                                    <div class="form-group col-md-3">
-                                        <label for="selectSm">RUC</label>
-                                        <input type="text" id="ruc" name="ruc"  class="form-control">
-                                    </div>
-
-                                    <div class="form-group col-md-3">
-                                        <label for="selectSm">Tipo Actividad</label>
-                                        <select id="ActividadID" name="ActividadID"  class="form-control">
-                                                            <?php
-                                                            $sql="SELECT * FROM actividad";
-                                                            $res=mysqli_query($con,$sql);
-                                                            while ($rw= mysqli_fetch_array($res)){
-                                                                echo "<option value=".$rw["ActividadID"].">".$rw["Nombrea"]."</option> ";
-                                                            } 
-                                                            ?>
-                                                </select>
-                                    </div>
-
-                                    <div class="form-group col-md-3">
-                                        <label for="selectSm">Latitud</label>
-                                        <input type="text" id="latitud" name="latitud"  class="form-control">
-                                    </div>
-
-                                    <div class="form-group col-md-3">
-                                        <label for="selectSm">Longitud</label>
-                                        <input type="text"  id="longitud" name="longitud" class="form-control">
-                                    </div>
-
-                                    <div class="form-group col-md-3">
-                                        <label for="selectSm">Distrito</label>
-                                        <input type="text" id="Distrito" name="Distrito"  class="form-control">
-                                    </div>               
-
-                                    <div class="form-group col-md-3">
-                                        <label for="selectSm">Estado</label>
-                                        <select class="form-control" id="estado" name="estado">
-                                                <option selected>Elegir...</option>
-                                                <option value="Activo">Activo</option>
-                                                <option value="Inactivo">Inactivo</option>
-                                            </select> 
-                                    </div>                 
-
-                                </div>
-                      
-                            </div>
-
-                            <div class="modal-footer">
-                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                                <button class="btn btn-primary"  type="submit">Guardar</button>
-                            </div>
-                       </form>
-
-                      </div>
-                </div>       
-              </div> 
-
-
         <footer class="panel-footer">
         <div class="row">
             
             <div class="col-sm-5 text-center">
-            <small class="text-muted inline m-t-sm m-b-sm">showing 20-30 of 50 items</small>
+            
             </div>
             <div class="col-sm-7 text-right text-center-xs">                
             <ul class="pagination pagination-sm m-t-none m-b-none">
