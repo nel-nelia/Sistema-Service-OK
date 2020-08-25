@@ -1,8 +1,9 @@
 <?php
 class Bot
 {
-    private $name = "OKEYcita";
-    private $gender = "Femenino";
+    private $name = "OKecita";
+    private $gender = "quien sabe";
+    private $fin = "Muchas gracias por ingresar";
 
     public function getName()
     {
@@ -12,6 +13,10 @@ class Bot
     public function getGender()
     {
         return $this->gender;
+    }
+    public function getFin()
+    {
+        return $this->fin;
     }
 
     public function hears($message, callable $call)
@@ -35,4 +40,3 @@ class Bot
         }
     }
 }
-

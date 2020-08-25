@@ -127,8 +127,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </header>
 <body>
 
-              <!-- Contenedor del Mapa de Google --> 
-              <div id="mapa"></div>               
+    <!-- Contenedor del Mapa de Google --> 
+    <div id="mapa"></div>               
 
   
 

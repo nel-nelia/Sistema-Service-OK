@@ -3,7 +3,7 @@
 class Conect_MySql {   
      var $obj = array ( "dbname"	=>	"serviceok",
                        "dbuser"		=>	"root"		,
-                       "dbpwd"		=>	"123456"		,
+                       "dbpwd"		=>	"root"		,
                        "dbhost"		=>	"localhost"	);
 
 

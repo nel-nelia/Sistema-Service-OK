@@ -2,7 +2,7 @@
 <head>
 <title>Service OK</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
   <!-- Required meta tags -->
   <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,9 +11,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
-    <link href="css/tilos.css" rel="stylesheet"> 
+    <link href="css/tilos2.css" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="./css/pirata.css"> 
+
 </head>
 
+<div id="particles-js"></div>
 
 <section class="contact-box">
         <div class="row no-gutters bg-dark">
@@ -56,7 +60,7 @@
                         <td colspan="3"><input type="file" name="archivo"></td>
                     </tr> <br> <br>
                     <tr>
-                        <td><input type="submit" value="subir" name="subir"></td>
+                        <td><input type="submit" value="subir" name="subir" class="btn btn-black width-100"></td>
 
                         
                         
@@ -113,6 +117,9 @@
         });
       });                                     
 	</script>
-	
+  
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="js/app.js"></script>
+
 </body>
 </html>

@@ -30,7 +30,9 @@
 
     <link rel="stylesheet" href="css/estrella.css">
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+   
+   
+    <link href="css/tilos3.css" rel="stylesheet"> 
 
    <script>
       $(document).ready(function()
@@ -47,7 +49,7 @@ $(document).ready(function(){
 <style type="text/css">
 .modal-backdrop
 {
-    background-image: url('images/tutu.png');
+    background-image: url('images/chillon.png');
     opacity:0.5 !important;
 }
 
@@ -62,8 +64,10 @@ $(document).ready(function(){
       <div class="modal-dialog">
         <div class="modal-content"> 
            <div class="modal-header">
-              <h1><b>¿Como estuvo el servicio solicitado?</b></h1>
-           </div>
+           <div class="form-group mb-3">
+              <h1 class="font-weight-bold"><b>¿Como estuvo el servicio solicitado?</b></h1>
+             
+            </div>
            <?php   
                         include 'conexion.php'; 
                         $id=$_GET['id'];   
@@ -83,8 +87,11 @@ $(document).ready(function(){
 
                    
    
- 
-            <input type="text"  name="name1"  value="<?php echo $fila["nombre"]; ?>" >
+                <div class="form-group mb-3">
+                
+                <label class="font-weight-bold">NOMBRE DEL ESTABLECIMIENTO<span class="text-danger"></span></label>
+</div>
+            <input class="form-control" type="text"  name="name1"  value="<?php echo $fila["nombre"]; ?>" >
                    
 
                         <div class="ratings">
@@ -95,7 +102,7 @@ $(document).ready(function(){
                             <span class="fa fa-star-o"></span>
                         </div>
                 
-                        <div><input type="submit" name="add"></div>
+                        <div><input type="submit" name="add" class="btn btn-black width-100"></div>
              </form>    
  </div>
 
