@@ -75,7 +75,7 @@ $(document).ready(function(){
            <div id="centro" class="modal-body">
 
            <form action="calificar.php" method="POST"> 
-           <input type="hidden"  name="dni" id="dni" value="<?php echo $dni;?>" > 
+
            <input type="hidden" name="name"  value="<?php echo $id;?>" >
            <input type="hidden" name="rate" id="rating-value">
 
@@ -84,7 +84,7 @@ $(document).ready(function(){
                    
    
  
-                    <input type="text"  name="name1"  value="<?php echo $fila["nombre"]; ?>" >
+            <input type="text"  name="name1"  value="<?php echo $fila["nombre"]; ?>" >
                    
 
                         <div class="ratings">

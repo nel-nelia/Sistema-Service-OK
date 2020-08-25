@@ -1,6 +1,7 @@
 <?php
 
-    include('conexion.php');
+	include('conexion.php');
+
 	$count=0;
 	if(!empty($_POST['add'])) {  
 		$autor = mysqli_real_escape_string($con,$_POST["autor"]);
@@ -11,7 +12,7 @@
 		$Email = mysqli_real_escape_string($con,$_POST["Email"]);
 		$direccion = mysqli_real_escape_string($con,$_POST["direccion"]);
 	
-		$mensaje = mysqli_real_escape_string($con,$_POST["mensaje"]);
+		$mensaje = mysqli_real_escape_string($con,$_POST["mensaje"]); 
 		
 		
 		
@@ -24,5 +25,5 @@
 	$result=mysqli_query($con, $sql2);
 	$count=mysqli_num_rows($result);
 
-	header( 'Location: ../vistas/permiso.php' ) ;
+	header( 'Location: ../vistas/registration.php' ) ;
 ?>

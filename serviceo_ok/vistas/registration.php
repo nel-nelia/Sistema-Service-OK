@@ -15,6 +15,8 @@
     <link href="css/tilos.css" rel="stylesheet">
 
 
+
+
     <script>
   function solonumeros(e){
   key=e.keyCode || e.which;
@@ -37,10 +39,16 @@
 
 </head>
 <body>
-
-		<?php
-            include("conexion.php");
-        ?>
+    <?php    
+          include("conexion.php");
+          $sql = "SELECT * FROM datos ";
+          $query=mysqli_query($con, $sql);
+          while ($row= MySQLI_fetch_array($query)){
+          $iddato=$row['id'];
+    ?>
+    <?php
+    }
+    ?>
 <section class="contact-box">
        <div class="row no-gutters bg-dark">
            <div class="col-xl-5 col-lg-12 register-bg">
@@ -54,9 +62,9 @@
                     <h1 class="font-weight-bold mb-3">Registra tu Establecimiento Gratis</h1>
                     
                     <p class="text-muted mb-5">Ingresa la siguiente información para registrar tu establecimiento.</p>
-
+ 
 	
-
+ 
 	<form name="frmNotification" id="frmNotification" action="../php/agregarnotificacion.php" method="post">
   <div class="form-group mb-3">
     
@@ -92,21 +100,32 @@
       <label class="font-weight-bold" for="mensaje">MENSAJE <span class="text-danger">*</span></label>
       <textarea class="form-control" name="mensaje" id="mensaje" rows="3" placeholder="mensaje" required=""></textarea>
       </div>
-      <div class="form-group mb-5">
+      <div class="form-group mb-5"> 
              <div class="form-check">
               <input class="form-check-input" type="checkbox">
               <label class="form-check-label text-muted" require>Al seleccionar esta casilla aceptas nuestro aviso de privacidad y los términos y condiciones</label>
             </div>
           </div>
-        <div class="form-group">
-                <center>  
-           <button type="submit" name="add" id="btn-send" value="Enviar" class="btn btn-black width-100">ENVIAR</button>
+        <div class="form-group">  
+           <center>  
+           <button type="submit" name="add" id="btn-send" value="Enviar" class="btn btn-black width-100" >ENVIAR</button>
            </center>
+           
            
             </div>
 		</form>
+
+    <center> 
+
+    <form method="POST" action="permiso.php?id=<?php echo $row['id']?>">
+		<input type="hidden" value="<?php echo $row['id']; ?>">
+		<button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o"> </i>&nbsp; Guardar Archivo</button>	
+		</form>   
+    </center>            
+
+    
     <small class="d-inline-block text-muted mt-5">Todos los derechos reservados | © 2020 SERVICE OK</small>
-               
+              
 </div>
 </div>
 </section>
