@@ -60,13 +60,13 @@ $(document).ready(function(){
 
    <div class="modal fade" id="mostrarmodal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
       <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content"> 
            <div class="modal-header">
               <h1><b>¿Como estuvo el servicio solicitado?</b></h1>
            </div>
            <?php   
                         include 'conexion.php'; 
-                        $id=$_GET['id'];  
+                        $id=$_GET['id'];   
                         $sql="SELECT * FROM establecimiento  WHERE id='".$id."' ";
                                     $result=mysqli_query($con,$sql);
                                     $fila=mysqli_fetch_array($result);

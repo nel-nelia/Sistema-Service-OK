@@ -45,9 +45,7 @@
      <br>
      <div class="card shadow mb-4"> 
             <div class="card-body">
-            <div class="col-6 p-2 d-flex justify-content-center">
-                <button class="btn btn btn-primary" data-toggle="modal" data-target="#tipo"> Agregar</button>
-             </div>
+        
               <div class="table-responsive">
                 <table class="table table-hover" id="dataTable" width="30%" cellspacing="0">
                     <thead class="thead-dark">
@@ -102,7 +100,7 @@
         <div class="row">
             
             <div class="col-sm-5 text-center">
-            <small class="text-muted inline m-t-sm m-b-sm">showing 20-30 of 50 items</small>
+            
             </div>
             <div class="col-sm-7 text-right text-center-xs">                
             <ul class="pagination pagination-sm m-t-none m-b-none">

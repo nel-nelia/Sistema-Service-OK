@@ -135,53 +135,50 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 
                 <li class="sub-menu">
                     <a href="javascript:;">
-                        <i class="fa fa-building-o"></i>
+                        <i class="fa fa-file-text"></i>
                         <span>Gestión Actividad</span>
                     </a>
                     <ul class="sub">
                         <li><a href="listaractividad.php">Listar</a></li>
-                        <li><a href="agregaractividad.php">Agregar</a></li>
 						<li><a href="pdf.php">Reporte</a></li>
                     </ul>
                 </li>
                 <li class="sub-menu">
                     <a href="javascript:;">
-                        <i class="fa fa-tasks"></i>
+                        <i class="fa fa-file-text"></i>
                         <span>Gestión Establecimiento</span>
                     </a>
                     <ul class="sub">
                         <li><a href="listarestablecimientos.php">Listar</a></li>
-                        <li><a href="agregarestablecimiento.php">Agregar</a></li>
+                        <li><a href="google_map.php">Ver</a></li>
 						
                     </ul>
 				</li>
 				
                 <li class="sub-menu">
                     <a href="javascript:;">
-                        <i class="fa fa-question-circle"></i>
+                        <i class="fa fa-file-text"></i>
                         <span>Consultar Establecimiento</span>
                     </a>
                     <ul class="sub">
-                        <li><a href="mail.html">Inbox</a></li>
-                        <li><a href="mail_compose.html">Compose Mail</a></li>
+                        <li><a href="consultarestablecimiento.php">Consultar</a></li>
                     </ul>
 				</li>
 				
                
                 <li class="sub-menu">
                     <a href="javascript:;">
-                        <i class="fa fa-eye"></i>
+                        <i class="fa fa-file-text"></i>
                         <span>Mostrar Establecimiento</span>
                     </a>
                     <ul class="sub">
                         <li><a href="google_map.php">Google Map</a></li>
-                        <li><a href="vector_map.php">Vector Map</a></li>
                     </ul>
 				</li>
 
 				<li class="sub-menu">
                     <a href="javascript:;">
-                        <i class="fa fa-eye"></i>
+                        <i class="fa fa-file-text"></i>
                         <span>Informacion Representante</span>
                     </a>
                     <ul class="sub">
@@ -192,7 +189,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				
                 <li class="sub-menu">
                     <a href="javascript:;">
-                        <i class="fa fa-unlock-alt"></i>
+                        <i class="fa fa-file-text"></i>
                         <span>Gestionar Administrador</span>
                     </a>
                     <ul class="sub">
@@ -204,7 +201,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </li>
 				<li class="sub-menu">
                     <a href="javascript:;">
-                        <i class="fa fa-unlock-alt"></i>
+                        <i class="fa fa-file-text"></i>
                         <span>Gestionar Usuario</span>
                     </a>
                     <ul class="sub">

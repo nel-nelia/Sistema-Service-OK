@@ -4,10 +4,10 @@ $usuario = $_SESSION['username'];
 
 if( !isset($usuario)){
 	header ("location: ../index.php");
-}else{
-	
+}else{	
 }
 ?>
+
 <!DOCTYPE html>
 <head>
 <title>Service OK</title>
@@ -29,16 +29,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <!-- //font-awesome icons -->
 <script src="js/jquery2.0.3.min.js"></script>
-
-<link rel="stylesheet" type="text/css" href="css/style.css"> 
+<!-- //swetalert -->
+<link rel="stylesheet" href="plugins/dist/sweetalert2.min.css">
 </head>
 <body>
 <section id="container">
 <!--header start-->
 <header class="header fixed-top clearfix">
 <!--logo start-->
-<div class="brand">
 
+<div class="brand">
     <a href="index.html" class="logo">
         SERVICE OK
     </a>
@@ -48,8 +48,35 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div>
 <!--logo end-->
 
-        <!-- menu-->
-    <?php include 'head.php';?>
+<?php include 'head.php';?> 
+
+<div class="top-nav clearfix">
+    <!--search & user info start-->
+    <ul class="nav pull-right top-menu">
+        <li>
+            <input type="text" class="form-control search" placeholder=" Search">
+        </li>
+        <!-- user login dropdown start-->
+        <li class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                <img alt="" src="images/2.png">
+                <span class="username">John Doe</span>
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu extended logout">
+                <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
+                <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+                <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
+            </ul>
+        </li>
+        <!-- user login dropdown end -->
+       
+    </ul>
+    <!--search & user info end-->
+</div>
+</header>
+<!--header end-->
+<!--sidebar start-->
 <aside>
     <div id="sidebar" class="nav-collapse">
         <!-- sidebar menu start-->
@@ -60,16 +87,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <i class="fa fa-hand-o-left"></i>
                         <span>Atras</span>
                     </a>
-                </li> 
+                </li>
+                
+               
             </ul>            
         </div>
     </div>
 </aside>
+
 <section id="main-content">
 	<section class="wrapper">
-		
+		<div class="table-agile-info">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                ESTABLECIMIENTOS
+                </div>
+            <div class="row w3-res-tb">
 
-      <div class="content">
+            <div class="content">
             <div class="col-lg-12">
                 <div class="card">
                           <div class="card-body">
@@ -84,19 +119,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                               <input type="text" class="form-control" id="q" onkeyup="load(1)" style="text-transform: uppercase;">
                                           </div>
                                       </div><br><br><br>
-                                      <div id="loader" style="position: absolute; text-align: center; top: 55px;  width: 100%;display:none;" class="col-sm-12 text-center"></div><!-- Carga gif animado -->
-                                      <div class="col-sm-12 outer_div" ></div><!-- Datos ajax Final -->
+                                      <div id="loader" style="position: absolute; text-align: center; top: 55px;  width: 100%;display:none;" class="col-sm-12 text-center"></div>
+                                      <div class="col-sm-12 outer_div" ></div>
                                   </div>
                               </div>
                           </div>
                 </div>
             </div>
       </div>
+        <div class="col-sm-5 m-b-xs">
+     
+    </section>
 
-    </div>
 
-      
-</section>
  <!-- footer -->
 		  <div class="footer">
 			<div class="wthree-copyright">
@@ -106,7 +141,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   <!-- / footer -->
 </section>
 
-<!--main content end-->
+
 </section>
 <script src="js/bootstrap.js"></script>
 <script src="js/jquery.dcjqaccordion.2.7.js"></script>

@@ -38,11 +38,10 @@
                 <div id="notification-latest"></div>
               </div>          
 			</div>
-		</div>
+		</div> 
 
 		<?php if(isset($message)) { ?> <div class="error"><?php echo $message; ?></div> <?php } ?>
-          <?php if(isset($success)) { ?> <div class="success"><?php echo $success;?></div> <?php } ?>
-
+    <?php if(isset($success)) { ?> <div class="success"><?php echo $success;?></div> <?php } ?>
 
 		</li>
 		
@@ -74,7 +73,6 @@
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
     <script src="js/popper.min.js"></script>

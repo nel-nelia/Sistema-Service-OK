@@ -9,7 +9,6 @@ if( !isset($usuario)){
 }
 ?>
 
-
 <!DOCTYPE html>
 <head>
 <title>Service OK</title>
@@ -45,17 +44,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </style> 
 
 </head>
-
-
 <body>
-
-
-<!-- mi pan mi pan mi pan mi pan -->
 
 <link href="css/estilos.css" rel="stylesheet">
 
 </head>
 <body>
+
 <section id="container">
 <!--header start-->
 <header class="header fixed-top clearfix">
@@ -80,7 +75,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div>
 </div>
 <div class="top-nav clearfix">
-    <!--search & user info start-->
     <ul class="nav pull-right top-menu">
 
 	<li>
@@ -92,18 +86,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
               </div>          
 			</div>
 		</div>
-
-		<?php if(isset($message)) { ?> <div class="error"><?php echo $message; ?></div> <?php } ?>
+		      <?php if(isset($message)) { ?> <div class="error"><?php echo $message; ?></div> <?php } ?>
           <?php if(isset($success)) { ?> <div class="success"><?php echo $success;?></div> <?php } ?>
-
-
 		</li>
-		
         <li>
             <input type="text" class="form-control search" placeholder=" Search">
 		</li>
-		
-        <!-- user login dropdown start-->
         <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                 <img alt="" src="images/2.png">
@@ -116,18 +104,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <li><a href="../logica/salir.php"><i class="fa fa-key"></i> Log Out</a></li>
             </ul>
         </li>
-        <!-- user login dropdown end -->
-       
     </ul>
-    <!--search & user info end-->
+    
 </div>
 </header>
-<!--header end-->
-<!--sidebar start-->
-
-
-<!--sidebar end-->
-<!--main content start-->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 
@@ -148,10 +128,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <li class="nav-item active">
        
       <li class="nav-item">
-       
       </li>
-      <li class="nav-item">
-       
+      <li class="nav-item">   
       </li> 
       </ul>
       <form name="bencc" method="get"  id="bencc" class="form-inline mt-2 mt-md-0" target="_blank" >
@@ -162,70 +140,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   </div>
 </nav>
 </header>
-
-<main role="main">
-
-<div class="card shadow mb-4">
-    <div class="card-body">
-        <div class="container text-center mt-20">
-
-          <div class="row">
-
+      <main role="main">
+        <div class="card shadow mb-4">
+           <div class="card-body">
+             <div class="row">
             <div class="col-md-12">
-
-              
-              <!-- Contenedor del Mapa de Google --> 
-              <div id="mapa"></div>               
-
-            </div>
-
+              <div id="mapa"></div>             
+              </div>
           </div>
           <div class="table-responsive">
             <div class="row mt-3">
 
             <div class="col-md-12">
-            <table class="table table-hover" id="dataTable" width="30%" cellspacing="0">
-                    <thead class="thead-dark">
-                    <h2 class="h2s">Lista de Estableccimientos</h2>
-
-                    <div class="col-6 p-2 d-flex justify-content-center">
-
-
-            </div>
-            
-              <!-- Archivo PHP con la lógica para mostrar una tabla con las ubicaciones -->
-              <?php include('../php/app.php'); ?> 	
-                  <tbody>
-                  </tbody>
-                </table>
-               
-              
-            </div>
-            
+  
+            </div>    
            </div> 
 
-           </br>
-           
-             <div class="col-6 p-2 d-flex justify-content-center">
-             <a href="principal.php">
-                        <i class="fa fa-hand-o-left"></i>
-                        <span>Atras</span>
-                    </a>
-               
-             </div>
-  
-          </div> 
-          
+           </br> 
          </div>
-            </div>
-
-  
-    </main>
-
-    
-
-
-      
+        </div>
+      </main>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -235,83 +169,91 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHUMaudNC3W-f3XO7NXbXBJP7wytJF4SI&callback=initMap"></script>
 
     <script type="text/javascript">
-      function initMap() {
-          var map;
-          var bounds = new google.maps.LatLngBounds();
-          var mapOptions = {
-              mapTypeId: 'roadmap'
-          };
 
-          map = new google.maps.Map(document.getElementById('mapa'), {
-              mapOptions
-          });
+navigator.geolocation.getCurrentPosition(function(location) {
+   console.log(location.coords.latitude);
+   console.log(location.coords.longitude);
 
-          map.setTilt(50);
+   
+   var center = {lat: location.coords.latitude, lng: location.coords.longitude};
 
-          // Crear múltiples marcadores desde la Base de Datos 
-          var marcadores = [
-              <?php include('../php/marcadores.php'); ?>
-          ];
+   function initMap() {
+     var map;
+     var bounds = new google.maps.LatLngBounds();
+     var mapOptions = {
+         mapTypeId: 'roadmap'
+     };
 
-          // Creamos la ventana de información para cada Marcador
-          var ventanaInfo = [
-              <?php include('../php/info_marcadores.php'); ?>
-             
-          ];
+     map = new google.maps.Map(document.getElementById('mapa'), {
+         center: center,
+         mapOptions
+     });
 
-          // Creamos la ventana de información con los marcadores 
-          var mostrarMarcadores = new google.maps.InfoWindow(),
-              marcadores, i;
-             
+     map.setTilt(50);
 
-          // Colocamos los marcadores en el Mapa de Google 
-          for (i = 0; i < marcadores.length; i++) {
-              var position = new google.maps.LatLng(marcadores[i][1], marcadores[i][2]);
-              bounds.extend(position);
-              marker = new google.maps.Marker({
-                  position: position,
-                  map: map,
-                  
-                  title: marcadores[i][0]
-              });
+     // Crear múltiples marcadores desde la Base de Datos 
+     var marcadores = [
+         <?php include('../php/marcadores.php'); ?>
+     ];
+     // Creamos la ventana de información para cada Marcador
+     var ventanaInfo = [
+         <?php include('../php/info_marcadores.php'); ?>
+        
+     ];
 
-              // Colocamos la ventana de información a cada Marcador del Mapa de Google 
-              google.maps.event.addListener(marker, 'click', (function(marker, i) {
-                  return function() {
-                      mostrarMarcadores.setContent(ventanaInfo[i][0]);
-                      mostrarMarcadores.open(map, marker);
-                  }
-              })(marker, i));
+     var marker = new google.maps.Marker({
+      position: {lat: location.coords.latitude, lng: location.coords.longitude},
+      map:map,
+      title: 'Ubicacion'
 
-              // Centramos el Mapa de Google para que todos los marcadores se puedan ver 
-              map.fitBounds(bounds);
-          }
+   });
 
-          // Aplicamos el evento 'bounds_changed' que detecta cambios en la ventana del Mapa de Google, también le configramos un zoom de 14 
-          var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
-              this.setZoom(14);
-              google.maps.event.removeListener(boundsListener);
-          });
+     // Creamos la ventana de información con los marcadores 
+     var mostrarMarcadores = new google.maps.InfoWindow(),
+         marcadores, i;
 
-          
+     // Colocamos los marcadores en el Mapa de Google 
+     for (i = 0; i < marcadores.length; i++) {
+         var position = new google.maps.LatLng(marcadores[i][1], marcadores[i][2]);
+         bounds.extend(position);
+         marker = new google.maps.Marker({
+             position1: {lat: location.coords.latitude, lng: location.coords.longitude},
+             position: position,
+             map: map,
 
-      }
+             title: marcadores[i][0],
+             icon: '../vistas/images/casa.png'
+       
+         });  
 
-      // Lanzamos la función 'initMap' para que muestre el Mapa con Los Marcadores y toda la configuración realizada 
-      google.maps.event.addDomListener(window, 'load', initMap);
-    </script>
-    
+         // Colocamos la ventana de información a cada Marcador del Mapa de Google 
+         google.maps.event.addListener(marker, 'click', (function(marker, i) {
+             return function() {
+                 mostrarMarcadores.setContent(ventanaInfo[i][0]);
+                 mostrarMarcadores.open(map, marker);
+             }
+         })(marker, i));
 
+         // Centramos el Mapa de Google para que todos los marcadores se puedan ver 
+         map.fitBounds(bounds);
+     }
 
+     // Aplicamos el evento 'bounds_changed' que detecta cambios en la ventana del Mapa de Google, también le configramos un zoom de 14 
+     var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
+         this.setZoom(16);
+         google.maps.event.removeListener(boundsListener);
+     });
+   }
+   initMap();
 
+ // Lanzamos la función 'initMap' para que muestre el Mapa con Los Marcadores y toda la configuración realizada 
+ google.maps.event.addDomListener(window, 'load', initMap);
+});
+</script>   
 </body>
 </script>
-  
 </section>
-<!-- main content end -->
 </section>
-<!-- / footer -->
-
 <div class="footer">
 			<div class="wthree-copyright">
 			  <p>© 2020 Service OK. All rights reserved | Construcción II <a href="">C II</a></p>
@@ -322,21 +264,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="js/scripts.js"></script>
 <script src="js/jquery.slimscroll.js"></script>
 <script src="js/jquery.nicescroll.js"></script>
-<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
 <script src="js/jquery.scrollTo.js"></script>
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="js/jquery.gmaps.js"></script>
-
-
-     <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
 
     <script type="text/javascript">

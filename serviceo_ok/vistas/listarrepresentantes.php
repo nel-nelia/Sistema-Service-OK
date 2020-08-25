@@ -69,13 +69,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
             </ul>
         </li>
+        <!-- user login dropdown end -->
+       
     </ul>
+    <!--search & user info end-->
 </div>
 </header>
-
+<!--header end-->
+<!--sidebar start-->
 <aside>
     <div id="sidebar" class="nav-collapse">
-        <!-- menu atras-->
+        <!-- sidebar menu start-->
         <div class="leftside-navigation">
             <ul class="sidebar-menu" id="nav-accordion">
                 <li>
@@ -84,33 +88,43 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <span>Atras</span>
                     </a>
                 </li>
+                
+               
             </ul>            
         </div>
+        <!-- sidebar menu end-->
     </div>
 </aside>
-
+<!--sidebar end-->
+<!--main content start-->
 <section id="main-content">
 	<section class="wrapper">
 		<div class="table-agile-info">
     <div class="panel panel-default">
         <div class="panel-heading">
-        Informacion Representante
+        REPRESENTANTE DEL ESTABLECIMIENTO
         </div>
+
+
+
      <div class="card shadow mb-4">
             
 
             <div class="card-body"><br>
+            <div class="col-6 p-2 d-flex justify-content-center">
+                <button class="btn btn btn-primary" data-toggle="modal" data-target="#tipo"> Agregar</button>
+             </div>
               <div class="table-responsive">
                 <table class="table table-hover" id="dataTable" width="30%" cellspacing="0">
                     <thead class="thead-dark">
                     <tr>
-                       
                         <th>Nombre</th>
                         <th>Apellidos</th>
                         <th>Establecimiento</th>
                         <th>RUC</th>
                         <th>Celular</th>
-                        <th>Autorizacion</th>
+                        <th>Correo</th>
+                        <th>Direccion</th>
                         <th>Acciones </th>
                         
                         </tr>
@@ -119,32 +133,36 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                   <?php
                       include ('conexion.php');     
-                      $sql = "SELECT * FROM tbl_documentos
-                      INNER JOIN datos ON datos.id=tbl_documentos.DatosID";
+
+                      $sql = "SELECT * FROM datos";
+
                       $query=mysqli_query($con, $sql);
+
                       while ($row= mysqli_fetch_array($query)){
-                            $iddoc=$row['id_documento'];
+                            
+                            $id=$row['id'];
                             $nombre=$row['autor'];
-                            $direccion=$row['apellidorepresentante'];
-                            $latitud=$row['nombreestablecimiento'];
-                            $longitud=$row['ruc'];
-                            $pais=$row['phone'];
+                            $apellido=$row['apellidorepresentante'];
+                            $nombreest=$row['nombreestablecimiento'];
+                            $ruc=$row['ruc'];
+                            $celular=$row['phone'];
                             $correo=$row['Email'];
-                            $id=$row['nombre_archivo'];  
+                            $direccion=$row['direccion'];
 
                   ?>
                         <tr>
                         <td><?php echo $nombre; ?></td>
-						<td><?php echo $direccion; ?></td>
-						<td><?php echo $latitud; ?></td>
-                        <td><?php echo $longitud; ?></td>
-                        <td><?php echo $pais; ?></td>
+						<td><?php echo $apellido; ?></td>
+						<td><?php echo $nombreest; ?></td>
+                        <td><?php echo $ruc; ?></td>
+                        <td><?php echo $celular; ?></td>
                         <td><?php echo $correo; ?></td>
-                        <td><?php echo $id; ?></td>
+                        <td><?php echo $direccion; ?></td>
+                        <td> 
+                        <a href="agregarestablecimientos.php?id=<?php echo $row["id"];?>" class="btn btn-sm btn-success"> <i class="fa fa-pencil-square-o"> </i>Editar</a>
                        
-                        <td><a href="verpdf.php?id=<?php echo $row["id_documento"];?>" class="btn btn-sm btn-danger"><i class="fa fa-trash-o"> </i> Ver</a></td>						
-                
-               
+                        <a href="../controladores/eliminarestablecimiento.php?id=<?php echo $row["id"];?>" class="btn btn-sm btn-danger"><i class="fa fa-trash-o"> </i> Eliminar</a>						
+						</td>   
 
                         </tr>
                         <?php
@@ -260,7 +278,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <ul class="pagination pagination-sm m-t-none m-b-none">
                 <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
                 <li><a href="">1</a></li>
-                <li><a href="">2</a></li>
+                <li><a href="">2</a></li> 
                 <li><a href="">3</a></li>
                 <li><a href="">4</a></li>
                 <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
@@ -269,7 +287,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
         </footer>
     </div>
-</div>
+ </div>
 </section>
  <!-- footer -->
 		  <div class="footer">
