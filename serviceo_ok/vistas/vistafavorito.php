@@ -29,12 +29,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <!-- //font-awesome icons -->
 <script src="js/jquery2.0.3.min.js"></script>
-
-  
-
-  <!-- Custom styles for this template-->
-  <link href="css/sb-admin-2.css" rel="stylesheet">
-  <link href="css/estilos.css" rel="stylesheet">
+<!-- Custom styles for this template-->
+<link href="css/sb-admin-2.css" rel="stylesheet">
+<link href="css/estilos.css" rel="stylesheet">
 </head>
 <body>
 <section id="container">
@@ -84,7 +81,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="table-agile-info">
   <div class="panel panel-default">
     <div class="panel-heading">
-      Listar Usuarios
+      Listar Favoritos
     </div>
 
     <div class="row w3-res-tb">
@@ -115,99 +112,60 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
             <div class="card-body">
 
-                <div class="col-6 p-2 d-flex justify-content-center">
-                    <button class="btn btn btn-primary" data-toggle="modal" data-target="#tipo"> Agregar</button>
-                </div>
+               
              
               <div class="table-responsive">
                 <table class="table table-hover" id="dataTable" width="30%" cellspacing="0">
                     <thead class="thead-dark">
                         <tr>
-                        <th>USUARIO</th>
-                        <th>CLAVE</th>
-                        
-                        <th>ACCIONES</th>
-                        
+                        <th>ID</th>
+                        <th>ESTRELLAS</th>
+                        <th>ACTIVIDAD</th>
+                        <th>NOMBRE DEL ESTABLECIMIENTO</th>                     
                         </tr>
                     </thead>
 
 
                   <?php
                       include ('conexion.php');          
-                      $sql = "SELECT * FROM usuarios";
-
+                      $sql = "SELECT * FROM establecimiento
+                      INNER JOIN ratee ON ratee.EstablecimientoID= establecimiento.id
+                      INNER JOIN actividad ON actividad.ActividadID =establecimiento.ActividadID
+                      ";
+ 
                       $query=mysqli_query($con, $sql);
 
                       while ($row= MySQLI_fetch_array($query)){
-                        $usuario=$row['usuario'];
-                        $clave=$row['clave'];
+                        $idcalificacion=$row['idcalificacion'];
+                        $rate=$row['rate'];
                         
+                        $Nombrea=$row['Nombrea'];
+                        $nombre=$row['nombre'];
 
                   ?>
                         <tr>
-                        <td><?php echo $usuario;?></td>  
-                        <td><?php echo $clave;?></td>
+                        <td><?php echo $idcalificacion;?></td>  
+                        <td><?php echo $rate;?></td>
                         
+                        <td><?php echo $Nombrea;?></td>
+                        <td><?php echo $nombre;?></td>
                         <td>
-
-                        <a href="modificaradmin.php?id=<?php echo $row["usuario"];?>" class="btn btn-sm btn-success"> <i class="fa fa-pencil-square-o"> </i>Editar</a>
-
-                        <a href="../controladores/eliminaradministrador.php?id=<?php echo $row["usuario"];?>" class="btn btn-sm btn-danger"><i class="fa fa-trash-o"> </i> Eliminar</a>                      
-                      </td>                    
+                     </td>                    
                         </tr>
                         <?php
                           }
-                        ?>	
+                        ?>	   
                   <tbody>
                   </tbody>
                 </table>
               </div>
-            </div>
-            
+            </div> 
           </div>
-
-
-    <div class="modal fade bd-example-modal-sm" id="tipo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Agregar Administrador</h5>
-                <button class="close" type="button"  data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">X</span>
-                </button>
-            </div>
-            <form action="../controladores/guardaradministrador.php" method="POST">
-            <div class="modal-body ">  
-
-                    <div class="col-sm-12 col-md-6">
-                            <div class="row form-group">
-                                <div class="col col-md-5"><label for="selectSm" class=" form-control-label">Usuario</label></div>
-                                <div class="col-12 col-md-7"><input type="text"id="usuario" name="usuario"  class="form-control"> </div>
-                            </div>
-                    </div> <br> <br> <br>
-
-                    <div class="col-sm-12 col-md-6">
-                            <div class="row form-group">
-                                <div class="col col-md-5"><label for="selectSm" class=" form-control-label">Clave</label></div>
-                                <div class="col-12 col-md-7"><input type="password" id="clave" name="clave" class="form-control"></div>
-                                </div>
-                    </div>
-                    
-                </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                        <button class="btn btn-primary"  type="submit">Guardar</button>
-                </div>
-     
-            </form>
-
-        </div>
-        </div>
-    </div>
+        
     
     <footer class="panel-footer">
       <div class="row">
-        
+               
         <div class="col-sm-5 text-center">
           <small class="text-muted inline m-t-sm m-b-sm">showing 20-30 of 50 items</small>
         </div>

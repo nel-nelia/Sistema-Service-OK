@@ -27,6 +27,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+  <link rel="stylesheet" href="./css/estiloschat.css">
+
 <style type="text/css">
 
       #mapa {
@@ -48,59 +50,35 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         SERVICE OK
     </a>
     <div class="sidebar-toggle-box">
-        <div class="fa fa-bars"></div>
+        <div class=""></div>
     </div>
 
 </div>
 
 <div class="top-nav clearfix">
     <!--search & user info start-->
-    <ul class="nav pull-right top-menu">
-        <li>
-            <input type="text" class="form-control search" placeholder=" Search">
-        </li>
-             
+    <ul class="nav pull-right top-menu">         
     </ul>
     <!--search & user info end-->
 </div>
+<aside>
+
+<div class="pirata">
+            <input type="checkbox" id="btn-mas">
+        <div class="redes">
+            <a href="registration.php" class="fa fa-registered"></a>
+            <a href="manualseguridad.php" class="fa fa-bullhorn"></a>
+            <a href="informate.php" class="fa fa-info"></a>
+            <a href="vistachat.php" class="fa fa-commenting-o"></a>
+            <a href="login.php" class="fa fa-user"></a>
+        </div>
+        <div class="btn-mas">
+            <label for="btn-mas" class="icon-mas2"><b>+</b></label>
+        </div>
+</div>
+    
 
     
-<aside>
-    <div id="sidebar" class="nav-collapse">
-        <!-- sidebar menu start-->
-        <div class="leftside-navigation">
-            <ul class="sidebar-menu" id="nav-accordion">
-                <li>
-                    <a class="active" href="registration.php">
-                        <i class="fa fa-dashboard"></i>
-                        <span>Registrate Aqui</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="active" href="manualseguridad.php">
-                        <i class="fa fa-bullhorn"></i>
-                        <span>Cuida a tu servicio</span>
-                    </a>
-                </li>
-                
-                
-               
-                <li>
-                    <a href="informate.php">
-                        <i class="fa fa-info"></i>
-                        <span>Informate sobre el Covid</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="login.php">
-                        <i class="fa fa-user"></i>
-                        <span>Login Page</span>
-                    </a>
-                </li>
-            </ul>            </div>
-        <!-- sidebar menu end-->
-    </div>
 </aside>
 
 

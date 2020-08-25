@@ -39,8 +39,7 @@
            </div>
            <div id="centro" class="modal-body">
 
-
-           <form id="form"  action="vistas/plantilla.php" method="POST">
+           <form id="form"  action="plantilla.php" method="POST">
             <center>
 
              <div  class="g-recaptcha" data-sitekey="6Lc1trwZAAAAAF2bw2a3moWEsl5hmIb8CeXVoKgW"></div><br><br>
