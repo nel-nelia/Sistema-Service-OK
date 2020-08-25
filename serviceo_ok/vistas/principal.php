@@ -204,13 +204,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </li>
 				<li class="sub-menu">
                     <a href="javascript:;">
-                        <i class="fa fa-unlock-alt"></i>
-                        <span>Gestionar Usuario</span>
+                        <i class="fa fa-star"></i>
+                        <span>Gestionar Favoritos</span>
                     </a>
                     <ul class="sub">
-                        <li><a href="vistausuario.php">Listar Usuario</a></li>
-						<li><a href="404.html">404 Error</a></li>
-						
+                        <li><a href="vistafavorito.php">Listar Favorito</a></li>
+						<li><a href="pdf.php">Reporte</a></li>			
                     </ul>
                 </li>
                 
@@ -293,15 +292,57 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="agileinfo-grap">
 							<div class="agileits-box">
 								<header class="agileits-box-header clearfix">
-									<h3>Visitor Statistics</h3>
+									<h3>Favoritos</h3>
 										<div class="toolbar">
-											
-											
+										
+										<?php  
+ $connect = mysqli_connect("localhost", "root", "root", "serviceok");  
+ $sql = "SELECT * FROM establecimiento
+ INNER JOIN ratee ON ratee.EstablecimientoID= establecimiento.id
+ INNER JOIN actividad ON actividad.ActividadID =establecimiento.ActividadID";
+                     
+ $query = "SELECT rate, count(*) as number FROM ratee GROUP BY rate";  
+ $result = mysqli_query($connect, $query);  
+ ?>  
+ 
+      <head>  
+           
+           <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>  
+           <script type="text/javascript">  
+           google.charts.load('current', {'packages':['corechart']});  
+           google.charts.setOnLoadCallback(drawChart);  
+           function drawChart()  
+           {  
+                var data = google.visualization.arrayToDataTable([  
+                          ['Rate', 'Number'],  
+                          <?php  
+                          while($row = mysqli_fetch_array($result))  
+                          {  
+                               echo "['".$row["rate"]."', ".$row["number"]."],";  
+                          }  
+                          ?>  
+                     ]);  
+                var options = {  
+                      title: 'Establecimientos Favoritos',  
+                      //is3D:true,  
+                      pieHole: 0.4  
+                     };  
+                var chart = new google.visualization.PieChart(document.getElementById('piechart'));  
+                chart.draw(data, options);  
+           }  
+           </script>  
+       
+      <body>  
+           <br /><br />  
+           <div style="width:900px;">  
+                
+                <br />  
+                <div id="piechart" style="width: 900px; height: 500px;"></div>  
+           </div>  
+      </body>  
 										</div>
 								</header>
-								<div class="agileits-box-body clearfix">
-									<canvas id="chart">
-								</div>
+								
 							</div>
 						</div>
 	<!--//agileinfo-grap-->
