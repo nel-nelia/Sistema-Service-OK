@@ -143,7 +143,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <td><?php echo $correo; ?></td>
                         <td><?php echo $id; ?></td>
                        
-                        <td><a href="verpdf.php?id=<?php echo $row["id_documento"];?>" class="btn btn-sm warning"><i class="fa fa-eye"> </i> Ver</a></td>						
+                        <td><a href="verpdf.php?id=<?php echo $row["id_documento"];?>" class="btn btn-sm btn-info""><i class="fa fa-eye"> </i> Ver</a></td>						
                 
                
 

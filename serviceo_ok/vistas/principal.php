@@ -293,14 +293,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<div class="toolbar">
 										
 										<?php  
- $connect = mysqli_connect("localhost", "root", "root", "serviceok");  
- $sql = "SELECT * FROM establecimiento
- INNER JOIN ratee ON ratee.EstablecimientoID= establecimiento.id
- INNER JOIN actividad ON actividad.ActividadID =establecimiento.ActividadID";
-                     
- $query = "SELECT rate, count(*) as number FROM ratee GROUP BY rate";  
- $result = mysqli_query($connect, $query);  
- ?>  
+                                        $connect = mysqli_connect("localhost", "root", "123456", "serviceok");  
+                                        $sql = "SELECT * FROM establecimiento
+                                        INNER JOIN ratee ON ratee.EstablecimientoID= establecimiento.id
+                                        INNER JOIN actividad ON actividad.ActividadID =establecimiento.ActividadID";
+                                                            
+                                        $query = "SELECT rate, count(*) as number FROM ratee GROUP BY rate";  
+                                        $result = mysqli_query($connect, $query);  
+                                        ?>  
  
       <head>  
            
@@ -320,10 +320,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                           ?>  
                      ]);  
                 var options = {  
-                      title: 'Establecimientos Favoritos',  
-                      //is3D:true,  
-                      pieHole: 0.4  
-                     };  
+                                title: 'Calificacion de los establecimientos',  
+                                
+                                pieHole: 0.4  
+                              };  
                 var chart = new google.visualization.PieChart(document.getElementById('piechart'));  
                 chart.draw(data, options);  
            }  
@@ -331,7 +331,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
        
       <body>  
            <br /><br />  
-           <div style="width:900px;">  
+           <div style="width:1000px;">  
                 
                 <br />  
                 <div id="piechart" style="width: 900px; height: 500px;"></div>  
@@ -342,7 +342,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								
 							</div>
 						</div>
-	<!--//agileinfo-grap-->
 
 				</div>
 			</div>
@@ -365,7 +364,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="js/scripts.js"></script>
 <script src="js/jquery.slimscroll.js"></script>
 <script src="js/jquery.nicescroll.js"></script>
-<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
 <script src="js/jquery.scrollTo.js"></script>
 <!-- morris JavaScript -->	
 <script>
@@ -454,17 +452,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 		});
 	</script>
-	<!-- //calendar -->
-
-
-	 <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
 
     <script type="text/javascript">
