@@ -14,7 +14,7 @@
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
     <link href="css/tilos.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="./css/pirata.css">    
+
 
     <link rel="stylesheet" href="./css/estiloschat.css">
 
@@ -41,13 +41,17 @@
 
 </head>
 <body>
-
-<div id="particles-js"></div>
-		<?php
-            include("conexion.php");
-        ?>
+    <?php    
+          include("conexion.php");
+          $sql = "SELECT * FROM datos ";
+          $query=mysqli_query($con, $sql);
+          while ($row= MySQLI_fetch_array($query)){
+          $iddato=$row['id'];
+    ?>
+    <?php
+    }
+    ?>
 <section class="contact-box">
-  
        <div class="row no-gutters bg-dark">
            <div class="col-xl-5 col-lg-12 register-bg">
             <div class="position-absolute testiomonial p-4">
@@ -57,13 +61,12 @@
            </div>
            <div class="col-xl-7 col-lg-12 d-flex">
                 <div class="container align-self-center p-6">
-                  
                     <h1 class="font-weight-bold mb-3">Registra tu Establecimiento Gratis</h1>
                     
                     <p class="text-muted mb-5">Ingresa la siguiente información para registrar tu establecimiento.</p>
-
+ 
 	
-
+ 
 	<form name="frmNotification" id="frmNotification" action="../php/agregarnotificacion.php" method="post">
   <div class="form-group mb-3">
     
@@ -99,21 +102,25 @@
       <label class="font-weight-bold" for="mensaje">MENSAJE <span class="text-danger">*</span></label>
       <textarea class="form-control" name="mensaje" id="mensaje" rows="3" placeholder="mensaje" required=""></textarea>
       </div>
-      <div class="form-group mb-5">
+      <div class="form-group mb-5"> 
              <div class="form-check">
               <input class="form-check-input" type="checkbox">
               <label class="form-check-label text-muted" require>Al seleccionar esta casilla aceptas nuestro aviso de privacidad y los términos y condiciones</label>
             </div>
           </div>
-        <div class="form-group">
-                <center>  
-           <button type="submit" name="add" id="btn-send" value="Enviar" class="btn btn-black width-100">ENVIAR</button>
+        <div class="form-group">  
+           <center>  
+           <button type="submit" name="add" id="btn-send" value="Enviar" class="btn btn-black width-100" >ENVIAR</button>
            </center>
+           
            
             </div>
 		</form>
+        
+
+    
     <small class="d-inline-block text-muted mt-5">Todos los derechos reservados | © 2020 SERVICE OK</small>
-               
+              
 </div>
 </div>
 </section>
@@ -135,7 +142,6 @@
  
 
 
-    
  <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -168,11 +174,6 @@
         });
       });                                     
 	</script>
-  
-  
-
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script src="js/app.js"></script>
-
+	
 </body>
 </html>

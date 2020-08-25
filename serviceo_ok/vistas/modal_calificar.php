@@ -60,13 +60,13 @@ $(document).ready(function(){
 
    <div class="modal fade" id="mostrarmodal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
       <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content"> 
            <div class="modal-header">
               <h1><b>¿Como estuvo el servicio solicitado?</b></h1>
            </div>
            <?php   
                         include 'conexion.php'; 
-                        $id=$_GET['id'];  
+                        $id=$_GET['id'];   
                         $sql="SELECT * FROM establecimiento  WHERE id='".$id."' ";
                                     $result=mysqli_query($con,$sql);
                                     $fila=mysqli_fetch_array($result);
@@ -75,14 +75,19 @@ $(document).ready(function(){
            <div id="centro" class="modal-body">
 
            <form action="calificar.php" method="POST"> 
-           <input type="hidden"  name="dni" id="dni" value="<?php echo $dni;?>" > 
+
            <input type="hidden" name="name"  value="<?php echo $id;?>" >
            <input type="hidden" name="rate" id="rating-value">
 
                 <div class="rating-box">
 
-                    <input type="text"  name="name1"  value="<?php echo $fila["nombre"]; ?>" >
-                     <div class="ratings">
+                   
+   
+ 
+            <input type="text"  name="name1"  value="<?php echo $fila["nombre"]; ?>" >
+                   
+
+                        <div class="ratings">
                             <span class="fa fa-star-o"></span>
                             <span class="fa fa-star-o"></span>
                             <span class="fa fa-star-o"></span>
@@ -107,4 +112,32 @@ $(document).ready(function(){
 </div>
 </body>
 
+<?php
+	
+	if(!empty($_POST)){
+		
+		$name = $_POST['name'];
+		$captcha = $_POST['g-recaptcha-response'];
+		
+		$secret = '6Lc1trwZAAAAAB2-glo_aMMgvWr2I9IclMLJe3ew';
+		
+		if(!$captcha){
+ 
+			echo "Por favor verifica el captcha";
+			
+			} else {
+			
+			$response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$captcha");
+			
+			$arr = json_decode($response, TRUE);
+			
+		        //	if($arr['success'])
+			    //{
+				//echo '<h2>Gracias</h2>';
+				//} else {
+				//echo '<h3>Error al comprobar Captcha </h3>';
+			    //}
+		}
+	}
+?>
 </html>

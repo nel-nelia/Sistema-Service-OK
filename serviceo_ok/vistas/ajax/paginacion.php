@@ -23,9 +23,6 @@ function paginate($reload, $page, $tpages, $adjacents) {
 	if($page>($adjacents+2)) {
 		$out.= "<li><a>...</a></li>";
 	}
-
-	// pages
-
 	$pmin = ($page>$adjacents) ? ($page-$adjacents) : 1;
 	$pmax = ($page<($tpages-$adjacents)) ? ($page+$adjacents) : $tpages;
 	for($i=$pmin; $i<=$pmax; $i++) {
@@ -37,9 +34,6 @@ function paginate($reload, $page, $tpages, $adjacents) {
 			$out.= "<li><a href='javascript:void(0);' onclick='load(".$i.")'>$i</a></li>";
 		}
 	}
-
-	// interval
-
 	if($page<($tpages-$adjacents-1)) {
 		$out.= "<li><a>...</a></li>";
 	}

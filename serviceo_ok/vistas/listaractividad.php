@@ -4,10 +4,10 @@ $usuario = $_SESSION['username'];
 
 if( !isset($usuario)){
 	header ("location: ../index.php");
-}else{
-	
+}else{	
 }
 ?>
+
 <!DOCTYPE html>
 <head>
 <title>Service OK</title>
@@ -29,7 +29,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <!-- //font-awesome icons -->
 <script src="js/jquery2.0.3.min.js"></script>
-
 <!-- //swetalert -->
 <link rel="stylesheet" href="plugins/dist/sweetalert2.min.css">
 </head>
@@ -38,8 +37,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--header start-->
 <header class="header fixed-top clearfix">
 <!--logo start-->
-<div class="brand">
 
+<div class="brand">
     <a href="index.html" class="logo">
         SERVICE OK
     </a>
@@ -49,9 +48,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div>
 <!--logo end-->
 
-
-
-<?php include 'head.php';?>
+<?php include 'head.php';?> 
 
 <div class="top-nav clearfix">
     <!--search & user info start-->
@@ -95,11 +92,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                
             </ul>            
         </div>
-        <!-- sidebar menu end-->
     </div>
 </aside>
-<!--sidebar end-->
-<!--main content start-->
+
 <section id="main-content">
 	<section class="wrapper">
 		<div class="table-agile-info">
@@ -109,13 +104,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
         <div class="row w3-res-tb">
       <div class="col-sm-5 m-b-xs">
-        <select class="input-sm form-control w-sm inline v-middle">
-          <option value="0">Bulk action</option>
-          <option value="1">Delete selected</option>
-          <option value="2">Bulk edit</option>
-          <option value="3">Export</option>
-        </select>
-        <button class="btn btn-sm btn-default">Filtrar</button>                
+        
+             
       </div>
       <div class="col-sm-4">
       </div>
@@ -131,15 +121,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
      </div>
 
 
-     <div class="card shadow mb-4">
-            
-
+        <div class="card shadow mb-4">
             <div class="card-body">
-
             <div class="col-6 p-2 d-flex justify-content-center">
                 <button class="btn btn btn-primary" data-toggle="modal" data-target="#tipo"> Agregar</button>
              </div>
-              <div class="table-responsive">
+
+             <div class="table-responsive">
                 <table class="table table-hover" id="dataTable" width="30%" cellspacing="0">
                     <thead class="thead-dark">
                     <tr>
@@ -156,24 +144,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                       include ('conexion.php');     
 
                       $sql = "SELECT * FROM actividad";
-
-                  
-
                       $query=mysqli_query($con, $sql);
-
-                      while ($row= mysqli_fetch_array($query)){
-                        
+                      while ($row= mysqli_fetch_array($query)){           
                         $actividadid=$row['ActividadID'];
                         $nombre=$row['Nombrea'];
                         $estado=$row['Estado'];
-
                   ?>
                         <tr>
                         <td><?php echo $actividadid;?></td>
                         <td><?php echo $nombre;?></td>
                         <td><?php echo $estado;?></td>
                         <td>
-
                         <a href="modificaractividad.php?id=<?php echo $row["ActividadID"];?>" class="btn btn-sm btn-success"> <i class="fa fa-pencil-square-o"> </i>Editar</a>
                         <a href="../controladores/eliminaractividad.php?id=<?php echo $row["ActividadID"];?>" class="btn btn-sm btn-danger"><i class="fa fa-trash-o"> </i> Eliminar</a> 
                       </td>                     
@@ -181,11 +162,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <?php
                           }
                         ?>	
-                  <tbody>
-                  </tbody>
+                  
                 </table>
             </div>
-     </div>
+        </div>
 
 
         <div class="modal fade bd-example-modal-sm" id="tipo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -217,8 +197,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 </div> <br><br><br><br><br><br>                     
                             </div>
 
-                        </div>
-                        
+                        </div>                 
                         <div class="modal-footer">
                             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
                             <button class="btn btn-primary"  type="submit">Guardar</button>
@@ -229,29 +208,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             
         </div>
-
-
-
-          
-
-
         <footer class="panel-footer">
-        <div class="row">
-            
-            <div class="col-sm-5 text-center">
-            <small class="text-muted inline m-t-sm m-b-sm">showing 20-30 of 50 items</small>
+            <div class="row">
+                
+                <div class="col-sm-5 text-center">
+                <small class="text-muted inline m-t-sm m-b-sm"></small>
+                </div>
+                <div class="col-sm-7 text-right text-center-xs">                
+                    <ul class="pagination pagination-sm m-t-none m-b-none">
+                        <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
+                        <li><a href="">1</a></li>
+                        <li><a href="">2</a></li>
+                        <li><a href="">3</a></li>
+                        <li><a href="">4</a></li>
+                        <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="col-sm-7 text-right text-center-xs">                
-            <ul class="pagination pagination-sm m-t-none m-b-none">
-                <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
-                <li><a href="">1</a></li>
-                <li><a href="">2</a></li>
-                <li><a href="">3</a></li>
-                <li><a href="">4</a></li>
-                <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
-            </ul>
-            </div>
-        </div>
         </footer>
     </div>
 </div>
@@ -265,7 +238,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   <!-- / footer -->
 </section>
 
-<!--main content end-->
+
 </section>
 <script src="confirmacion.js"></script>
 <script src="js/bootstrap.js"></script>
@@ -273,7 +246,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="js/scripts.js"></script>
 <script src="js/jquery.slimscroll.js"></script>
 <script src="js/jquery.nicescroll.js"></script>
-<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
 <script src="js/jquery.scrollTo.js"></script>
 <script src="plugins/dist/sweetalert2.all.min.js"></script>
 

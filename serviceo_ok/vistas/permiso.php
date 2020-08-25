@@ -27,8 +27,16 @@
             <div class="col-xl-7 col-lg-12 d-flex">
                 <div class="container align-self-center p-6"> 
                     <h1 class="font-weight-bold mb-3">Documento de autorizacion</h1>
-
+                   
+                    <?php   
+                        include 'conexion.php'; 
+                        $iddato=$_GET['id'];   
+                        $sql="SELECT * FROM datos  WHERE id='".$iddato."' ";
+                                    $result=mysqli_query($con,$sql);
+                                    $fila=mysqli_fetch_array($result);  
+                    ?>
             <form method="POST" action="../controladores/guardarpdf.php" enctype="multipart/form-data">
+            <input type="hidden" name="DatosID"  value="<?php echo $iddato;?>" >
 
              <div class="form-group mb-3">
                  <label class="font-weight-bold">NOMBRE<span class="text-danger">*</span></label>
@@ -37,17 +45,8 @@
 
              <div class="form-group mb-3">
              <label class="font-weight-bold">RUC<span class="text-danger">*</span></label>
-                        <select  name="DatosID"  class="form-control">
-                             <?php
-                             include("conexion.php");
-
-                             $sql="SELECT * FROM datos";
-                             $res=mysqli_query($con,$sql);
-                             while ($rw= mysqli_fetch_array($res)){
-                             echo "<option value=".$rw["id"].">".$rw["ruc"]."</option> ";
-                             } 
-                             ?>
-                        </select> 
+      
+             <input type="text"  name="name1"  value="<?php echo $fila["ruc"]; ?>" >
              </div>
              
                        

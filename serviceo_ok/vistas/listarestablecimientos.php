@@ -44,19 +44,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="fa fa-bars"></div>
     </div>
 </div>
-<!--logo end-->
-
-
 
 <?php include 'head.php';?>
 
 <div class="top-nav clearfix">
-    <!--search & user info start-->
     <ul class="nav pull-right top-menu">
         <li>
             <input type="text" class="form-control search" placeholder=" Search">
         </li>
-        <!-- user login dropdown start-->
         <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                 <img alt="" src="images/2.png">
@@ -68,35 +63,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
                 <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
             </ul>
-        </li>
-        <!-- user login dropdown end -->
-       
+        </li>  
     </ul>
-    <!--search & user info end-->
+    
 </div>
 </header>
-<!--header end-->
-<!--sidebar start-->
-<aside>
-    <div id="sidebar" class="nav-collapse">
-        <!-- sidebar menu start-->
-        <div class="leftside-navigation">
-            <ul class="sidebar-menu" id="nav-accordion">
-                <li>
-                    <a href="principal.php">
-                        <i class="fa fa-hand-o-left"></i>
-                        <span>Atras</span>
-                    </a>
-                </li>
+    <aside>
+        <div id="sidebar" class="nav-collapse">
+        
+            <div class="leftside-navigation">
+                <ul class="sidebar-menu" id="nav-accordion">
+                    <li>
+                        <a href="principal.php">
+                            <i class="fa fa-hand-o-left"></i>
+                            <span>Atras</span>
+                        </a>
+                    </li>
+                    
                 
-               
-            </ul>            
+                </ul>            
+            </div>
         </div>
-        <!-- sidebar menu end-->
-    </div>
-</aside>
-<!--sidebar end-->
-<!--main content start-->
+    </aside>
+
 <section id="main-content">
 	<section class="wrapper">
 		<div class="table-agile-info">
@@ -104,11 +93,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="panel-heading">
         Establecimiento
         </div>
-
-
-
      <div class="card shadow mb-4">
-            
 
             <div class="card-body"><br>
             <div class="col-6 p-2 d-flex justify-content-center">
@@ -127,24 +112,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         
                         </tr>
                     </thead>
-
-
                   <?php
                       include ('conexion.php');     
-
                       $sql = "SELECT * FROM establecimiento";
-
                       $query=mysqli_query($con, $sql);
-
-                      while ($row= mysqli_fetch_array($query)){
-                        
+                      while ($row= mysqli_fetch_array($query)){                       
                             $nombre=$row['nombre'];
                             $direccion=$row['direccion'];
                             $latitud=$row['lat'];
                             $longitud=$row['lng'];
                             $pais=$row['Distrito'];
                             $id=$row['id'];
-
                   ?>
                         <tr>
                         <td><?php echo $nombre; ?></td>
@@ -161,8 +139,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <?php
                           }
                         ?>	
-                  <tbody>
-                  </tbody>
                 </table>
             </div>
      </div>
@@ -259,19 +235,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                       </div>
                 </div>       
               </div> 
-
-
         <footer class="panel-footer">
         <div class="row">
             
-            <div class="col-sm-5 text-center">
-            <small class="text-muted inline m-t-sm m-b-sm">showing 20-30 of 50 items</small>
+            <div class="col-sm-5 text-center">     
             </div>
             <div class="col-sm-7 text-right text-center-xs">                
             <ul class="pagination pagination-sm m-t-none m-b-none">
                 <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
                 <li><a href="">1</a></li>
-                <li><a href="">2</a></li>
+                <li><a href="">2</a></li> 
                 <li><a href="">3</a></li>
                 <li><a href="">4</a></li>
                 <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
@@ -280,18 +253,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
         </footer>
     </div>
-</div>
-</section>
- <!-- footer -->
-		  <div class="footer">
-			<div class="wthree-copyright">
-			  <p>© 2020 Service OK. All rights reserved | Design by <a href="">C II</a></p>
-			</div>
-		  </div>
-  <!-- / footer -->
-</section>
-
-<!--main content end-->
+ </div>
+    </section>
+            <div class="footer">
+                <div class="wthree-copyright">
+                <p>© 2020 Service OK. All rights reserved | Design by <a href="">C II</a></p>
+                </div>
+            </div>
+    </section>
+    
 </section>
 <script src="confirmacion.js"></script>
 <script src="js/bootstrap.js"></script>
@@ -299,7 +269,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="js/scripts.js"></script>
 <script src="js/jquery.slimscroll.js"></script>
 <script src="js/jquery.nicescroll.js"></script>
-<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
 <script src="js/jquery.scrollTo.js"></script>
 </body>
 </html>

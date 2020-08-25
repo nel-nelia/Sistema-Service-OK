@@ -141,7 +141,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     <script type="text/javascript">
 
-    navigator.geolocation.getCurrentPosition(function(location) {
+     navigator.geolocation.getCurrentPosition(function(location) {
         console.log(location.coords.latitude);
         console.log(location.coords.longitude);
 

@@ -1,6 +1,16 @@
 <?php
 
-    include('conexion.php');
+	include('conexion.php');
+	$result = mysqli_query($con, "SELECT * FROM datos");
+	if($result->num_rows > 0){ 
+
+		while($row = $result->fetch_assoc()){ 
+			$iddato=$row['id'];
+			?>
+		
+		<?php }  
+}   
+
 	$count=0;
 	if(!empty($_POST['add'])) {  
 		$autor = mysqli_real_escape_string($con,$_POST["autor"]);
@@ -9,9 +19,9 @@
 		$ruc = mysqli_real_escape_string($con,$_POST["ruc"]);
 		$phone = mysqli_real_escape_string($con,$_POST["phone"]);
 		$Email = mysqli_real_escape_string($con,$_POST["Email"]);
-		$direccion = mysqli_real_escape_string($con,$_POST["direccion"]);
+		$direccion = mysqli_real_escape_string($con,$_POST["direccion"]);  
 	
-		$mensaje = mysqli_real_escape_string($con,$_POST["mensaje"]);
+		$mensaje = mysqli_real_escape_string($con,$_POST["mensaje"]); 
 		
 		
 		
@@ -24,5 +34,6 @@
 	$result=mysqli_query($con, $sql2);
 	$count=mysqli_num_rows($result);
 
-	header( 'Location: ../vistas/permiso.php' ) ;
+	header( 'Location: ../vistas/permiso.php?id='.$iddato);
+
 ?>
