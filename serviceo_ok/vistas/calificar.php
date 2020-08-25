@@ -5,7 +5,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 {
     $name = $_POST["name"];
     $rate = $_POST["rate"];
-    $sql= "INSERT INTO ratee(rate, EstablecimientoID) VALUES ('$name','$rate')";
+    $sql= "INSERT INTO ratee(rate, EstablecimientoID) VALUES ('$rate','$name')";
     if(mysqli_query($con, $sql))
     {
         echo "NEW RATE ADDDED";
